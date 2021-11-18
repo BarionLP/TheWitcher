@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "+",
+    "-"
+  ],
+  "key": {
+    "#": {
+      "item": "the_witcher:silver_ingot"
+    },
+    "+": {
+      "item": "the_witcher:steel_ingot"
+    },
+    "-": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "the_witcher:silver_sword"
+  }
+}

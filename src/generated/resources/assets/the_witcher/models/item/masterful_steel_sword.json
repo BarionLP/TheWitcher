@@ -1,0 +1,6 @@
+{
+  "parent": "the_witcher:item/big_sword",
+  "textures": {
+    "layer0": "the_witcher:item/masterful_steel_sword"
+  }
+}

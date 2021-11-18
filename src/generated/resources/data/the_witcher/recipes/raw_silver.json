@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "the_witcher:raw_silver_block"
+    }
+  ],
+  "result": {
+    "item": "the_witcher:raw_silver",
+    "count": 9
+  }
+}

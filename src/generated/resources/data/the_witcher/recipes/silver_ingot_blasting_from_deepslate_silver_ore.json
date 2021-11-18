@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "the_witcher:deepslate_silver_ore"
+  },
+  "result": "the_witcher:silver_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

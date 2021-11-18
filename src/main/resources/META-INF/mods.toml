@@ -1,0 +1,31 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37,)"
+license="All rights reserved"
+issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content/issues"
+
+[[mods]] #mandatory
+
+modId="the_witcher" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="The Witcher Content" #mandatory
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content" #optional
+#updateJSONURL="https://change.me.example.invalid/updates.json"
+logoFile="logo.png" #optional
+credits="Thanks to every supporter" #optional
+authors="Barion" #optional
+description='''
+Adds stuff from The Witcher Universe
+'''
+[[dependencies.the_witcher]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[37,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.the_witcher]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
