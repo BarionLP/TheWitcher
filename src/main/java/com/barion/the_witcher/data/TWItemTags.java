@@ -1,8 +1,8 @@
 package com.barion.the_witcher.data;
 
+import com.barion.the_witcher.TWItems;
+import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.stuff.TWItems;
-import com.barion.the_witcher.stuff.TWTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;

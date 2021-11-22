@@ -26,8 +26,12 @@ a778f0dad452758d735232c998e1fab18a24edfa data/forge/tags/blocks/storage_blocks.j
 a778f0dad452758d735232c998e1fab18a24edfa data/forge/tags/blocks/storage_blocks/silver.json
 df2ecca875eb44a682ab244e8a4a51915e46bdb5 data/forge/tags/entity_types/magic_mob.json
 2c0c92c067acee8f1a24b5eaeecb35aa63a80a81 data/forge/tags/items/ingots.json
+1e60e0397418b7d0621f4f5a6ac0d70d9944183e data/forge/tags/items/ingots/silver.json
 3e869809c6c1d512da227a92a2f4849af12c5a59 data/forge/tags/items/nuggets.json
+dab7402847cfbb000987dff8cfc50964365bd732 data/forge/tags/items/nuggets/silver.json
 e462b77baec12cf3ed21455810b067347b2fc65b data/forge/tags/items/ores.json
+e462b77baec12cf3ed21455810b067347b2fc65b data/forge/tags/items/ores/silver.json
+a778f0dad452758d735232c998e1fab18a24edfa data/forge/tags/items/storage_blocks/silver.json
 a778f0dad452758d735232c998e1fab18a24edfa data/minecraft/tags/blocks/beacon_base_blocks.json
 b5b631d26fd3ea0eb94882c4e018aba98c06fa17 data/minecraft/tags/blocks/mineable/pickaxe.json
 b5b631d26fd3ea0eb94882c4e018aba98c06fa17 data/minecraft/tags/blocks/needs_iron_tool.json
@@ -49,8 +53,8 @@ f1e3fbb2b0f47c6ea5ef7ac7ccf073b032a450e8 data/the_witcher/advancements/recipes/t
 ff5bff349414edc051bece1a88a928401825d876 data/the_witcher/advancements/recipes/the_witcher/steel_nugget.json
 1a316d96457c22892aa786311029ed5181c3d77e data/the_witcher/advancements/recipes/the_witcher/steel_sword.json
 9c0324c780bca8c38880e9ba0bfbcab5e0e3e093 data/the_witcher/loot_tables/blocks/deepslate_silver_ore.json
-48047990d9c44cb922b6631207119568cda0ae16 data/the_witcher/loot_tables/blocks/raw_silver_block.json
-7557340a870086913b9bbe3137627a16214f7024 data/the_witcher/loot_tables/blocks/silver_block.json
+a33f0c1955a939731fceb55bceb838e2ce06e94b data/the_witcher/loot_tables/blocks/raw_silver_block.json
+7a7c9337d8ed733f909adde774d720b1909d2cbf data/the_witcher/loot_tables/blocks/silver_block.json
 1c633f713a3788f5dce7ba2d1c00afaf81119b42 data/the_witcher/loot_tables/blocks/silver_ore.json
 83612a734b3aaf7c78e6134b0399dc4312d6b818 data/the_witcher/recipes/raw_silver.json
 4b1f92f0df0f7d331846278b98491cb65ec4a54c data/the_witcher/recipes/raw_silver_block.json
@@ -68,9 +72,5 @@ e7ad8af79f3c5ddc2b86460de578e47b3baab909 data/the_witcher/recipes/silver_ingot_s
 c484bad9b0f8de47dd0177220da11696048986af data/the_witcher/recipes/steel_ingot.json
 25afaaada3e0eb6288248d70bb4c19e20f642585 data/the_witcher/recipes/steel_nugget.json
 65fc2e4f181902a280b250736c58de432a1f4552 data/the_witcher/recipes/steel_sword.json
-1e60e0397418b7d0621f4f5a6ac0d70d9944183e data/the_witcher/tags/items/ingots/silver.json
 751e2089f23538a86ad85266252854ab20e739fd data/the_witcher/tags/items/ingots/steel.json
-dab7402847cfbb000987dff8cfc50964365bd732 data/the_witcher/tags/items/nuggets/silver.json
 1c5ea20abc5573107fed21fe7a1091661963be3b data/the_witcher/tags/items/nuggets/steel.json
-e462b77baec12cf3ed21455810b067347b2fc65b data/the_witcher/tags/items/ores/silver.json
-a778f0dad452758d735232c998e1fab18a24edfa data/the_witcher/tags/items/storage_blocks/silver.json

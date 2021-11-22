@@ -1,6 +1,5 @@
-package com.barion.the_witcher.stuff;
+package com.barion.the_witcher;
 
-import com.barion.the_witcher.TheWitcher;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

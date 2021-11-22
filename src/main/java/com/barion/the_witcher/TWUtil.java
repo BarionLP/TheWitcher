@@ -1,8 +1,11 @@
-package com.barion.the_witcher.stuff;
+package com.barion.the_witcher;
 
+import com.barion.the_witcher.stuff.TWBaseArmorMaterial;
+import com.barion.the_witcher.stuff.TWBaseTier;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -10,6 +13,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
@@ -18,71 +22,12 @@ public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
 
     public static class Tiers{
-        public static final Tier Silver = new SilverTier();
-        public static final Tier Steel = new SteelTier();
-        private static class SilverTier implements Tier {
-            @Override
-            public int getUses() {
-                return 1000;
-            }
+        public static final Tier Silver = new TWBaseTier(1, 0, 20, 2, 1000, Ingredient.of(TWTags.Items.SilverIngots));
+        public static final Tier Steel = new TWBaseTier(9, -2, 20, 5, 2500, Ingredient.of(TWTags.Items.SteelIngots));
+    }
 
-            @Override
-            public float getSpeed() {
-                return 0;
-            }
-
-            @Override
-            public float getAttackDamageBonus() {
-                return 1;
-            }
-
-            @Override
-            public int getLevel() {
-                return 2;
-            }
-
-            @Override
-            public int getEnchantmentValue() {
-                return 20;
-            }
-
-            @Override
-            public Ingredient getRepairIngredient() {
-                return Ingredient.of(TWItems.SilverIngot.get());
-            }
-        }
-        private static class SteelTier implements Tier{
-
-            @Override
-            public int getUses() {
-                return 2500;
-            }
-
-            @Override
-            public float getSpeed() {
-                return -2;
-            }
-
-            @Override
-            public float getAttackDamageBonus() {
-                return 9;
-            }
-
-            @Override
-            public int getLevel() {
-                return 5;
-            }
-
-            @Override
-            public int getEnchantmentValue() {
-                return 20;
-            }
-
-            @Override
-            public Ingredient getRepairIngredient() {
-                return Ingredient.of(TWItems.SteelIngot.get());
-            }
-        }
+    public static class ArmorMaterials{
+        public static final TWBaseArmorMaterial ReinforcedLeather = new TWBaseArmorMaterial("reinforced_leather_armor", 45, new int[] {4, 7, 9, 4}, 0.1f, 3, 20, SoundEvents.ARMOR_EQUIP_LEATHER, Ingredient.of(TWTags.Items.SteelIngots));
     }
 
     public static class Swords{
@@ -130,7 +75,7 @@ public class TWUtil {
             items.add(TWItems.SteelNugget.get().getDefaultInstance());
         }
 
-        @Override
+        @Override @Nonnull
         public ItemStack makeIcon() {
             return TWItems.TabLogo.get().getDefaultInstance();
         }

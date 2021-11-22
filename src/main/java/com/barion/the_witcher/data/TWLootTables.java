@@ -1,7 +1,7 @@
 package com.barion.the_witcher.data;
 
-import com.barion.the_witcher.stuff.TWBlocks;
-import com.barion.the_witcher.stuff.TWItems;
+import com.barion.the_witcher.TWBlocks;
+import com.barion.the_witcher.TWItems;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.DataGenerator;
@@ -39,12 +39,13 @@ public class TWLootTables extends LootTableProvider {
     public static class TWBlockLoot extends BlockLoot {
         @Override
         protected void addTables() {
-            dropSelf(TWBlocks.SilverBlock.get());
-            dropSelf(TWBlocks.RawSilverBlock.get());
+            dropSelf(TWBlocks.SilverBlock.get(),
+                    TWBlocks.RawSilverBlock.get());
             dropOreLoot(TWBlocks.SilverOre.get(), TWItems.RawSilver.get());
             dropOreLoot(TWBlocks.DeepslateSilverOre.get(), TWItems.RawSilver.get());
         }
 
+        @SafeVarargs
         private <T extends Block> void dropSelf(T... Blocks){
             for (Block Block : Blocks){
                 dropSelf(Block);

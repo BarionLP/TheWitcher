@@ -1,7 +1,7 @@
 package com.barion.the_witcher.data;
 
+import com.barion.the_witcher.TWBlocks;
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.stuff.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
