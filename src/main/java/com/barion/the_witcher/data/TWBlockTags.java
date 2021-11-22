@@ -34,14 +34,18 @@ public class TWBlockTags extends BlockTagsProvider {
         custom(TWTags.Blocks.StorageBlocksSilver, TWBlocks.SilverBlock.get());
     }
 
+    @SafeVarargs
     private <T extends Block> void needsAxe(T... blocks) {
         tag(BlockTags.MINEABLE_WITH_AXE).add(blocks);
     }
+    @SafeVarargs
     private  <T extends Block> void needsPickaxe(T... blocks) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blocks);
     }
+    @SafeVarargs
     private  <T extends Block> void needsIronTool(T... blocks) {tag(BlockTags.NEEDS_IRON_TOOL).add(blocks);}
+    @SafeVarargs
     private  <T extends Block> void custom(Tag.Named<Block> tag, T... blocks) {tag(tag).add(blocks);}
-
+    @SafeVarargs
     private <T extends Block> void isOre(T... blocks){tag(Tags.Blocks.ORES).add(blocks);}
 }

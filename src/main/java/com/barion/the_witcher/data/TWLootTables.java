@@ -17,6 +17,8 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.fmllegacy.RegistryObject;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -27,13 +29,13 @@ import java.util.stream.Collectors;
 public class TWLootTables extends LootTableProvider {
     public TWLootTables(DataGenerator generator){super(generator);}
 
-    @Override
+    @Override @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(Pair.of(TWBlockLoot::new, LootContextParamSets.BLOCK));
     }
-    @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
-        map.forEach((x, y) -> LootTables.validate(validationtracker, x, y));
+    @Override @ParametersAreNonnullByDefault
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
+        map.forEach((x, y) -> LootTables.validate(validationContext, x, y));
     }
 
     public static class TWBlockLoot extends BlockLoot {
@@ -54,7 +56,7 @@ public class TWLootTables extends LootTableProvider {
         private void dropOreLoot(Block ore, Item rawOre){
             add(ore, createOreDrop(ore, rawOre));
         }
-        @Override
+        @Override @Nonnull
         protected Iterable<Block> getKnownBlocks() {
             return TWBlocks.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }

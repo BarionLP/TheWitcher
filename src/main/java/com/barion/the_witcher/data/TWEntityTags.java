@@ -19,7 +19,7 @@ public class TWEntityTags extends EntityTypeTagsProvider {
         isMagicMob(EntityType.VEX);
     }
 
-    private void isMagicMob(EntityType... entities){
+    private void isMagicMob(EntityType<?>... entities){
         tag(TWTags.Entities.MagicMob).add(entities);
     }
 }
