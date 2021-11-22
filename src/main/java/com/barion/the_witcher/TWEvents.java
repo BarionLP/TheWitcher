@@ -1,6 +1,5 @@
 package com.barion.the_witcher;
 
-import com.barion.the_witcher.stuff.TWBlocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GenerationStep;

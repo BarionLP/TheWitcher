@@ -1,18 +1,16 @@
 package com.barion.the_witcher.data;
 
+import com.barion.the_witcher.TWBlocks;
+import com.barion.the_witcher.TWItems;
+import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.stuff.TWBlocks;
-import com.barion.the_witcher.stuff.TWItems;
-import com.barion.the_witcher.stuff.TWTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;

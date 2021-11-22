@@ -1,6 +1,5 @@
-package com.barion.the_witcher.stuff;
+package com.barion.the_witcher;
 
-import com.barion.the_witcher.TheWitcher;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
@@ -24,10 +23,10 @@ public class TWTags {
     }
 
     public static final class Items{
-        public static final Tags.IOptionalNamedTag<Item> SilverOres = mod("ores/silver");
-        public static final Tags.IOptionalNamedTag<Item> StorageBlocksSilver = mod("storage_blocks/silver");
-        public static final Tags.IOptionalNamedTag<Item> SilverIngots = mod("ingots/silver");
-        public static final Tags.IOptionalNamedTag<Item> SilverNuggets = mod("nuggets/silver");
+        public static final Tags.IOptionalNamedTag<Item> SilverOres = forge("ores/silver");
+        public static final Tags.IOptionalNamedTag<Item> StorageBlocksSilver = forge("storage_blocks/silver");
+        public static final Tags.IOptionalNamedTag<Item> SilverIngots = forge("ingots/silver");
+        public static final Tags.IOptionalNamedTag<Item> SilverNuggets = forge("nuggets/silver");
 
         public static final Tags.IOptionalNamedTag<Item> SteelIngots = mod("ingots/steel");
         public static final Tags.IOptionalNamedTag<Item> SteelNuggets = mod("nuggets/steel");
