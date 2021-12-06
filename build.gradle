@@ -13,9 +13,9 @@ apply plugin: 'maven-publish'
 
 version = '0.2.0'
 group = 'com.barion.the_witcher'
-archivesBaseName = 'the_witcher-1.17'
+archivesBaseName = 'the_witcher-1.18'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
@@ -65,7 +65,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.1.0'
+    minecraft 'net.minecraftforge:forge:1.18-38.0.15'
 }
 
 jar {

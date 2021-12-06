@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[37,)"
+loaderVersion="[38,)"
 license="All rights reserved"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content/issues"
 
@@ -19,13 +19,13 @@ Adds stuff from The Witcher Universe
 [[dependencies.the_witcher]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[37,)" #mandatory
+    versionRange="[38,)" #mandatory
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.the_witcher]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1,1.18)"
+    versionRange="[1.18,1.19)"
     ordering="NONE"
     side="BOTH"

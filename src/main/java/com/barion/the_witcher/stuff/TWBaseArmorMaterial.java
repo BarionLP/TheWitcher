@@ -4,6 +4,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
@@ -44,17 +45,17 @@ public class TWBaseArmorMaterial implements ArmorMaterial {
         return enchant;
     }
 
-    @Override
+    @Override @NotNull
     public SoundEvent getEquipSound() {
         return sound;
     }
 
-    @Override
+    @Override @NotNull
     public Ingredient getRepairIngredient() {
         return repairIng.get();
     }
 
-    @Override
+    @Override @NotNull
     public String getName() {
         return name;
     }

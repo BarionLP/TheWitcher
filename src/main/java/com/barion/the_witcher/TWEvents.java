@@ -6,8 +6,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RangeDecoratorConfiguration;
-import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
+import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -25,6 +24,6 @@ public class TWEvents {
 
     private static void addOre(RuleTest rule, BlockState state, int veinSize, int minHeight, int maxHeight, int amount){
         event.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
-                Feature.ORE.configured(new OreConfiguration(rule, state, veinSize)).range(new RangeDecoratorConfiguration(UniformHeight.of(VerticalAnchor.absolute(minHeight), VerticalAnchor.absolute(maxHeight)))).squared().count(amount));
+                Feature.ORE.configured(new OreConfiguration(rule, state, veinSize, 1)).range(TrapezoidHeight.of(VerticalAnchor.absolute(minHeight), VerticalAnchor.absolute(maxHeight))).squared().count(amount));
     }
 }

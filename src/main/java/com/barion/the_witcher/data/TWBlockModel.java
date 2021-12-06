@@ -20,7 +20,8 @@ public class TWBlockModel extends BlockStateProvider {
                 TWBlocks.RawSilverBlock.get());
     }
 
-    protected <T extends Block>void simpleBlocks(T... blocks){
+    @SafeVarargs
+    protected final <T extends Block>void simpleBlocks(T... blocks){
         for (T block : blocks) {
             simpleBlock(block);
         }

@@ -2,6 +2,7 @@ package com.barion.the_witcher.stuff;
 
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -44,7 +45,7 @@ public class TWBaseTier implements Tier {
         return enchant;
     }
 
-    @Override
+    @Override @NotNull
     public Ingredient getRepairIngredient() {
         return repairIng.get();
     }
