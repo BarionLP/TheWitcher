@@ -13,7 +13,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class TWBlocks {
     public static final DeferredRegister<Block> Blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, TheWitcher.ModID);
 
-
     public static final RegistryObject<Block> SilverOre = register("silver_ore",
             Block(Material.STONE, 3, 3, SoundType.STONE, true));
     public static final RegistryObject<Block> DeepslateSilverOre = register("deepslate_silver_ore",

@@ -22,8 +22,8 @@ public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
 
     public static class Tiers{
-        public static final Tier Silver = new TWBaseTier(1, 0, 20, 2, 1000, Ingredient.of(TWTags.Items.SilverIngots));
-        public static final Tier Steel = new TWBaseTier(9, -2, 20, 5, 2500, Ingredient.of(TWTags.Items.SteelIngots));
+        public static final Tier Silver = new TWBaseTier(1, 0, 20, 2, 1000, ()-> Ingredient.of(TWTags.Items.SilverIngots));
+        public static final Tier Steel = new TWBaseTier(9, -2, 20, 5, 2500, ()-> Ingredient.of(TWTags.Items.SteelIngots));
     }
 
     public static class ArmorMaterials{

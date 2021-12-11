@@ -11,13 +11,13 @@ public class TWBaseTier implements Tier {
     private final int enchant, harvestLvl, durability;
     private final Supplier<Ingredient> repairIng;
 
-    public TWBaseTier(float dmg, float speed, int enchant, int harvestLvl, int durability, Ingredient repairIng){
+    public TWBaseTier(float dmg, float speed, int enchant, int harvestLvl, int durability, Supplier<Ingredient> repairIng){
         this.dmgBonus = dmg;
         this.speed = speed;
         this.enchant = enchant;
         this.harvestLvl = harvestLvl;
         this.durability = durability;
-        this.repairIng = ()-> repairIng;
+        this.repairIng = repairIng;
     }
 
     @Override
