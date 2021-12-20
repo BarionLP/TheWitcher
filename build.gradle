@@ -11,9 +11,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '0.2.0'
+version = mod_version
 group = 'com.barion.the_witcher'
-archivesBaseName = 'the_witcher-1.18'
+archivesBaseName = "the_witcher-${mc_version}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
