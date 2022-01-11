@@ -1,4 +1,4 @@
-package com.barion.the_witcher.data;
+package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;

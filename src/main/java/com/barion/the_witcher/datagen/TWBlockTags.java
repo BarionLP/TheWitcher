@@ -1,12 +1,11 @@
-package com.barion.the_witcher.data;
+package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWBlocks;
 import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,7 +19,10 @@ public class TWBlockTags extends BlockTagsProvider {
     protected void addTags() {
         needsPickaxe(TWBlocks.SilverOre.get(),
                 TWBlocks.RawSilverBlock.get(),
-                TWBlocks.DeepslateSilverOre.get());
+                TWBlocks.DeepslateSilverOre.get(),
+                TWBlocks.FrostedStone.get(),
+                TWBlocks.DeepFrostedStone.get());
+
         needsIronTool(TWBlocks.SilverOre.get(),
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.DeepslateSilverOre.get());
@@ -28,10 +30,11 @@ public class TWBlockTags extends BlockTagsProvider {
         isOre(TWBlocks.SilverOre.get(),
                 TWBlocks.DeepslateSilverOre.get());
 
-        custom(TWTags.Blocks.SilverOres, TWBlocks.SilverOre.get(), TWBlocks.DeepslateSilverOre.get());
-        custom(BlockTags.BEACON_BASE_BLOCKS, TWBlocks.SilverBlock.get());
-        custom(Tags.Blocks.STORAGE_BLOCKS, TWBlocks.SilverBlock.get());
-        custom(TWTags.Blocks.StorageBlocksSilver, TWBlocks.SilverBlock.get());
+        tag(TWTags.Blocks.SilverOres).add(TWBlocks.SilverOre.get(), TWBlocks.DeepslateSilverOre.get());
+        tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());
+        tag(TWTags.Blocks.StorageBlocksSilver).add(TWBlocks.SilverBlock.get());
+        tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());
+        tag(Tags.Blocks.STORAGE_BLOCKS).addTags(TWTags.Blocks.StorageBlocksSilver, TWTags.Blocks.StorageBlocksRawSilver);
     }
 
     @SafeVarargs
@@ -44,8 +47,6 @@ public class TWBlockTags extends BlockTagsProvider {
     }
     @SafeVarargs
     private  <T extends Block> void needsIronTool(T... blocks) {tag(BlockTags.NEEDS_IRON_TOOL).add(blocks);}
-    @SafeVarargs
-    private  <T extends Block> void custom(Tag.Named<Block> tag, T... blocks) {tag(tag).add(blocks);}
     @SafeVarargs
     private <T extends Block> void isOre(T... blocks){tag(Tags.Blocks.ORES).add(blocks);}
 }
