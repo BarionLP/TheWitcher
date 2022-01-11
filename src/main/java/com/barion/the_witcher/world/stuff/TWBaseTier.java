@@ -1,4 +1,4 @@
-package com.barion.the_witcher.stuff;
+package com.barion.the_witcher.world.stuff;
 
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;

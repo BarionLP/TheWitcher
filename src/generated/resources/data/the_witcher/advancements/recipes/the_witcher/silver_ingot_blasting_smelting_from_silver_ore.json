@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "the_witcher:silver_ingot_smelting_from_silver_ore"
+      "the_witcher:silver_ingot_blasting_smelting_from_silver_ore"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "the_witcher:silver_ingot_smelting_from_silver_ore"
+        "recipe": "the_witcher:silver_ingot_blasting_smelting_from_silver_ore"
       }
     }
   },

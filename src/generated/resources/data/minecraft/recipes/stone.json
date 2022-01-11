@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "the_witcher:frosted_stone"
+  },
+  "result": "minecraft:stone",
+  "experience": 0.0,
+  "cookingtime": 200
+}

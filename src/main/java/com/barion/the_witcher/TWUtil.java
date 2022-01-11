@@ -1,7 +1,9 @@
 package com.barion.the_witcher;
 
-import com.barion.the_witcher.stuff.TWBaseArmorMaterial;
-import com.barion.the_witcher.stuff.TWBaseTier;
+import com.barion.the_witcher.world.TWBlocks;
+import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.stuff.TWBaseArmorMaterial;
+import com.barion.the_witcher.world.stuff.TWBaseTier;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

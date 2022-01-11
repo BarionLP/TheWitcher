@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "the_witcher:frosted_cobblestone"
+    },
+    {
+      "item": "the_witcher:frosted_cobblestone"
+    },
+    {
+      "item": "the_witcher:frosted_cobblestone"
+    },
+    {
+      "item": "the_witcher:frosted_cobblestone"
+    }
+  ],
+  "result": {
+    "item": "the_witcher:frosted_stone",
+    "count": 4
+  }
+}

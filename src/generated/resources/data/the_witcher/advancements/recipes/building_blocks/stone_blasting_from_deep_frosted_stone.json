@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "the_witcher:silver_ingot_smelting"
+      "the_witcher:stone_blasting_from_deep_frosted_stone"
     ]
   },
   "criteria": {
@@ -12,7 +12,7 @@
         "items": [
           {
             "items": [
-              "the_witcher:raw_silver"
+              "the_witcher:deep_frosted_stone"
             ]
           }
         ]
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "the_witcher:silver_ingot_smelting"
+        "recipe": "the_witcher:stone_blasting_from_deep_frosted_stone"
       }
     }
   },

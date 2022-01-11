@@ -2,6 +2,7 @@ package com.barion.the_witcher;
 
 import com.barion.the_witcher.datagen.*;
 import com.barion.the_witcher.world.TWBlocks;
+import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.world.item.Item;
@@ -33,17 +34,16 @@ public class TheWitcher {
         Registers.Features.register(modBus);
 
         TWBlocks.init();
+        TWItems.init();
 
         modBus.addListener(this::setup);
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.register(this);
-        forgeBus.register(TWEvents.class);
+        forgeBus.addListener(TWEvents::onBiomeLoading);
     }
 
-    private void setup(final FMLCommonSetupEvent event){
-        TWEvents.registerOres();
-    }
+    private void setup(final FMLCommonSetupEvent event){TWEvents.registerOres();}
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class DataGenerators {
@@ -58,9 +58,9 @@ public class TheWitcher {
             BlockTagsProvider blockTags = new TWBlockTags(generator, fileHelper);
             generator.addProvider(blockTags);
             generator.addProvider(new TWItemTags(generator, blockTags, fileHelper));
+            generator.addProvider(new TWEntityTags(generator, fileHelper));
             generator.addProvider(new TWLootTables(generator));
             generator.addProvider(new TWRecipes(generator));
-            generator.addProvider(new TWEntityTags(generator, fileHelper));
         }
     }
 

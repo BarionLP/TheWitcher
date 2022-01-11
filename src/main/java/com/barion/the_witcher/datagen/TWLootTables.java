@@ -1,7 +1,8 @@
-package com.barion.the_witcher.data;
+package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWBlocks;
-import com.barion.the_witcher.TWItems;
+import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.world.TWBlocks;
+import com.barion.the_witcher.world.TWItems;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.DataGenerator;
@@ -42,7 +43,12 @@ public class TWLootTables extends LootTableProvider {
         @Override
         protected void addTables() {
             dropSelf(TWBlocks.SilverBlock.get(),
-                    TWBlocks.RawSilverBlock.get());
+                    TWBlocks.RawSilverBlock.get(),
+                    TWBlocks.FrostedCobblestone.get(),
+                    TWBlocks.DeepFrostedCobblestone.get());
+
+            dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
+            dropOther(TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
             dropOreLoot(TWBlocks.SilverOre.get(), TWItems.RawSilver.get());
             dropOreLoot(TWBlocks.DeepslateSilverOre.get(), TWItems.RawSilver.get());
         }
@@ -53,12 +59,12 @@ public class TWLootTables extends LootTableProvider {
                 dropSelf(Block);
             }
         }
+
         private void dropOreLoot(Block ore, Item rawOre){
             add(ore, createOreDrop(ore, rawOre));
         }
+
         @Override @Nonnull
-        protected Iterable<Block> getKnownBlocks() {
-            return TWBlocks.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
-        }
+        protected Iterable<Block> getKnownBlocks() {return TheWitcher.Registers.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
     }
 }
