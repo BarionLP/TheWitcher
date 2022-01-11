@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": -566064573,
+    "settings": "the_witcher:white_frost",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "the_witcher:frozen_spikes"
+    }
+  }
+}
