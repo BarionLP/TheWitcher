@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = mod_version
+version = mod_version as Object
 group = 'com.barion.the_witcher'
 archivesBaseName = "the_witcher-${mc_version}"
 
@@ -75,7 +75,7 @@ jar {
             "Specification-Vendor": "Barion",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
-            "Implementation-Version": project.jar.archiveVersion,
+            "Implementation-Version": mod_version,
             "Implementation-Vendor" :"Barion",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
