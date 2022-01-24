@@ -27,7 +27,9 @@ public class TWItemModel extends ItemModelProvider {
                 TWBlocks.SilverBlock.get(),
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.FrostedStone.get(),
-                TWBlocks.DeepFrostedStone.get());
+                TWBlocks.FrostedCobblestone.get(),
+                TWBlocks.DeepFrostedStone.get(),
+                TWBlocks.DeepFrostedCobblestone.get());
 
         item(TWItems.TabLogo.get(),
                 TWItems.RawSilver.get(),

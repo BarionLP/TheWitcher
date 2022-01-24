@@ -3,6 +3,7 @@ package com.barion.the_witcher;
 import com.barion.the_witcher.datagen.*;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.gen.TWFeatures;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.world.item.Item;
@@ -35,6 +36,7 @@ public class TheWitcher {
 
         TWBlocks.init();
         TWItems.init();
+        TWFeatures.init();
 
         modBus.addListener(this::setup);
 

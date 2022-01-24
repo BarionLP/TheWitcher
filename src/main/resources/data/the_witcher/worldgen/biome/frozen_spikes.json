@@ -21,7 +21,7 @@
   },
   "features": [
     [
-      "minecraft:ice_spike"
+      "the_witcher:large_ice_spike"
     ],
     [
       "minecraft:freeze_top_layer"

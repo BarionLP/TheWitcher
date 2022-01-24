@@ -9,11 +9,16 @@
   "item.the_witcher.raw_silver": "Raw Silver",
   "item.the_witcher.silver_sword": "Silver Sword",
   "item.the_witcher.masterful_silver_sword": "Masterful Silver Sword",
-  "item.the_witcher.silver_sword.info": "+ 12 Damage to Magic Mobs",
-  "item.the_witcher.masterful_silver_sword.info": "+ 16 Damage to Magic Mobs",
+  "item.the_witcher.silver_sword.info": "+ 12 Damage to magic Mobs",
+  "item.the_witcher.masterful_silver_sword.info": "+ 16 Damage to magic Mobs",
   "item.the_witcher.steel_ingot": "Steel Ingot",
   "item.the_witcher.steel_nugget": "Steel Nugget",
 
   "item.the_witcher.steel_sword": "Steel Sword",
-  "item.the_witcher.masterful_steel_sword": "Masterful Steel Sword"
+  "item.the_witcher.masterful_steel_sword": "Masterful Steel Sword",
+
+  "block.the_witcher.frosted_stone": "Frosted Stone",
+  "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
+  "block.the_witcher.deep_frosted_stone": "Deep Frosted Stone",
+  "block.the_witcher.deep_frosted_cobblestone": "Deep Frosted Cobblestone"
 }

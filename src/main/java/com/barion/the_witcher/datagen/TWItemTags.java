@@ -29,6 +29,7 @@ public class TWItemTags extends ItemTagsProvider {
 
         isNugget(TWItems.SilverNugget.get(),
                 TWItems.SteelNugget.get());
+
         tag(TWTags.Items.RawMaterialsSilver).add(TWItems.RawSilver.get());
         tag(TWTags.Items.SilverIngots).add(TWItems.SilverIngot.get());
         tag(TWTags.Items.SilverNuggets).add(TWItems.SilverNugget.get());

@@ -14,6 +14,7 @@ public class TWTags {
         public static final Tags.IOptionalNamedTag<Block> SilverOres = forge("ores/silver");
         public static final Tags.IOptionalNamedTag<Block> StorageBlocksSilver = forge("storage_blocks/silver");
         public static final Tags.IOptionalNamedTag<Block> StorageBlocksRawSilver = forge("storage_blocks/raw_silver");
+        public static final Tags.IOptionalNamedTag<Block> SpikesCanPlace = mod("spikes_can_place");
 
         private static Tags.IOptionalNamedTag<Block> forge(String path){return BlockTags.createOptional(new ResourceLocation("forge", path));}
         private static Tags.IOptionalNamedTag<Block> mod(String path){return BlockTags.createOptional(new ResourceLocation(TheWitcher.ModID, path));}
@@ -23,7 +24,7 @@ public class TWTags {
         public static final Tags.IOptionalNamedTag<Item> SilverOres = forge("ores/silver");
         public static final Tags.IOptionalNamedTag<Item> StorageBlocksSilver = forge("storage_blocks/silver");
         public static final Tags.IOptionalNamedTag<Item> StorageBlocksRawSilver = forge("storage_blocks/raw_silver");
-        public static final Tags.IOptionalNamedTag<Item> RawMaterialsSilver = forge("materials/raw_silver");
+        public static final Tags.IOptionalNamedTag<Item> RawMaterialsSilver = forge("raw_materials/raw_silver");
         public static final Tags.IOptionalNamedTag<Item> SilverIngots = forge("ingots/silver");
         public static final Tags.IOptionalNamedTag<Item> SilverNuggets = forge("nuggets/silver");
 

@@ -75,6 +75,11 @@ public class TWUtil {
 
             items.add(TWItems.SteelIngot.get().getDefaultInstance());
             items.add(TWItems.SteelNugget.get().getDefaultInstance());
+
+            items.add(TWBlocks.FrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedCobblestone.get().asItem().getDefaultInstance());
         }
 
         @Override @Nonnull
