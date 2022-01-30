@@ -1,12 +1,121 @@
 {
-  "type": "minecraft:overworld",
+  "type": "the_witcher:white_frost",
   "generator": {
     "type": "minecraft:noise",
-    "seed": -566064573,
+    "seed": -1655111826,
     "settings": "the_witcher:white_frost",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "the_witcher:frozen_spikes"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "the_witcher:snowy_desert",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -0.11,
+              0.5
+            ],
+            "erosion": [
+              0,
+              0.45
+            ],
+            "weirdness": [
+              -1,
+              -0.9
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "the_witcher:icy_peaks",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              0.5,
+              1
+            ],
+            "erosion": [
+              -1,
+              -0.7799
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.7666
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "the_witcher:frozen_spikes",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.45
+            ],
+            "continentalness": [
+              -0.19,
+              0.3
+            ],
+            "erosion": [
+              -0.375,
+              0.05
+            ],
+            "weirdness": [
+              0.7666,
+              0.9333
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "the_witcher:frosted_ocean",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -1.05,
+              -0.19
+            ],
+            "erosion": [
+              -1,
+              1
+            ],
+            "weirdness": [
+              -1,
+              1
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
     }
   }
 }
