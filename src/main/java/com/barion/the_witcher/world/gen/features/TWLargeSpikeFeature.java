@@ -24,8 +24,8 @@ public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
 
         if (!TWSpikeUtils.isEmptyOrWaterOrLava(genLevel, origin)) {return false;}
 
-        TWLargeSpikeConfiguration configuration = context.config();
         Random random = context.random();
+        TWLargeSpikeConfiguration configuration = context.config();
 
         int k = Mth.randomBetweenInclusive(random, configuration.columnRadius.getMinValue(), configuration.columnRadius.getMaxValue());
         TWLargeSpike spike = makeSpike(origin.atY(genLevel.getHeight(Heightmap.Types.MOTION_BLOCKING, origin.getX(), origin.getZ())), random, k, configuration.bluntness, configuration.heightScale);
