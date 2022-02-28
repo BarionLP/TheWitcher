@@ -16,10 +16,10 @@ import net.minecraft.world.level.ItemLike;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
-public class TWRecipes extends RecipeProvider {
+public class TWRecipeProvider extends RecipeProvider {
     private Consumer<FinishedRecipe> consumer;
 
-    public TWRecipes(DataGenerator generator){super(generator);}
+    public TWRecipeProvider(DataGenerator generator){super(generator);}
 
     @Override @ParametersAreNonnullByDefault
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {

@@ -1,6 +1,5 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.google.common.collect.ImmutableList;
@@ -27,8 +26,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class TWLootTables extends LootTableProvider {
-    public TWLootTables(DataGenerator generator){super(generator);}
+public class TWLootTableProvider extends LootTableProvider {
+    public TWLootTableProvider(DataGenerator generator){super(generator);}
 
     @Override @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
@@ -36,7 +35,7 @@ public class TWLootTables extends LootTableProvider {
     }
     @Override @ParametersAreNonnullByDefault
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
-        map.forEach((x, y) -> LootTables.validate(validationContext, x, y));
+        map.forEach((location, lootTable) -> LootTables.validate(validationContext, location, lootTable));
     }
 
     public static class TWBlockLoot extends BlockLoot {
@@ -65,6 +64,6 @@ public class TWLootTables extends LootTableProvider {
         }
 
         @Override @Nonnull
-        protected Iterable<Block> getKnownBlocks() {return TheWitcher.Registers.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
+        protected Iterable<Block> getKnownBlocks() {return TWBlocks.Registry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
     }
 }

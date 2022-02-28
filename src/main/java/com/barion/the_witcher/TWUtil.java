@@ -2,11 +2,12 @@ package com.barion.the_witcher;
 
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
-import com.barion.the_witcher.world.stuff.TWBaseArmorMaterial;
-import com.barion.the_witcher.world.stuff.TWBaseTier;
+import com.barion.the_witcher.world.util.TWBaseArmorMaterial;
+import com.barion.the_witcher.world.util.TWBaseTier;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -86,5 +87,9 @@ public class TWUtil {
         public ItemStack makeIcon() {
             return TWItems.TabLogo.get().getDefaultInstance();
         }
+    }
+
+    public static ResourceLocation createResourceLocation(String key){
+        return new ResourceLocation(TheWitcher.ModID, key);
     }
 }

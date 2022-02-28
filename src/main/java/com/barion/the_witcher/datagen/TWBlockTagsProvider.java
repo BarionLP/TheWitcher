@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class TWBlockTags extends BlockTagsProvider {
-    public TWBlockTags(DataGenerator generator, ExistingFileHelper fileHelper){
+public class TWBlockTagsProvider extends BlockTagsProvider {
+    public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, TheWitcher.ModID, fileHelper);
     }
 

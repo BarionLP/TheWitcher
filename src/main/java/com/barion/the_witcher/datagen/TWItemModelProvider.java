@@ -14,11 +14,11 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Objects;
 
-public class TWItemModel extends ItemModelProvider {
+public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
     private final ModelFile bigSword = getExistingFile(modLoc("item/big_sword"));
 
-    public TWItemModel(DataGenerator generator, ExistingFileHelper fileHelper){super(generator, TheWitcher.ModID, fileHelper);}
+    public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper){super(generator, TheWitcher.ModID, fileHelper);}
 
     @Override
     protected void registerModels() {

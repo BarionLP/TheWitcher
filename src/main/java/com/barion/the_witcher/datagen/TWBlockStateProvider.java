@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class TWBlockModel extends BlockStateProvider {
-    public TWBlockModel(DataGenerator generator, ExistingFileHelper fileHelper){
+public class TWBlockStateProvider extends BlockStateProvider {
+    public TWBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, TheWitcher.ModID, fileHelper);
     }
 

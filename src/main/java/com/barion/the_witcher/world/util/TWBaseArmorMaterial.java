@@ -1,4 +1,4 @@
-package com.barion.the_witcher.world.stuff;
+package com.barion.the_witcher.world.util;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -31,42 +31,19 @@ public class TWBaseArmorMaterial implements ArmorMaterial {
     }
 
     @Override @ParametersAreNonnullByDefault
-    public int getDurabilityForSlot(EquipmentSlot slot) {
-        return baseDurability[slot.getIndex()] * durabilityMultiplier;
-    }
-
+    public int getDurabilityForSlot(EquipmentSlot slot) {return baseDurability[slot.getIndex()] * durabilityMultiplier;}
     @Override @ParametersAreNonnullByDefault
-    public int getDefenseForSlot(EquipmentSlot slot) {
-        return protections[slot.getIndex()];
-    }
-
+    public int getDefenseForSlot(EquipmentSlot slot) {return protections[slot.getIndex()];}
     @Override
-    public int getEnchantmentValue() {
-        return enchant;
-    }
-
+    public int getEnchantmentValue() {return enchant;}
     @Override @NotNull
-    public SoundEvent getEquipSound() {
-        return sound;
-    }
-
+    public SoundEvent getEquipSound() {return sound;}
     @Override @NotNull
-    public Ingredient getRepairIngredient() {
-        return repairIng.get();
-    }
-
+    public Ingredient getRepairIngredient() {return repairIng.get();}
     @Override @NotNull
-    public String getName() {
-        return name;
-    }
-
+    public String getName() {return name;}
     @Override
-    public float getToughness() {
-        return toughness;
-    }
-
+    public float getToughness() {return toughness;}
     @Override
-    public float getKnockbackResistance() {
-        return knockbackResi;
-    }
+    public float getKnockbackResistance() {return knockbackResi;}
 }

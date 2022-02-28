@@ -9,8 +9,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
 
-public class TWEntityTags extends EntityTypeTagsProvider {
-    public TWEntityTags(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
+public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
+    public TWEntityTypeTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, TheWitcher.ModID, existingFileHelper);
     }
 

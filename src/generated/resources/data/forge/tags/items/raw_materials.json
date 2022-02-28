@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:materials/raw_silver"
+    "#forge:raw_materials/raw_silver"
   ]
 }

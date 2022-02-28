@@ -9,9 +9,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class TWBlocks {
+    public static final DeferredRegister<Block> Registry = DeferredRegister.create(ForgeRegistries.BLOCKS, TheWitcher.ModID);
+
     public static final BlockBehaviour.Properties frosted = properties(Blocks.STONE).friction(0.8f);
 
     public static final RegistryObject<Block> SilverOre = register("silver_ore",
@@ -42,12 +46,10 @@ public class TWBlocks {
 
     private static <T extends Block>RegistryObject<T> register(String name, T block){
         RegistryObject<T> registered = registerWithoutItem(name, block);
-        TheWitcher.Registers.Items.register(name, () -> new BlockItem(registered.get(), new Item.Properties().tab(TWUtil.TheWitcherTab)));
+        TWItems.Registry.register(name, () -> new BlockItem(registered.get(), new Item.Properties().tab(TWUtil.TheWitcherTab)));
         return registered;
     }
     private static <T extends Block>RegistryObject<T> registerWithoutItem(String name, T block){
-        return TheWitcher.Registers.Blocks.register(name, () -> block);
+        return Registry.register(name, () -> block);
     }
-
-    public static void init(){}
 }

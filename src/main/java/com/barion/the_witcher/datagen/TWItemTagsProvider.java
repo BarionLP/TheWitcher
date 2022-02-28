@@ -11,8 +11,8 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class TWItemTags extends ItemTagsProvider {
-    public TWItemTags(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper fileHelper){
+public class TWItemTagsProvider extends ItemTagsProvider {
+    public TWItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper fileHelper){
         super(generator, blockTags, TheWitcher.ModID, fileHelper);
     }
 
