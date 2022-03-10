@@ -19,14 +19,25 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags() {
         needsPickaxe(TWBlocks.SilverOre.get(),
-                TWBlocks.RawSilverBlock.get(),
                 TWBlocks.DeepslateSilverOre.get(),
+                TWBlocks.RawSilverBlock.get(),
+                TWBlocks.SilverBlock.get(),
+
                 TWBlocks.FrostedStone.get(),
+                TWBlocks.FrostedStoneStairs.get(),
+                TWBlocks.FrostedStoneSlab.get(),
+                TWBlocks.FrostedStoneWall.get(),
+                TWBlocks.FrostedCobblestone.get(),
+                TWBlocks.FrostedCobblestoneStairs.get(),
+                TWBlocks.FrostedCobblestoneSlab.get(),
+                TWBlocks.FrostedCobblestoneWall.get(),
+
                 TWBlocks.DeepFrostedStone.get());
 
         needsIronTool(TWBlocks.SilverOre.get(),
+                TWBlocks.DeepslateSilverOre.get(),
                 TWBlocks.RawSilverBlock.get(),
-                TWBlocks.DeepslateSilverOre.get());
+                TWBlocks.SilverBlock.get());
 
         isOre(TWBlocks.SilverOre.get(),
                 TWBlocks.DeepslateSilverOre.get());
@@ -35,7 +46,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksSilver).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());
-        tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE);
+        tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK);
         tag(Tags.Blocks.STORAGE_BLOCKS).addTags(TWTags.Blocks.StorageBlocksSilver, TWTags.Blocks.StorageBlocksRawSilver);
     }
 

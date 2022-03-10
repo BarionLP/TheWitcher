@@ -26,8 +26,8 @@ public class TheWitcher {
     public TheWitcher() {
         final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        TWBlocks.Registry.register(modBus);
         TWItems.Registry.register(modBus);
+        TWBlocks.Registry.register(modBus);
         TWEntities.Registry.register(modBus);
         TWFeatures.Registry.register(modBus);
 
@@ -40,7 +40,7 @@ public class TheWitcher {
         forgeBus.addListener(TWEvents::onBiomeLoad);
     }
 
-    private void setup(final FMLCommonSetupEvent event){TWEvents.registerOres();}
+    private void setup(final FMLCommonSetupEvent event) {TWEvents.registerOres();}
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class DataGenerators {

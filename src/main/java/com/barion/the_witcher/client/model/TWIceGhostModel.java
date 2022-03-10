@@ -14,7 +14,10 @@ public class TWIceGhostModel extends AdvancedEntityModel<TWIceGhost>{
 	public final TWModelBox RightArm;
 	public final TWModelBox LeftArm;
 
-	public TWIceGhostModel(){
+	public TWIceGhostModel(int i){
+		texWidth = 64;
+		texHeight = 64;
+
 		Root = new TWModelBox(this, "Root");
 		Root.setPos(0, 0, 0);
 
@@ -24,25 +27,63 @@ public class TWIceGhostModel extends AdvancedEntityModel<TWIceGhost>{
 		TWModelBox HeadOverlay = new TWModelBox(this, "HeadOverlay");
 		HeadOverlay.setRotationRad(0.1309f, 0, 0).addBox(-4, -4, 0, 8, 8, 11);
 		Head.addChild(HeadOverlay);
+		Root.addChild(Head);
 
 		Body = new TWModelBox(this, "Body");
-		Body.setTextureOffset(28, 31).addBox(-3, 0, -2, 4, 12, 4);
+		Body.setTextureOffset(28, 31).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 17.0F, 4.0F);
 		Body.setRotationPoint(0, 21, 0);
 		Body.setRotationRad(0.1745f, 0, 0);
+		Root.addChild(Body);
 
 		RightArm = new TWModelBox(this, "RightArm");
 		RightArm.setTextureOffset(12, 47).addBox(-3, 0, -2, 4, 12, 4);
 		RightArm.setTextureOffset(46, 0).addBox(-3, -2, -2, 4, 12, 4, 0.25f);
 		RightArm.setRotationPoint(5, 19, 0);
+		Root.addChild(RightArm);
 
 		LeftArm = new TWModelBox(this, "LeftArm");
 		LeftArm.setTextureOffset(0, 35).addBox(-1, -2, -2, 4, 12, 4);
 		LeftArm.setTextureOffset(34, 15).addBox(-1, 0, -2, 4, 12, 4, 0.25f);
-
-		Root.addChild(Head);
-		Root.addChild(Body);
-		Root.addChild(RightArm);
 		Root.addChild(LeftArm);
+	}
+
+	public TWIceGhostModel(){
+		texWidth = 64;
+		texHeight = 64;
+
+		Root = new TWModelBox( this, "Root");
+		Root.setRotationPoint(0.0F, 24.0F, 0.0F);
+
+		Body = new TWModelBox(this, "Body");
+		Body.setRotationPoint(0.0F, -21.0F, 0.0F);
+		Body.setRotationRad(0.1745F, 0.0F, 0.0F);
+		Body.setTextureOffset(28, 31).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 17.0F, 4.0F);
+		Root.addChild(Body);
+
+		RightArm = new TWModelBox(this, "RightArm");
+		RightArm.setRotationPoint(-4.0F, -19.0F, 0.0F);
+		RightArm.setRotationRad(-1.0472F, 0.0F, 0.0F);
+		RightArm.setTextureOffset(12, 47).addBox(-4.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25F); //Deform 0.25
+		RightArm.setTextureOffset(46, 0).addBox(-4.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F);
+		Root.addChild(RightArm);
+
+
+		LeftArm = new TWModelBox(this, "LeftArm");
+		LeftArm.setRotationPoint(4.0F, -19.0F, 0.0F);
+		LeftArm.setRotationRad(-1.0472F, 0.0F, 0.0F);
+		LeftArm.setTextureOffset(0, 35).addBox(0.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F);
+		LeftArm.setTextureOffset(34, 15).addBox(0.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.25f);
+		Root.addChild(LeftArm);
+
+		Head = new TWModelBox(this, "Head");
+		Head.setRotationPoint(0.0F, -21.0F, 0.0F);
+		Head.setTextureOffset(0, 19).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F);
+		TWModelBox HeadOverlay = new TWModelBox(this, "HeadOverlay");
+		HeadOverlay.setRotationPoint(0.0F, -4.0F, -4.0F);
+		HeadOverlay.setRotationDeg(0.1309F, 0.0F, 0.0F);
+		HeadOverlay.setTextureOffset(0, 0).addBox(-4.0F, -4.0F, 0.0F, 8.0F, 8.0F, 11.0F, 0.5F);
+		Head.addChild(HeadOverlay);
+		Root.addChild(Head);
 	}
 
 

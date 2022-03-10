@@ -87,7 +87,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    compileOnly "curse.maven:citadel4-331936:3548061" // change to
+    compileOnly "curse.maven:citadel4-331936:3548061"
     runtimeOnly "curse.maven:citadel4-331936:3642722"
 }
 

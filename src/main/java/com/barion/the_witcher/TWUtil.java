@@ -10,8 +10,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
@@ -41,12 +40,20 @@ public class TWUtil {
                 DamageBonus = damageBonus;
             }
 
-            @Override
+            /*@Override
             public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
                 if(TWTags.Entities.MagicMob.contains(entity.getType())){
                     entity.hurt(DamageSource.GENERIC, DamageBonus);
                 }
-                return false;
+                return true;
+            }*/
+
+            @Override @ParametersAreNonnullByDefault
+            public boolean hurtEnemy(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
+                if(target.getType().is(TWTags.Entities.MagicMob)){
+                    target.hurt(DamageSource.GENERIC, DamageBonus);
+                }
+                return super.hurtEnemy(itemStack, attacker, target);
             }
 
             @Override @ParametersAreNonnullByDefault

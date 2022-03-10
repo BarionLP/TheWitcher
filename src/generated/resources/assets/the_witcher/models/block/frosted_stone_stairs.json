@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "the_witcher:block/frosted_stone",
+    "bottom": "the_witcher:block/frosted_stone",
+    "top": "the_witcher:block/frosted_stone"
+  }
+}

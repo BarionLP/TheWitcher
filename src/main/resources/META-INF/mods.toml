@@ -1,12 +1,12 @@
 modLoader="javafml" #mandatory
-loaderVersion="[39,)"
+loaderVersion="[40,)"
 license="All rights reserved"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content/issues"
 
 [[mods]] #mandatory
     modId="the_witcher" #mandatory
     version="${file.jarVersion}" #mandatory
-    displayName="The Witcher Content" #mandatory
+    displayName="The Witcher" #mandatory
     displayURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content" #optional
     #updateJSONURL="https://change.me.example.invalid/updates.json"
     logoFile="logo.png" #optional
@@ -17,12 +17,13 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-conten
 [[dependencies.the_witcher]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[39,)" #mandatory
+    versionRange="[40,)" #mandatory
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.the_witcher]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1,1.19)"
+    versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
