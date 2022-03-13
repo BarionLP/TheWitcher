@@ -12,6 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class TWBlocks {
@@ -32,10 +33,17 @@ public class TWBlocks {
     public static final RegistryObject<StairBlock> FrostedCobblestoneStairs = register("frosted_cobblestone_stairs", stair(frosted, () -> FrostedCobblestone.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> FrostedCobblestoneSlab = register("frosted_cobblestone_slab", slab(frosted));
     public static final RegistryObject<WallBlock> FrostedCobblestoneWall = register("frosted_cobblestone_wall", wall(frosted));
-    public static final RegistryObject<Block> DeepFrostedStone = register("deep_frosted_stone", block(frosted));
-    public static final RegistryObject<Block> DeepFrostedCobblestone = register("deep_frosted_cobblestone", block(frosted));
 
-    private static BlockBehaviour.Properties properties(Block base){return BlockBehaviour.Properties.copy(base);}
+    public static final RegistryObject<Block> DeepFrostedStone = register("deep_frosted_stone", block(frosted));
+    public static final RegistryObject<StairBlock> DeepFrostedStoneStairs = register("deep_frosted_stone_stairs", stair(frosted, () -> DeepFrostedStone.get().defaultBlockState()));
+    public static final RegistryObject<SlabBlock> DeepFrostedStoneSlab = register("deep_frosted_stone_slab", slab(frosted));
+    public static final RegistryObject<WallBlock> DeepFrostedStoneWall = register("deep_frosted_stone_wall", wall(frosted));
+    public static final RegistryObject<Block> DeepFrostedCobblestone = register("deep_frosted_cobblestone", block(frosted));
+    public static final RegistryObject<StairBlock> DeepFrostedCobblestoneStairs = register("deep_frosted_cobblestone_stairs", stair(frosted, ()-> DeepFrostedCobblestone.get().defaultBlockState()));
+    public static final RegistryObject<SlabBlock> DeepFrostedCobblestoneSlab = register("deep_frosted_cobblestone_slab", slab(frosted));
+    public static final RegistryObject<WallBlock> DeepFrostedCobblestoneWall = register("deep_frosted_cobblestone_wall", wall(frosted));
+
+    private static BlockBehaviour.Properties properties(Block base) {return BlockBehaviour.Properties.copy(base);}
 
     private static Supplier<Block> block(BlockBehaviour.Properties properties) {return ()-> new Block(properties);}
     private static Supplier<StairBlock> stair(StairBlock.Properties properties, Supplier<BlockState> base) {return ()-> new StairBlock(base, properties);}
@@ -55,5 +63,9 @@ public class TWBlocks {
     }
     private static <T extends Block>RegistryObject<T> registerWithoutItem(String name, Supplier<T> block){
         return Registry.register(name, block);
+    }
+
+    public static List<Block> getAllBlocks(){
+        return Registry.getEntries().stream().map(RegistryObject::get).toList();
     }
 }

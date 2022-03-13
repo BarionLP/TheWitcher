@@ -7,14 +7,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.List;
 import java.util.Objects;
 
 public class TWItemModelProvider extends ItemModelProvider {
@@ -25,22 +23,7 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        blocks(TWBlocks.SilverOre.get(),
-                TWBlocks.DeepslateSilverOre.get(),
-                TWBlocks.SilverBlock.get(),
-                TWBlocks.RawSilverBlock.get(),
-
-                TWBlocks.DeepFrostedStone.get(),
-                TWBlocks.DeepFrostedCobblestone.get());
-
-        blockGroup(TWBlocks.FrostedStone.get(),
-                TWBlocks.FrostedStoneStairs.get(),
-                TWBlocks.FrostedStoneSlab.get(),
-                TWBlocks.FrostedStoneWall.get());
-        blockGroup(TWBlocks.FrostedCobblestone.get(),
-                TWBlocks.FrostedCobblestoneStairs.get(),
-                TWBlocks.FrostedCobblestoneSlab.get(),
-                TWBlocks.FrostedCobblestoneWall.get());
+        simpleBlock(TWBlocks.getAllBlocks());
 
         item(TWItems.TabLogo.get(),
                 TWItems.RawSilver.get(),
@@ -67,29 +50,9 @@ public class TWItemModelProvider extends ItemModelProvider {
         item(name, texture);
     }
     protected final void item(String name, String texture) {getBuilder(name).parent(generatedItem).texture("layer0", "item/" + texture);}
-
-    protected final void blocks(Block... blocks){
-        for(Block block : blocks) {
-            block(block);
-        }
-    }
-    protected final void blockGroup(Block block, StairBlock stair, SlabBlock slab, WallBlock wall){
-        String texture = getName(block);
-        block(block, texture);
-        stairBlock(stair, texture);
-        slabBlock(slab, texture);
-        wallBlock(wall, texture);
-    }
-
-    protected final void stairBlock(StairBlock stair, String texture) {stairs(getName(stair), location(texture), location(texture), location(texture));}
-    protected final void slabBlock(SlabBlock slab, String texture) {slab(getName(slab), location(texture), location(texture), location(texture));}
-    protected final void wallBlock(WallBlock wall, String texture) {wallInventory(getName(wall), location(texture));}
-
-    protected final void block(Block block) {block(block, getName(block));}
-    protected final void block(Block block, String parent){
-        TheWitcher.LOGGER.info(location(parent));
-        //withExistingParent(getName(block), location(parent));
-        withExistingParent(getName(block), modLoc("block/" + parent));
+    private void item(Item item){
+        String name = getName(item);
+        getBuilder(name).parent(generatedItem).texture("layer0", "item/" + name);
     }
 
     @SafeVarargs
@@ -101,8 +64,31 @@ public class TWItemModelProvider extends ItemModelProvider {
     }
     protected final void bigSword(String name, String texture) {getBuilder(name).parent(bigSword).texture("layer0", "item/" + texture);}
 
+    private <B extends Block> void simpleBlock(List<B> blocks){
+        for(B block : blocks) {
+            String name = getName(block);
+            ResourceLocation texture;
+            TheWitcher.LOGGER.info(modLoc("block/" + name));
+            if(block instanceof StairBlock){
+                texture = modLoc("block/" + name.replace("_stairs", ""));
+                stairs(name, texture, texture, texture);
+            }else if(block instanceof SlabBlock) {
+                texture = modLoc("block/" + name.replace("_slab", ""));
+                slab(name, texture, texture, texture);
+            }else if(block instanceof WallBlock){
+                texture = modLoc("block/" + name.replace("_wall", ""));
+                wallInventory(name, texture);
+            }else if(block instanceof SaplingBlock){
+                sapling(name);
+            }else{
+                simpleBlock(name);
+            }
+        }
+    }
+    private void simpleBlock(String name) {withExistingParent(name, modLoc("block/" + name));}
+    private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", "block/" + name);}
+
     protected final String getName(Item item) {return Objects.requireNonNull(item.getRegistryName()).getPath();}
     protected final String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
-    protected final ResourceLocation location(String name) {return modLoc("block/" + name);
-    }
+    protected final ResourceLocation location(String name) {return modLoc("block/" + name);}
 }

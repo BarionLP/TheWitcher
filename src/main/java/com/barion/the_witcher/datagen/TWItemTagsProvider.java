@@ -6,6 +6,7 @@ import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
@@ -23,6 +24,9 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         copy(TWTags.Blocks.StorageBlocksSilver, TWTags.Items.StorageBlocksSilver);
         copy(TWTags.Blocks.StorageBlocksRawSilver, TWTags.Items.StorageBlocksRawSilver);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
+        copy(BlockTags.STAIRS, ItemTags.STAIRS);
+        copy(BlockTags.SLABS, ItemTags.SLABS);
+        copy(BlockTags.WALLS, ItemTags.WALLS);
 
         isIngot(TWItems.SilverIngot.get(),
                 TWItems.SteelIngot.get());

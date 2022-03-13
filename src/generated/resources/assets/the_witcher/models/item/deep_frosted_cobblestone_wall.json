@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "the_witcher:block/deep_frosted_cobblestone"
+  }
+}

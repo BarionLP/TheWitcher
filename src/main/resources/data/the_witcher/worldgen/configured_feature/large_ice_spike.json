@@ -32,7 +32,7 @@
        "type": "minecraft:uniform",
        "value": {
          "min_inclusive": 0,
-         "max_exclusive": 0.6
+         "max_exclusive": 0.4
        }
      },
      "min_radius_for_wind": 4,

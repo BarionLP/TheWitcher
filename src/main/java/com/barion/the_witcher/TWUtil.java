@@ -65,9 +65,7 @@ public class TWUtil {
     }
 
     private static class TheWitcherTab extends CreativeModeTab {
-        public TheWitcherTab() {
-            super("the_witcher");
-        }
+        public TheWitcherTab() {super("the_witcher");}
 
         @Override
         public void fillItemList(NonNullList<ItemStack> items) {
@@ -85,15 +83,26 @@ public class TWUtil {
             items.add(TWItems.SteelNugget.get().getDefaultInstance());
 
             items.add(TWBlocks.FrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneWall.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedCobblestoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedCobblestoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedCobblestoneWall.get().asItem().getDefaultInstance());
+
             items.add(TWBlocks.DeepFrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneWall.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedCobblestone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedCobblestoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedCobblestoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedCobblestoneWall.get().asItem().getDefaultInstance());
         }
 
         @Override @Nonnull
-        public ItemStack makeIcon() {
-            return TWItems.TabLogo.get().getDefaultInstance();
-        }
+        public ItemStack makeIcon() {return TWItems.TabLogo.get().getDefaultInstance();}
     }
 
     public static ResourceLocation createResourceLocation(String key){

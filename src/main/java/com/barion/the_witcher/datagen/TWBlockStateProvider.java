@@ -4,13 +4,11 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.List;
 import java.util.Objects;
 
 public class TWBlockStateProvider extends BlockStateProvider {
@@ -19,48 +17,54 @@ public class TWBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels() {
-        simpleBlocks(TWBlocks.SilverOre.get(),
-                TWBlocks.DeepslateSilverOre.get(),
-                TWBlocks.SilverBlock.get(),
-                TWBlocks.RawSilverBlock.get(),
-
-                TWBlocks.DeepFrostedStone.get(),
-                TWBlocks.DeepFrostedCobblestone.get());
-
-        blockGroup(TWBlocks.FrostedStone.get(),
-                TWBlocks.FrostedStoneStairs.get(),
-                TWBlocks.FrostedStoneSlab.get(),
-                TWBlocks.FrostedStoneWall.get());
-
-        blockGroup(TWBlocks.FrostedCobblestone.get(),
-                TWBlocks.FrostedCobblestoneStairs.get(),
-                TWBlocks.FrostedCobblestoneSlab.get(),
-                TWBlocks.FrostedCobblestoneWall.get());
+    protected void registerStatesAndModels(){
+        simpleBlock(TWBlocks.getAllBlocks());
     }
 
-    protected final void stairBlock(StairBlock block, String texture) {stairsBlock(block, location(texture));}
-    protected final void slabBlock(SlabBlock block, String texture) {slabBlock(block, location(texture), location(texture));}
-    protected final void wallBlock(WallBlock block, String texture) {wallBlock(block, location(texture));}
-
-    protected final void blockGroup(Block block, StairBlock stairBlock, SlabBlock slabBlock, WallBlock wallBlock){
-        String texture = Objects.requireNonNull(block.getRegistryName()).getPath();
-        simpleBlock(block);
-        stairBlock(stairBlock, texture);
-        slabBlock(slabBlock, texture);
-        wallBlock(wallBlock, texture);
-    }
-
-
-    @SafeVarargs
-    protected final <B extends Block> void simpleBlocks(B... blocks){
-        for (B block : blocks) {
-            simpleBlock(block);
+    protected  <B extends Block> void simpleBlock(List<B> blocks){
+        for(B block : blocks) {
+            if(block instanceof StairBlock){
+                stairs((StairBlock) block);
+            }else if(block instanceof SlabBlock) {
+                slab((SlabBlock) block);
+            }else if(block instanceof WallBlock){
+                wall((WallBlock) block);
+            }else if(block instanceof RotatedPillarBlock){
+                if(getName(block).contains("wood")) {
+                    wood((RotatedPillarBlock) block);
+                }else{
+                    logBlock((RotatedPillarBlock) block);
+                }
+            }else if(block instanceof SaplingBlock){
+                sapling((SaplingBlock) block);
+            }else{
+                simpleBlock(block);
+            }
         }
     }
 
 
-    protected final ResourceLocation location(String name) {
-        return modLoc("block/" + name);
+    protected void wood(RotatedPillarBlock wood){
+        ResourceLocation texture = location(getName(wood).replace("wood", "log"));
+        axisBlock(wood, texture, texture);
     }
+    protected void stairs(StairBlock stairBlock){
+        stairsBlock(stairBlock, location(getName(stairBlock).replace("_stairs", "")));
+    }
+    protected void slab(SlabBlock slabBlock){
+        ResourceLocation texture = location(getName(slabBlock).replace("_slab", ""));
+        slabBlock(slabBlock, texture, texture);
+    }
+    protected void wall(WallBlock wallBlock){
+        wallBlock(wallBlock, location(getName(wallBlock).replace("_wall", "")));
+    }
+    protected void sapling(SaplingBlock sapling){
+        String name = getName(sapling);
+        simpleBlock(sapling, models().cross(name, location(name)));
+    }
+
+    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
+
+    protected final ResourceLocation location(String name) {return modLoc("block/" + name);}
+    protected final ResourceLocation location(Block block) {return modLoc("block/" + getName(block));}
 }

@@ -15,9 +15,7 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
     }
 
     @Override
-    protected void addTags(){
-        isMagicMob(EntityType.VEX);
-    }
+    protected void addTags() {isMagicMob(EntityType.VEX);}
 
     private void isMagicMob(EntityType<?>... entities) {tag(TWTags.Entities.MagicMob).add(entities);}
 }
