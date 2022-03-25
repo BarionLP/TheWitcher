@@ -1,5 +1,6 @@
 package com.barion.the_witcher;
 
+import com.barion.the_witcher.client.model.TWIceGhostModel;
 import com.barion.the_witcher.client.model.render.TWIceGhostRender;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
@@ -38,12 +39,14 @@ public class TWEvents {
         }
     }
 
-    public static void regAttributes(EntityAttributeCreationEvent event){
+    public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(TWEntities.IceGhost.get(), TWIceGhost.createAttributes().build());
     }
-
-    public static void regRenderers(EntityRenderersEvent.RegisterRenderers event){
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(TWEntities.IceGhost.get(), TWIceGhostRender::new);
+    }
+    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
+        event.registerLayerDefinition(TWIceGhostModel.LayerLocation, TWIceGhostModel::createBodyLayer);
     }
 
     private static void addOre(String name, RegistryObject<Block> ore, RegistryObject<Block> deepOre, int veinSize, int minHeight, int maxHeight, int vinesPerChunk){

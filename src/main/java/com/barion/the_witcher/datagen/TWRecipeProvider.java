@@ -4,8 +4,6 @@ import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -33,7 +31,7 @@ public class TWRecipeProvider extends RecipeProvider {
         recipeOreSmelting(TWItems.RawSilver.get(), TWItems.SilverIngot.get());
         recipeShapeless(TWItems.SilverIngot.get(), TWItems.SilverNugget.get(), 9);
         recipeShapeless(TWItems.SilverNugget.get(), 9, TWItems.SilverIngot.get());
-        recipeShapeless(TWBlocks.SilverBlock.get(), TWItems.SilverIngot.get(), 9, "_from_silver_block");
+        recipeShapeless(TWBlocks.SilverBlock.get(), 1, TWItems.SilverIngot.get(), 9, true);
         recipeShapeless(TWItems.SilverIngot.get(), 9, TWBlocks.SilverBlock.get());
         recipeShapeless(TWBlocks.RawSilverBlock.get(), TWItems.RawSilver.get(), 9);
         recipeShapeless(TWItems.RawSilver.get(), 9, TWBlocks.RawSilverBlock.get());
@@ -78,13 +76,7 @@ public class TWRecipeProvider extends RecipeProvider {
     }
 
     protected void recipeStairs(ItemLike stair, ItemLike material, boolean hasStonecutting){
-        ShapedRecipeBuilder.shaped(stair, 4)
-                .define('#', material)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .unlockedBy("has_item", has(material))
-                .save(consumer);
+        stairBuilder(stair, Ingredient.of(material)).unlockedBy(getHasName(material), has(material)).save(consumer);
         if(hasStonecutting) {recipeStonecutting(stair, material);}
     }
     protected void recipeStairs(ItemLike stairs, ItemLike material, boolean hasStonecutting, ItemLike... addMats){
@@ -93,11 +85,7 @@ public class TWRecipeProvider extends RecipeProvider {
     }
 
     protected void recipeSlab(ItemLike slab, ItemLike material, boolean hasStonecutting){
-        ShapedRecipeBuilder.shaped(slab, 6)
-                .define('#', material)
-                .pattern("###")
-                .unlockedBy("has_item", has(material))
-                .save(consumer);
+        slab(consumer, slab, material);
         if(hasStonecutting) {recipeStonecutting(slab, material, 2);}
     }
     protected void recipeSlab(ItemLike slab, ItemLike material, ItemLike... addMats){
@@ -106,38 +94,27 @@ public class TWRecipeProvider extends RecipeProvider {
     }
 
     protected void recipeWall(ItemLike wall, ItemLike material, boolean hasStonecutting){
-        ShapedRecipeBuilder.shaped(wall, 6)
-                .define('#', material)
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(material))
-                .save(consumer);
+        wall(consumer, wall, material);
         if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(ItemLike wall, ItemLike material, boolean hasStonecutting, boolean addToID) {
-        ShapedRecipeBuilder.shaped(wall, 6)
-                .define('#', material)
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(material))
-                .save(consumer, recipeID(wall, "_from_" + material));
+        wallBuilder(wall, Ingredient.of(material)).unlockedBy("has_item", has(material)).save(consumer, getConversionRecipeName(wall, material));
         if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(ItemLike wall, ItemLike material, ItemLike... addMats) {
-        recipeWall(wall, material);
+        recipeWall(wall, material, true);
         for (ItemLike item : addMats) {recipeStonecutting(wall, item, true);}
     }
 
-    protected void recipeShapeless(ItemLike ingredient, ItemLike result, int amount) {ShapelessRecipeBuilder.shapeless(result, amount).requires(ingredient).unlockedBy("has_item", has(ingredient)).save(consumer);}
-    protected void recipeShapeless(ItemLike ingredient, int amount, ItemLike result) {ShapelessRecipeBuilder.shapeless(result).requires(ingredient, amount).unlockedBy("has_item", has(ingredient)).save(consumer);}
-    protected void recipeShapeless(ItemLike ingredient, int amountI, ItemLike result, int amountR) {ShapelessRecipeBuilder.shapeless(result, amountR).requires(ingredient, amountI).unlockedBy("has_item", has(ingredient)).save(consumer);}
-    protected void recipeShapeless(ItemLike ingredient, ItemLike result, int amount, String add) {ShapelessRecipeBuilder.shapeless(result, amount).requires(ingredient).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, add));}
-    protected void recipeShapeless(ItemLike ingredient, int amount, ItemLike result, String add) {ShapelessRecipeBuilder.shapeless(result).requires(ingredient, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, add));}
+    protected void recipeShapeless(ItemLike ingredient, ItemLike result, int amount) {recipeShapeless(ingredient, 1, result, amount);}
+    protected void recipeShapeless(ItemLike ingredient, int amount, ItemLike result) {recipeShapeless(ingredient, amount, result, 1);}
+    protected void recipeShapeless(ItemLike ingredient, int amountI, ItemLike result, int amountR) {ShapelessRecipeBuilder.shapeless(result, amountR).requires(ingredient, amountI).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer);}
+    protected void recipeShapeless(ItemLike ingredient, int amountI, ItemLike result, int amountR, boolean addToID) {ShapelessRecipeBuilder.shapeless(result, amountR).requires(ingredient, amountI).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getConversionRecipeName(result, ingredient));}
 
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient) {recipeStonecutting(result, ingredient, 1);}
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));}
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient, boolean addToID) {recipeStonecutting(result, ingredient, 1, addToID);}
-    protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount, boolean addToID) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient));}
+    protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount, boolean addToID) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getConversionRecipeName(result, ingredient) + "_stonecutting");}
 
     protected void recipeOreSmelting(ItemLike ore, ItemLike ingot) {
         recipeFurnance(ore, ingot, 0.7f, 200, "_smelting");
@@ -175,6 +152,4 @@ public class TWRecipeProvider extends RecipeProvider {
             return itemLike.toString();
         }
     }
-
-    private static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> tag) {return inventoryTrigger(ItemPredicate.Builder.item().of(tag).build());}
 }

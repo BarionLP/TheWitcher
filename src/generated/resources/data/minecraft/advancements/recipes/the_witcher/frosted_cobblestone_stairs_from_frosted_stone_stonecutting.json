@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "the_witcher:silver_ingot_from_silver_block"
+      "minecraft:frosted_cobblestone_stairs_from_frosted_stone_stonecutting"
     ]
   },
   "criteria": {
-    "has_item": {
+    "has_frosted_stone": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "the_witcher:silver_block"
+              "the_witcher:frosted_stone"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "the_witcher:silver_ingot_from_silver_block"
+        "recipe": "minecraft:frosted_cobblestone_stairs_from_frosted_stone_stonecutting"
       }
     }
   },
   "requirements": [
     [
-      "has_item",
+      "has_frosted_stone",
       "has_the_recipe"
     ]
   ]

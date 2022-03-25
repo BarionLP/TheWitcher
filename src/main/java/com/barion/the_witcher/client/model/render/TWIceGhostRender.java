@@ -11,12 +11,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class TWIceGhostRender extends MobRenderer<TWIceGhost, TWIceGhostModel>{
-    private static final ResourceLocation TEXTURE = TWUtil.createResourceLocation("textures/entity/ice_ghost.png");
+    private static final ResourceLocation Texture = TWUtil.createResourceLocation("textures/entity/ice_ghost.png");
 
     public TWIceGhostRender(EntityRendererProvider.Context renderContext) {
-        super(renderContext, new TWIceGhostModel(), 0.2f);
+        super(renderContext, new TWIceGhostModel(renderContext.bakeLayer(TWIceGhostModel.LayerLocation)), 0.2f);
     }
 
     @Override @Nonnull @ParametersAreNonnullByDefault
-    public ResourceLocation getTextureLocation(TWIceGhost entity) {return TEXTURE;}
+    public ResourceLocation getTextureLocation(TWIceGhost entity) {return Texture;}
 }

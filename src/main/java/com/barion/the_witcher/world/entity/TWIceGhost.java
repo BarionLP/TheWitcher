@@ -3,6 +3,7 @@ package com.barion.the_witcher.world.entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -19,8 +20,9 @@ public class TWIceGhost extends Monster implements FlyingAnimal {
 
     @Override
     protected void registerGoals() {
-        goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-        goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, false));
+        goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false));
+        goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, false));
+        goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Animal.class, false));
         goalSelector.addGoal(1, new RandomLookAroundGoal(this));
         goalSelector.addGoal(1, new WaterAvoidingRandomFlyingGoal(this, 0.8));
     }

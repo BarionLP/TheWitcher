@@ -20,5 +20,7 @@
   "block.the_witcher.frosted_stone": "Frosted Stone",
   "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
   "block.the_witcher.deep_frosted_stone": "Deep Frosted Stone",
-  "block.the_witcher.deep_frosted_cobblestone": "Deep Frosted Cobblestone"
+  "block.the_witcher.deep_frosted_cobblestone": "Deep Frosted Cobblestone",
+
+  "entity.the_witcher.ice_ghost": "Ice Ghost"
 }

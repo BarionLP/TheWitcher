@@ -32,8 +32,9 @@ public class TheWitcher {
         TWFeatures.Registry.register(modBus);
 
         modBus.addListener(this::setup);
-        modBus.addListener(TWEvents::regAttributes);
-        modBus.addListener(TWEvents::regRenderers);
+        modBus.addListener(TWEvents::registerAttributes);
+        modBus.addListener(TWEvents::registerRenderers);
+        modBus.addListener(TWEvents::registerLayers);
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.register(this);

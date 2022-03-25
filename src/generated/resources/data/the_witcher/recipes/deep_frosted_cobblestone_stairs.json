@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "the_witcher:deep_frosted_cobblestone"
+    }
+  },
+  "result": {
+    "item": "the_witcher:deep_frosted_cobblestone_stairs",
+    "count": 4
+  }
+}
