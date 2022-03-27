@@ -46,7 +46,7 @@ public class TWRecipeProvider extends RecipeProvider {
                 .pattern("#")
                 .pattern("+")
                 .pattern("-")
-                .unlockedBy("has_item", has(TWItems.SilverIngot.get()))
+                .unlockedBy("has_silver_ingot", has(TWItems.SilverIngot.get()))
                 .save(consumer);} // Silver Sword
         recipeSword(TWTags.Items.SteelIngots, TWItems.SteelSword.get());
 
@@ -98,7 +98,7 @@ public class TWRecipeProvider extends RecipeProvider {
         if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(ItemLike wall, ItemLike material, boolean hasStonecutting, boolean addToID) {
-        wallBuilder(wall, Ingredient.of(material)).unlockedBy("has_item", has(material)).save(consumer, getConversionRecipeName(wall, material));
+        wallBuilder(wall, Ingredient.of(material)).unlockedBy(getHasName(material), has(material)).save(consumer, getConversionRecipeName(wall, material));
         if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(ItemLike wall, ItemLike material, ItemLike... addMats) {
@@ -112,17 +112,17 @@ public class TWRecipeProvider extends RecipeProvider {
     protected void recipeShapeless(ItemLike ingredient, int amountI, ItemLike result, int amountR, boolean addToID) {ShapelessRecipeBuilder.shapeless(result, amountR).requires(ingredient, amountI).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getConversionRecipeName(result, ingredient));}
 
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient) {recipeStonecutting(result, ingredient, 1);}
-    protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));}
+    protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));}
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient, boolean addToID) {recipeStonecutting(result, ingredient, 1, addToID);}
     protected void recipeStonecutting(ItemLike result, ItemLike ingredient, int amount, boolean addToID) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getConversionRecipeName(result, ingredient) + "_stonecutting");}
 
     protected void recipeOreSmelting(ItemLike ore, ItemLike ingot) {
         recipeFurnance(ore, ingot, 0.7f, 200, "_smelting");
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ore), ingot, 0.7f, 100).unlockedBy("has_item", has(ore)).save(consumer, recipeID(ingot, "_blasting"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ore), ingot, 0.7f, 100).unlockedBy(getHasName(ore), has(ore)).save(consumer, recipeID(ingot, "_blasting"));
     }
     protected void recipeOreSmelting(ItemLike ingredient, ItemLike result, String add) {
         recipeFurnance(ingredient, result, 0.7f, 200, "_smelting" + add);
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ingredient), result, 0.7f, 100).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_blasting" + add));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ingredient), result, 0.7f, 100).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, recipeID(result, "_blasting" + add));
     }
     protected void recipeFurnance(ItemLike ingredient, ItemLike result, float xp, int time) {SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, xp, time).unlockedBy("has_item", has(ingredient)).save(consumer);}
     protected void recipeFurnance(ItemLike ingredient, ItemLike result, float xp, int time, boolean add) {recipeFurnance(ingredient, result, xp, time, "_from_" + getName(ingredient));}

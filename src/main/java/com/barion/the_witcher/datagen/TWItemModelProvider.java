@@ -49,10 +49,10 @@ public class TWItemModelProvider extends ItemModelProvider {
         String name = getName(item);
         item(name, texture);
     }
-    protected final void item(String name, String texture) {getBuilder(name).parent(generatedItem).texture("layer0", "item/" + texture);}
+    protected final void item(String name, String texture) {getBuilder(name).parent(generatedItem).texture("layer0", ITEM_FOLDER + "/" + texture);}
     private void item(Item item){
         String name = getName(item);
-        getBuilder(name).parent(generatedItem).texture("layer0", "item/" + name);
+        getBuilder(name).parent(generatedItem).texture("layer0", ITEM_FOLDER + "/" + name);
     }
 
     @SafeVarargs
@@ -62,21 +62,21 @@ public class TWItemModelProvider extends ItemModelProvider {
             bigSword(name, name);
         }
     }
-    protected final void bigSword(String name, String texture) {getBuilder(name).parent(bigSword).texture("layer0", "item/" + texture);}
+    protected final void bigSword(String name, String texture) {getBuilder(name).parent(bigSword).texture("layer0", ITEM_FOLDER + "/" + texture);}
 
     private <B extends Block> void simpleBlock(List<B> blocks){
         for(B block : blocks) {
             String name = getName(block);
             ResourceLocation texture;
-            TheWitcher.LOGGER.info(modLoc("block/" + name));
+            TheWitcher.LOGGER.info(modLoc(BLOCK_FOLDER + "/" + name));
             if(block instanceof StairBlock){
-                texture = modLoc("block/" + name.replace("_stairs", ""));
+                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_stairs", ""));
                 stairs(name, texture, texture, texture);
             }else if(block instanceof SlabBlock) {
-                texture = modLoc("block/" + name.replace("_slab", ""));
+                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_slab", ""));
                 slab(name, texture, texture, texture);
             }else if(block instanceof WallBlock){
-                texture = modLoc("block/" + name.replace("_wall", ""));
+                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_wall", ""));
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
                 sapling(name);
@@ -85,10 +85,10 @@ public class TWItemModelProvider extends ItemModelProvider {
             }
         }
     }
-    private void simpleBlock(String name) {withExistingParent(name, modLoc("block/" + name));}
-    private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", "block/" + name);}
+    private void simpleBlock(String name) {withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name));}
+    private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", BLOCK_FOLDER + "/" + name);}
 
     protected final String getName(Item item) {return Objects.requireNonNull(item.getRegistryName()).getPath();}
     protected final String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
-    protected final ResourceLocation location(String name) {return modLoc("block/" + name);}
+    protected final ResourceLocation location(String name) {return modLoc(BLOCK_FOLDER + "/" + name);}
 }

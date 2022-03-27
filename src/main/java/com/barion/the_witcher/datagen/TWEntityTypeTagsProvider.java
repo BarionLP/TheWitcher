@@ -2,6 +2,7 @@ package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.world.TWEntities;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +16,11 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
     }
 
     @Override
-    protected void addTags() {isMagicMob(EntityType.VEX);}
-
-    private void isMagicMob(EntityType<?>... entities) {tag(TWTags.Entities.MagicMob).add(entities);}
+    protected void addTags(){
+        tag(TWTags.Entities.MagicMob).add(
+                EntityType.VEX,
+                EntityType.CREEPER,
+                TWEntities.IceGhost.get()
+        );
+    }
 }
