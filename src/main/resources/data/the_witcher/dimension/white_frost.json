@@ -16,7 +16,7 @@
             ],
             "humidity": [
               -1,
-              1
+              0
             ],
             "continentalness": [
               0,
@@ -96,7 +96,7 @@
               1
             ],
             "humidity": [
-              -1,
+              0,
               1
             ],
             "continentalness": [
