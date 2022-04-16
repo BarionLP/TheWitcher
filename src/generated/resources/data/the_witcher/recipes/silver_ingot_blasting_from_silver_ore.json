@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "the_witcher:silver_ore"
-  },
-  "result": "the_witcher:silver_ingot",
-  "experience": 0.7,
-  "cookingtime": 100
-}

@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "the_witcher:silver_ingot"
-            ]
+            "tag": "forge:ingots/silver"
           }
         ]
       }

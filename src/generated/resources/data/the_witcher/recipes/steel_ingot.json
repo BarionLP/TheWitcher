@@ -1,34 +1,15 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
-      "item": "the_witcher:steel_nugget"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
       "item": "the_witcher:steel_nugget"
     }
-  ],
+  },
   "result": {
     "item": "the_witcher:steel_ingot"
   }

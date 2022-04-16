@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class TWIceGhostRender extends MobRenderer<TWIceGhost, TWIceGhostModel>{
-    private static final ResourceLocation Texture = TWUtil.createResourceLocation("textures/entity/ice_ghost.png");
+    private static final ResourceLocation Texture = TWUtil.location("textures/entity/ice_ghost.png");
 
     public TWIceGhostRender(EntityRendererProvider.Context renderContext) {
         super(renderContext, new TWIceGhostModel(renderContext.bakeLayer(TWIceGhostModel.LayerLocation)), 0.2f);

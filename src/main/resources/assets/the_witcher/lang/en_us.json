@@ -1,26 +1,39 @@
 {
   "itemGroup.the_witcher": "The Witcher",
-  "block.the_witcher.silver_ore": "Silver Ore",
-  "block.the_witcher.deepslate_silver_ore": "Deepslate Silver Ore",
-  "block.the_witcher.silver_block": "Block of Silver",
-  "block.the_witcher.raw_silver_block": "Block of Raw Silver",
-  "item.the_witcher.silver_ingot": "Silver Ingot",
-  "item.the_witcher.silver_nugget": "Silver Nugget",
+
   "item.the_witcher.raw_silver": "Raw Silver",
+  "block.the_witcher.raw_silver_block": "Block of Raw Silver",
+  "item.the_witcher.silver_nugget": "Silver Nugget",
+  "item.the_witcher.silver_ingot": "Silver Ingot",
+  "block.the_witcher.silver_block": "Block of Silver",
   "item.the_witcher.silver_sword": "Silver Sword",
   "item.the_witcher.masterful_silver_sword": "Masterful Silver Sword",
   "item.the_witcher.silver_sword.info": "+ 12 Damage to magic Mobs",
   "item.the_witcher.masterful_silver_sword.info": "+ 16 Damage to magic Mobs",
+
   "item.the_witcher.steel_ingot": "Steel Ingot",
   "item.the_witcher.steel_nugget": "Steel Nugget",
-
   "item.the_witcher.steel_sword": "Steel Sword",
   "item.the_witcher.masterful_steel_sword": "Masterful Steel Sword",
 
   "block.the_witcher.frosted_stone": "Frosted Stone",
+  "block.the_witcher.frosted_stone_stairs": "Frosted Stone Stairs",
+  "block.the_witcher.frosted_stone_slab": "Frosted Stone Slab",
+  "block.the_witcher.frosted_stone_wall": "Frosted Stone Wall",
   "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
+  "block.the_witcher.frosted_cobblestone_stairs": "Frosted Cobblestone Stairs",
+  "block.the_witcher.frosted_cobblestone_slab": "Frosted Cobblestone Slab",
+  "block.the_witcher.frosted_cobblestone_wall": "Frosted Cobblestone Wall",
   "block.the_witcher.deep_frosted_stone": "Deep Frosted Stone",
+  "block.the_witcher.deep_frosted_stone_stairs": "Deep Frosted Stone Stairs",
+  "block.the_witcher.deep_frosted_stone_slab": "Deep Frosted Stone Slab",
+  "block.the_witcher.deep_frosted_stone_wall": "Deep Frosted Stone Wall",
   "block.the_witcher.deep_frosted_cobblestone": "Deep Frosted Cobblestone",
+  "block.the_witcher.deep_frosted_cobblestone_stairs": "Deep Frosted Cobblestone Stairs",
+  "block.the_witcher.deep_frosted_cobblestone_slab": "Deep Frosted Cobblestone Slab",
+  "block.the_witcher.deep_frosted_cobblestone_wall": "Deep Frosted Cobblestone Wall",
+
+  "item.the_witcher.kikimora_tooth": "Kikimora Tooth",
 
   "entity.the_witcher.ice_ghost": "Ice Ghost"
 }

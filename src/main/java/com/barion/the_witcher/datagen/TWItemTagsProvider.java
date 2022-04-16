@@ -19,8 +19,6 @@ public class TWItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
-        copy(Tags.Blocks.ORES, Tags.Items.ORES);
-        copy(TWTags.Blocks.SilverOres, TWTags.Items.SilverOres);
         copy(TWTags.Blocks.StorageBlocksSilver, TWTags.Items.StorageBlocksSilver);
         copy(TWTags.Blocks.StorageBlocksRawSilver, TWTags.Items.StorageBlocksRawSilver);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);

@@ -1,7 +1,7 @@
 modLoader="javafml" #mandatory
 loaderVersion="[40,)"
 license="All rights reserved"
-issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content/issues"
+issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 
 [[mods]] #mandatory
     modId="the_witcher" #mandatory
@@ -25,5 +25,12 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-conten
     modId="minecraft"
     mandatory=true
     versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.the_witcher]]
+    modId="structure_gel"
+    mandatory=true
+    versionRange="[2.2.0,]"
     ordering="NONE"
     side="BOTH"

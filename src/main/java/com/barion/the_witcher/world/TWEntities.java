@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -16,6 +17,10 @@ public class TWEntities {
     public static final DeferredRegister<EntityType<?>> Registry = DeferredRegister.create(ForgeRegistries.ENTITIES, TheWitcher.ModID);
 
     public static final RegistryObject<EntityType<TWIceGhost>> IceGhost = register("ice_ghost", TWIceGhost::new, MobCategory.MONSTER, 1, 2);
+
+    public static void registerAttributes(EntityAttributeCreationEvent event){
+        event.put(TWEntities.IceGhost.get(), TWIceGhost.createAttributes().build());
+    }
 
     @ParametersAreNonnullByDefault
     private static <E extends Entity>RegistryObject<EntityType<E>> register(String name, EntityType.EntityFactory<E> entity, MobCategory category, float size, float height){

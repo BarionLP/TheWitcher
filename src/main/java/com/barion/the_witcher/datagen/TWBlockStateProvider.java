@@ -23,44 +23,29 @@ public class TWBlockStateProvider extends BlockStateProvider {
 
     protected  <B extends Block> void simpleBlock(List<B> blocks){
         for(B block : blocks) {
-            if(block instanceof StairBlock){
-                stairs((StairBlock) block);
+            String name = getName(block);
+            ResourceLocation texture;
+
+            if(block instanceof StairBlock) {
+                stairsBlock((StairBlock) block, location(name.replace("_stairs", "")));
             }else if(block instanceof SlabBlock) {
-                slab((SlabBlock) block);
-            }else if(block instanceof WallBlock){
-                wall((WallBlock) block);
-            }else if(block instanceof RotatedPillarBlock){
+                texture = location(name.replace("_slab", ""));
+                slabBlock((SlabBlock) block, texture, texture);
+            }else if(block instanceof WallBlock) {
+                wallBlock((WallBlock) block, location(name.replace("_wall", "")));
+            }else if(block instanceof RotatedPillarBlock) {
                 if(getName(block).contains("wood")) {
-                    wood((RotatedPillarBlock) block);
+                    texture = location(name.replace("wood", "log"));
+                    axisBlock((RotatedPillarBlock) block, texture, texture);
                 }else{
                     logBlock((RotatedPillarBlock) block);
                 }
-            }else if(block instanceof SaplingBlock){
-                sapling((SaplingBlock) block);
-            }else{
+            }else if(block instanceof SaplingBlock) {
+                simpleBlock(block, models().cross(name, location(name)));
+            }else {
                 simpleBlock(block);
             }
         }
-    }
-
-
-    protected void wood(RotatedPillarBlock wood){
-        ResourceLocation texture = location(getName(wood).replace("wood", "log"));
-        axisBlock(wood, texture, texture);
-    }
-    protected void stairs(StairBlock stairBlock){
-        stairsBlock(stairBlock, location(getName(stairBlock).replace("_stairs", "")));
-    }
-    protected void slab(SlabBlock slabBlock){
-        ResourceLocation texture = location(getName(slabBlock).replace("_slab", ""));
-        slabBlock(slabBlock, texture, texture);
-    }
-    protected void wall(WallBlock wallBlock){
-        wallBlock(wallBlock, location(getName(wallBlock).replace("_wall", "")));
-    }
-    protected void sapling(SaplingBlock sapling){
-        String name = getName(sapling);
-        simpleBlock(sapling, models().cross(name, location(name)));
     }
 
     protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}

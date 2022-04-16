@@ -18,8 +18,6 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags() {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                TWBlocks.SilverOre.get(),
-                TWBlocks.DeepslateSilverOre.get(),
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.SilverBlock.get(),
 
@@ -64,17 +62,10 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
-                TWBlocks.SilverOre.get(),
-                TWBlocks.DeepslateSilverOre.get(),
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.SilverBlock.get()
         );
 
-        tag(Tags.Blocks.ORES).add(TWBlocks.SilverOre.get(),
-                TWBlocks.DeepslateSilverOre.get()
-        );
-
-        tag(TWTags.Blocks.SilverOres).add(TWBlocks.SilverOre.get(), TWBlocks.DeepslateSilverOre.get());
         tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksSilver).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());

@@ -69,8 +69,6 @@ public class TWLootTableProvider extends LootTableProvider {
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
             dropOther(TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
-            dropOreLoot(TWBlocks.SilverOre.get(), TWItems.RawSilver.get());
-            dropOreLoot(TWBlocks.DeepslateSilverOre.get(), TWItems.RawSilver.get());
         }
 
         @SafeVarargs private <T extends Block> void dropSelf(T... Blocks) {for(Block Block : Blocks) {dropSelf(Block);}}
@@ -91,8 +89,92 @@ public class TWLootTableProvider extends LootTableProvider {
                                 .add(lootItem(TWItems.RawSilver.get(), 5, lootNumber(0, 1)))
                                 .add(lootItem(TWItems.SilverIngot.get(), 4, lootNumber(0, 1)))
                                 .add(lootItem(TWItems.SteelNugget.get(), 1, lootNumber(0, 3)))
-                                .add(potion(1, Potions.STRENGTH, lootNumber(0, 1)))));
-            } //White Frost Portal
+                                .add(potion(1, Potions.STRENGTH, lootNumber(0, 1)))
+                        ));
+            } // White Frost Portal
+
+            {
+                lootTable.accept(location("witcher_castle/brewing"), LootTable.lootTable()
+                        .withPool(lootPool(lootNumber(10, 15))
+                                //.add(lootItem(TWItems.WhiteMyrtle.get(), 6, one())
+                                //.add(lootItem(TWItems.Beer.get(), 4, one()))
+                                .add(lootItem(Items.WHEAT, 10, lootNumber(1, 4)))
+                                .add(lootItem(Items.GUNPOWDER, 10, lootNumber(1, 2)))
+                                .add(lootItem(Items.SPIDER_EYE, 12, lootNumber(1, 3)))
+                                .add(lootItem(Items.GLOWSTONE_DUST, 2, one()))
+                                //.add(lootItem(TWItems.HotWaterBottle.get(), 4, one()))
+                                .add(lootItem(Items.REDSTONE, 3, one())))
+                        .withPool(lootPool(lootNumber(1, 3))
+                                //.add(lootItem(TWItems.Celandine.get(), 2, lootNumber(1, 2)))
+                                //.add(lootItem(TWItems.KikimoraTooth.get(), 2, one()))
+                                .add(lootItem(Items.BLAZE_POWDER, 1, one()))
+                                //.add(lootItem(TWItems.WhiteGull.get(), 2, one()))
+                                //.add(lootItem(TWItems.PotionOfZireael.get(), 1, lootNumber(0, 1))
+                        ));
+
+                lootTable.accept(location("witcher_castle/food"), LootTable.lootTable()
+                        .withPool(lootPool(lootNumber(14, 19))
+                                .add(lootItem(Items.BREAD, 2, one()))
+                                .add(lootItem(Items.WHEAT_SEEDS, 4, one()))
+                                .add(lootItem(Items.PUMPKIN_SEEDS, 3, one()))
+                                .add(lootItem(Items.MELON_SEEDS, 3, one()))
+                                .add(lootItem(Items.GOLDEN_CARROT, 1, one()))
+                                .add(lootItem(Items.GOLDEN_APPLE, 1, lootNumber(0, 1)))
+                                .add(lootItem(Items.APPLE, 2, one()))
+                                .add(suspiciousStew(2, one()))
+                                .add(lootItem(Items.BAKED_POTATO, 2, one()))
+                                .add(lootItem(Items.POTATO, 2, one()))
+                                .add(lootItem(Items.CARROT, 2, one()))
+                                .add(lootItem(Items.SUGAR_CANE, 2, one()))
+                                .add(lootItem(Items.MUSHROOM_STEW, 2, one()))
+                                .add(lootItem(Items.ROTTEN_FLESH, 5, one()))
+                                .add(lootItem(Items.COOKED_MUTTON, 1, one()))
+                                .add(lootItem(Items.COOKED_BEEF, 1, one()))
+                                .add(lootItem(Items.COOKED_PORKCHOP, 1, one()))
+                                .add(lootItem(Items.COOKED_CHICKEN, 1, one()))
+                                .add(lootItem(Items.COOKED_RABBIT, 1, one()))
+                                .add(lootItem(Items.COOKED_SALMON, 1, one()))
+                                .add(lootItem(Items.COOKED_COD, 1, one()))
+                                //.add(lootItem(TWItems.Beer.get(), 1, lootNumber(0, 1)))
+                        ));
+
+                lootTable.accept(location("witcher_castle/smithing"), LootTable.lootTable()
+                        .withPool(lootPool(lootNumber(4, 6))
+                                .add(lootItem(TWItems.SilverNugget.get(), 2, lootNumber(3, 4)))
+                                .add(lootItem(TWItems.RawSilver.get(), 1, lootNumber(1, 2)))
+                                .add(lootItem(Items.IRON_INGOT, 5, lootNumber(2, 3)))
+                                .add(lootItem(Items.IRON_NUGGET, 7, lootNumber(3, 6)))
+                                .add(lootItem(Items.RAW_IRON, 5, lootNumber(2, 4)))
+                                .add(lootItem(Items.GOLD_INGOT, 5, lootNumber(2, 3)))
+                                .add(lootItem(Items.GOLD_NUGGET, 6, lootNumber(3, 6)))
+                                .add(lootItem(Items.RAW_GOLD, 5, lootNumber(2, 4))))
+                        .withPool(lootPool(lootNumber(1, 3))
+                                //.add(lootItem(TWItems.ReinforcedLeatherHelmet.get(), 2, lootNumber(0, 1)))
+                                //.add(lootItem(TWItems.ReinforcedLeatherChestplate.get(), 2, lootNumber(0, 1)))
+                                //.add(lootItem(TWItems.ReinforcedLeatherLeggings.get(), 2, lootNumber(0, 1)))
+                                //.add(lootItem(TWItems.ReinforcedLeatherBoots.get(), 2, lootNumber(0, 1)))
+                                .add(lootItem(TWItems.SteelSword.get(), 2, one()))
+                                .add(lootItem(TWItems.SteelIngot.get(), 2, one()))
+                                .add(lootItem(TWItems.SilverIngot.get(), 3, one()))
+                                .add(lootItem(TWItems.SteelNugget.get(), 3, lootNumber(1, 2)))
+                                .add(lootItem(Items.BLAZE_POWDER, 1, one()))
+                        ));
+
+                lootTable.accept(location("witcher_castle/util"), LootTable.lootTable()
+                        .withPool(lootPool(lootNumber(7, 14))
+                                .add(lootItem(Items.ARROW, 12, lootNumber(1, 3)))
+                                .add(lootItem(Items.COBWEB, 7, one()))
+                                .add(lootItem(Items.STRING, 9, lootNumber(1, 3)))
+                                .add(lootItem(TWItems.SilverNugget.get(), 1, one()))
+                                .add(lootItem(TWItems.SteelNugget.get(), 1, lootNumber(0, 1)))
+                                .add(lootItem(Items.REDSTONE, 7, one()))
+                                .add(lootItem(Items.ROTTEN_FLESH, 14, lootNumber(1, 3)))
+                                .add(lootItem(Items.GUNPOWDER, 9, one()))
+                                .add(lootItem(Items.PAPER, 10, one()))
+                                .add(lootItem(Items.BLAZE_POWDER, 1, lootNumber(0, 1)))
+                                //.add(lootItem(TWItems.KikimoraTooth.get(), 1, lootNumber(0, 1)))
+                        ));
+            } // Witcher Castle
         }
 
         private LootPoolEntryContainer.Builder<?> lootItem(ItemLike item, int weight, NumberProvider amount){
@@ -111,7 +193,7 @@ public class TWLootTableProvider extends LootTableProvider {
             return LootItem.lootTableItem(Items.POTION).setWeight(weight).apply(SetItemCountFunction.setCount(amount)).apply(SetPotionFunction.setPotion(potion));
         }
 
-        private NumberProvider one() {return ConstantValue.exactly(1);}
+        private NumberProvider one() {return lootNumber(1);}
         private NumberProvider lootNumber(int amount) {return ConstantValue.exactly(amount);}
         private NumberProvider lootNumber(int minAmount, int maxAmount) {return UniformGenerator.between(minAmount, maxAmount);}
 

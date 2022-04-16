@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class TWKikimoraRender extends MobRenderer<TWKikimora, TWKikimoraModel>{
-    private static final ResourceLocation Texture = TWUtil.createResourceLocation("textures/entity/kikimora.png");
+    private static final ResourceLocation Texture = TWUtil.location("textures/entity/kikimora.png");
 
     public TWKikimoraRender(EntityRendererProvider.Context rendererContext) {
         super(rendererContext, new TWKikimoraModel(rendererContext.bakeLayer(TWKikimoraModel.LayerLocation)), 0.2f);

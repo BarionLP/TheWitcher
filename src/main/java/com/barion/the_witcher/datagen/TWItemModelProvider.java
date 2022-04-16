@@ -5,7 +5,9 @@ import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -17,52 +19,15 @@ import java.util.Objects;
 
 public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
-    private final ModelFile bigSword = getExistingFile(modLoc("item/big_sword"));
+    private final ModelFile bigHandheld = getExistingFile(modLoc("item/big_sword"));
 
     public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper){super(generator, TheWitcher.ModID, fileHelper);}
 
     @Override
     protected void registerModels() {
         simpleBlock(TWBlocks.getAllBlocks());
-
-        item(TWItems.TabLogo.get(),
-                TWItems.RawSilver.get(),
-                TWItems.SilverIngot.get(),
-                TWItems.SilverNugget.get(),
-                TWItems.SteelIngot.get(),
-                TWItems.SteelNugget.get());
-
-        bigSword(TWItems.SilverSword.get(),
-                TWItems.MasterfulSilverSword.get(),
-                TWItems.SteelSword.get(),
-                TWItems.MasterfulSteelSword.get());
+        items(TWItems.getAllItems());
     }
-
-    @SafeVarargs
-    protected  final  <I extends Item> void item(I... items){
-        for(I item : items){
-            String name = getName(item);
-            item(name, name);
-        }
-    }
-    protected final <I extends Item> void item(I item, String texture){
-        String name = getName(item);
-        item(name, texture);
-    }
-    protected final void item(String name, String texture) {getBuilder(name).parent(generatedItem).texture("layer0", ITEM_FOLDER + "/" + texture);}
-    private void item(Item item){
-        String name = getName(item);
-        getBuilder(name).parent(generatedItem).texture("layer0", ITEM_FOLDER + "/" + name);
-    }
-
-    @SafeVarargs
-    protected final <S extends SwordItem> void bigSword(S... swords) {
-        for(S sword : swords){
-            String name = Objects.requireNonNull(sword.getRegistryName()).getPath();
-            bigSword(name, name);
-        }
-    }
-    protected final void bigSword(String name, String texture) {getBuilder(name).parent(bigSword).texture("layer0", ITEM_FOLDER + "/" + texture);}
 
     private <B extends Block> void simpleBlock(List<B> blocks){
         for(B block : blocks) {
@@ -87,6 +52,26 @@ public class TWItemModelProvider extends ItemModelProvider {
     }
     private void simpleBlock(String name) {withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name));}
     private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", BLOCK_FOLDER + "/" + name);}
+
+    private <I extends Item> void items(List<I> items){
+        for (Item item : items){
+            String name = getName(item);
+
+            if(item instanceof SignItem){
+                item(name);
+            }else if(item instanceof BlockItem){
+                continue;
+            }else if(item instanceof SwordItem){
+                item(name, bigHandheld);
+            }else{
+                item(name);
+            }
+        }
+    }
+
+    protected final void item(String name) {item(name, generatedItem, name);}
+    protected final void item(String name, ModelFile model) {item(name, model, name);}
+    protected final void item(String name, ModelFile model, String texture) {getBuilder(name).parent(model).texture("layer0", ITEM_FOLDER + "/" + texture);}
 
     protected final String getName(Item item) {return Objects.requireNonNull(item.getRegistryName()).getPath();}
     protected final String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}

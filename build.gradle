@@ -27,7 +27,6 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', 'the_witcher'
@@ -59,7 +58,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'the_witcher'
 
             mods {
-                examplemod {
+                the_witcher {
                     source sourceSets.main
                 }
             }
@@ -77,15 +76,30 @@ minecraft {
                 }
             }
         }
+
+        all {
+            def srgToMcpFile = project.tasks.createSrgToMcp.outputs.files[0].path
+
+            property 'net.minecraftforge.gradle.GradleStart.srg.srg-mcp', srgToMcpFile
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', srgToMcpFile
+        }
+
     }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-repositories {}
+repositories {
+    maven {
+        name "Modding Legacy Maven"
+        url "https://maven.moddinglegacy.com/artifactory/modding-legacy/"
+    }
+}
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    implementation fg.deobf("com.legacy:structure-gel:${mc_version}-${gel_version}")
 }
 
 jar {

@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "the_witcher:silver_ingot"
+      "tag": "forge:ingots/silver"
     },
     "+": {
-      "item": "the_witcher:steel_ingot"
+      "tag": "the_witcher:ingots/steel"
     },
     "-": {
       "item": "minecraft:stick"
