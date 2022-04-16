@@ -42,10 +42,13 @@ public class TWRecipeProvider extends RecipeProvider {
                 .save(consumer);} // Silver Sword
         sword(TWTags.Items.SteelIngots, TWItems.SteelSword.get());
 
-        stairSlabWall(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStone.get(), true);
         stairSlabWall(TWBlocks.FrostedCobblestoneStairs.get(), TWBlocks.FrostedCobblestoneSlab.get(), TWBlocks.FrostedCobblestoneWall.get(), TWBlocks.FrostedCobblestone.get(), TWBlocks.FrostedStone.get());
-        stairSlabWall(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStone.get(), true);
+        stairSlabWall(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStone.get(), true);
+        stairSlabWall(TWBlocks.FrostedStoneBrickStairs.get(), TWBlocks.FrostedStoneBrickSlab.get(), TWBlocks.FrostedStoneBrickWall.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
         stairSlabWall(TWBlocks.DeepFrostedCobblestoneStairs.get(), TWBlocks.DeepFrostedCobblestoneSlab.get(), TWBlocks.DeepFrostedCobblestoneWall.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
+        stairSlabWall(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStone.get(), true);
+        stairSlabWall(TWBlocks.DeepFrostedStoneBrickStairs.get(), TWBlocks.DeepFrostedStoneBrickSlab.get(), TWBlocks.DeepFrostedStoneBrickWall.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
+        stairSlabWall(TWBlocks.DeepFrostedStoneTileStairs.get(), TWBlocks.DeepFrostedStoneTileSlab.get(), TWBlocks.DeepFrostedStoneTileWall.get(), TWBlocks.DeepFrostedStoneTiles.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedStoneBricks.get());
 
         shapeless(TWBlocks.FrostedStone.get(), 4, TWBlocks.FrostedCobblestone.get(), 4);
         shapeless(TWBlocks.DeepFrostedStone.get(), 4, TWBlocks.DeepFrostedCobblestone.get(), 4);

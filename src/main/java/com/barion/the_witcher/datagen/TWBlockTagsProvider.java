@@ -21,44 +21,65 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.SilverBlock.get(),
 
-                TWBlocks.FrostedStone.get(),
-                TWBlocks.FrostedStoneStairs.get(),
-                TWBlocks.FrostedStoneSlab.get(),
-                TWBlocks.FrostedStoneWall.get(),
                 TWBlocks.FrostedCobblestone.get(),
                 TWBlocks.FrostedCobblestoneStairs.get(),
                 TWBlocks.FrostedCobblestoneSlab.get(),
                 TWBlocks.FrostedCobblestoneWall.get(),
+                TWBlocks.FrostedStone.get(),
+                TWBlocks.FrostedStoneStairs.get(),
+                TWBlocks.FrostedStoneSlab.get(),
+                TWBlocks.FrostedStoneWall.get(),
+                TWBlocks.FrostedStoneBricks.get(),
+                TWBlocks.FrostedStoneBrickStairs.get(),
+                TWBlocks.FrostedStoneBrickSlab.get(),
+                TWBlocks.FrostedStoneBrickWall.get(),
 
+                TWBlocks.DeepFrostedCobblestone.get(),
+                TWBlocks.DeepFrostedCobblestoneStairs.get(),
+                TWBlocks.DeepFrostedCobblestoneSlab.get(),
+                TWBlocks.DeepFrostedCobblestoneWall.get(),
                 TWBlocks.DeepFrostedStone.get(),
                 TWBlocks.DeepFrostedStoneStairs.get(),
                 TWBlocks.DeepFrostedStoneSlab.get(),
                 TWBlocks.DeepFrostedStoneWall.get(),
-                TWBlocks.DeepFrostedCobblestone.get(),
-                TWBlocks.DeepFrostedCobblestoneStairs.get(),
-                TWBlocks.DeepFrostedCobblestoneSlab.get(),
-                TWBlocks.DeepFrostedCobblestoneWall.get()
+                TWBlocks.DeepFrostedStoneBricks.get(),
+                TWBlocks.DeepFrostedStoneBrickStairs.get(),
+                TWBlocks.DeepFrostedStoneBrickSlab.get(),
+                TWBlocks.DeepFrostedStoneBrickWall.get(),
+                TWBlocks.DeepFrostedStoneTiles.get(),
+                TWBlocks.DeepFrostedStoneTileStairs.get(),
+                TWBlocks.DeepFrostedStoneTileSlab.get(),
+                TWBlocks.DeepFrostedStoneTileWall.get()
         );
 
         tag(BlockTags.STAIRS).add(
-                TWBlocks.FrostedStoneStairs.get(),
                 TWBlocks.FrostedCobblestoneStairs.get(),
+                TWBlocks.FrostedStoneStairs.get(),
+                TWBlocks.FrostedStoneBrickStairs.get(),
+                TWBlocks.DeepFrostedCobblestoneStairs.get(),
                 TWBlocks.DeepFrostedStoneStairs.get(),
-                TWBlocks.DeepFrostedCobblestoneStairs.get()
+                TWBlocks.DeepFrostedStoneBrickStairs.get(),
+                TWBlocks.DeepFrostedStoneTileStairs.get()
         );
 
         tag(BlockTags.SLABS).add(
-                TWBlocks.FrostedStoneSlab.get(),
                 TWBlocks.FrostedCobblestoneSlab.get(),
+                TWBlocks.FrostedStoneSlab.get(),
+                TWBlocks.FrostedStoneBrickSlab.get(),
+                TWBlocks.DeepFrostedCobblestoneSlab.get(),
                 TWBlocks.DeepFrostedStoneSlab.get(),
-                TWBlocks.DeepFrostedCobblestoneSlab.get()
+                TWBlocks.DeepFrostedStoneBrickSlab.get(),
+                TWBlocks.DeepFrostedStoneTileSlab.get()
         );
 
         tag(BlockTags.WALLS).add(
-                TWBlocks.FrostedStoneWall.get(),
                 TWBlocks.FrostedCobblestoneWall.get(),
+                TWBlocks.FrostedStoneWall.get(),
+                TWBlocks.FrostedStoneBrickWall.get(),
+                TWBlocks.DeepFrostedCobblestoneWall.get(),
                 TWBlocks.DeepFrostedStoneWall.get(),
-                TWBlocks.DeepFrostedCobblestoneWall.get()
+                TWBlocks.DeepFrostedStoneBrickWall.get(),
+                TWBlocks.DeepFrostedStoneTileWall.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(

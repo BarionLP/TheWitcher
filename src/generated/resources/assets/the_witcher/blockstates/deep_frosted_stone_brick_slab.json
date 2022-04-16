@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "the_witcher:block/deep_frosted_stone_brick_slab_top"
+    },
+    "type=bottom": {
+      "model": "the_witcher:block/deep_frosted_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "the_witcher:block/deep_frosted_stone_bricks"
+    }
+  }
+}

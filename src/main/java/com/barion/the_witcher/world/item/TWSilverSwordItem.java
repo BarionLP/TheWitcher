@@ -18,17 +18,23 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class TWSilverSwordItem extends SwordItem {
-    private final int DamageBonus;
-    public TWSilverSwordItem(Tier tier, int damageBonus, float speed, Properties properties) {
+    private final int MagicDamage;
+    public TWSilverSwordItem(Tier tier, int magicDamage, float speed, Properties properties) {
         super(tier, 0, speed, properties);
-        DamageBonus = damageBonus;
+        MagicDamage = magicDamage;
     }
 
     @Override @ParametersAreNonnullByDefault
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
-        TheWitcher.LOGGER.info(target + "  " + attacker);
         if(target.getType().is(TWTags.Entities.MagicMob)) {
-            target.hurt(DamageSource.GENERIC, (attacker instanceof Player) ? ((Player) attacker).getAttackStrengthScale(DamageBonus) : DamageBonus);
+            float damage = MagicDamage;
+            if(attacker instanceof Player){
+                float dmgScale = ((Player) attacker).getAttackStrengthScale(0.5f) * 6.6666f;
+                damage *= dmgScale;
+                TheWitcher.LOGGER.info("Scaled damage with: " + dmgScale);
+            }
+            TheWitcher.LOGGER.info("Total Damage: " + damage);
+            target.hurt(DamageSource.mobAttack(attacker), damage);
         }
         return super.hurtEnemy(itemStack, target, attacker);
     }

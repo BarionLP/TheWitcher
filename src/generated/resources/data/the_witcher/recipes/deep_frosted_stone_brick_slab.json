@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "the_witcher:deep_frosted_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "the_witcher:deep_frosted_stone_brick_slab",
+    "count": 6
+  }
+}

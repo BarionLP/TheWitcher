@@ -1,5 +1,6 @@
 package com.barion.the_witcher.datagen;
 
+import com.barion.the_witcher.TWUtil;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
@@ -33,15 +34,17 @@ public class TWItemModelProvider extends ItemModelProvider {
         for(B block : blocks) {
             String name = getName(block);
             ResourceLocation texture;
-            TheWitcher.LOGGER.info(modLoc(BLOCK_FOLDER + "/" + name));
-            if(block instanceof StairBlock){
-                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_stairs", ""));
+            if(block instanceof StairBlock) {
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
+                else {texture = blockTexture(name.replace("_stairs", ""));}
                 stairs(name, texture, texture, texture);
             }else if(block instanceof SlabBlock) {
-                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_slab", ""));
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
+                else {texture = blockTexture(name.replace("_slab", ""));}
                 slab(name, texture, texture, texture);
-            }else if(block instanceof WallBlock){
-                texture = modLoc(BLOCK_FOLDER + "/" + name.replace("_wall", ""));
+            }else if(block instanceof WallBlock) {
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                else {texture = blockTexture(name.replace("_wall", ""));}
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
                 sapling(name);
@@ -75,5 +78,5 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     protected final String getName(Item item) {return Objects.requireNonNull(item.getRegistryName()).getPath();}
     protected final String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
-    protected final ResourceLocation location(String name) {return modLoc(BLOCK_FOLDER + "/" + name);}
+    protected final ResourceLocation blockTexture(String name) {return modLoc(BLOCK_FOLDER + "/" + name);}
 }

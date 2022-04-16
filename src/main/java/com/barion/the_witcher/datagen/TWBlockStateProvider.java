@@ -1,5 +1,6 @@
 package com.barion.the_witcher.datagen;
 
+import com.barion.the_witcher.TWUtil;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
@@ -17,9 +18,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels(){
-        simpleBlock(TWBlocks.getAllBlocks());
-    }
+    protected void registerStatesAndModels() {simpleBlock(TWBlocks.getAllBlocks());}
 
     protected  <B extends Block> void simpleBlock(List<B> blocks){
         for(B block : blocks) {
@@ -27,21 +26,26 @@ public class TWBlockStateProvider extends BlockStateProvider {
             ResourceLocation texture;
 
             if(block instanceof StairBlock) {
-                stairsBlock((StairBlock) block, location(name.replace("_stairs", "")));
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
+                else {texture = blockTexture(name.replace("_stairs", ""));}
+                stairsBlock((StairBlock) block, texture);
             }else if(block instanceof SlabBlock) {
-                texture = location(name.replace("_slab", ""));
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
+                else {texture = blockTexture(name.replace("_slab", ""));}
                 slabBlock((SlabBlock) block, texture, texture);
             }else if(block instanceof WallBlock) {
-                wallBlock((WallBlock) block, location(name.replace("_wall", "")));
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                else {texture = blockTexture(name.replace("_wall", ""));}
+                wallBlock((WallBlock) block, texture);
             }else if(block instanceof RotatedPillarBlock) {
                 if(getName(block).contains("wood")) {
-                    texture = location(name.replace("wood", "log"));
+                    texture = blockTexture(name.replace("wood", "log"));
                     axisBlock((RotatedPillarBlock) block, texture, texture);
                 }else{
                     logBlock((RotatedPillarBlock) block);
                 }
             }else if(block instanceof SaplingBlock) {
-                simpleBlock(block, models().cross(name, location(name)));
+                simpleBlock(block, models().cross(name, blockTexture(name)));
             }else {
                 simpleBlock(block);
             }
@@ -49,7 +53,5 @@ public class TWBlockStateProvider extends BlockStateProvider {
     }
 
     protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
-
-    protected final ResourceLocation location(String name) {return modLoc("block/" + name);}
-    protected final ResourceLocation location(Block block) {return modLoc("block/" + getName(block));}
+    protected final ResourceLocation blockTexture(String name) {return modLoc("block/" + name);}
 }

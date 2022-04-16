@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "the_witcher:deep_frosted_stone_tiles"
+  },
+  "result": "the_witcher:deep_frosted_stone_tile_slab",
+  "count": 2
+}

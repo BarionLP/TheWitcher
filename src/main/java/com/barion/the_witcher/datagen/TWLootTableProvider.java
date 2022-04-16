@@ -57,6 +57,10 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.FrostedCobblestoneStairs.get(),
                     TWBlocks.FrostedCobblestoneSlab.get(),
                     TWBlocks.FrostedCobblestoneWall.get(),
+                    TWBlocks.FrostedStoneBricks.get(),
+                    TWBlocks.FrostedStoneBrickStairs.get(),
+                    TWBlocks.FrostedStoneBrickSlab.get(),
+                    TWBlocks.FrostedStoneBrickWall.get(),
 
                     TWBlocks.DeepFrostedStoneStairs.get(),
                     TWBlocks.DeepFrostedStoneSlab.get(),
@@ -64,7 +68,15 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.DeepFrostedCobblestone.get(),
                     TWBlocks.DeepFrostedCobblestoneStairs.get(),
                     TWBlocks.DeepFrostedCobblestoneSlab.get(),
-                    TWBlocks.DeepFrostedCobblestoneWall.get()
+                    TWBlocks.DeepFrostedCobblestoneWall.get(),
+                    TWBlocks.DeepFrostedStoneBricks.get(),
+                    TWBlocks.DeepFrostedStoneBrickStairs.get(),
+                    TWBlocks.DeepFrostedStoneBrickSlab.get(),
+                    TWBlocks.DeepFrostedStoneBrickWall.get(),
+                    TWBlocks.DeepFrostedStoneTiles.get(),
+                    TWBlocks.DeepFrostedStoneTileStairs.get(),
+                    TWBlocks.DeepFrostedStoneTileSlab.get(),
+                    TWBlocks.DeepFrostedStoneTileWall.get()
             );
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
@@ -106,7 +118,7 @@ public class TWLootTableProvider extends LootTableProvider {
                                 .add(lootItem(Items.REDSTONE, 3, one())))
                         .withPool(lootPool(lootNumber(1, 3))
                                 //.add(lootItem(TWItems.Celandine.get(), 2, lootNumber(1, 2)))
-                                //.add(lootItem(TWItems.KikimoraTooth.get(), 2, one()))
+                                .add(lootItem(TWItems.KikimoraTooth.get(), 2, one()))
                                 .add(lootItem(Items.BLAZE_POWDER, 1, one()))
                                 //.add(lootItem(TWItems.WhiteGull.get(), 2, one()))
                                 //.add(lootItem(TWItems.PotionOfZireael.get(), 1, lootNumber(0, 1))
@@ -172,7 +184,7 @@ public class TWLootTableProvider extends LootTableProvider {
                                 .add(lootItem(Items.GUNPOWDER, 9, one()))
                                 .add(lootItem(Items.PAPER, 10, one()))
                                 .add(lootItem(Items.BLAZE_POWDER, 1, lootNumber(0, 1)))
-                                //.add(lootItem(TWItems.KikimoraTooth.get(), 1, lootNumber(0, 1)))
+                                .add(lootItem(TWItems.KikimoraTooth.get(), 1, lootNumber(0, 1)))
                         ));
             } // Witcher Castle
         }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "the_witcher:deep_frosted_stone_tiles"
+    }
+  },
+  "result": {
+    "item": "the_witcher:deep_frosted_stone_tile_stairs",
+    "count": 4
+  }
+}

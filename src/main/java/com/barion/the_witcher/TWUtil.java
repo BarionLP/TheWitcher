@@ -19,6 +19,8 @@ public class TWUtil {
         public static final TWBaseArmorMaterial ReinforcedLeather = new TWBaseArmorMaterial("reinforced_leather_armor", 45, new int[] {4, 7, 9, 4}, 0.1f, 3, 20, SoundEvents.ARMOR_EQUIP_LEATHER, Ingredient.of(TWTags.Items.SteelIngots));
     }
 
+    public static boolean appendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
+
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}
 
@@ -37,22 +39,35 @@ public class TWUtil {
             items.add(TWItems.SteelSword.get().getDefaultInstance());
             items.add(TWItems.MasterfulSteelSword.get().getDefaultInstance());
 
-            items.add(TWBlocks.FrostedStone.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.FrostedStoneStairs.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.FrostedStoneSlab.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.FrostedStoneWall.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestoneStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestoneSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestoneWall.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.DeepFrostedStone.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.DeepFrostedStoneStairs.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.DeepFrostedStoneSlab.get().asItem().getDefaultInstance());
-            items.add(TWBlocks.DeepFrostedStoneWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneBricks.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneBrickStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneBrickSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneBrickWall.get().asItem().getDefaultInstance());
+
             items.add(TWBlocks.DeepFrostedCobblestone.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedCobblestoneStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedCobblestoneSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedCobblestoneWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStone.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneBricks.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneBrickStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneBrickSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneBrickWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneTiles.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneTileStairs.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneTileSlab.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneTileWall.get().asItem().getDefaultInstance());
         }
 
         @Override @Nonnull

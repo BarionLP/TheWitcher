@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "the_witcher:frosted_stone_brick_stairs"
+    ]
+  },
+  "criteria": {
+    "has_frosted_stone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_witcher:frosted_stone_bricks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "the_witcher:frosted_stone_brick_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_frosted_stone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}
