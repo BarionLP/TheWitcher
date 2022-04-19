@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.item;
 
-import com.barion.the_witcher.TWTags;
+import com.barion.the_witcher.util.TWTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;

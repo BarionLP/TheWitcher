@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world;
 
-import com.barion.the_witcher.TWUtil;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.item.TWKikimoraToothItem;
 import com.barion.the_witcher.world.item.TWSilverSwordItem;
 import com.barion.the_witcher.world.item.TWTiers;

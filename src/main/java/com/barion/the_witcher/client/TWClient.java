@@ -1,7 +1,7 @@
 package com.barion.the_witcher.client;
 
 import com.barion.the_witcher.client.model.TWIceGhostModel;
-import com.barion.the_witcher.client.model.render.TWIceGhostRender;
+import com.barion.the_witcher.client.render.TWIceGhostRender;
 import com.barion.the_witcher.world.TWEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

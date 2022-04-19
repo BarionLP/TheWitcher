@@ -1,4 +1,4 @@
-package com.barion.the_witcher.world.gen.feature.util;
+package com.barion.the_witcher.world.gen.util;
 
 import com.barion.the_witcher.world.gen.feature.configuration.TWLargeSpikeConfiguration;
 import net.minecraft.core.BlockPos;
@@ -29,17 +29,9 @@ public final class TWLargeSpike{
         this.scale = scale;
     }
 
-    private int getHeight() {
-        return this.getHeightAtRadius(0);
-    }
-
-    private int getMinY() {
-        return this.pointingUp ? this.root.getY() : this.root.getY() - this.getHeight();
-    }
-
-    private int getMaxY() {
-        return !this.pointingUp ? this.root.getY() : this.root.getY() + this.getHeight();
-    }
+    private int getHeight() {return this.getHeightAtRadius(0);}
+    private int getMinY() {return this.pointingUp ? this.root.getY() : this.root.getY() - this.getHeight();}
+    private int getMaxY() {return !this.pointingUp ? this.root.getY() : this.root.getY() + this.getHeight();}
 
     public boolean moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(WorldGenLevel genLevel, WindOffsetter windOffsetter) {
         while(this.radius > 1) {
@@ -63,9 +55,7 @@ public final class TWLargeSpike{
         return false;
     }
 
-    private int getHeightAtRadius(float radius) {
-        return (int)TWSpikeUtils.getSpikeHeight(radius, this.radius, this.scale, this.bluntness);
-    }
+    private int getHeightAtRadius(float radius) {return (int)TWSpikeUtils.getSpikeHeight(radius, this.radius, this.scale, this.bluntness);}
 
     public void placeBlocks(WorldGenLevel worldGenLevel, Random random, WindOffsetter windOffsetter, BlockStateProvider baseBlock) {
         for(int i1 = -this.radius; i1 <= this.radius; ++i1) {
@@ -100,9 +90,7 @@ public final class TWLargeSpike{
 
     }
 
-    public boolean isSuitableForWind(TWLargeSpikeConfiguration configuration) {
-        return this.radius >= configuration.minRadiusForWind && this.bluntness >= (double)configuration.minBluntnessForWind;
-    }
+    public boolean isSuitableForWind(TWLargeSpikeConfiguration configuration) {return this.radius >= configuration.minRadiusForWind && this.bluntness >= (double)configuration.minBluntnessForWind;}
 
     public static final class WindOffsetter {
         private final int originY;

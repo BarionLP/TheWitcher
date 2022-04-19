@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWUtil;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
@@ -48,6 +48,10 @@ public class TWItemModelProvider extends ItemModelProvider {
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
                 sapling(name);
+            }else if(block instanceof ButtonBlock){
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
+                else {texture = blockTexture(name.replace("_button", ""));}
+                buttonInventory(name, texture);
             }else{
                 simpleBlock(name);
             }

@@ -1,4 +1,4 @@
-package com.barion.the_witcher;
+package com.barion.the_witcher.util;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -43,7 +43,8 @@ public class TWTags {
     }
 
     public static final class Biomes{
-        //public static final TagKey<Biome> HasWitcherCastle = tw("has_witcher_castle");
+        public static final TagKey<Biome> isWhiteFrost = tw("is_white_frost");
+        public static final TagKey<Biome> hasIcyRuin = tw("has/icy_ruin");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
     }

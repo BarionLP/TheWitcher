@@ -1,7 +1,9 @@
 package com.barion.the_witcher.world.gen;
 
-import com.barion.the_witcher.TWConfig;
-import com.barion.the_witcher.TWUtil;
+import com.barion.the_witcher.util.TWConfig;
+import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.util.TWUtil;
+import com.barion.the_witcher.world.gen.structure.TWIcyRuinStructure;
 import com.barion.the_witcher.world.gen.structure.TWWitcherCitadelStructure;
 import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
@@ -15,7 +17,15 @@ public class TWStructures {
             StructureRegistrar.builder(TWUtil.location("witcher_citadel"), TWWitcherCitadelStructure::new)
                     .addPiece(TWWitcherCitadelStructure.Piece::new)
                     .pushConfigured(NoneFeatureConfiguration.INSTANCE)
-                            .biomes(TWConfig.COMMON.WitcherCastleConfig.getConfigured())
+                            .biomes(TWConfig.COMMON.WitcherCitadelConfig.getConfigured())
+                            .adaptNoise()
+                    .popConfigured().build();
+
+    public static final StructureRegistrar<NoneFeatureConfiguration, TWIcyRuinStructure> IcyRuin =
+            StructureRegistrar.builder(TWUtil.location("icy_ruin"), TWIcyRuinStructure::new)
+                    .addPiece(TWIcyRuinStructure.Piece::new)
+                    .pushConfigured(NoneFeatureConfiguration.INSTANCE)
+                            .biomes(TWTags.Biomes.hasIcyRuin)
                             .adaptNoise()
                     .popConfigured().build();
 
@@ -23,5 +33,6 @@ public class TWStructures {
     public static void register(final RegistryEvent.Register<StructureFeature<?>> event){
         IForgeRegistry<StructureFeature<?>> registry = event.getRegistry();
         WitcherCastle.handleForge(registry);
+        IcyRuin.handleForge(registry);
     }
 }

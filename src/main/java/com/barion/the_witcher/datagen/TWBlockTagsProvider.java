@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -80,6 +80,11 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.DeepFrostedStoneWall.get(),
                 TWBlocks.DeepFrostedStoneBrickWall.get(),
                 TWBlocks.DeepFrostedStoneTileWall.get()
+        );
+
+        tag(BlockTags.BUTTONS).add(
+                TWBlocks.FrostedStoneBrickButton.get(),
+                TWBlocks.DeepFrostedStoneBrickButton.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(

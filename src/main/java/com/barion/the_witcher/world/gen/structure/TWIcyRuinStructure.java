@@ -11,10 +11,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -30,33 +28,33 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Random;
 
-public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfiguration> {
-    private static final ResourceLocation StructureFile = TWUtil.location("witcher_citadel");
+public class TWIcyRuinStructure extends GelStructure<NoneFeatureConfiguration> {
 
-    public TWWitcherCitadelStructure() {
-        super(NoneFeatureConfiguration.CODEC, PieceGeneratorSupplier.simple(TWWitcherCitadelStructure::checkLocation, TWWitcherCitadelStructure::generatePieces));
-    }
-
-    private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){
-        if(context.validBiomeOnTop(Heightmap.Types.WORLD_SURFACE_WG)){
-            return DETerrainAnalyzer.isPositionSuitable(context.chunkPos(), context.chunkGenerator(), DETerrainAnalyzer.GenerationType.onGround, new DETerrainAnalyzer.Settings(1, 2, 8), context.heightAccessor());
-        }
-        return false;
+    public TWIcyRuinStructure() {
+        super(NoneFeatureConfiguration.CODEC, PieceGeneratorSupplier.simple(TWIcyRuinStructure::checkLocation, TWIcyRuinStructure::generatePieces));
     }
 
     private static void generatePieces(StructurePiecesBuilder piecesBuilder, PieceGenerator.Context<NoneFeatureConfiguration> context) {
         int x = context.chunkPos().getMinBlockX();
         int z = context.chunkPos().getMinBlockZ();
-        ChunkGenerator chunkGen = context.chunkGenerator();
-        LevelHeightAccessor heightAccessor = context.heightAccessor();
-        int y = chunkGen.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, heightAccessor);
+        int y = context.chunkGenerator().getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
 
-        piecesBuilder.addPiece(new Piece(context.structureManager(), new BlockPos(x, y, z), context.random()));
+        piecesBuilder.addPiece(new TWWitcherCitadelStructure.Piece(context.structureManager(), new BlockPos(x, y, z), context.random()));
+    }
+
+    private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){
+        if(context.validBiomeOnTop(Heightmap.Types.WORLD_SURFACE_WG)){
+            return DETerrainAnalyzer.isPositionSuitable(context.chunkPos(), context.chunkGenerator(), DETerrainAnalyzer.GenerationType.onGround, context.heightAccessor());
+        }
+
+        return false;
     }
 
     public static class Piece extends GelTemplateStructurePiece {
+        private static final ResourceLocation[] StructureFiles = new ResourceLocation[] {TWUtil.location("icy_ruins/small"), TWUtil.location("icy_ruins/small")};
+
         public Piece(StructureManager structureManager, BlockPos pos, Random random){
-            super(TWStructures.WitcherCastle.getPieceType(), 0, structureManager, StructureFile, pos);
+            super(TWStructures.WitcherCastle.getPieceType(), 0, structureManager, StructureFiles[random.nextInt(StructureFiles.length)], pos);
             rotation = Rotation.getRandom(random);
             setupPlaceSettings(structureManager);
         }
@@ -72,7 +70,7 @@ public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfigura
             BlockPos pivot = new BlockPos(size.getX() / 2, 0, size.getZ() / 2);
             StructurePlaceSettings settings = new StructurePlaceSettings().setKeepLiquids(false).setRotationPivot(pivot);
             settings.addProcessor(BlockIgnoreProcessor.STRUCTURE_AND_AIR).addProcessor(RemoveGelStructureProcessor.INSTANCE);
-            settings.addProcessor(TWProcessors.CrackStoneBricks);
+            settings.addProcessor(TWProcessors.CobbleFrostedStoneBricks);
             return settings;
         }
 
@@ -81,8 +79,7 @@ public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfigura
     }
 
     @Override
-    public int getSpacing() {return 68;}
-
+    public int getSpacing() {return 27;}
     @Override
     public int getOffset() {return getSpacing()/2;}
 }

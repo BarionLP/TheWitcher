@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWUtil;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -46,6 +46,10 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 }
             }else if(block instanceof SaplingBlock) {
                 simpleBlock(block, models().cross(name, blockTexture(name)));
+            }else if(block instanceof ButtonBlock) {
+                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
+                else {texture = blockTexture(name.replace("_button", ""));}
+                buttonBlock((ButtonBlock) block, texture);
             }else {
                 simpleBlock(block);
             }

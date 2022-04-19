@@ -1,4 +1,4 @@
-package com.barion.the_witcher.world.gen.feature.util;
+package com.barion.the_witcher.world.gen.util;
 
 // Tool to determine if a surface is suitable for structure generation
 // created by BarionLP https://github.com/BarionLP/DungeonsEnhanced/blob/1.18.2/src/main/java/com/barion/dungeons_enhanced/world/gen/DETerrainAnalyzer.java
@@ -13,11 +13,11 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 
 public class DETerrainAnalyzer {
-    public static Settings defaultCheckSettings = new Settings(1, 3, 3);
+    public static Settings defaultSettings = new Settings(1, 3, 3);
     protected static ChunkGenerator chunkGenerator;
     protected static LevelHeightAccessor heightAccessor;
 
-    public static boolean isPositionSuitable(ChunkPos chunkPos, ChunkGenerator chunkGenerator, GenerationType generationType, LevelHeightAccessor heightAccessor) {return isPositionSuitable(chunkPos, chunkGenerator, generationType, defaultCheckSettings, heightAccessor);}
+    public static boolean isPositionSuitable(ChunkPos chunkPos, ChunkGenerator chunkGenerator, GenerationType generationType, LevelHeightAccessor heightAccessor) {return isPositionSuitable(chunkPos, chunkGenerator, generationType, defaultSettings, heightAccessor);}
 
     public static boolean isPositionSuitable(ChunkPos chunkPos, ChunkGenerator chunkGenerator, GenerationType generationType, Settings settings, LevelHeightAccessor heightAccessor) {
         int x = chunkPos.getMinBlockX();
@@ -30,37 +30,23 @@ public class DETerrainAnalyzer {
         DETerrainAnalyzer.chunkGenerator = chunkGenerator;
         DETerrainAnalyzer.heightAccessor = heightAccessor;
 
-        if(getBlockAt(x, y-1, z) == Blocks.WATER) {
-            //DungeonsEnhanced.LOGGER.info("Canceled at " + new BlockPos(x, y, z) + " because Water");
-            return false;
-        }
+        if(getBlockAt(x, y-1, z) == Blocks.WATER) {return false;}
 
         int columSpreading = settings.columSpreading();
 
-        if(isColumBlocked(new BlockPos(x+columSpreading, y, z), settings)) {
-            return false;
-        }
-        if(isColumBlocked(new BlockPos(x-columSpreading, y, z), settings)) {
-            return false;
-        }
-        if(isColumBlocked(new BlockPos(x, y, z+columSpreading), settings)) {
-            return false;
-        }
-        if(isColumBlocked(new BlockPos(x, y, z-columSpreading), settings)) {
-            return false;
-        }
-
-        return true;
+        if(isColumBlocked(new BlockPos(x+columSpreading, y, z), settings)) {return false;}
+        if(isColumBlocked(new BlockPos(x-columSpreading, y, z), settings)) {return false;}
+        if(isColumBlocked(new BlockPos(x, y, z+columSpreading), settings)) {return false;}
+        return !isColumBlocked(new BlockPos(x, y, z-columSpreading), settings);
     }
 
     protected static boolean isColumBlocked(BlockPos pos, Settings settings){
-        int maxRangePerColum = settings.maxRangePerColum();
+        int maxRangePerColum = settings.steps();
         int stepSize = settings.stepSize();
 
         if(!isDownwardsFree(pos, stepSize, maxRangePerColum)){
             return isUpwardsBlocked(pos, stepSize, maxRangePerColum);
         }
-
         return true;
     }
 
@@ -82,7 +68,7 @@ public class DETerrainAnalyzer {
 
     protected static Block getBlockAt(int x, int y, int z) {return chunkGenerator.getBaseColumn(x, z, heightAccessor).getBlock(y).getBlock();}
 
-    public record Settings(int maxRangePerColum, int stepSize, int columSpreading) {}
+    public record Settings(int steps, int stepSize, int columSpreading) {}
 
     public enum GenerationType {onGround, inAir, underground}
 }

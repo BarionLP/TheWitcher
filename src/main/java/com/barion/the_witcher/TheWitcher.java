@@ -2,6 +2,7 @@ package com.barion.the_witcher;
 
 import com.barion.the_witcher.client.TWClient;
 import com.barion.the_witcher.datagen.*;
+import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
 import com.barion.the_witcher.world.TWItems;

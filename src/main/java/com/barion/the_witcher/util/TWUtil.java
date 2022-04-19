@@ -1,5 +1,6 @@
-package com.barion.the_witcher;
+package com.barion.the_witcher.util;
 
+import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.item.TWBaseArmorMaterial;
@@ -51,6 +52,7 @@ public class TWUtil {
             items.add(TWBlocks.FrostedStoneBrickStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedStoneBrickSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedStoneBrickWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.FrostedStoneBrickButton.get().asItem().getDefaultInstance());
 
             items.add(TWBlocks.DeepFrostedCobblestone.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedCobblestoneStairs.get().asItem().getDefaultInstance());
@@ -64,6 +66,7 @@ public class TWUtil {
             items.add(TWBlocks.DeepFrostedStoneBrickStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneBrickSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneBrickWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.DeepFrostedStoneBrickButton.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTiles.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileSlab.get().asItem().getDefaultInstance());

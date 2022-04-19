@@ -1,8 +1,8 @@
 package com.barion.the_witcher.world.gen.feature;
 
 import com.barion.the_witcher.world.gen.feature.configuration.TWLargeSpikeConfiguration;
-import com.barion.the_witcher.world.gen.feature.util.TWLargeSpike;
-import com.barion.the_witcher.world.gen.feature.util.TWSpikeUtils;
+import com.barion.the_witcher.world.gen.util.TWLargeSpike;
+import com.barion.the_witcher.world.gen.util.TWSpikeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.FloatProvider;

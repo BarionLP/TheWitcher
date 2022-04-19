@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "the_witcher:block/frosted_stone_bricks"
+  }
+}

@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -25,6 +25,7 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
+        copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
 
         isIngot(TWItems.SilverIngot.get(),
                 TWItems.SteelIngot.get());

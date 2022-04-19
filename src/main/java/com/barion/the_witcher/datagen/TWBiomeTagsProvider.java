@@ -1,6 +1,8 @@
 package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.world.gen.TWBiomes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -12,5 +14,17 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
     }
 
     @Override
-    protected void addTags() {}
+    protected void addTags() {
+        tag(TWTags.Biomes.isWhiteFrost).add(
+                TWBiomes.FrozenSpikes,
+                TWBiomes.IcyPeaks,
+                TWBiomes.SnowyDesert,
+                TWBiomes.FrostedOcean
+        );
+        tag(TWTags.Biomes.hasIcyRuin).add(
+                TWBiomes.FrozenSpikes,
+                TWBiomes.IcyPeaks,
+                TWBiomes.SnowyDesert
+        );
+    }
 }

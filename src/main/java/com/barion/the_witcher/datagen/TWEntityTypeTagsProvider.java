@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWEntities;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.EntityTypeTagsProvider;

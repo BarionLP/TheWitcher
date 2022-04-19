@@ -2,7 +2,7 @@ package com.barion.the_witcher.client.model;
 // Made with Blockbench 4.1.5
 
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.world.entity.TWIceGhost;
+import com.barion.the_witcher.world.entity.TWIceGhostEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class TWIceGhostModel extends EntityModel<TWIceGhost> {
+public class TWIceGhostModel extends EntityModel<TWIceGhostEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LayerLocation = new ModelLayerLocation(new ResourceLocation(TheWitcher.ModID, "ice_ghost"), "main");
 	private final ModelPart root;
@@ -45,7 +45,7 @@ public class TWIceGhostModel extends EntityModel<TWIceGhost> {
 	}
 
 	@Override @ParametersAreNonnullByDefault
-	public void setupAnim(TWIceGhost entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(TWIceGhostEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
 	}
 

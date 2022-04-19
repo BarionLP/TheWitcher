@@ -18,13 +18,12 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class TWKikimora extends Spider {
-    public TWKikimora(EntityType<? extends Spider> type, Level level) {
-        super(type, level);
-    }
+public class TWKikimoraEntity extends Spider {
+    public TWKikimoraEntity(EntityType<? extends Spider> type, Level level) {super(type, level);}
 
     @Override
     protected void registerGoals() {
@@ -36,8 +35,8 @@ public class TWKikimora extends Spider {
         goalSelector.addGoal(1, new RandomLookAroundGoal(this));
         goalSelector.addGoal(1, new FloatGoal(this));
     }
-
-    public static AttributeSupplier.Builder createAttributes(){
+    @NotNull
+    public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)

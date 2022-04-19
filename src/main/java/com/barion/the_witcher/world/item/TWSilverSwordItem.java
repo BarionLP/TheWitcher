@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world.item;
 
-import com.barion.the_witcher.TWTags;
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWTags;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.damagesource.DamageSource;

@@ -1,7 +1,7 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TWTags;
-import com.barion.the_witcher.TWUtil;
+import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
@@ -45,9 +45,11 @@ public class TWRecipeProvider extends RecipeProvider {
         stairSlabWall(TWBlocks.FrostedCobblestoneStairs.get(), TWBlocks.FrostedCobblestoneSlab.get(), TWBlocks.FrostedCobblestoneWall.get(), TWBlocks.FrostedCobblestone.get(), TWBlocks.FrostedStone.get());
         stairSlabWall(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStone.get(), true);
         stairSlabWall(TWBlocks.FrostedStoneBrickStairs.get(), TWBlocks.FrostedStoneBrickSlab.get(), TWBlocks.FrostedStoneBrickWall.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
+        button(TWBlocks.FrostedStoneBrickButton.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
         stairSlabWall(TWBlocks.DeepFrostedCobblestoneStairs.get(), TWBlocks.DeepFrostedCobblestoneSlab.get(), TWBlocks.DeepFrostedCobblestoneWall.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
         stairSlabWall(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStone.get(), true);
         stairSlabWall(TWBlocks.DeepFrostedStoneBrickStairs.get(), TWBlocks.DeepFrostedStoneBrickSlab.get(), TWBlocks.DeepFrostedStoneBrickWall.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
+        button(TWBlocks.DeepFrostedStoneBrickButton.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
         stairSlabWall(TWBlocks.DeepFrostedStoneTileStairs.get(), TWBlocks.DeepFrostedStoneTileSlab.get(), TWBlocks.DeepFrostedStoneTileWall.get(), TWBlocks.DeepFrostedStoneTiles.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedStoneBricks.get());
 
         shapeless(TWBlocks.FrostedStone.get(), 4, TWBlocks.FrostedCobblestone.get(), 4);
@@ -76,7 +78,7 @@ public class TWRecipeProvider extends RecipeProvider {
     }
     protected static void stairs(ItemLike stairs, ItemLike material, ItemLike... addMats){
         stairs(stairs, material, true);
-        for (ItemLike item : addMats) {stonecuttingExtraID(stairs, 1, item);}
+        for(ItemLike item : addMats) {stonecuttingExtraID(stairs, 1, item);}
     }
 
     protected static void slab(ItemLike slab, ItemLike material, boolean hasStonecutting){
@@ -85,7 +87,7 @@ public class TWRecipeProvider extends RecipeProvider {
     }
     protected static void slab(ItemLike slab, ItemLike material, ItemLike... addMats){
         slab(slab, material, true);
-        for (ItemLike item : addMats) {stonecuttingExtraID(slab, (item instanceof SlabBlock) ? 1 : 2, item);}
+        for(ItemLike item : addMats) {stonecuttingExtraID(slab, (item instanceof SlabBlock) ? 1 : 2, item);}
     }
 
     protected static void wall(ItemLike wall, ItemLike material, boolean hasStonecutting){
@@ -94,7 +96,16 @@ public class TWRecipeProvider extends RecipeProvider {
     }
     protected static void wall(ItemLike wall, ItemLike material, ItemLike... addMats) {
         wall(wall, material, true);
-        for (ItemLike item : addMats) {stonecuttingExtraID(wall, 1, item);}
+        for(ItemLike item : addMats) {stonecuttingExtraID(wall, 1, item);}
+    }
+
+    protected static void button(ItemLike button, ItemLike material, boolean hasStonecutting){
+        buttonBuilder(button, Ingredient.of(material)).unlockedBy(getHasName(material), has(material));
+        if(hasStonecutting) {stonecutting(button, 1, material);}
+    }
+    protected static void button(ItemLike button, ItemLike material, ItemLike... addMats) {
+        button(button, material, true);
+        for(ItemLike item : addMats) {stonecuttingExtraID(button, 1, item);}
     }
 
     protected static void nineBlockStorage(ItemLike unpacked, ItemLike packed) {

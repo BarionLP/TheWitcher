@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world;
 
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.world.entity.TWIceGhost;
+import com.barion.the_witcher.world.entity.TWIceGhostEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -16,10 +16,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class TWEntities {
     public static final DeferredRegister<EntityType<?>> Registry = DeferredRegister.create(ForgeRegistries.ENTITIES, TheWitcher.ModID);
 
-    public static final RegistryObject<EntityType<TWIceGhost>> IceGhost = register("ice_ghost", TWIceGhost::new, MobCategory.MONSTER, 1, 2);
+    public static final RegistryObject<EntityType<TWIceGhostEntity>> IceGhost = register("ice_ghost", TWIceGhostEntity::new, MobCategory.MONSTER, 1, 2);
 
     public static void registerAttributes(EntityAttributeCreationEvent event){
-        event.put(TWEntities.IceGhost.get(), TWIceGhost.createAttributes().build());
+        event.put(TWEntities.IceGhost.get(), TWIceGhostEntity.createAttributes().build());
     }
 
     @ParametersAreNonnullByDefault

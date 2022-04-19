@@ -1,21 +1,16 @@
 package com.barion.the_witcher.client.model;
 // Made with Blockbench 4.1.5
 
-import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.world.entity.TWKikimora;
+import com.barion.the_witcher.world.entity.TWKikimoraEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class TWKikimoraModel extends EntityModel<TWKikimora> {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LayerLocation = new ModelLayerLocation(new ResourceLocation(TheWitcher.ModID, "kikimora_model"), "main");
+public class TWKikimoraModel extends EntityModel<TWKikimoraEntity> {
 	private final ModelPart Root;
 
 	public TWKikimoraModel(ModelPart root){
@@ -234,7 +229,7 @@ public class TWKikimoraModel extends EntityModel<TWKikimora> {
 	}
 
 	@Override
-	public void setupAnim(@NotNull TWKikimora entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(@NotNull TWKikimoraEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
 	}
 
