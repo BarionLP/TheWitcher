@@ -26,11 +26,11 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleBlock(TWBlocks.getAllBlocks());
+        blocks(TWBlocks.getAllBlocks());
         items(TWItems.getAllItems());
     }
 
-    private <B extends Block> void simpleBlock(List<B> blocks){
+    private <B extends Block> void blocks(List<B> blocks){
         for(B block : blocks) {
             String name = getName(block);
             ResourceLocation texture;
@@ -53,11 +53,11 @@ public class TWItemModelProvider extends ItemModelProvider {
                 else {texture = blockTexture(name.replace("_button", ""));}
                 buttonInventory(name, texture);
             }else{
-                simpleBlock(name);
+                block(name);
             }
         }
     }
-    private void simpleBlock(String name) {withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name));}
+    private void block(String name) {withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name));}
     private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", BLOCK_FOLDER + "/" + name);}
 
     private <I extends Item> void items(List<I> items){

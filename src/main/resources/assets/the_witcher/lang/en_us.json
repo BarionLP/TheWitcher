@@ -15,6 +15,10 @@
   "item.the_witcher.steel_nugget": "Steel Nugget",
   "item.the_witcher.steel_sword": "Steel Sword",
   "item.the_witcher.masterful_steel_sword": "Masterful Steel Sword",
+  "item.the_witcher.reinforced_leather_helmet": "Reinforced Leather Helmet",
+  "item.the_witcher.reinforced_leather_chestplate": "Reinforced Leather Chestplate",
+  "item.the_witcher.reinforced_leather_leggings": "Reinforced Leather Leggings",
+  "item.the_witcher.reinforced_leather_boots": "Reinforced Leather Boots",
 
   "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
   "block.the_witcher.frosted_cobblestone_stairs": "Frosted Cobblestone Stairs",
@@ -48,5 +52,6 @@
 
   "item.the_witcher.kikimora_tooth": "Kikimora Tooth",
 
-  "entity.the_witcher.ice_ghost": "Ice Ghost"
+  "entity.the_witcher.ice_ghost": "Ice Ghost",
+  "entity.the_witcher.wild_hunt_hound": "Hound of the Wild Hunt"
 }

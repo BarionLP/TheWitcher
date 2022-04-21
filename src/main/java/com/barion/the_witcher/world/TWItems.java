@@ -2,13 +2,12 @@ package com.barion.the_witcher.world;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
+import com.barion.the_witcher.world.item.TWArmorMaterial;
 import com.barion.the_witcher.world.item.TWKikimoraToothItem;
 import com.barion.the_witcher.world.item.TWSilverSwordItem;
 import com.barion.the_witcher.world.item.TWTiers;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,6 +33,10 @@ public class TWItems{
     public static final RegistryObject<Item> SteelNugget = register("steel_nugget", item(DefaultProperies));
     public static final RegistryObject<SwordItem> SteelSword = register("steel_sword", sword(TWTiers.Steel, 0, -2, 0, Rarity.COMMON));
     public static final RegistryObject<SwordItem> MasterfulSteelSword = register("masterful_steel_sword", sword(TWTiers.Steel, 4, -1.5f, 500, Rarity.RARE));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherHelmet = register("reinforced_leather_helmet", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.HEAD, DefaultProperies));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherChestplate = register("reinforced_leather_chestplate", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.CHEST, DefaultProperies));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherLeggings = register("reinforced_leather_leggings", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.LEGS, DefaultProperies));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.FEET, DefaultProperies));
 
     public static final RegistryObject<TWKikimoraToothItem> KikimoraTooth = register("kikimora_tooth", TWKikimoraToothItem::new);
 

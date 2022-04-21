@@ -1,4 +1,4 @@
-package com.barion.the_witcher.client.render;
+package com.barion.the_witcher.client.renderer;
 
 import com.barion.the_witcher.client.model.TWKikimoraModel;
 import com.barion.the_witcher.util.TWUtil;

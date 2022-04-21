@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:vex",
-    "minecraft:creeper",
     "the_witcher:wild_hunt_hound",
     "the_witcher:ice_ghost"
   ]

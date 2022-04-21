@@ -3,22 +3,15 @@ package com.barion.the_witcher.util;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
-import com.barion.the_witcher.world.item.TWBaseArmorMaterial;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 
 import javax.annotation.Nonnull;
 
 public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
-
-    public static class ArmorMaterials{
-        public static final TWBaseArmorMaterial ReinforcedLeather = new TWBaseArmorMaterial("reinforced_leather_armor", 45, new int[] {4, 7, 9, 4}, 0.1f, 3, 20, SoundEvents.ARMOR_EQUIP_LEATHER, Ingredient.of(TWTags.Items.SteelIngots));
-    }
 
     public static boolean appendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
 
@@ -39,6 +32,10 @@ public class TWUtil {
             items.add(TWItems.SteelNugget.get().getDefaultInstance());
             items.add(TWItems.SteelSword.get().getDefaultInstance());
             items.add(TWItems.MasterfulSteelSword.get().getDefaultInstance());
+            items.add(TWItems.ReinforcedLeatherHelmet.get().getDefaultInstance());
+            items.add(TWItems.ReinforcedLeatherChestplate.get().getDefaultInstance());
+            items.add(TWItems.ReinforcedLeatherLeggings.get().getDefaultInstance());
+            items.add(TWItems.ReinforcedLeatherBoots.get().getDefaultInstance());
 
             items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestoneStairs.get().asItem().getDefaultInstance());
