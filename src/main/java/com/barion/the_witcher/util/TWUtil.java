@@ -36,6 +36,7 @@ public class TWUtil {
             items.add(TWItems.ReinforcedLeatherChestplate.get().getDefaultInstance());
             items.add(TWItems.ReinforcedLeatherLeggings.get().getDefaultInstance());
             items.add(TWItems.ReinforcedLeatherBoots.get().getDefaultInstance());
+            items.add(TWBlocks.MasterSmithingTable.get().asItem().getDefaultInstance());
 
             items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
             items.add(TWBlocks.FrostedCobblestoneStairs.get().asItem().getDefaultInstance());

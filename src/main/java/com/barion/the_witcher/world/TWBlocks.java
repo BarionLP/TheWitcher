@@ -1,6 +1,7 @@
 package com.barion.the_witcher.world;
 
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -56,6 +57,8 @@ public class TWBlocks {
     public static final RegistryObject<StairBlock> DeepFrostedStoneTileStairs = register("deep_frosted_stone_tile_stairs", stair(deepFrosted, () -> DeepFrostedStoneTiles.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> DeepFrostedStoneTileSlab = register("deep_frosted_stone_tile_slab", slab(deepFrosted));
     public static final RegistryObject<WallBlock> DeepFrostedStoneTileWall = register("deep_frosted_stone_tile_wall", wall(deepFrosted));
+
+    public static final RegistryObject<TWMasterSmithingTableBlock> MasterSmithingTable = register("master_smithing_table", () -> new TWMasterSmithingTableBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE)));
 
     private static BlockBehaviour.Properties properties(Block base) {return BlockBehaviour.Properties.copy(base);}
 

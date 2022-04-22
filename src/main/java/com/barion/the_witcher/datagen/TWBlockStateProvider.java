@@ -3,6 +3,7 @@ package com.barion.the_witcher.datagen;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
+import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -44,6 +45,8 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 }else{
                     logBlock((RotatedPillarBlock) block);
                 }
+            }else if(block instanceof TWMasterSmithingTableBlock) {
+                simpleBlock(block, models().cube(name, blockTexture(name + "_bottom"), blockTexture(name + "_top"), blockTexture(name + "_front"), blockTexture(name + "_front"), blockTexture(name + "_side"), blockTexture(name + "_side")).texture("particle", blockTexture(name + "_top")));
             }else if(block instanceof SaplingBlock) {
                 simpleBlock(block, models().cross(name, blockTexture(name)));
             }else if(block instanceof ButtonBlock) {

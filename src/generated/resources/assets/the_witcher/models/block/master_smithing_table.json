@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "the_witcher:block/master_smithing_table_bottom",
+    "up": "the_witcher:block/master_smithing_table_top",
+    "north": "the_witcher:block/master_smithing_table_front",
+    "south": "the_witcher:block/master_smithing_table_front",
+    "east": "the_witcher:block/master_smithing_table_side",
+    "west": "the_witcher:block/master_smithing_table_side"
+  }
+}

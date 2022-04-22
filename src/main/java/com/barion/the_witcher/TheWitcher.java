@@ -6,8 +6,10 @@ import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
 import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.block.entity.TWBlockEntities;
 import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
+import com.barion.the_witcher.world.screen.TWMenuTypes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,10 +38,13 @@ public class TheWitcher {
         TWBlocks.Registry.register(modBus);
         TWEntities.Registry.register(modBus);
         TWFeatures.Registry.register(modBus);
+        TWBlockEntities.Registry.register(modBus);
+        TWMenuTypes.Registry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.register(TWStructures.class);
         modBus.addListener(TWEntities::registerAttributes);
+        modBus.addListener(TWClient::clientSetup);
         modBus.addListener(TWClient::registerRenderers);
         modBus.addListener(TWClient::registerLayers);
 

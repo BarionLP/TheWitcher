@@ -49,6 +49,7 @@ public class TWLootTableProvider extends LootTableProvider {
         protected void addTables() {
             dropSelf(TWBlocks.SilverBlock.get(),
                     TWBlocks.RawSilverBlock.get(),
+                    TWBlocks.MasterSmithingTable.get(),
 
                     TWBlocks.FrostedStoneStairs.get(),
                     TWBlocks.FrostedStoneSlab.get(),

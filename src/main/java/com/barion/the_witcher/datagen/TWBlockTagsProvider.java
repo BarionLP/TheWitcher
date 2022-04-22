@@ -52,6 +52,10 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.DeepFrostedStoneTileWall.get()
         );
 
+        tag(BlockTags.MINEABLE_WITH_AXE).add(
+                TWBlocks.MasterSmithingTable.get()
+        );
+
         tag(BlockTags.STAIRS).add(
                 TWBlocks.FrostedCobblestoneStairs.get(),
                 TWBlocks.FrostedStoneStairs.get(),
