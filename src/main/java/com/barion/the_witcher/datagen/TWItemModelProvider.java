@@ -35,21 +35,21 @@ public class TWItemModelProvider extends ItemModelProvider {
             String name = getName(block);
             ResourceLocation texture;
             if(block instanceof StairBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
                 else {texture = blockTexture(name.replace("_stairs", ""));}
                 stairs(name, texture, texture, texture);
             }else if(block instanceof SlabBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
                 else {texture = blockTexture(name.replace("_slab", ""));}
                 slab(name, texture, texture, texture);
             }else if(block instanceof WallBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
                 else {texture = blockTexture(name.replace("_wall", ""));}
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
                 sapling(name);
             }else if(block instanceof ButtonBlock){
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
                 buttonInventory(name, texture);
             }else{

@@ -6,6 +6,7 @@
     "north": "the_witcher:block/master_smithing_table_front",
     "south": "the_witcher:block/master_smithing_table_front",
     "east": "the_witcher:block/master_smithing_table_side",
-    "west": "the_witcher:block/master_smithing_table_side"
+    "west": "the_witcher:block/master_smithing_table_side",
+    "particle": "the_witcher:block/master_smithing_table_top"
   }
 }

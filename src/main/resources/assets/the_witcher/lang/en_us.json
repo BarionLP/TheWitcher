@@ -34,6 +34,7 @@
   "block.the_witcher.frosted_stone_brick_stairs": "Frosted Stone Brick Stairs",
   "block.the_witcher.frosted_stone_brick_slab": "Frosted Stone Brick Slab",
   "block.the_witcher.frosted_stone_brick_wall": "Frosted Stone Brick Wall",
+  "block.the_witcher.frosted_stone_brick_button": "Frosted Stone Brick Button",
 
   "block.the_witcher.deep_frosted_cobblestone": "Deep Frosted Cobblestone",
   "block.the_witcher.deep_frosted_cobblestone_stairs": "Deep Frosted Cobblestone Stairs",
@@ -47,12 +48,15 @@
   "block.the_witcher.deep_frosted_stone_brick_stairs": "Deep Frosted Stone Brick Stairs",
   "block.the_witcher.deep_frosted_stone_brick_slab": "Deep Frosted Stone Brick Slab",
   "block.the_witcher.deep_frosted_stone_brick_wall": "Deep Frosted Stone Brick Wall",
+  "block.the_witcher.deep_frosted_stone_brick_button": "Deep Frosted Stone Brick Button",
   "block.the_witcher.deep_frosted_stone_tiles": "Deep Frosted Stone Tiles",
   "block.the_witcher.deep_frosted_stone_tile_stairs": "Deep Frosted Stone Tile Stairs",
   "block.the_witcher.deep_frosted_stone_tile_slab": "Deep Frosted Stone Tile Slab",
   "block.the_witcher.deep_frosted_stone_tile_wall": "Deep Frosted Stone Tile Wall",
 
   "item.the_witcher.kikimora_tooth": "Kikimora Tooth",
+  "item.the_witcher.celandine": "Celandine Blossom",
+  "item.the_witcher.white_myrtle": "White Myrtle Bloom",
 
   "entity.the_witcher.ice_ghost": "Ice Ghost",
   "entity.the_witcher.wild_hunt_hound": "Hound of the Wild Hunt"

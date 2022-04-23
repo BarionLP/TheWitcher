@@ -111,7 +111,7 @@ public class TWLootTableProvider extends LootTableProvider {
             {
                 lootTable.accept(location("witcher_castle/brewing"), LootTable.lootTable()
                         .withPool(lootPool(lootNumber(10, 15))
-                                //.add(lootItem(TWItems.WhiteMyrtle.get(), 6, one())
+                                .add(lootItem(TWItems.WhiteMyrtle.get(), 6, one()))
                                 //.add(lootItem(TWItems.Beer.get(), 4, one()))
                                 .add(lootItem(Items.WHEAT, 10, lootNumber(1, 4)))
                                 .add(lootItem(Items.GUNPOWDER, 10, lootNumber(1, 2)))
@@ -120,7 +120,7 @@ public class TWLootTableProvider extends LootTableProvider {
                                 //.add(lootItem(TWItems.HotWaterBottle.get(), 4, one()))
                                 .add(lootItem(Items.REDSTONE, 3, one())))
                         .withPool(lootPool(lootNumber(1, 3))
-                                //.add(lootItem(TWItems.Celandine.get(), 2, lootNumber(1, 2)))
+                                .add(lootItem(TWItems.Celandine.get(), 2, lootNumber(1, 2)))
                                 .add(lootItem(TWItems.KikimoraTooth.get(), 2, one()))
                                 .add(lootItem(Items.BLAZE_POWDER, 1, one()))
                                 //.add(lootItem(TWItems.WhiteGull.get(), 2, one()))

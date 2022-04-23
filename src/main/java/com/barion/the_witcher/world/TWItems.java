@@ -33,12 +33,14 @@ public class TWItems{
     public static final RegistryObject<Item> SteelNugget = register("steel_nugget", item(DefaultProperies));
     public static final RegistryObject<SwordItem> SteelSword = register("steel_sword", sword(TWTiers.Steel, 0, -2, 0, Rarity.COMMON));
     public static final RegistryObject<SwordItem> MasterfulSteelSword = register("masterful_steel_sword", sword(TWTiers.Steel, 4, -1.5f, 500, Rarity.RARE));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherHelmet = register("reinforced_leather_helmet", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.HEAD, DefaultProperies));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherChestplate = register("reinforced_leather_chestplate", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.CHEST, DefaultProperies));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherLeggings = register("reinforced_leather_leggings", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.LEGS, DefaultProperies));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.FEET, DefaultProperies));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherHelmet = register("reinforced_leather_helmet", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.HEAD, properties()));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherChestplate = register("reinforced_leather_chestplate", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.CHEST, properties()));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherLeggings = register("reinforced_leather_leggings", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.LEGS, properties()));
+    public static final RegistryObject<ArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.FEET, properties()));
 
     public static final RegistryObject<TWKikimoraToothItem> KikimoraTooth = register("kikimora_tooth", TWKikimoraToothItem::new);
+    public static final RegistryObject<Item> Celandine = register("celandine", item(DefaultProperies));
+    public static final RegistryObject<Item> WhiteMyrtle = register("white_myrtle", item(DefaultProperies));
 
     private static Supplier<Item> item(Item.Properties properties) {return () -> new Item(properties);}
     private static Supplier<TWSilverSwordItem> silverSword(int dmgBonus, Rarity rarity){

@@ -27,15 +27,15 @@ public class TWBlockStateProvider extends BlockStateProvider {
             ResourceLocation texture;
 
             if(block instanceof StairBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
                 else {texture = blockTexture(name.replace("_stairs", ""));}
                 stairsBlock((StairBlock) block, texture);
             }else if(block instanceof SlabBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
                 else {texture = blockTexture(name.replace("_slab", ""));}
                 slabBlock((SlabBlock) block, texture, texture);
             }else if(block instanceof WallBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
                 else {texture = blockTexture(name.replace("_wall", ""));}
                 wallBlock((WallBlock) block, texture);
             }else if(block instanceof RotatedPillarBlock) {
@@ -50,7 +50,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
             }else if(block instanceof SaplingBlock) {
                 simpleBlock(block, models().cross(name, blockTexture(name)));
             }else if(block instanceof ButtonBlock) {
-                if(TWUtil.appendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
+                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
                 buttonBlock((ButtonBlock) block, texture);
             }else {

@@ -19,5 +19,9 @@
       "minecraft:canyon"
     ]
   },
-  "features": []
+  "features": [
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
 }

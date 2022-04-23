@@ -13,7 +13,7 @@ import javax.annotation.Nonnull;
 public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
 
-    public static boolean appendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
+    public static boolean shouldAppendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
 
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}
@@ -69,6 +69,10 @@ public class TWUtil {
             items.add(TWBlocks.DeepFrostedStoneTileStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileWall.get().asItem().getDefaultInstance());
+
+            items.add(TWItems.Celandine.get().getDefaultInstance());
+            items.add(TWItems.WhiteMyrtle.get().getDefaultInstance());
+            items.add(TWItems.KikimoraTooth.get().getDefaultInstance());
         }
 
         @Override @Nonnull
