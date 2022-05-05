@@ -34,9 +34,9 @@ public class TWMasterSmithingTableBlockEntity extends BlockEntity implements Men
     private final ItemStackHandler itemHandler = new ItemStackHandler(Slots){
         @Override
         protected void onContentsChanged(int slot) {
-            if(hasRecipe(TWMasterSmithingTableBlockEntity.this))
-
-            setChanged();
+            if(hasRecipe(TWMasterSmithingTableBlockEntity.this)){
+                setChanged();
+            }
         }
     };
 
