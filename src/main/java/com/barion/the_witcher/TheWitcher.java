@@ -2,6 +2,7 @@ package com.barion.the_witcher;
 
 import com.barion.the_witcher.client.TWClient;
 import com.barion.the_witcher.datagen.*;
+import com.barion.the_witcher.recipe.TWRecipes;
 import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
@@ -40,6 +41,7 @@ public class TheWitcher {
         TWFeatures.Registry.register(modBus);
         TWBlockEntities.Registry.register(modBus);
         TWMenuTypes.Registry.register(modBus);
+        TWRecipes.Registry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.register(TWStructures.class);

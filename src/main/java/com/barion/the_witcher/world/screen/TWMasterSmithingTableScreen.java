@@ -34,4 +34,6 @@ public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMaste
         super.render(poseStack, mouseX, mouseY, delta);
         renderTooltip(poseStack, mouseX, mouseY);
     }
+
+
 }

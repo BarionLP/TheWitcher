@@ -1,0 +1,11 @@
+{
+  "type": "the_witcher:master_smithing",
+  "ingredients": [
+    {
+      "item": "the_witcher:steel_sword"
+    }
+  ],
+  "output": {
+    "item": "the_witcher:masterful_steel_sword"
+  }
+}

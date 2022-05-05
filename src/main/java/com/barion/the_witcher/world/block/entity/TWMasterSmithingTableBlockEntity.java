@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.block.entity;
 
-import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.recipe.TWMasterSmithingTableRecipe;
 import com.barion.the_witcher.world.screen.TWMasterSmithingTableMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 
 public class TWMasterSmithingTableBlockEntity extends BlockEntity implements MenuProvider {
     public static final int Slots = 2;
@@ -33,6 +34,8 @@ public class TWMasterSmithingTableBlockEntity extends BlockEntity implements Men
     private final ItemStackHandler itemHandler = new ItemStackHandler(Slots){
         @Override
         protected void onContentsChanged(int slot) {
+            if(hasRecipe(TWMasterSmithingTableBlockEntity.this))
+
             setChanged();
         }
     };
@@ -87,32 +90,48 @@ public class TWMasterSmithingTableBlockEntity extends BlockEntity implements Men
     }
 
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
-        }
-
         assert this.level != null;
+        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots()-1);
+        inventory.setItem(0, itemHandler.getStackInSlot(0));
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState blockState, TWMasterSmithingTableBlockEntity blockEntity) {
-        if(hasRecipe(blockEntity) && hasNotReachedStackLimit(blockEntity)) {
-            craftItem(blockEntity);
+    private static boolean hasRecipe(TWMasterSmithingTableBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
+
+        assert level != null;
+        Optional<TWMasterSmithingTableRecipe> match = level.getRecipeManager().getRecipeFor(TWMasterSmithingTableRecipe.Type.Instance, inventory, level);
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
     }
 
     private static void craftItem(TWMasterSmithingTableBlockEntity entity) {
-        entity.itemHandler.extractItem(0, 1, false);
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
 
-        entity.itemHandler.setStackInSlot(1, new ItemStack(TWItems.MasterfulSteelSword.get(), 1));
+        assert level != null;
+        Optional<TWMasterSmithingTableRecipe> match = level.getRecipeManager().getRecipeFor(TWMasterSmithingTableRecipe.Type.Instance, inventory, level);
+
+        if(match.isPresent()) {
+            entity.itemHandler.extractItem(0,1, false);
+
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+        }
     }
 
-    private static boolean hasRecipe(TWMasterSmithingTableBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(0).getItem() == TWItems.SteelSword.get();
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(1).getItem() == output.getItem() || inventory.getItem(1).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(TWMasterSmithingTableBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(1).getCount() < entity.itemHandler.getStackInSlot(1).getMaxStackSize();
+    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
+        return inventory.getItem(1).getMaxStackSize() > inventory.getItem(1).getCount();
     }
 }

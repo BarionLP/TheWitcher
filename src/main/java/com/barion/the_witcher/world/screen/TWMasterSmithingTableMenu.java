@@ -1,9 +1,8 @@
 package com.barion.the_witcher.world.screen;
 
-import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.block.entity.TWMasterSmithingTableBlockEntity;
 import com.barion.the_witcher.world.screen.slot.TWResultSlot;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -11,34 +10,38 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TWMasterSmithingTableMenu extends AbstractContainerMenu {
-    private final TWMasterSmithingTableBlockEntity blockEntity;
+    private final Player player;
     private final Level level;
+    private IItemHandler itemHandler;
+    private final Map<Integer, Slot> customSlots = new HashMap<>();
 
-    public TWMasterSmithingTableMenu(int id, Inventory inventory, FriendlyByteBuf extraData) {
-        this(id, inventory, inventory.player.level.getBlockEntity(extraData.readBlockPos()));
-    }
 
-    public TWMasterSmithingTableMenu(int id, Inventory inventory, BlockEntity entity) {
+    public TWMasterSmithingTableMenu(int id, Inventory inventory, ContainerLevelAccess containerAccess) {
         super(TWMenuTypes.MasterSmithingTableMenu.get(), id);
-        checkContainerSize(inventory, TWMasterSmithingTableBlockEntity.Slots);
-        blockEntity = ((TWMasterSmithingTableBlockEntity) entity);
+        player = inventory.player;
         level = inventory.player.level;
+        itemHandler = new ItemStackHandler(2);
+        checkContainerSize(inventory, TWMasterSmithingTableBlockEntity.Slots);
+
+
+        customSlots.put(0, addSlot(new SlotItemHandler(itemHandler, 0, 44, 39)));
+        customSlots.put(1, addSlot(new TWResultSlot(itemHandler, 0, 116, 39)));
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
-
-
-        this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 44, 39));
-            this.addSlot(new TWResultSlot(handler, 1, 116, 39));
-        });
     }
+
+    @Override
+    public void slotsChanged(@NotNull Container container) {super.slotsChanged(container);}
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
@@ -92,9 +95,7 @@ public class TWMasterSmithingTableMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public boolean stillValid(@NotNull Player player) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, TWBlocks.MasterSmithingTable.get());
-    }
+    public boolean stillValid(@NotNull Player player) {return true;}
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
