@@ -31,9 +31,9 @@ public class TWSilverSwordItem extends SwordItem {
             if(attacker instanceof Player){
                 float dmgScale = ((Player) attacker).getAttackStrengthScale(0.5f) * 6.6666f;
                 damage *= dmgScale;
-                TheWitcher.LOGGER.info("Scaled damage with: " + dmgScale);
+                TheWitcher.Logger.info("Scaled damage with: " + dmgScale);
             }
-            TheWitcher.LOGGER.info("Total Damage: " + damage);
+            TheWitcher.Logger.info("Total Damage: " + damage);
             target.hurt(DamageSource.mobAttack(attacker), damage);
         }
         return super.hurtEnemy(itemStack, target, attacker);

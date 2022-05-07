@@ -1,0 +1,10 @@
+{
+  "type": "the_witcher:master_smithing",
+  "ingredient": {
+    "item": "the_witcher:silver_sword"
+  },
+  "output": {
+    "item": "the_witcher:masterful_silver_sword"
+  },
+  "xp": 20
+}

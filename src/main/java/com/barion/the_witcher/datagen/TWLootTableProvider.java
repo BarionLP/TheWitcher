@@ -5,6 +5,7 @@ import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.ChestLoot;
@@ -15,9 +16,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTables;
@@ -27,6 +30,7 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -39,7 +43,6 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class TWLootTableProvider extends LootTableProvider {
     public TWLootTableProvider(DataGenerator generator) {super(generator);}
@@ -84,11 +87,20 @@ public class TWLootTableProvider extends LootTableProvider {
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
             dropOther(TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
+
+            dropBush(TWBlocks.WhiteMyrtleBush.get(), TWItems.WhiteMyrtle.get());
+            dropBush(TWBlocks.CelandineBush.get(), TWItems.Celandine.get());
         }
 
         @SafeVarargs private <T extends Block> void dropSelf(T... Blocks) {for(Block Block : Blocks) {dropSelf(Block);}}
+        private void dropBush(Block bush, ItemLike drop){
+            this.add(bush, (block) -> applyExplosionDecay(block, LootTable.lootTable()
+                    .withPool(LootPool.lootPool()
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 3)))
+                            .add(LootItem.lootTableItem(drop)).apply(SetItemCountFunction.setCount(one())).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+        }
         private void dropOreLoot(Block ore, Item rawOre) {add(ore, createOreDrop(ore, rawOre));}
-        @Override @Nonnull protected Iterable<Block> getKnownBlocks() {return TWBlocks.Registry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
+        @Override @Nonnull protected Iterable<Block> getKnownBlocks() {return TWBlocks.Registry.getEntries().stream().map(RegistryObject::get).toList();}
     }
 
     public static class TWChestLoot extends ChestLoot{
@@ -163,11 +175,11 @@ public class TWLootTableProvider extends LootTableProvider {
                                 .add(lootItem(Items.GOLD_INGOT, 5, lootNumber(2, 3)))
                                 .add(lootItem(Items.GOLD_NUGGET, 6, lootNumber(3, 6)))
                                 .add(lootItem(Items.RAW_GOLD, 5, lootNumber(2, 4))))
-                        .withPool(lootPool(lootNumber(1, 3))
-                                //.add(lootItem(TWItems.ReinforcedLeatherHelmet.get(), 2, lootNumber(0, 1)))
-                                //.add(lootItem(TWItems.ReinforcedLeatherChestplate.get(), 2, lootNumber(0, 1)))
-                                //.add(lootItem(TWItems.ReinforcedLeatherLeggings.get(), 2, lootNumber(0, 1)))
-                                //.add(lootItem(TWItems.ReinforcedLeatherBoots.get(), 2, lootNumber(0, 1)))
+                        .withPool(lootPool(lootNumber(0, 2))
+                                .add(lootItem(TWItems.ReinforcedLeatherHelmet.get(), 2, lootNumber(0, 1)))
+                                .add(lootItem(TWItems.ReinforcedLeatherChestplate.get(), 2, lootNumber(0, 1)))
+                                .add(lootItem(TWItems.ReinforcedLeatherLeggings.get(), 2, lootNumber(0, 1)))
+                                .add(lootItem(TWItems.ReinforcedLeatherBoots.get(), 2, lootNumber(0, 1)))
                                 .add(lootItem(TWItems.SteelSword.get(), 2, one()))
                                 .add(lootItem(TWItems.SteelIngot.get(), 2, one()))
                                 .add(lootItem(TWItems.SilverIngot.get(), 3, one()))
@@ -208,14 +220,14 @@ public class TWLootTableProvider extends LootTableProvider {
             return LootItem.lootTableItem(Items.POTION).setWeight(weight).apply(SetItemCountFunction.setCount(amount)).apply(SetPotionFunction.setPotion(potion));
         }
 
-        private NumberProvider one() {return lootNumber(1);}
-        private NumberProvider lootNumber(int amount) {return ConstantValue.exactly(amount);}
-        private NumberProvider lootNumber(int minAmount, int maxAmount) {return UniformGenerator.between(minAmount, maxAmount);}
-
-        private LootPool.Builder lootPool(NumberProvider rolls) {return LootPool.lootPool().setRolls(rolls);}
-
         private static ResourceLocation location(String name) {return new ResourceLocation(TheWitcher.ModID, "chests/" + name);}
     }
+
+    protected static NumberProvider one() {return lootNumber(1);}
+    protected static NumberProvider lootNumber(int amount) {return ConstantValue.exactly(amount);}
+    protected static NumberProvider lootNumber(int minAmount, int maxAmount) {return UniformGenerator.between(minAmount, maxAmount);}
+
+    protected static LootPool.Builder lootPool(NumberProvider rolls) {return LootPool.lootPool().setRolls(rolls);}
 
     @Override @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {return ImmutableList.of(Pair.of(TWBlockLoot::new, LootContextParamSets.BLOCK), Pair.of(TWChestLoot::new, LootContextParamSets.CHEST));}

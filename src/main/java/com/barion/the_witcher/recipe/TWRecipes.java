@@ -13,10 +13,10 @@ import net.minecraftforge.registries.RegistryObject;
 public class TWRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> Registry = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TheWitcher.ModID);
 
-    public static final RegistryObject<RecipeSerializer<TWMasterSmithingTableRecipe>> MasterSmithing = Registry.register("master_smithing", () -> TWMasterSmithingTableRecipe.Serializer.Instance);
+    public static final RegistryObject<RecipeSerializer<TWMasterSmithingRecipe>> MasterSmithing = Registry.register("master_smithing", () -> TWMasterSmithingRecipe.Serializer.Instance);
 
     @SubscribeEvent
     public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
-        net.minecraft.core.Registry.register(net.minecraft.core.Registry.RECIPE_TYPE, TWMasterSmithingTableRecipe.Type.ID, TWMasterSmithingTableRecipe.Type.Instance);
+        net.minecraft.core.Registry.register(net.minecraft.core.Registry.RECIPE_TYPE, TWMasterSmithingRecipe.Type.ID, TWMasterSmithingRecipe.Type.Instance);
     }
 }

@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.block;
 
-import com.barion.the_witcher.world.screen.TWMasterSmithingTableMenu;
+import com.barion.the_witcher.world.screen.TWMasterSmithingMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -19,6 +19,6 @@ public class TWMasterSmithingTableBlock extends CraftingTableBlock {
 
     @Override @ParametersAreNonnullByDefault
     public MenuProvider getMenuProvider(BlockState blockState, Level level, BlockPos pos) {
-        return new SimpleMenuProvider((id, inventory, player) -> new TWMasterSmithingTableMenu(id, inventory, ContainerLevelAccess.create(level, pos)), TextComponent);
+        return new SimpleMenuProvider((id, inventory, player) -> new TWMasterSmithingMenu(id, inventory, ContainerLevelAccess.create(level, pos)), TextComponent);
     }
 }

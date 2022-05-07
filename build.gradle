@@ -105,8 +105,8 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "the_witcher",
-            "Specification-Vendor": "Barion",
+            "Specification-Title": "The Witcher",
+            "Specification-Vendor": "Ametrin Studios",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": mod_version,

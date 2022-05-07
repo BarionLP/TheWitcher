@@ -11,6 +11,7 @@ import com.barion.the_witcher.world.block.entity.TWBlockEntities;
 import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
+import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,13 +24,12 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 @Mod(TheWitcher.ModID)
 public class TheWitcher {
     public static final String ModID = "the_witcher";
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger Logger = LogUtils.getLogger();
 
     public TheWitcher() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWConfig.CommonSpec);

@@ -8,6 +8,7 @@ import com.barion.the_witcher.world.item.TWSilverSwordItem;
 import com.barion.the_witcher.world.item.TWTiers;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -39,10 +40,11 @@ public class TWItems{
     public static final RegistryObject<ArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.FEET, properties()));
 
     public static final RegistryObject<TWKikimoraToothItem> KikimoraTooth = register("kikimora_tooth", TWKikimoraToothItem::new);
-    public static final RegistryObject<Item> Celandine = register("celandine", item(DefaultProperies));
-    public static final RegistryObject<Item> WhiteMyrtle = register("white_myrtle", item(DefaultProperies));
+    public static final RegistryObject<ItemNameBlockItem> WhiteMyrtle = register("white_myrtle", blockItem(TWBlocks.WhiteMyrtleBush));
+    public static final RegistryObject<ItemNameBlockItem> Celandine = register("celandine", blockItem(TWBlocks.CelandineBush));
 
     private static Supplier<Item> item(Item.Properties properties) {return () -> new Item(properties);}
+    private static Supplier<ItemNameBlockItem> blockItem(Supplier<? extends Block> block) {return () -> new ItemNameBlockItem(block.get(), DefaultProperies);}
     private static Supplier<TWSilverSwordItem> silverSword(int dmgBonus, Rarity rarity){
         return () -> new TWSilverSwordItem(TWTiers.Silver, dmgBonus, 2, properties().defaultDurability(1200).rarity(rarity));
     }

@@ -10,22 +10,22 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMasterSmithingTableMenu> {
+public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMasterSmithingMenu> {
     private static final ResourceLocation Texture = TWUtil.location("textures/gui/master_smithing_table.png");
 
-    public TWMasterSmithingTableScreen(TWMasterSmithingTableMenu menu, Inventory playerInventory, Component tile) {
+    public TWMasterSmithingTableScreen(TWMasterSmithingMenu menu, Inventory playerInventory, Component tile) {
         super(menu, playerInventory, tile);
     }
 
     @Override
     protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, Texture);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        this.blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
+        blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
     }
 
     @Override
@@ -35,5 +35,11 @@ public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMaste
         renderTooltip(poseStack, mouseX, mouseY);
     }
 
-
+    @Override
+    protected void renderLabels(@NotNull PoseStack poseStack, int mouseX, int mouseY) {
+        super.renderLabels(poseStack, mouseX, mouseY);
+        if(menu.getSelectedRecipe() != null){
+            font.draw(poseStack, String.valueOf(menu.getSelectedRecipe().getXpCost()),77,56,4210752);
+        }
+    }
 }

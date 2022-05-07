@@ -3,11 +3,14 @@ package com.barion.the_witcher.datagen;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
+import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
@@ -49,6 +52,8 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 simpleBlock(block, models().cube(name, blockTexture(name + "_bottom"), blockTexture(name + "_top"), blockTexture(name + "_front"), blockTexture(name + "_front"), blockTexture(name + "_side"), blockTexture(name + "_side")).texture("particle", blockTexture(name + "_top")));
             }else if(block instanceof SaplingBlock) {
                 simpleBlock(block, models().cross(name, blockTexture(name)));
+            }else if(block instanceof TWGrowableBushBlock) {
+                simpleGrowableBush(block, name);
             }else if(block instanceof ButtonBlock) {
                 if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
@@ -57,6 +62,16 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 simpleBlock(block);
             }
         }
+    }
+    protected void simpleGrowableBush(Block bush, String name) {
+        ModelFile Age0 = models().cross(name + "/stage0", mcLoc("block/sweet_berry_bush_stage0"));
+        ModelFile Age1 = models().cross(name + "/stage1", mcLoc("block/sweet_berry_bush_stage1"));
+        ModelFile Age2 = models().cross(name + "/stage2", blockTexture(name+"/stage2"));
+        ModelFile Age3 = models().cross(name + "/stage3", blockTexture(name+"/stage3"));
+        getVariantBuilder(bush).forAllStates(state -> {
+            final int age = state.getValue(TWGrowableBushBlock.AGE);
+            return ConfiguredModel.builder().modelFile((age == 0) ? Age0 : (age == 1) ? Age1 : (age == 2) ? Age2 : Age3).build();
+        });
     }
 
     protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}

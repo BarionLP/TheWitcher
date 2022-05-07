@@ -11,7 +11,7 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
     #updateJSONURL="https://change.me.example.invalid/updates.json"
     logoFile="logo.png" #optional
     credits="Thanks to Callout, Valarauko9 and every supporter" #optional
-    authors="Barion" #optional
+    authors="Ametrin Studios" #optional
     description='''Adds stuff from The Witcher Universe'''
 
 [[dependencies.the_witcher]] #optional
@@ -31,6 +31,6 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 [[dependencies.the_witcher]]
     modId="structure_gel"
     mandatory=true
-    versionRange="[2.2.+,]"
+    versionRange="[2.2.2+,]"
     ordering="NONE"
     side="BOTH"

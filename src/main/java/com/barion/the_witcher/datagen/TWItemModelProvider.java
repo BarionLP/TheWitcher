@@ -4,12 +4,10 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -32,6 +30,10 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     private <B extends Block> void blocks(List<B> blocks){
         for(B block : blocks) {
+            if(block instanceof TWGrowableBushBlock){
+                continue;
+            }
+
             String name = getName(block);
             ResourceLocation texture;
             if(block instanceof StairBlock) {
@@ -66,7 +68,7 @@ public class TWItemModelProvider extends ItemModelProvider {
 
             if(item instanceof SignItem){
                 item(name);
-            }else if(item instanceof BlockItem){
+            }else if(item instanceof BlockItem && !(item instanceof ItemNameBlockItem)){
                 continue;
             }else if(item instanceof SwordItem){
                 item(name, bigHandheld);
