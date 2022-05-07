@@ -1,6 +1,5 @@
 package com.barion.the_witcher.world.screen;
 
-import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.recipe.TWMasterSmithingRecipe;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.network.FriendlyByteBuf;
@@ -46,8 +45,7 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
         itemHandler = new ItemStackHandler(Slots){
             @Override
             protected void onContentsChanged(int slot) {
-                //createResult();
-                //slotsChanged(getContainer());
+                slotsChanged(getContainer());
             }
         };
         checkContainerSize(inventory, Slots);
@@ -62,7 +60,9 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
             }
             @Override @ParametersAreNonnullByDefault
             public void onTake(Player player, ItemStack itemStack) {
-                TWMasterSmithingMenu.this.onTake(player, itemStack);
+                itemStack.onCraftedBy(player.level, player, itemStack.getCount());
+                itemHandler.extractItem(InputSlot, 1, false);
+                access.execute((level, pos) -> level.levelEvent(1044, pos, 0));
             }}));
 
         addPlayerInventory(inventory);
@@ -77,25 +77,19 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
         return this.selectedRecipe != null && this.selectedRecipe.matches(getContainer(), this.level);
     }
 
-    protected void onTake(Player player, ItemStack itemStack) {
-        itemStack.onCraftedBy(player.level, player, itemStack.getCount());
-        itemHandler.extractItem(InputSlot, 1, false);
-        access.execute((level, pos) -> level.levelEvent(1044, pos, 0));
-    }
-
     public void createResult() {
         List<TWMasterSmithingRecipe> list = this.level.getRecipeManager().getRecipesFor(TWMasterSmithingRecipe.Type.Instance, getContainer(), level);
-        TheWitcher.Logger.info(String.valueOf(list));
+        //TheWitcher.Logger.info(String.valueOf(list));
         if (list.isEmpty()) {
-            itemHandler.setStackInSlot(ResultSlot, ItemStack.EMPTY);
+            if(itemHandler.getStackInSlot(ResultSlot) != ItemStack.EMPTY) {itemHandler.setStackInSlot(ResultSlot, ItemStack.EMPTY);}
         } else {
             selectedRecipe = list.get(0);
             if(!enoughXP()){
                 selectedRecipe = null;
                 return;
             }
-            ItemStack itemstack = selectedRecipe.getResultItem();
-            itemHandler.setStackInSlot(ResultSlot, itemstack);
+            ItemStack resultItem = selectedRecipe.getResultItem();
+            if(!itemHandler.getStackInSlot(ResultSlot).is(resultItem.getItem())) {itemHandler.setStackInSlot(ResultSlot, resultItem);}
         }
     }
 

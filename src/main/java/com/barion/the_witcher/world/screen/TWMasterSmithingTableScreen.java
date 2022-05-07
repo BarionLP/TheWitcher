@@ -39,7 +39,7 @@ public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMaste
     protected void renderLabels(@NotNull PoseStack poseStack, int mouseX, int mouseY) {
         super.renderLabels(poseStack, mouseX, mouseY);
         if(menu.getSelectedRecipe() != null){
-            font.draw(poseStack, String.valueOf(menu.getSelectedRecipe().getXpCost()),77,56,4210752);
+            font.draw(poseStack, menu.getSelectedRecipe().getXpCost() + " XP",77,56, menu.enoughXP() ? 4210752 : 16711680);
         }
     }
 }

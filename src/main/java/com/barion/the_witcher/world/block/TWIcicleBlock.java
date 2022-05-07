@@ -133,7 +133,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
     }
     @Override @ParametersAreNonnullByDefault
     public void animateTick(BlockState blockState, Level level, BlockPos pos, Random random) {
-        if (canDrip(blockState) && !level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrow)) {
+        if (canDrip(blockState) && !level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrowIn)) {
             float chance = random.nextFloat();
             if (!(chance > 0.12f)) {
                 getFluidAboveStalactite(level, pos, blockState).filter((fluid) -> chance < 0.02f || canFillCauldron(fluid)).ifPresent((fluid) -> {
@@ -153,7 +153,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
 
     @Override @ParametersAreNonnullByDefault
     public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
-        if(level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrow)) {
+        if(level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrowIn)) {
             if (random.nextFloat() < 0.011377778F && isStalactiteStartPos(blockState, level, pos)) {
                 growStalactiteOrStalagmiteIfPossible(blockState, level, pos, random);
             }
@@ -164,7 +164,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
 
     @VisibleForTesting
     public static void maybeFillCauldron(BlockState blockState, ServerLevel level, BlockPos pos, float number) {
-        if(level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrow)) {return;}
+        if(level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrowIn)) {return;}
 
         if (!(number > 0.17578125F)) {
             if (isStalactiteStartPos(blockState, level, pos)) {
