@@ -45,6 +45,7 @@ public class TWTags {
     public static final class Biomes{
         public static final TagKey<Biome> isWhiteFrost = tw("is_white_frost");
         public static final TagKey<Biome> hasIcyRuin = tw("has/icy_ruin");
+        public static final TagKey<Biome> IcicleCanGrow = tw("icicle_can_grow");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
     }

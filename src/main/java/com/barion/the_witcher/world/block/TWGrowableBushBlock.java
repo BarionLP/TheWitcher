@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -27,27 +25,24 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Random;
-import java.util.function.Supplier;
 
 public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock {
     public final int MaxAge = 3;
     public final int GrowRarity;
-    public final Supplier<? extends BlockItem> Drop;
     public final int BonusDrop;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     private static final VoxelShape SAPLING_SHAPE = Block.box(3, 0, 3, 13, 8, 13);
     private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1, 0, 1, 15, 16, 15);
 
-    public TWGrowableBushBlock(Supplier<? extends BlockItem> drop, int bonusDrop, int growRate, BlockBehaviour.Properties properties) {
+    public TWGrowableBushBlock(int bonusDrop, int growRate, Properties properties) {
         super(properties);
         GrowRarity = growRate;
-        Drop = drop;
         BonusDrop = bonusDrop;
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
     @Override @ParametersAreNonnullByDefault
     public @NotNull ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState blockState) {
-        return new ItemStack(Items.SWEET_BERRIES);
+        return new ItemStack(asItem());
     }
     @Override @ParametersAreNonnullByDefault
     public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -81,7 +76,7 @@ public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock 
             if(BonusDrop > 0){
                 dropAmount += level.random.nextInt(BonusDrop);
             }
-            popResource(level, blockPos, new ItemStack(Drop.get(), dropAmount));
+            popResource(level, blockPos, new ItemStack(asItem(), dropAmount));
             level.playSound(null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1, 0.8f + level.random.nextFloat() * 0.4f);
             level.setBlock(blockPos, blockState.setValue(AGE, 1), 2);
             return InteractionResult.sidedSuccess(level.isClientSide);

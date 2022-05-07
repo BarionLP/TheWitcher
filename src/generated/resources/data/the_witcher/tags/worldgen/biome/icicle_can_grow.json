@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#the_witcher:is_white_frost",
+    "minecraft:frozen_ocean",
+    "minecraft:frozen_peaks",
+    "minecraft:frozen_river",
+    "minecraft:deep_frozen_ocean",
+    "minecraft:snowy_beach",
+    "minecraft:snowy_plains",
+    "minecraft:snowy_slopes",
+    "minecraft:snowy_taiga",
+    "minecraft:ice_spikes"
+  ]
+}

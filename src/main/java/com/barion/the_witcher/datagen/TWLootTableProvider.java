@@ -82,7 +82,8 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.DeepFrostedStoneTiles.get(),
                     TWBlocks.DeepFrostedStoneTileStairs.get(),
                     TWBlocks.DeepFrostedStoneTileSlab.get(),
-                    TWBlocks.DeepFrostedStoneTileWall.get()
+                    TWBlocks.DeepFrostedStoneTileWall.get(),
+                    TWBlocks.Icicle.get()
             );
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());

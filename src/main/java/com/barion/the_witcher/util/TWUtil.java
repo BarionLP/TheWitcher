@@ -69,6 +69,7 @@ public class TWUtil {
             items.add(TWBlocks.DeepFrostedStoneTileStairs.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileSlab.get().asItem().getDefaultInstance());
             items.add(TWBlocks.DeepFrostedStoneTileWall.get().asItem().getDefaultInstance());
+            items.add(TWBlocks.Icicle.get().asItem().getDefaultInstance());
 
             items.add(TWItems.Celandine.get().getDefaultInstance());
             items.add(TWItems.WhiteMyrtle.get().getDefaultInstance());

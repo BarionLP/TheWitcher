@@ -19,6 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @OnlyIn(Dist.CLIENT)
 public class TWClient {
     public static void clientSetup(final FMLClientSetupEvent event){
+        ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.WhiteMyrtleBush.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.CelandineBush.get(), RenderType.cutout());
 

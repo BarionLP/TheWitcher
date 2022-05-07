@@ -5,6 +5,7 @@ import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.block.TWGrowableBushBlock;
+import com.barion.the_witcher.world.block.TWIcicleBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -49,7 +50,9 @@ public class TWItemModelProvider extends ItemModelProvider {
                 else {texture = blockTexture(name.replace("_wall", ""));}
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
-                sapling(name);
+                itemBlock(name);
+            }else if(block instanceof TWIcicleBlock){
+                itemBlock(getExistingFile(mcLoc("item/pointed_dripstone")), name, name + "/down/tip");
             }else if(block instanceof ButtonBlock){
                 if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
@@ -60,10 +63,12 @@ public class TWItemModelProvider extends ItemModelProvider {
         }
     }
     private void block(String name) {withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name));}
-    private void sapling(String name) {getBuilder(name).parent(generatedItem).texture("layer0", BLOCK_FOLDER + "/" + name);}
+    private void itemBlock(String name) {itemBlock(name, name);}
+    private void itemBlock(String name, String texture) {itemBlock(generatedItem, name, texture);}
+    private void itemBlock(ModelFile parent, String name, String texture) {getBuilder(name).parent(parent).texture("layer0", BLOCK_FOLDER + "/" + texture);}
 
     private <I extends Item> void items(List<I> items){
-        for (Item item : items){
+        for (I item : items){
             String name = getName(item);
 
             if(item instanceof SignItem){
