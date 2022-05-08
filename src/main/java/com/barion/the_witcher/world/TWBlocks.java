@@ -41,7 +41,11 @@ public class TWBlocks {
     public static final RegistryObject<StairBlock> FrostedStoneBrickStairs = register("frosted_stone_brick_stairs", stair(frosted, () -> FrostedStoneBricks.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> FrostedStoneBrickSlab = register("frosted_stone_brick_slab", slab(frosted));
     public static final RegistryObject<WallBlock> FrostedStoneBrickWall = register("frosted_stone_brick_wall", wall(frosted));
-    public static final RegistryObject<StoneButtonBlock> FrostedStoneBrickButton = register("frosted_stone_brick_button", () -> new StoneButtonBlock(frosted.noCollission()));
+    public static final RegistryObject<StoneButtonBlock> FrostedStoneBrickButton = register("frosted_stone_brick_button", () -> new StoneButtonBlock(properties(frosted).noCollission()));
+    public static final RegistryObject<Block> CrackedFrostedStoneBricks = register("cracked_frosted_stone_bricks", block(frosted));
+    public static final RegistryObject<StairBlock> CrackedFrostedStoneBrickStairs = register("cracked_frosted_stone_brick_stairs", stair(frosted, () -> CrackedFrostedStoneBricks.get().defaultBlockState()));
+    public static final RegistryObject<SlabBlock> CrackedFrostedStoneBrickSlab = register("cracked_frosted_stone_brick_slab", slab(frosted));
+    public static final RegistryObject<WallBlock> CrackedFrostedStoneBrickWall = register("cracked_frosted_stone_brick_wall", wall(frosted));
 
     public static final RegistryObject<Block> DeepFrostedCobblestone = register("deep_frosted_cobblestone", block(deepCobbledFrosted));
     public static final RegistryObject<StairBlock> DeepFrostedCobblestoneStairs = register("deep_frosted_cobblestone_stairs", stair(deepCobbledFrosted, ()-> DeepFrostedCobblestone.get().defaultBlockState()));
@@ -55,7 +59,7 @@ public class TWBlocks {
     public static final RegistryObject<StairBlock> DeepFrostedStoneBrickStairs = register("deep_frosted_stone_brick_stairs", stair(deepFrosted, () -> DeepFrostedStoneBricks.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> DeepFrostedStoneBrickSlab = register("deep_frosted_stone_brick_slab", slab(deepFrosted));
     public static final RegistryObject<WallBlock> DeepFrostedStoneBrickWall = register("deep_frosted_stone_brick_wall", wall(deepFrosted));
-    public static final RegistryObject<StoneButtonBlock> DeepFrostedStoneBrickButton = register("deep_frosted_stone_brick_button", () -> new StoneButtonBlock(deepFrosted.noCollission()));
+    public static final RegistryObject<StoneButtonBlock> DeepFrostedStoneBrickButton = register("deep_frosted_stone_brick_button", () -> new StoneButtonBlock(properties(deepFrosted).noCollission()));
     public static final RegistryObject<Block> DeepFrostedStoneTiles = register("deep_frosted_stone_tiles", block(deepFrosted));
     public static final RegistryObject<StairBlock> DeepFrostedStoneTileStairs = register("deep_frosted_stone_tile_stairs", stair(deepFrosted, () -> DeepFrostedStoneTiles.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> DeepFrostedStoneTileSlab = register("deep_frosted_stone_tile_slab", slab(deepFrosted));
@@ -67,6 +71,7 @@ public class TWBlocks {
     public static final RegistryObject<TWGrowableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));
 
     private static BlockBehaviour.Properties properties(Block base) {return BlockBehaviour.Properties.copy(base);}
+    private static BlockBehaviour.Properties properties(BlockBehaviour.Properties base) {return properties(new Block(base));}
 
     private static Supplier<Block> block(BlockBehaviour.Properties properties) {return ()-> new Block(properties);}
     private static Supplier<StairBlock> stair(StairBlock.Properties properties, Supplier<BlockState> base) {return ()-> new StairBlock(base, properties);}

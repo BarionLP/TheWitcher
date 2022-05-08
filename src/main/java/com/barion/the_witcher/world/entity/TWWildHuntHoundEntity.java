@@ -1,5 +1,6 @@
 package com.barion.the_witcher.world.entity;
 
+import com.barion.the_witcher.util.TWTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -25,13 +26,13 @@ public class TWWildHuntHoundEntity extends Monster implements TWWildHuntEntity{
         goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false));
 
         targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> !(entity instanceof TWWildHuntEntity)));
+        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> !entity.getType().is(TWTags.Entities.WildHuntIgnore)));
     }
 
     @NotNull
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 10)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.MOVEMENT_SPEED, 0.5)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.1)
                 .add(Attributes.ATTACK_DAMAGE, 15)

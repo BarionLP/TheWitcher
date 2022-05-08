@@ -14,10 +14,10 @@ public class TWTags {
     public static final class Blocks{
         public static final TagKey<Block> StorageBlocksSilver = forge("storage_blocks/silver");
         public static final TagKey<Block> StorageBlocksRawSilver = forge("storage_blocks/raw_silver");
-        public static final TagKey<Block> SpikesCanPlace = mod("spikes_can_place");
+        public static final TagKey<Block> SpikesCanPlace = tw("spikes_can_place");
 
         private static TagKey<Block> forge(String path){return BlockTags.create(new ResourceLocation("forge", path));}
-        private static TagKey<Block> mod(String path){return BlockTags.create(TWUtil.location(path));}
+        private static TagKey<Block> tw(String path){return BlockTags.create(TWUtil.location(path));}
     }
 
     public static final class Items{
@@ -27,11 +27,11 @@ public class TWTags {
         public static final TagKey<Item> SilverIngots = forge("ingots/silver");
         public static final TagKey<Item> SilverNuggets = forge("nuggets/silver");
 
-        public static final TagKey<Item> SteelIngots = mod("ingots/steel");
-        public static final TagKey<Item> SteelNuggets = mod("nuggets/steel");
+        public static final TagKey<Item> SteelIngots = tw("ingots/steel");
+        public static final TagKey<Item> SteelNuggets = tw("nuggets/steel");
 
         private static TagKey<Item> forge(String path) {return ItemTags.create(new ResourceLocation("forge", path));}
-        private static TagKey<Item> mod(String path) {return ItemTags.create(TWUtil.location(path));}
+        private static TagKey<Item> tw(String path) {return ItemTags.create(TWUtil.location(path));}
     }
 
     public static final class Entities{

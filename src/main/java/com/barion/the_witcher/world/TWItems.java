@@ -27,8 +27,8 @@ public class TWItems{
     public static final RegistryObject<Item> RawSilver = register("raw_silver", item(DefaultProperies));
     public static final RegistryObject<Item> SilverIngot = register("silver_ingot", item(DefaultProperies));
     public static final RegistryObject<Item> SilverNugget = register("silver_nugget", item(DefaultProperies));
-    public static final RegistryObject<TWSilverSwordItem> SilverSword = register("silver_sword", silverSword(12, Rarity.COMMON));
-    public static final RegistryObject<TWSilverSwordItem> MasterfulSilverSword = register("masterful_silver_sword", silverSword(16, Rarity.RARE));
+    public static final RegistryObject<TWSilverSwordItem> SilverSword = register("silver_sword", silverSword(12, 256, Rarity.COMMON));
+    public static final RegistryObject<TWSilverSwordItem> MasterfulSilverSword = register("masterful_silver_sword", silverSword(16, 512, Rarity.RARE));
 
     public static final RegistryObject<Item> SteelIngot = register("steel_ingot", item(DefaultProperies));
     public static final RegistryObject<Item> SteelNugget = register("steel_nugget", item(DefaultProperies));
@@ -45,11 +45,11 @@ public class TWItems{
 
     private static Supplier<Item> item(Item.Properties properties) {return () -> new Item(properties);}
     private static Supplier<ItemNameBlockItem> blockItem(Supplier<? extends Block> block) {return () -> new ItemNameBlockItem(block.get(), DefaultProperies);}
-    private static Supplier<TWSilverSwordItem> silverSword(int dmgBonus, Rarity rarity){
-        return () -> new TWSilverSwordItem(TWTiers.Silver, dmgBonus, 2, properties().defaultDurability(1200).rarity(rarity));
+    private static Supplier<TWSilverSwordItem> silverSword(int dmgBonus, int bonusUses, Rarity rarity){
+        return () -> new TWSilverSwordItem(TWTiers.Silver, dmgBonus, 2, properties().defaultDurability(TWTiers.Silver.getUses() + bonusUses).rarity(rarity));
     }
-    private static Supplier<SwordItem> sword(Tier tier, int dmg, float speed, int durability, Rarity rarity){
-        return () -> new SwordItem(tier, dmg, speed, properties().defaultDurability(tier.getUses() + durability).rarity(rarity));
+    private static Supplier<SwordItem> sword(Tier tier, int dmg, float speed, int bonusUses, Rarity rarity){
+        return () -> new SwordItem(tier, dmg, speed, properties().defaultDurability(tier.getUses() + bonusUses).rarity(rarity));
     }
 
     public static Item.Properties properties() {return new Item.Properties().tab(TWUtil.TheWitcherTab);}

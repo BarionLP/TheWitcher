@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#the_witcher:wild_hunt",
+    "minecraft:axolotl",
+    "minecraft:bee",
+    "minecraft:creeper",
+    "minecraft:dolphin",
+    "minecraft:fox",
+    "minecraft:polar_bear",
+    "minecraft:parrot",
+    "minecraft:skeleton_horse"
+  ]
+}

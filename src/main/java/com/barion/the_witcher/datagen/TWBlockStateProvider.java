@@ -74,7 +74,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
         ModelFile Age2 = models().cross(name + "/stage2", blockTexture(name+"/stage2"));
         ModelFile Age3 = models().cross(name + "/stage3", blockTexture(name+"/stage3"));
         getVariantBuilder(bush).forAllStates(state -> {
-            final int age = state.getValue(TWGrowableBushBlock.AGE);
+            final int age = state.getValue(TWGrowableBushBlock.Age);
             return ConfiguredModel.builder().modelFile((age == 0) ? Age0 : (age == 1) ? Age1 : (age == 2) ? Age2 : Age3).build();
         });
     }

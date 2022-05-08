@@ -2,13 +2,17 @@ package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+
+import java.util.List;
+import java.util.Objects;
 
 public class TWBlockTagsProvider extends BlockTagsProvider {
     public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
@@ -17,6 +21,8 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+        handleDefaults(TWBlocks.getAllBlocks());
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 TWBlocks.RawSilverBlock.get(),
                 TWBlocks.SilverBlock.get(),
@@ -33,6 +39,11 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.FrostedStoneBrickStairs.get(),
                 TWBlocks.FrostedStoneBrickSlab.get(),
                 TWBlocks.FrostedStoneBrickWall.get(),
+                TWBlocks.FrostedStoneBrickButton.get(),
+                TWBlocks.CrackedFrostedStoneBricks.get(),
+                TWBlocks.CrackedFrostedStoneBrickStairs.get(),
+                TWBlocks.CrackedFrostedStoneBrickSlab.get(),
+                TWBlocks.CrackedFrostedStoneBrickWall.get(),
 
                 TWBlocks.DeepFrostedCobblestone.get(),
                 TWBlocks.DeepFrostedCobblestoneStairs.get(),
@@ -46,6 +57,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.DeepFrostedStoneBrickStairs.get(),
                 TWBlocks.DeepFrostedStoneBrickSlab.get(),
                 TWBlocks.DeepFrostedStoneBrickWall.get(),
+                TWBlocks.DeepFrostedStoneBrickButton.get(),
                 TWBlocks.DeepFrostedStoneTiles.get(),
                 TWBlocks.DeepFrostedStoneTileStairs.get(),
                 TWBlocks.DeepFrostedStoneTileSlab.get(),
@@ -56,7 +68,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.MasterSmithingTable.get()
         );
 
-        tag(BlockTags.STAIRS).add(
+/*        tag(BlockTags.STAIRS).add(
                 TWBlocks.FrostedCobblestoneStairs.get(),
                 TWBlocks.FrostedStoneStairs.get(),
                 TWBlocks.FrostedStoneBrickStairs.get(),
@@ -84,7 +96,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.DeepFrostedStoneWall.get(),
                 TWBlocks.DeepFrostedStoneBrickWall.get(),
                 TWBlocks.DeepFrostedStoneTileWall.get()
-        );
+        );*/
 
         tag(BlockTags.BUTTONS).add(
                 TWBlocks.FrostedStoneBrickButton.get(),
@@ -102,4 +114,36 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
         tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK);
         tag(Tags.Blocks.STORAGE_BLOCKS).addTags(TWTags.Blocks.StorageBlocksSilver, TWTags.Blocks.StorageBlocksRawSilver);
     }
+
+    private void handleDefaults(List<Block> allBlocks) {
+        for(Block block : allBlocks) {
+            String name = getName(block);
+
+            if(block instanceof StairBlock){
+                if(TWUtil.isWooden(name)){
+                    tag(BlockTags.WOODEN_STAIRS).add(block);
+                } else {
+                    tag(BlockTags.STAIRS).add(block);
+                }
+            }
+            if(block instanceof SlabBlock){
+                if(TWUtil.isWooden(name)){
+                    tag(BlockTags.WOODEN_SLABS).add(block);
+                } else {
+                    tag(BlockTags.SLABS).add(block);
+                }
+            }
+            if(block instanceof WallBlock) {
+                tag(BlockTags.WALLS).add(block);
+            }
+            if(block instanceof FenceBlock){
+                tag(BlockTags.FENCES).add(block);
+            }
+            if(block instanceof FenceGateBlock){
+                tag(BlockTags.FENCE_GATES).add(block);
+            }
+        }
+    }
+
+    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
 }

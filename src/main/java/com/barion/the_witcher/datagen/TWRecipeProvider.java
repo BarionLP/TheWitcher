@@ -46,6 +46,7 @@ public class TWRecipeProvider extends RecipeProvider {
         stairSlabWall(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStone.get(), true);
         stairSlabWall(TWBlocks.FrostedStoneBrickStairs.get(), TWBlocks.FrostedStoneBrickSlab.get(), TWBlocks.FrostedStoneBrickWall.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
         button(TWBlocks.FrostedStoneBrickButton.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
+        stairSlabWall(TWBlocks.CrackedFrostedStoneBrickStairs.get(), TWBlocks.CrackedFrostedStoneBrickSlab.get(), TWBlocks.CrackedFrostedStoneBrickWall.get(), TWBlocks.CrackedFrostedStoneBricks.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
         stairSlabWall(TWBlocks.DeepFrostedCobblestoneStairs.get(), TWBlocks.DeepFrostedCobblestoneSlab.get(), TWBlocks.DeepFrostedCobblestoneWall.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
         stairSlabWall(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStone.get(), true);
         stairSlabWall(TWBlocks.DeepFrostedStoneBrickStairs.get(), TWBlocks.DeepFrostedStoneBrickSlab.get(), TWBlocks.DeepFrostedStoneBrickWall.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());

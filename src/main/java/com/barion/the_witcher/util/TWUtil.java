@@ -14,6 +14,9 @@ public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
 
     public static boolean shouldAppendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
+    public static boolean isWood(String name) {return (name.contains("wood") || name.contains("hyphae"));}
+    public static boolean isLog(String name) {return (name.contains("log") || name.contains("stem"));}
+    public static boolean isWooden(String name) {return isLog(name) || isWood(name) || name.contains("plank");}
 
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}
@@ -80,7 +83,5 @@ public class TWUtil {
         public ItemStack makeIcon() {return TWItems.TabLogo.get().getDefaultInstance();}
     }
 
-    public static ResourceLocation location(String key){
-        return new ResourceLocation(TheWitcher.ModID, key);
-    }
+    public static ResourceLocation location(String key) {return new ResourceLocation(TheWitcher.ModID, key);}
 }

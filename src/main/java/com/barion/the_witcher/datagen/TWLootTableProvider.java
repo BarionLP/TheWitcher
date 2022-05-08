@@ -66,6 +66,10 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.FrostedStoneBrickSlab.get(),
                     TWBlocks.FrostedStoneBrickWall.get(),
                     TWBlocks.FrostedStoneBrickButton.get(),
+                    TWBlocks.CrackedFrostedStoneBricks.get(),
+                    TWBlocks.CrackedFrostedStoneBrickStairs.get(),
+                    TWBlocks.CrackedFrostedStoneBrickSlab.get(),
+                    TWBlocks.CrackedFrostedStoneBrickWall.get(),
 
                     TWBlocks.DeepFrostedStoneStairs.get(),
                     TWBlocks.DeepFrostedStoneSlab.get(),
