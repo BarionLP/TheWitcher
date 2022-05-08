@@ -108,8 +108,8 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
 
                 return blockState;
             } else {
-                boolean flag = blockState.getValue(Thickness) == DripstoneThickness.TIP_MERGE;
-                DripstoneThickness thickness = calculateIcicleThickness(level, pos, tipDirection, flag);
+                boolean isTipMerge = blockState.getValue(Thickness) == DripstoneThickness.TIP_MERGE;
+                DripstoneThickness thickness = calculateIcicleThickness(level, pos, tipDirection, isTipMerge);
                 return blockState.setValue(Thickness, thickness);
             }
         }

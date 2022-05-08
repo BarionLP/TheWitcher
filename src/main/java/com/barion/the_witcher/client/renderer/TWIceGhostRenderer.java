@@ -11,11 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class TWIceGhostRender extends MobRenderer<TWIceGhostEntity, TWIceGhostModel>{
+public class TWIceGhostRenderer extends MobRenderer<TWIceGhostEntity, TWIceGhostModel>{
     private static final ResourceLocation Texture = TWUtil.location("textures/entity/ice_ghost.png");
     public static final ModelLayerLocation LayerLocation = new ModelLayerLocation(TWUtil.location("ice_ghost"), "main");
 
-    public TWIceGhostRender(EntityRendererProvider.Context renderContext) {
+    public TWIceGhostRenderer(EntityRendererProvider.Context renderContext) {
         super(renderContext, new TWIceGhostModel(renderContext.bakeLayer(LayerLocation)), 0.2f);
     }
 

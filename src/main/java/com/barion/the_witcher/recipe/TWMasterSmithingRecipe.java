@@ -49,7 +49,7 @@ public class TWMasterSmithingRecipe implements Recipe<Container> {
 
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() {return Serializer.Instance;}
-    private Ingredient getIngredient() {return ingredient;}
+    public Ingredient getIngredient() {return ingredient;}
     @Override
     public @NotNull RecipeType<?> getType() {return Type.Instance;}
 

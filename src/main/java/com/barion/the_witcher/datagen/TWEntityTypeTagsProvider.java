@@ -25,8 +25,25 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
                 TWEntities.IceGhost.get()
         );
 
+        tag(TWTags.Entities.WildHunt).add(
+                TWEntities.WildHuntHound.get(),
+                TWEntities.WildHuntKnight.get()
+        );
+
+        tag(TWTags.Entities.WildHuntIgnore).addTag(TWTags.Entities.WildHunt).add(
+                EntityType.AXOLOTL,
+                EntityType.BEE,
+                EntityType.CREEPER,
+                EntityType.DOLPHIN,
+                EntityType.FOX,
+                EntityType.POLAR_BEAR,
+                EntityType.PARROT,
+                EntityType.SKELETON_HORSE
+        );
+
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(
                 TWEntities.WildHuntHound.get(),
+                TWEntities.WildHuntKnight.get(),
                 TWEntities.IceGhost.get()
         );
         tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS).add(

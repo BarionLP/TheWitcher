@@ -4,6 +4,7 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.entity.TWIceGhostEntity;
 import com.barion.the_witcher.world.entity.TWWildHuntHoundEntity;
+import com.barion.the_witcher.world.entity.TWWildHuntKnightEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,12 +17,14 @@ import net.minecraftforge.registries.RegistryObject;
 public class TWEntities {
     public static final DeferredRegister<EntityType<?>> Registry = DeferredRegister.create(ForgeRegistries.ENTITIES, TheWitcher.ModID);
 
-    public static final RegistryObject<EntityType<TWIceGhostEntity>> IceGhost = register("ice_ghost", livingEntity(TWIceGhostEntity::new, MobCategory.MONSTER, 1, 2, 8));
+    public static final RegistryObject<EntityType<TWIceGhostEntity>> IceGhost = register("ice_ghost", livingEntity(TWIceGhostEntity::new, MobCategory.MONSTER, 0.6f, 1.95f, 8));
     public static final RegistryObject<EntityType<TWWildHuntHoundEntity>> WildHuntHound = register("wild_hunt_hound", livingEntity(TWWildHuntHoundEntity::new, MobCategory.MONSTER, 1.3f, 1.2f, 16));
+    public static final RegistryObject<EntityType<TWWildHuntKnightEntity>> WildHuntKnight = register("wild_hunt_knight", livingEntity(TWWildHuntKnightEntity::new, MobCategory.MONSTER, 0.6f, 1.95f, 16));
 
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(IceGhost.get(), TWIceGhostEntity.createAttributes().build());
         event.put(WildHuntHound.get(), TWWildHuntHoundEntity.createAttributes().build());
+        event.put(WildHuntKnight.get(), TWWildHuntKnightEntity.createAttributes().build());
     }
 
     private static <E extends Entity, EF extends EntityType.EntityFactory<E>> EntityType.Builder<E> boat(EF entity) {

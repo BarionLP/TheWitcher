@@ -11,11 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class TWKikimoraRender extends MobRenderer<TWKikimoraEntity, TWKikimoraModel>{
+public class TWKikimoraRenderer extends MobRenderer<TWKikimoraEntity, TWKikimoraModel>{
     public static final ModelLayerLocation LayerLocation = new ModelLayerLocation(TWUtil.location("kikimora"), "main");
     private static final ResourceLocation Texture = TWUtil.location("textures/entity/kikimora.png");
 
-    public TWKikimoraRender(EntityRendererProvider.Context rendererContext) {
+    public TWKikimoraRenderer(EntityRendererProvider.Context rendererContext) {
         super(rendererContext, new TWKikimoraModel(rendererContext.bakeLayer(LayerLocation)), 0.2f);
     }
 

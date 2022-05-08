@@ -61,6 +61,9 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
             @Override @ParametersAreNonnullByDefault
             public void onTake(Player player, ItemStack itemStack) {
                 itemStack.onCraftedBy(player.level, player, itemStack.getCount());
+                if(!player.getAbilities().instabuild) {
+                    player.giveExperienceLevels(-selectedRecipe.getXpCost());
+                }
                 itemHandler.extractItem(InputSlot, 1, false);
                 access.execute((level, pos) -> level.levelEvent(1044, pos, 0));
             }}));
@@ -81,15 +84,18 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
         List<TWMasterSmithingRecipe> list = this.level.getRecipeManager().getRecipesFor(TWMasterSmithingRecipe.Type.Instance, getContainer(), level);
         //TheWitcher.Logger.info(String.valueOf(list));
         if (list.isEmpty()) {
-            if(itemHandler.getStackInSlot(ResultSlot) != ItemStack.EMPTY) {itemHandler.setStackInSlot(ResultSlot, ItemStack.EMPTY);}
+            if(itemHandler.getStackInSlot(ResultSlot) != ItemStack.EMPTY) {
+                itemHandler.setStackInSlot(ResultSlot, ItemStack.EMPTY);
+                selectedRecipe = null;
+            }
         } else {
             selectedRecipe = list.get(0);
-            if(!enoughXP()){
-                selectedRecipe = null;
-                return;
-            }
+            if(!canCraft()) {return;}
             ItemStack resultItem = selectedRecipe.getResultItem();
-            if(!itemHandler.getStackInSlot(ResultSlot).is(resultItem.getItem())) {itemHandler.setStackInSlot(ResultSlot, resultItem);}
+            if(!itemHandler.getStackInSlot(ResultSlot).is(resultItem.getItem())) {
+                resultItem.setTag(itemHandler.getStackInSlot(InputSlot).getTag());
+                itemHandler.setStackInSlot(ResultSlot, resultItem);
+            }
         }
     }
 
@@ -110,11 +116,11 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
 
     protected void clearContainer(Player player) {
         if (!player.isAlive() || player instanceof ServerPlayer && ((ServerPlayer)player).hasDisconnected()) {
-            player.drop(itemHandler.getStackInSlot(ResultSlot), false);
+            player.drop(itemHandler.getStackInSlot(InputSlot), false);
         } else {
             Inventory inventory = player.getInventory();
             if (inventory.player instanceof ServerPlayer) {
-                inventory.placeItemBackInInventory(itemHandler.getStackInSlot(ResultSlot));
+                inventory.placeItemBackInInventory(itemHandler.getStackInSlot(InputSlot));
             }
         }
     }
@@ -127,7 +133,8 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
         return inventory;
     }
 
-    public boolean enoughXP() {return player.experienceLevel >= selectedRecipe.getXpCost();}
+    public boolean enoughXP() {return player.experienceLevel >= selectedRecipe.getXpCost() || player.getAbilities().instabuild;}
+    public boolean canCraft() {return getSelectedRecipe() != null && enoughXP();}
     public TWMasterSmithingRecipe getSelectedRecipe() {return selectedRecipe;}
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

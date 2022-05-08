@@ -11,11 +11,11 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 
-public class TWWildHuntHoundRender extends MobRenderer<TWWildHuntHoundEntity, TWWildHuntHoundModel>{
+public class TWWildHuntHoundRenderer extends MobRenderer<TWWildHuntHoundEntity, TWWildHuntHoundModel>{
     private static final ResourceLocation Texture = TWUtil.location("textures/entity/wild_hunt_hound.png");
     public static final ModelLayerLocation LayerLocation = new ModelLayerLocation(TWUtil.location("wild_hunt_hound"), "main");
 
-    public TWWildHuntHoundRender(EntityRendererProvider.Context context) {
+    public TWWildHuntHoundRenderer(EntityRendererProvider.Context context) {
         super(context, new TWWildHuntHoundModel(context.bakeLayer(LayerLocation)), 1.1f);
     }
 

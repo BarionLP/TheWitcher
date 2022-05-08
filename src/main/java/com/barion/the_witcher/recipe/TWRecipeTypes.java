@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TWRecipes {
+public class TWRecipeTypes {
     public static final DeferredRegister<RecipeSerializer<?>> Registry = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TheWitcher.ModID);
 
     public static final RegistryObject<RecipeSerializer<TWMasterSmithingRecipe>> MasterSmithing = Registry.register("master_smithing", () -> TWMasterSmithingRecipe.Serializer.Instance);

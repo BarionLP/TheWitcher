@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class TWMasterSmithingTableBlock extends CraftingTableBlock {
-    private static final Component TextComponent = new TranslatableComponent("container.the_witcher.master_smithting");
+    public static final Component TextComponent = new TranslatableComponent("container.the_witcher.master_smithting");
     public TWMasterSmithingTableBlock(Properties properties) {super(properties);}
 
     @Override @ParametersAreNonnullByDefault

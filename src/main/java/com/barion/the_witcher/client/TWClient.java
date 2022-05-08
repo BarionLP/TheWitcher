@@ -2,13 +2,17 @@ package com.barion.the_witcher.client;
 
 import com.barion.the_witcher.client.model.TWIceGhostModel;
 import com.barion.the_witcher.client.model.TWWildHuntHoundModel;
-import com.barion.the_witcher.client.renderer.TWIceGhostRender;
-import com.barion.the_witcher.client.renderer.TWWildHuntHoundRender;
+import com.barion.the_witcher.client.renderer.TWIceGhostRenderer;
+import com.barion.the_witcher.client.renderer.TWWildHuntHoundRenderer;
+import com.barion.the_witcher.client.renderer.TWWildHuntKnightRenderer;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
 import com.barion.the_witcher.world.screen.TWMasterSmithingTableScreen;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,7 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @OnlyIn(Dist.CLIENT)
 public class TWClient {
     public static void clientSetup(final FMLClientSetupEvent event){
-        ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.translucentNoCrumbling());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.WhiteMyrtleBush.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.CelandineBush.get(), RenderType.cutout());
 
@@ -27,11 +31,15 @@ public class TWClient {
     }
 
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
-        event.registerEntityRenderer(TWEntities.IceGhost.get(), TWIceGhostRender::new);
-        event.registerEntityRenderer(TWEntities.WildHuntHound.get(), TWWildHuntHoundRender::new);
+        event.registerEntityRenderer(TWEntities.IceGhost.get(), TWIceGhostRenderer::new);
+        event.registerEntityRenderer(TWEntities.WildHuntHound.get(), TWWildHuntHoundRenderer::new);
+        event.registerEntityRenderer(TWEntities.WildHuntKnight.get(), TWWildHuntKnightRenderer::new);
     }
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
-        event.registerLayerDefinition(TWIceGhostRender.LayerLocation, TWIceGhostModel::createMesh);
-        event.registerLayerDefinition(TWWildHuntHoundRender.LayerLocation, TWWildHuntHoundModel::createMesh);
+        event.registerLayerDefinition(TWIceGhostRenderer.LayerLocation, TWIceGhostModel::createMesh);
+        event.registerLayerDefinition(TWWildHuntHoundRenderer.LayerLocation, TWWildHuntHoundModel::createMesh);
+        event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocation, ()-> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0), 64, 32));
+        event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocationOuterArmor, ()-> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(1), 0), 64, 32));
+        event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocationInnerArmor, ()-> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.5f), 0), 64, 32));
     }
 }

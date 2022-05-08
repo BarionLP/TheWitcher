@@ -36,9 +36,11 @@ public class TWTags {
 
     public static final class Entities{
         public static final TagKey<EntityType<?>> MagicMob = forge("magic_mob");
+        public static final TagKey<EntityType<?>> WildHunt = tw("wild_hunt");
+        public static final TagKey<EntityType<?>> WildHuntIgnore = tw("wild_hunt_ignore");
 
         private static TagKey<EntityType<?>> forge(String path) {return create(new ResourceLocation("forge", path));}
-        private static TagKey<EntityType<?>> mod(String path) {return create(TWUtil.location(path));}
+        private static TagKey<EntityType<?>> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<EntityType<?>> create(ResourceLocation location) {return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, location);}
     }
 

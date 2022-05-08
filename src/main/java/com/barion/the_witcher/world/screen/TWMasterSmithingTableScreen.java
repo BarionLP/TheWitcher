@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMasterSmithingMenu> {
-    private static final ResourceLocation Texture = TWUtil.location("textures/gui/master_smithing_table.png");
+    public static final ResourceLocation Texture = TWUtil.location("textures/gui/master_smithing_table.png");
 
     public TWMasterSmithingTableScreen(TWMasterSmithingMenu menu, Inventory playerInventory, Component tile) {
         super(menu, playerInventory, tile);
@@ -26,6 +26,10 @@ public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMaste
         int y = (height - imageHeight) / 2;
 
         blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
+
+        if(menu.getSlot(0).hasItem() && (menu.getSelectedRecipe() == null || !menu.enoughXP())){
+            blit(poseStack, x + 74, y + 37, imageWidth, 0, 28, 20);
+        }
     }
 
     @Override
