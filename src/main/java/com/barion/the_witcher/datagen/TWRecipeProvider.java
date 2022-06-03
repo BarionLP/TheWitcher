@@ -129,7 +129,7 @@ public class TWRecipeProvider extends RecipeProvider {
     }
 
     protected static void furnance(ItemLike result, ItemLike ingredient, float xp, int time) {SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, xp, time).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, smeltingRecipeID(result));}
-    protected static void furnanceExtraID(ItemLike result, ItemLike ingredient, float xp, int time) {SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, xp, time).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, extraSmeltingRecipeID(result, ingredient));}
+    protected static void furnanceExtraID(ItemLike result, ItemLike ingredient, float xp, int time) {SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, xp, time).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, conversionSmeltingRecipeID(result, ingredient));}
     protected static void sword(TagKey<Item> material, ItemLike sword){
         ShapedRecipeBuilder.shaped(sword)
                 .define('#', material)
@@ -144,6 +144,6 @@ public class TWRecipeProvider extends RecipeProvider {
     protected static ResourceLocation stonecuttingRecipeID(ItemLike item) {return TWUtil.location("stonecutting/" + getItemName(item));}
     protected static ResourceLocation extraStonecuttingRecipeID(ItemLike result, ItemLike ingredient) {return TWUtil.location("stonecutting/" + getConversionRecipeName(result, ingredient));}
     protected static ResourceLocation smeltingRecipeID(ItemLike item) {return TWUtil.location("smelting/" + getItemName(item));}
-    protected static ResourceLocation extraSmeltingRecipeID(ItemLike result, ItemLike ingredient) {return TWUtil.location("smelting/" + getConversionRecipeName(result, ingredient));}
+    protected static ResourceLocation conversionSmeltingRecipeID(ItemLike result, ItemLike ingredient) {return TWUtil.location("smelting/" + getConversionRecipeName(result, ingredient));}
     protected static ResourceLocation blastingRecipeID(ItemLike item) {return TWUtil.location("blasting/" + getItemName(item));}
 }
