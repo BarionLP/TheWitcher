@@ -8,7 +8,6 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -27,12 +26,6 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
 
-        isIngot(TWItems.SilverIngot.get(),
-                TWItems.SteelIngot.get());
-
-        isNugget(TWItems.SilverNugget.get(),
-                TWItems.SteelNugget.get());
-
         tag(TWTags.Items.RawMaterialsSilver).add(TWItems.RawSilver.get());
         tag(TWTags.Items.SilverIngots).add(TWItems.SilverIngot.get());
         tag(TWTags.Items.SilverNuggets).add(TWItems.SilverNugget.get());
@@ -40,12 +33,15 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         tag(TWTags.Items.SteelNuggets).add(TWItems.SteelNugget.get());
         tag(TWTags.Items.SteelNuggets).add(TWItems.SteelNugget.get());
 
+        tag(Tags.Items.INGOTS).addTags(
+                TWTags.Items.SilverIngots,
+                TWTags.Items.SteelIngots);
+
+        tag(Tags.Items.NUGGETS).addTags(
+                TWTags.Items.SilverNuggets,
+                TWTags.Items.SteelNuggets);
+
         tag(Tags.Items.RAW_MATERIALS).addTag(TWTags.Items.RawMaterialsSilver);
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(TWItems.SilverIngot.get(), TWItems.SteelIngot.get());
     }
-
-    @SafeVarargs
-    private  <T extends Item> void isIngot(T... items) {tag(Tags.Items.INGOTS).add(items);}
-    @SafeVarargs
-    private  <T extends Item> void isNugget(T... items) {tag(Tags.Items.NUGGETS).add(items);}
 }

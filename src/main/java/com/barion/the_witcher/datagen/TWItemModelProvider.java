@@ -6,6 +6,7 @@ import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
+import com.barion.the_witcher.world.block.TWPowerBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -20,6 +21,7 @@ import java.util.Objects;
 public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
     private final ModelFile bigHandheld = getExistingFile(modLoc("item/big_sword"));
+    private final ModelFile spawnEgg = getExistingFile(mcLoc("item/template_spawn_egg"));
 
     public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper){super(generator, TheWitcher.ModID, fileHelper);}
 
@@ -57,6 +59,8 @@ public class TWItemModelProvider extends ItemModelProvider {
                 if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
                 buttonInventory(name, texture);
+            }else if(block instanceof TWPowerBlock){
+                withExistingParent(name, modLoc(BLOCK_FOLDER + "/" + name + "/on"));
             }else{
                 block(name);
             }
@@ -75,8 +79,10 @@ public class TWItemModelProvider extends ItemModelProvider {
                 item(name);
             }else if(item instanceof BlockItem && !(item instanceof ItemNameBlockItem)){
                 continue;
-            }else if(item instanceof SwordItem){
+            }else if(item instanceof SwordItem) {
                 item(name, bigHandheld);
+            }else if(item instanceof SpawnEggItem){
+                getBuilder(name).parent(spawnEgg);
             }else{
                 item(name);
             }

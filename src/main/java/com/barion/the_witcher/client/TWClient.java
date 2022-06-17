@@ -7,7 +7,7 @@ import com.barion.the_witcher.client.renderer.TWWildHuntHoundRenderer;
 import com.barion.the_witcher.client.renderer.TWWildHuntKnightRenderer;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
-import com.barion.the_witcher.world.screen.TWMasterSmithingTableScreen;
+import com.barion.the_witcher.world.screen.TWMasterSmithingScreen;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.HumanoidModel;
@@ -23,11 +23,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @OnlyIn(Dist.CLIENT)
 public class TWClient {
     public static void clientSetup(final FMLClientSetupEvent event){
-        ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.translucentNoCrumbling());
+        ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.WhiteMyrtleBush.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.CelandineBush.get(), RenderType.cutout());
 
-        MenuScreens.register(TWMenuTypes.MasterSmithingTableMenu.get(), TWMasterSmithingTableScreen::new);
+        MenuScreens.register(TWMenuTypes.MasterSmithingTableMenu.get(), TWMasterSmithingScreen::new);
     }
 
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){

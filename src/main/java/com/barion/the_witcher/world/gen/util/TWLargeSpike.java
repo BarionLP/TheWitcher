@@ -72,7 +72,7 @@ public final class TWLargeSpike{
                         boolean flag = false;
                         int l = this.pointingUp ? worldGenLevel.getHeight(Heightmap.Types.WORLD_SURFACE_WG, mutableBlockPos.getX(), mutableBlockPos.getZ()) : Integer.MAX_VALUE;
 
-                        for(int i2 = 0; i2 < k /*&& mutableBlockPos.getY() < l*/; ++i2){
+                        for(int i2 = 0; i2 < k; ++i2){
                             BlockPos pos = windOffsetter.offset(mutableBlockPos);
                             if (TWSpikeUtils.isEmptyOrWaterOrLava(worldGenLevel, pos)) {
                                 flag = true;

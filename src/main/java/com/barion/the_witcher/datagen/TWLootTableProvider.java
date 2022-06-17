@@ -16,7 +16,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -86,12 +85,12 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.DeepFrostedStoneTiles.get(),
                     TWBlocks.DeepFrostedStoneTileStairs.get(),
                     TWBlocks.DeepFrostedStoneTileSlab.get(),
-                    TWBlocks.DeepFrostedStoneTileWall.get(),
-                    TWBlocks.Icicle.get()
+                    TWBlocks.DeepFrostedStoneTileWall.get()
             );
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
             dropOther(TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
+            dropWhenSilkTouch(TWBlocks.Icicle.get());
 
             dropBush(TWBlocks.WhiteMyrtleBush.get(), TWItems.WhiteMyrtle.get());
             dropBush(TWBlocks.CelandineBush.get(), TWItems.Celandine.get());
@@ -102,7 +101,7 @@ public class TWLootTableProvider extends LootTableProvider {
             this.add(bush, (block) -> applyExplosionDecay(block, LootTable.lootTable()
                     .withPool(LootPool.lootPool()
                             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 3)))
-                            .add(LootItem.lootTableItem(drop)).apply(SetItemCountFunction.setCount(one())).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+                            .add(LootItem.lootTableItem(drop)).apply(SetItemCountFunction.setCount(one())))));
         }
         private void dropOreLoot(Block ore, Item rawOre) {add(ore, createOreDrop(ore, rawOre));}
         @Override @Nonnull protected Iterable<Block> getKnownBlocks() {return TWBlocks.Registry.getEntries().stream().map(RegistryObject::get).toList();}

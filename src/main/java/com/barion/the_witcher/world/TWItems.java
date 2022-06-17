@@ -2,13 +2,11 @@ package com.barion.the_witcher.world;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWUtil;
-import com.barion.the_witcher.world.item.TWArmorMaterial;
-import com.barion.the_witcher.world.item.TWKikimoraToothItem;
-import com.barion.the_witcher.world.item.TWSilverSwordItem;
-import com.barion.the_witcher.world.item.TWTiers;
+import com.barion.the_witcher.world.item.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -42,6 +40,11 @@ public class TWItems{
     public static final RegistryObject<TWKikimoraToothItem> KikimoraTooth = register("kikimora_tooth", TWKikimoraToothItem::new);
     public static final RegistryObject<ItemNameBlockItem> WhiteMyrtle = register("white_myrtle", blockItem(TWBlocks.WhiteMyrtleBush));
     public static final RegistryObject<ItemNameBlockItem> Celandine = register("celandine", blockItem(TWBlocks.CelandineBush));
+    public static final RegistryObject<Item> HotWaterBottle = register("hot_water_bottle", () -> new TWHotWaterBottleItem(properties().stacksTo(4).craftRemainder(Items.GLASS_BOTTLE).food(TWFoods.HotWaterBottle)));
+
+    public static final RegistryObject<SpawnEggItem> WildHuntKnightSpawnEgg = register("wild_hunt_knight_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.WildHuntKnight, -16777216, -6684673, DefaultProperies));
+    public static final RegistryObject<SpawnEggItem> WildHuntHoundSpawnEgg = register("wild_hunt_hound_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.WildHuntHound, -13421773, -16737895, DefaultProperies));
+    public static final RegistryObject<SpawnEggItem> IceGhostSpawnEgg = register("ice_ghost_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.IceGhost, -13369345, -16776961, DefaultProperies));
 
     private static Supplier<Item> item(Item.Properties properties) {return () -> new Item(properties);}
     private static Supplier<ItemNameBlockItem> blockItem(Supplier<? extends Block> block) {return () -> new ItemNameBlockItem(block.get(), DefaultProperies);}

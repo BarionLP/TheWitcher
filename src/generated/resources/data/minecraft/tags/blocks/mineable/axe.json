@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "the_witcher:master_smithing_table"
+    "the_witcher:master_smithing_table",
+    "the_witcher:icicle"
   ]
 }

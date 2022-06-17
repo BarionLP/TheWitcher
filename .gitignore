@@ -20,6 +20,9 @@ build
 # other
 eclipse
 run
+!run/config
+!run/saves/BuildTest
+!run/options.txt
 
 # Files from Forge MDK
 forge*changelog.txt

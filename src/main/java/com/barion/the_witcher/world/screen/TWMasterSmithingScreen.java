@@ -10,10 +10,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMasterSmithingMenu> {
-    public static final ResourceLocation Texture = TWUtil.location("textures/gui/master_smithing_table.png");
+public class TWMasterSmithingScreen extends AbstractContainerScreen<TWMasterSmithingMenu> {
+    public static final ResourceLocation Texture = TWUtil.location("textures/gui/master_smithing.png");
 
-    public TWMasterSmithingTableScreen(TWMasterSmithingMenu menu, Inventory playerInventory, Component tile) {
+    public TWMasterSmithingScreen(TWMasterSmithingMenu menu, Inventory playerInventory, Component tile) {
         super(menu, playerInventory, tile);
     }
 
@@ -43,7 +43,7 @@ public class TWMasterSmithingTableScreen extends AbstractContainerScreen<TWMaste
     protected void renderLabels(@NotNull PoseStack poseStack, int mouseX, int mouseY) {
         super.renderLabels(poseStack, mouseX, mouseY);
         if(menu.getSelectedRecipe() != null){
-            font.draw(poseStack, menu.getSelectedRecipe().getXpCost() + " XP",77,56, menu.enoughXP() ? 4210752 : 16711680);
+            font.drawShadow(poseStack, menu.getSelectedRecipe().getXpCost() + " XP",77,56, menu.enoughXP() ? 8453920 : 16736352);
         }
     }
 }

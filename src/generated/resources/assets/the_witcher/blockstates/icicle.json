@@ -1,64 +1,64 @@
 {
   "variants": {
     "thickness=tip_merge,vertical_direction=down,waterlogged=false": {
-      "model": "the_witcher:icicle/down/tip_merge"
+      "model": "the_witcher:block/icicle/down/tip_merge"
     },
     "thickness=tip,vertical_direction=down,waterlogged=false": {
-      "model": "the_witcher:icicle/down/tip"
+      "model": "the_witcher:block/icicle/down/tip"
     },
     "thickness=frustum,vertical_direction=down,waterlogged=false": {
-      "model": "the_witcher:icicle/down/frustum"
+      "model": "the_witcher:block/icicle/down/frustum"
     },
     "thickness=middle,vertical_direction=down,waterlogged=false": {
-      "model": "the_witcher:icicle/down/middle"
+      "model": "the_witcher:block/icicle/down/middle"
     },
     "thickness=base,vertical_direction=down,waterlogged=false": {
-      "model": "the_witcher:icicle/down/base"
+      "model": "the_witcher:block/icicle/down/base"
     },
     "thickness=tip_merge,vertical_direction=up,waterlogged=false": {
-      "model": "the_witcher:icicle/up/tip_merge"
+      "model": "the_witcher:block/icicle/up/tip_merge"
     },
     "thickness=tip,vertical_direction=up,waterlogged=false": {
-      "model": "the_witcher:icicle/up/tip"
+      "model": "the_witcher:block/icicle/up/tip"
     },
     "thickness=frustum,vertical_direction=up,waterlogged=false": {
-      "model": "the_witcher:icicle/up/frustum"
+      "model": "the_witcher:block/icicle/up/frustum"
     },
     "thickness=middle,vertical_direction=up,waterlogged=false": {
-      "model": "the_witcher:icicle/up/middle"
+      "model": "the_witcher:block/icicle/up/middle"
     },
     "thickness=base,vertical_direction=up,waterlogged=false": {
-      "model": "the_witcher:icicle/up/base"
+      "model": "the_witcher:block/icicle/up/base"
     },
     "thickness=tip_merge,vertical_direction=down,waterlogged=true": {
-      "model": "the_witcher:icicle/down/tip_merge"
+      "model": "the_witcher:block/icicle/down/tip_merge"
     },
     "thickness=tip,vertical_direction=down,waterlogged=true": {
-      "model": "the_witcher:icicle/down/tip"
+      "model": "the_witcher:block/icicle/down/tip"
     },
     "thickness=frustum,vertical_direction=down,waterlogged=true": {
-      "model": "the_witcher:icicle/down/frustum"
+      "model": "the_witcher:block/icicle/down/frustum"
     },
     "thickness=middle,vertical_direction=down,waterlogged=true": {
-      "model": "the_witcher:icicle/down/middle"
+      "model": "the_witcher:block/icicle/down/middle"
     },
     "thickness=base,vertical_direction=down,waterlogged=true": {
-      "model": "the_witcher:icicle/down/base"
+      "model": "the_witcher:block/icicle/down/base"
     },
     "thickness=tip_merge,vertical_direction=up,waterlogged=true": {
-      "model": "the_witcher:icicle/up/tip_merge"
+      "model": "the_witcher:block/icicle/up/tip_merge"
     },
     "thickness=tip,vertical_direction=up,waterlogged=true": {
-      "model": "the_witcher:icicle/up/tip"
+      "model": "the_witcher:block/icicle/up/tip"
     },
     "thickness=frustum,vertical_direction=up,waterlogged=true": {
-      "model": "the_witcher:icicle/up/frustum"
+      "model": "the_witcher:block/icicle/up/frustum"
     },
     "thickness=middle,vertical_direction=up,waterlogged=true": {
-      "model": "the_witcher:icicle/up/middle"
+      "model": "the_witcher:block/icicle/up/middle"
     },
     "thickness=base,vertical_direction=up,waterlogged=true": {
-      "model": "the_witcher:icicle/up/base"
+      "model": "the_witcher:block/icicle/up/base"
     }
   }
 }

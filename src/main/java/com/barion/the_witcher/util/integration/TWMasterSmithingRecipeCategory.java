@@ -4,7 +4,7 @@ import com.barion.the_witcher.recipe.TWMasterSmithingRecipe;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
-import com.barion.the_witcher.world.screen.TWMasterSmithingTableScreen;
+import com.barion.the_witcher.world.screen.TWMasterSmithingScreen;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -26,7 +26,7 @@ public class TWMasterSmithingRecipeCategory implements IRecipeCategory<TWMasterS
     private final IDrawable icon;
 
     public TWMasterSmithingRecipeCategory(IGuiHelper guiHelper) {
-        background = guiHelper.createDrawable(TWMasterSmithingTableScreen.Texture, 4, 4, 167, 77);
+        background = guiHelper.createDrawable(TWMasterSmithingScreen.Texture, 4, 4, 167, 77);
         icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(TWBlocks.MasterSmithingTable.get()));
     }
 

@@ -6,6 +6,7 @@ import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
+import com.barion.the_witcher.world.block.TWPowerBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -59,6 +60,8 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 simpleGrowableBush(block, name);
             }else if(block instanceof TWIcicleBlock) {
                 icicleBlock(block, name);
+            }else if(block instanceof TWPowerBlock) {
+                powerBlock(block, name);
             }else if(block instanceof ButtonBlock) {
                 if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
@@ -68,27 +71,36 @@ public class TWBlockStateProvider extends BlockStateProvider {
             }
         }
     }
+
+    protected void powerBlock(Block powerBlock, String name){
+        ModelFile on = models().cubeAll("block/" + name + "/on", blockTexture(name + "/on"));
+        ModelFile off = models().cubeAll("block/" + name + "/off", blockTexture(name + "/off"));
+        getVariantBuilder(powerBlock).forAllStates(state -> {
+            final boolean hasPower = state.getValue(TWPowerBlock.hasPower);
+            return ConfiguredModel.builder().modelFile(hasPower ? on : off).build();
+        });
+    }
     protected void simpleGrowableBush(Block bush, String name) {
-        ModelFile Age0 = models().cross(name + "/stage0", mcLoc("block/sweet_berry_bush_stage0"));
-        ModelFile Age1 = models().cross(name + "/stage1", mcLoc("block/sweet_berry_bush_stage1"));
-        ModelFile Age2 = models().cross(name + "/stage2", blockTexture(name+"/stage2"));
-        ModelFile Age3 = models().cross(name + "/stage3", blockTexture(name+"/stage3"));
+        ModelFile Age0 = models().cross("block/" + name + "/stage0", mcLoc("block/sweet_berry_bush_stage0"));
+        ModelFile Age1 = models().cross("block/" + name + "/stage1", mcLoc("block/sweet_berry_bush_stage1"));
+        ModelFile Age2 = models().cross("block/" + name + "/stage2", blockTexture(name+"/stage2"));
+        ModelFile Age3 = models().cross("block/" + name + "/stage3", blockTexture(name+"/stage3"));
         getVariantBuilder(bush).forAllStates(state -> {
             final int age = state.getValue(TWGrowableBushBlock.Age);
             return ConfiguredModel.builder().modelFile((age == 0) ? Age0 : (age == 1) ? Age1 : (age == 2) ? Age2 : Age3).build();
         });
     }
     protected void icicleBlock(Block icicle, String name) {
-        ModelFile downBase = models().cross(name + "/down/base", blockTexture(name + "/down/base"));
-        ModelFile downFrustum = models().cross(name + "/down/frustum", blockTexture(name + "/down/frustum"));
-        ModelFile downMiddle = models().cross(name + "/down/middle", blockTexture(name + "/down/middle"));
-        ModelFile downTip = models().cross(name + "/down/tip", blockTexture(name + "/down/tip"));
-        ModelFile downTipMerge = models().cross(name + "/down/tip_merge", blockTexture(name + "/down/tip_merge"));
-        ModelFile upBase = models().cross(name + "/up/base", blockTexture(name + "/up/base"));
-        ModelFile upFrustum = models().cross(name + "/up/frustum", blockTexture(name + "/up/frustum"));
-        ModelFile upMiddle = models().cross(name + "/up/middle", blockTexture(name + "/up/middle"));
-        ModelFile upTip = models().cross(name + "/up/tip", blockTexture(name + "/up/tip"));
-        ModelFile upTipMerge = models().cross(name + "/up/tip_merge", blockTexture(name + "/up/tip_merge"));
+        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base"));
+        ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum"));
+        ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle"));
+        ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip"));
+        ModelFile downTipMerge = models().cross("block/" + name + "/down/tip_merge", blockTexture(name + "/down/tip_merge"));
+        ModelFile upBase = models().cross("block/" + name + "/up/base", blockTexture(name + "/up/base"));
+        ModelFile upFrustum = models().cross("block/" + name + "/up/frustum", blockTexture(name + "/up/frustum"));
+        ModelFile upMiddle = models().cross("block/" + name + "/up/middle", blockTexture(name + "/up/middle"));
+        ModelFile upTip = models().cross("block/" + name + "/up/tip", blockTexture(name + "/up/tip"));
+        ModelFile upTipMerge = models().cross("block/" + name + "/up/tip_merge", blockTexture(name + "/up/tip_merge"));
         getVariantBuilder(icicle).forAllStates(state -> {
             final DripstoneThickness thickness = state.getValue(TWIcicleBlock.Thickness);
             final Direction direction = state.getValue(TWIcicleBlock.TipDirection);

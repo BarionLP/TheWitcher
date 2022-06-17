@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "the_witcher:silver_ingot",
-    "the_witcher:steel_ingot"
+    "#forge:ingots/silver",
+    "#the_witcher:ingots/steel"
   ]
 }

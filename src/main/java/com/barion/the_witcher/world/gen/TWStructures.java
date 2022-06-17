@@ -6,6 +6,7 @@ import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.structure.TWIcyRuinStructure;
 import com.barion.the_witcher.world.gen.structure.TWWitcherCitadelStructure;
 import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraftforge.event.RegistryEvent;
@@ -18,6 +19,7 @@ public class TWStructures {
                     .addPiece(TWWitcherCitadelStructure.Piece::new)
                     .pushConfigured(NoneFeatureConfiguration.INSTANCE)
                             .biomes(TWConfig.COMMON.WitcherCitadelConfig.getConfigured())
+                            .dimensions(Level.OVERWORLD)
                             .adaptNoise()
                     .popConfigured().build();
 
@@ -26,7 +28,7 @@ public class TWStructures {
                     .addPiece(TWIcyRuinStructure.Piece::new)
                     .pushConfigured(NoneFeatureConfiguration.INSTANCE)
                             .biomes(TWTags.Biomes.hasIcyRuin)
-                            .adaptNoise()
+                            .dimensions(TWLevels.WhiteFrost)
                     .popConfigured().build();
 
     @SubscribeEvent

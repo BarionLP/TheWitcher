@@ -5,6 +5,8 @@
     "the_witcher:deep_frosted_stone",
     "minecraft:stone",
     "minecraft:dirt",
-    "minecraft:grass_block"
+    "minecraft:grass_block",
+    "minecraft:snow_block",
+    "minecraft:powder_snow"
   ]
 }

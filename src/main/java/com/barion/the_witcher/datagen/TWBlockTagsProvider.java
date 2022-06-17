@@ -61,46 +61,13 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
                 TWBlocks.DeepFrostedStoneTiles.get(),
                 TWBlocks.DeepFrostedStoneTileStairs.get(),
                 TWBlocks.DeepFrostedStoneTileSlab.get(),
-                TWBlocks.DeepFrostedStoneTileWall.get()
+                TWBlocks.DeepFrostedStoneTileWall.get(),
+                TWBlocks.Icicle.get()
         );
 
         tag(BlockTags.MINEABLE_WITH_AXE).add(
-                TWBlocks.MasterSmithingTable.get()
-        );
-
-/*        tag(BlockTags.STAIRS).add(
-                TWBlocks.FrostedCobblestoneStairs.get(),
-                TWBlocks.FrostedStoneStairs.get(),
-                TWBlocks.FrostedStoneBrickStairs.get(),
-                TWBlocks.DeepFrostedCobblestoneStairs.get(),
-                TWBlocks.DeepFrostedStoneStairs.get(),
-                TWBlocks.DeepFrostedStoneBrickStairs.get(),
-                TWBlocks.DeepFrostedStoneTileStairs.get()
-        );
-
-        tag(BlockTags.SLABS).add(
-                TWBlocks.FrostedCobblestoneSlab.get(),
-                TWBlocks.FrostedStoneSlab.get(),
-                TWBlocks.FrostedStoneBrickSlab.get(),
-                TWBlocks.DeepFrostedCobblestoneSlab.get(),
-                TWBlocks.DeepFrostedStoneSlab.get(),
-                TWBlocks.DeepFrostedStoneBrickSlab.get(),
-                TWBlocks.DeepFrostedStoneTileSlab.get()
-        );
-
-        tag(BlockTags.WALLS).add(
-                TWBlocks.FrostedCobblestoneWall.get(),
-                TWBlocks.FrostedStoneWall.get(),
-                TWBlocks.FrostedStoneBrickWall.get(),
-                TWBlocks.DeepFrostedCobblestoneWall.get(),
-                TWBlocks.DeepFrostedStoneWall.get(),
-                TWBlocks.DeepFrostedStoneBrickWall.get(),
-                TWBlocks.DeepFrostedStoneTileWall.get()
-        );*/
-
-        tag(BlockTags.BUTTONS).add(
-                TWBlocks.FrostedStoneBrickButton.get(),
-                TWBlocks.DeepFrostedStoneBrickButton.get()
+                TWBlocks.MasterSmithingTable.get(),
+                TWBlocks.Icicle.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
@@ -111,7 +78,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksSilver).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());
-        tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK);
+        tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW);
         tag(Tags.Blocks.STORAGE_BLOCKS).addTags(TWTags.Blocks.StorageBlocksSilver, TWTags.Blocks.StorageBlocksRawSilver);
     }
 
@@ -141,6 +108,13 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
             }
             if(block instanceof FenceGateBlock){
                 tag(BlockTags.FENCE_GATES).add(block);
+            }
+            if(block instanceof ButtonBlock){
+                if(block instanceof WoodButtonBlock){
+                    tag(BlockTags.WOODEN_BUTTONS).add(block);
+                } else{
+                    tag(BlockTags.BUTTONS).add(block);
+                }
             }
         }
     }

@@ -3,12 +3,14 @@ package com.barion.the_witcher.util;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.gen.util.TWStructurePiece;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
+import java.util.Random;
 
 public class TWUtil {
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
@@ -17,6 +19,31 @@ public class TWUtil {
     public static boolean isWood(String name) {return (name.contains("wood") || name.contains("hyphae"));}
     public static boolean isLog(String name) {return (name.contains("log") || name.contains("stem"));}
     public static boolean isWooden(String name) {return isLog(name) || isWood(name) || name.contains("plank");}
+    public static TWStructurePiece.Builder pieceBuilder() {return new TWStructurePiece.Builder();}
+
+    public static TWStructurePiece getRandomPiece(TWStructurePiece[] variants, int maxWeight, Random rand){
+        int piece = 0;
+        if(variants.length > 1) {
+            int i = rand.nextInt(maxWeight+1);
+            for (int j = 0; j < variants.length; j++) {
+                if (variants[j].Weight >= i) {
+                    piece = j;
+                    break;
+                } else {
+                    i -= variants[j].Weight;
+                }
+            }
+        }
+        return variants[piece];
+    }
+
+    public static int getMaxWeight(TWStructurePiece[] variants){
+        int i = 0;
+        for (TWStructurePiece piece : variants){
+            i += piece.Weight;
+        }
+        return i;
+    }
 
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}
@@ -77,6 +104,11 @@ public class TWUtil {
             items.add(TWItems.Celandine.get().getDefaultInstance());
             items.add(TWItems.WhiteMyrtle.get().getDefaultInstance());
             items.add(TWItems.KikimoraTooth.get().getDefaultInstance());
+            items.add(TWItems.HotWaterBottle.get().getDefaultInstance());
+
+            items.add(TWItems.WildHuntKnightSpawnEgg.get().getDefaultInstance());
+            items.add(TWItems.WildHuntHoundSpawnEgg.get().getDefaultInstance());
+            items.add(TWItems.IceGhostSpawnEgg.get().getDefaultInstance());
         }
 
         @Override @Nonnull

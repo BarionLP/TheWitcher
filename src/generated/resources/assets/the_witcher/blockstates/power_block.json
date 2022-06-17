@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "has_power=false": {
+      "model": "the_witcher:block/power_block/off"
+    },
+    "has_power=true": {
+      "model": "the_witcher:block/power_block/on"
+    }
+  }
+}
