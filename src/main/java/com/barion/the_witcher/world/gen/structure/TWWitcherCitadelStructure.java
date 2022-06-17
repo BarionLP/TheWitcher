@@ -68,7 +68,7 @@ public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfigura
 
         @Override
         protected StructurePlaceSettings getPlaceSettings(StructureManager structureManager) {
-            Vec3i size = structureManager.get(this.makeTemplateLocation()).get().getSize();
+            Vec3i size = structureManager.get(makeTemplateLocation()).get().getSize();
             BlockPos pivot = new BlockPos(size.getX() / 2, 0, size.getZ() / 2);
             StructurePlaceSettings settings = new StructurePlaceSettings().setKeepLiquids(false).setRotationPivot(pivot);
             settings.addProcessor(BlockIgnoreProcessor.STRUCTURE_AND_AIR).addProcessor(RemoveGelStructureProcessor.INSTANCE);

@@ -101,7 +101,7 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(@NotNull Player player) {
-        return this.access.evaluate((level, pos) -> this.isValidBlock(level.getBlockState(pos)) && player.distanceToSqr((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D) <= 64.0D, true);
+        return access.evaluate((level, pos) -> this.isValidBlock(level.getBlockState(pos)) && player.distanceToSqr((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D) <= 64.0D, true);
     }
     @Override
     public void slotsChanged(@NotNull Container container) {
@@ -111,7 +111,7 @@ public class TWMasterSmithingMenu extends AbstractContainerMenu {
     @Override
     public void removed(@NotNull Player player) {
         super.removed(player);
-        this.access.execute((level, pos) -> this.clearContainer(player));
+        access.execute((level, pos) -> this.clearContainer(player));
     }
 
     protected void clearContainer(Player player) {

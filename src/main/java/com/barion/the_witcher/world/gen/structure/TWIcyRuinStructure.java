@@ -39,7 +39,7 @@ public class TWIcyRuinStructure extends GelStructure<NoneFeatureConfiguration> {
         int z = context.chunkPos().getMinBlockZ();
         int y = context.chunkGenerator().getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
 
-        piecesBuilder.addPiece(new TWWitcherCitadelStructure.Piece(context.structureManager(), new BlockPos(x, y, z), context.random()));
+        piecesBuilder.addPiece(new Piece(context.structureManager(), new BlockPos(x, y, z), context.random()));
     }
 
     private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){

@@ -58,18 +58,16 @@ public class TWWildHuntKnightEntity extends Monster implements TWWildHuntEntity{
         populateEquipmentSlot(EquipmentSlot.LEGS);
         populateEquipmentSlot(EquipmentSlot.FEET);
         setItemSlot(EquipmentSlot.MAINHAND, getEquipmentItemForSlot(EquipmentSlot.MAINHAND, random.nextInt(3) > 0));
+        if(random.nextInt(3) == 2){
+            setItemSlot(EquipmentSlot.OFFHAND, getEquipmentItemForSlot(EquipmentSlot.OFFHAND, false));
+        }
     }
 
     protected void populateEquipmentSlot(EquipmentSlot slot){
         int chance = random.nextInt(5);
-        if(chance == 0) {return;}
+        if(chance <=  1) {return;}
 
-        if(chance == 4){
-            setItemSlot(slot, getEquipmentItemForSlot(slot, true));
-            return;
-        }
-
-        setItemSlot(slot, getEquipmentItemForSlot(slot, false));
+        setItemSlot(slot, getEquipmentItemForSlot(slot, chance == 4));
     }
 
     protected ItemStack getEquipmentItemForSlot(EquipmentSlot slot, boolean isRare){
@@ -80,6 +78,7 @@ public class TWWildHuntKnightEntity extends Monster implements TWWildHuntEntity{
                 case LEGS -> {return new ItemStack(TWItems.ReinforcedLeatherLeggings.get());}
                 case FEET -> {return new ItemStack(TWItems.ReinforcedLeatherBoots.get());}
                 case MAINHAND -> {return new ItemStack(TWItems.SteelSword.get());}
+                case OFFHAND -> {return new ItemStack(Items.SHIELD);}
             }
         }else {
             switch(slot){
@@ -88,6 +87,7 @@ public class TWWildHuntKnightEntity extends Monster implements TWWildHuntEntity{
                 case LEGS -> {return new ItemStack(Items.IRON_LEGGINGS);}
                 case FEET -> {return new ItemStack(Items.IRON_BOOTS);}
                 case MAINHAND -> {return new ItemStack(Items.IRON_SWORD);}
+                case OFFHAND -> {return new ItemStack(Items.SHIELD);}
             }
         }
         return ItemStack.EMPTY;
