@@ -16,19 +16,19 @@
             ],
             "humidity": [
               -1,
-              -0.5
+              0
             ],
             "continentalness": [
+              -0.13,
+              0.6
+            ],
+            "erosion": [
               0,
               1
             ],
-            "erosion": [
-              -0.4,
-              0.1
-            ],
             "weirdness": [
-              -0.1,
-              0.3
+              -1,
+              1
             ],
             "depth": 0,
             "offset": 0
@@ -46,18 +46,18 @@
               1
             ],
             "continentalness": [
-              0,
+              0.7,
               1
             ],
             "erosion": [
               -1,
-              -0.8
+              -0.3
             ],
             "weirdness": [
               -1,
-              -0.8
+              1
             ],
-            "depth": 1,
+            "depth": 0,
             "offset": 0
           }
         },
@@ -69,20 +69,20 @@
               1
             ],
             "humidity": [
-              -0.5,
-              1
+              0,
+              0.5
             ],
             "continentalness": [
-              0,
-              1
+              -0.13,
+              0.6
             ],
             "erosion": [
-              -1,
-              0.3
+              -0.5,
+              0
             ],
             "weirdness": [
-              -0.1,
-              0.1
+              -1,
+              1
             ],
             "depth": 0,
             "offset": 0
@@ -101,10 +101,37 @@
             ],
             "continentalness": [
               -1.05,
-              0
+              -0.19
             ],
             "erosion": [
               -1,
+              1
+            ],
+            "weirdness": [
+              -1,
+              1
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "the_witcher:arctic_boneyard",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              0.5,
+              1
+            ],
+            "continentalness": [
+              -0.13,
+              0.6
+            ],
+            "erosion": [
+              0,
               1
             ],
             "weirdness": [

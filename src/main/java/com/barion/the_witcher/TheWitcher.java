@@ -4,6 +4,7 @@ import com.barion.the_witcher.client.TWClient;
 import com.barion.the_witcher.datagen.*;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
 import com.barion.the_witcher.util.TWConfig;
+import com.barion.the_witcher.util.TWVariables;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
 import com.barion.the_witcher.world.TWItems;
@@ -49,6 +50,8 @@ public class TheWitcher {
         modBus.addListener(TWClient::clientSetup);
         modBus.addListener(TWClient::registerRenderers);
         modBus.addListener(TWClient::registerLayers);
+        modBus.addListener(TWVariables::initNetwork);
+        modBus.addListener(TWVariables::initCapabilities);
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
     }

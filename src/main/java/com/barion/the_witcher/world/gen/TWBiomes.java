@@ -10,4 +10,5 @@ public class TWBiomes {
     public static final ResourceKey<Biome> IcyPeaks = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), TWUtil.location("icy_peaks"));
     public static final ResourceKey<Biome> FrozenSpikes = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), TWUtil.location("frozen_spikes"));
     public static final ResourceKey<Biome> FrostedOcean = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), TWUtil.location("frosted_ocean"));
+    public static final ResourceKey<Biome> ArcticBoneyard = ResourceKey.create(ForgeRegistries.BIOMES.getRegistryKey(), TWUtil.location("arctic_boneyard"));
 }

@@ -5,6 +5,7 @@ import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.gen.TWBiomes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -20,11 +21,13 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
                 TWBiomes.FrozenSpikes,
                 TWBiomes.IcyPeaks,
                 TWBiomes.SnowyDesert,
+                TWBiomes.ArcticBoneyard,
                 TWBiomes.FrostedOcean
         );
         tag(TWTags.Biomes.hasIcyRuin).add(
                 TWBiomes.FrozenSpikes,
                 TWBiomes.IcyPeaks,
+                TWBiomes.ArcticBoneyard,
                 TWBiomes.SnowyDesert
         );
         tag(TWTags.Biomes.IcicleCanGrowIn).addTag(TWTags.Biomes.isWhiteFrost).add(
@@ -37,6 +40,9 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
                 Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA,
                 Biomes.ICE_SPIKES
+        );
+        tag(BiomeTags.HAS_NETHER_FOSSIL).add(
+                TWBiomes.ArcticBoneyard
         );
     }
 }
