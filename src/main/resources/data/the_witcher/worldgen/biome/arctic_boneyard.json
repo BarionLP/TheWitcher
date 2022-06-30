@@ -21,6 +21,9 @@
   },
   "features": [
     [
+      "the_witcher:large_icicle"
+    ],
+    [
       "minecraft:freeze_top_layer"
     ]
   ]

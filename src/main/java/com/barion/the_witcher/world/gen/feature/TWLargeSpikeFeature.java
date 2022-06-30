@@ -1,8 +1,8 @@
 package com.barion.the_witcher.world.gen.feature;
 
 import com.barion.the_witcher.world.gen.feature.configuration.TWLargeSpikeConfiguration;
+import com.barion.the_witcher.world.gen.util.TWDripstoneUtils;
 import com.barion.the_witcher.world.gen.util.TWLargeSpike;
-import com.barion.the_witcher.world.gen.util.TWSpikeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.FloatProvider;
@@ -22,7 +22,7 @@ public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
         WorldGenLevel genLevel = context.level();
         BlockPos origin = context.origin();
 
-        if (!TWSpikeUtils.isEmptyOrWaterOrLava(genLevel, origin)) {return false;}
+        if (!TWDripstoneUtils.isEmptyOrWaterOrLava(genLevel, origin)) {return false;}
 
         Random random = context.random();
         TWLargeSpikeConfiguration configuration = context.config();
@@ -31,7 +31,7 @@ public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
         TWLargeSpike spike = makeSpike(origin.atY(genLevel.getHeight(Heightmap.Types.MOTION_BLOCKING, origin.getX(), origin.getZ())), random, k, configuration.bluntness, configuration.heightScale);
 
         TWLargeSpike.WindOffsetter windOffsetter;
-        if (spike.isSuitableForWind(configuration)) {windOffsetter = new TWLargeSpike.WindOffsetter(origin.getY(), random, configuration.windSpeed);}
+        if (spike.isSuitableForWind(configuration.minRadiusForWind, configuration.minBluntnessForWind)) {windOffsetter = new TWLargeSpike.WindOffsetter(origin.getY(), random, configuration.windSpeed);}
         else {windOffsetter = TWLargeSpike.WindOffsetter.noWind();}
 
         boolean flag = spike.moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(genLevel, windOffsetter);

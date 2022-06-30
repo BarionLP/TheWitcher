@@ -1,6 +1,5 @@
 package com.barion.the_witcher.world.gen.util;
 
-import com.barion.the_witcher.world.gen.feature.configuration.TWLargeSpikeConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
@@ -41,7 +40,7 @@ public final class TWLargeSpike{
             for(int j = 0; j < i; ++j) {
                 if (genLevel.getBlockState(mutableBlockPos).is(Blocks.LAVA)) {return false;}
 
-                if (TWSpikeUtils.isCircleMostlyEmbeddedInStone(genLevel, windOffsetter.offset(mutableBlockPos), this.radius)) {
+                if (TWDripstoneUtils.isCircleMostlyEmbeddedInStone(genLevel, windOffsetter.offset(mutableBlockPos), this.radius)) {
                     this.root = mutableBlockPos;
                     return true;
                 }
@@ -55,7 +54,7 @@ public final class TWLargeSpike{
         return false;
     }
 
-    private int getHeightAtRadius(float radius) {return (int)TWSpikeUtils.getSpikeHeight(radius, this.radius, this.scale, this.bluntness);}
+    private int getHeightAtRadius(float radius) {return (int) TWDripstoneUtils.getSpikeHeight(radius, this.radius, this.scale, this.bluntness);}
 
     public void placeBlocks(WorldGenLevel worldGenLevel, Random random, WindOffsetter windOffsetter, BlockStateProvider baseBlock) {
         for(int i1 = -this.radius; i1 <= this.radius; ++i1) {
@@ -74,7 +73,7 @@ public final class TWLargeSpike{
 
                         for(int i2 = 0; i2 < k; ++i2){
                             BlockPos pos = windOffsetter.offset(mutableBlockPos);
-                            if (TWSpikeUtils.isEmptyOrWaterOrLava(worldGenLevel, pos)) {
+                            if (TWDripstoneUtils.isEmptyOrWaterOrLava(worldGenLevel, pos)) {
                                 flag = true;
                                 worldGenLevel.setBlock(pos, baseBlock.getState(random, pos), 2);
                             } else if (flag && !worldGenLevel.getBlockState(pos).isAir()) {
@@ -90,7 +89,7 @@ public final class TWLargeSpike{
 
     }
 
-    public boolean isSuitableForWind(TWLargeSpikeConfiguration configuration) {return this.radius >= configuration.minRadiusForWind && this.bluntness >= (double)configuration.minBluntnessForWind;}
+    public boolean isSuitableForWind(int minRadiusForWind, double minBluntnessForWind) {return this.radius >= minRadiusForWind && this.bluntness >= minBluntnessForWind;}
 
     public static final class WindOffsetter {
         private final int originY;
@@ -103,11 +102,7 @@ public final class TWLargeSpike{
             this.windSpeed = new Vec3(Mth.cos(f1) * f, 0, Mth.sin(f1) * f);
         }
 
-        private WindOffsetter() {
-            this.originY = 0;
-            this.windSpeed = null;
-        }
-
+        private WindOffsetter() {this.originY = 0; this.windSpeed = null;}
         public static WindOffsetter noWind() {return new WindOffsetter();}
 
         public BlockPos offset(BlockPos current) {

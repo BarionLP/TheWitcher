@@ -8,7 +8,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TWSpikeUtils {
+public class TWDripstoneUtils {
     public static double getSpikeHeight(double radius, double maxRadius, double scale, double bluntness) {
         if (radius < bluntness) {
             radius = bluntness;
@@ -38,13 +38,13 @@ public class TWSpikeUtils {
         }
     }
 
-    protected static boolean isEmptyOrWater(LevelAccessor levelAccessor, BlockPos pos) {return levelAccessor.isStateAtPosition(pos, TWSpikeUtils::isEmptyOrWater);}
+    protected static boolean isEmptyOrWater(LevelAccessor levelAccessor, BlockPos pos) {return levelAccessor.isStateAtPosition(pos, TWDripstoneUtils::isEmptyOrWater);}
 
-    public static boolean isEmptyOrWaterOrLava(LevelAccessor levelAccessor, BlockPos pos) {return levelAccessor.isStateAtPosition(pos, TWSpikeUtils::isEmptyOrWaterOrLava);}
+    public static boolean isEmptyOrWaterOrLava(LevelAccessor levelAccessor, BlockPos pos) {return levelAccessor.isStateAtPosition(pos, TWDripstoneUtils::isEmptyOrWaterOrLava);}
 
-    public static boolean isSpikeBaseOrLava(BlockState blockState) {return isSpikeBase(blockState) || blockState.is(Blocks.LAVA);}
+    public static boolean isDripstoneBaseOrLava(BlockState blockState) {return isDripstoneBase(blockState) || blockState.is(Blocks.LAVA);}
 
-    public static boolean isSpikeBase(BlockState blockState) {return blockState.is(TWTags.Blocks.SpikesCanPlace);}
+    public static boolean isDripstoneBase(BlockState blockState) {return blockState.is(TWTags.Blocks.SpikesCanPlace);}
 
     public static boolean isEmptyOrWater(BlockState blockState) {return blockState.isAir() || blockState.is(Blocks.WATER);}
 
