@@ -9,6 +9,7 @@ import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -33,7 +34,7 @@ public class TWStructures {
 
     @SubscribeEvent
     public static void register(final RegistryEvent.Register<StructureFeature<?>> event){
-        IForgeRegistry<StructureFeature<?>> registry = event.getRegistry();
+        IForgeRegistry<Structure> registry = event.getRegistry();
         WitcherCastle.handleForge(registry);
         IcyRuin.handleForge(registry);
     }

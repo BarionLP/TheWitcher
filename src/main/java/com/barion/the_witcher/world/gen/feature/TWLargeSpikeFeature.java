@@ -5,6 +5,7 @@ import com.barion.the_witcher.world.gen.util.TWDripstoneUtils;
 import com.barion.the_witcher.world.gen.util.TWLargeSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -12,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
 
 public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
     public TWLargeSpikeFeature() {super(TWLargeSpikeConfiguration.CODEC);}
@@ -24,7 +24,7 @@ public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
 
         if (!TWDripstoneUtils.isEmptyOrWaterOrLava(genLevel, origin)) {return false;}
 
-        Random random = context.random();
+        RandomSource random = context.random();
         TWLargeSpikeConfiguration configuration = context.config();
 
         int k = Mth.randomBetweenInclusive(random, configuration.columnRadius.getMinValue(), configuration.columnRadius.getMaxValue());
@@ -39,5 +39,5 @@ public class TWLargeSpikeFeature extends Feature<TWLargeSpikeConfiguration> {
         return flag;
     }
 
-    private static TWLargeSpike makeSpike(BlockPos pos, Random random, int radius, FloatProvider bluntness, FloatProvider scale) {return new TWLargeSpike(pos, true, radius, bluntness.sample(random), scale.sample(random));}
+    private static TWLargeSpike makeSpike(BlockPos pos, RandomSource random, int radius, FloatProvider bluntness, FloatProvider scale) {return new TWLargeSpike(pos, true, radius, bluntness.sample(random), scale.sample(random));}
 }

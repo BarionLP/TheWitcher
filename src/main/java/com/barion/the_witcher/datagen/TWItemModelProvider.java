@@ -16,7 +16,9 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
-import java.util.Objects;
+
+import static com.barion.the_witcher.util.TWUtil.getBlockName;
+import static com.barion.the_witcher.util.TWUtil.getItemName;
 
 public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
@@ -37,7 +39,7 @@ public class TWItemModelProvider extends ItemModelProvider {
                 continue;
             }
 
-            String name = getName(block);
+            String name = getBlockName(block);
             ResourceLocation texture;
             if(block instanceof StairBlock) {
                 if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
@@ -73,7 +75,7 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     private <I extends Item> void items(List<I> items){
         for (I item : items){
-            String name = getName(item);
+            String name = getItemName(item);
 
             if(item instanceof SignItem){
                 item(name);
@@ -93,7 +95,5 @@ public class TWItemModelProvider extends ItemModelProvider {
     protected final void item(String name, ModelFile model) {item(name, model, name);}
     protected final void item(String name, ModelFile model, String texture) {getBuilder(name).parent(model).texture("layer0", ITEM_FOLDER + "/" + texture);}
 
-    protected final String getName(Item item) {return Objects.requireNonNull(item.getRegistryName()).getPath();}
-    protected final String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
     protected final ResourceLocation blockTexture(String name) {return modLoc(BLOCK_FOLDER + "/" + name);}
 }

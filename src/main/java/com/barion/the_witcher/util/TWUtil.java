@@ -8,12 +8,16 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 import java.util.Random;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -52,6 +56,9 @@ public class TWUtil {
         return i;
     }
 
+    public static String getItemName(Item item) {return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath();}
+    public static String getBlockName(Block block) {return Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();}
+
     private static final String ProtocolVersion = "1";
     public static final SimpleChannel PacketHandler = NetworkRegistry.newSimpleChannel(location(TheWitcher.ModID), () -> ProtocolVersion, ProtocolVersion::equals, ProtocolVersion::equals);
     private static int messageID = 0;
@@ -59,8 +66,6 @@ public class TWUtil {
         PacketHandler.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
         messageID++;
     }
-
-
 
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}

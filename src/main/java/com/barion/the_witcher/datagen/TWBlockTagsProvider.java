@@ -12,7 +12,8 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
-import java.util.Objects;
+
+import static com.barion.the_witcher.util.TWUtil.getBlockName;
 
 public class TWBlockTagsProvider extends BlockTagsProvider {
     public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
@@ -84,7 +85,7 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
 
     private void handleDefaults(List<Block> allBlocks) {
         for(Block block : allBlocks) {
-            String name = getName(block);
+            String name = getBlockName(block);
 
             if(block instanceof StairBlock){
                 if(TWUtil.isWooden(name)){
@@ -118,6 +119,4 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
             }
         }
     }
-
-    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
 }

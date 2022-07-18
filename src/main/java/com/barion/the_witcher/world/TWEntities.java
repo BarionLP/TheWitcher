@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class TWEntities {
-    public static final DeferredRegister<EntityType<?>> Registry = DeferredRegister.create(ForgeRegistries.ENTITIES, TheWitcher.ModID);
+    public static final DeferredRegister<EntityType<?>> Registry = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TheWitcher.ModID);
     public static final RegistryObject<EntityType<TWIceGhostEntity>> IceGhost = register("ice_ghost", livingEntity(TWIceGhostEntity::new, MobCategory.MONSTER, 0.6f, 1.95f, 8));
     public static final RegistryObject<EntityType<TWWildHuntHoundEntity>> WildHuntHound = register("wild_hunt_hound", livingEntity(TWWildHuntHoundEntity::new, MobCategory.MONSTER, 1.3f, 1.2f, 16));
     public static final RegistryObject<EntityType<TWWildHuntKnightEntity>> WildHuntKnight = register("wild_hunt_knight", livingEntity(TWWildHuntKnightEntity::new, MobCategory.MONSTER, 0.6f, 1.95f, 16));

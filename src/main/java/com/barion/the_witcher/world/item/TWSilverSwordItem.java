@@ -3,7 +3,6 @@ package com.barion.the_witcher.world.item;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -20,11 +19,11 @@ import java.util.List;
 
 public class TWSilverSwordItem extends SwordItem {
     private final int MagicDamage;
-    private final TranslatableComponent MagicDamageInfo;
+    private final Component MagicDamageInfo;
     public TWSilverSwordItem(Tier tier, int magicDamage, float attackSpeed, Properties properties) {
         super(tier, 0, attackSpeed, properties);
         MagicDamage = magicDamage;
-        MagicDamageInfo  = new TranslatableComponent("item.the_witcher.silver_sword.info", MagicDamage);
+        MagicDamageInfo  = Component.translatable("item.the_witcher.silver_sword.info", MagicDamage);
     }
 
     @Override @ParametersAreNonnullByDefault

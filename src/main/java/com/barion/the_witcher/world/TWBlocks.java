@@ -67,9 +67,9 @@ public class TWBlocks {
     public static final RegistryObject<StairBlock> DeepFrostedStoneTileStairs = register("deep_frosted_stone_tile_stairs", stair(deepFrosted, () -> DeepFrostedStoneTiles.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> DeepFrostedStoneTileSlab = register("deep_frosted_stone_tile_slab", slab(deepFrosted));
     public static final RegistryObject<WallBlock> DeepFrostedStoneTileWall = register("deep_frosted_stone_tile_wall", wall(deepFrosted));
-    public static final RegistryObject<TWIcicleBlock> Icicle = register("icicle", ()-> new TWIcicleBlock(properties(Blocks.POINTED_DRIPSTONE).sound(SoundType.GLASS)));
+    public static final RegistryObject<TWIcicleBlock> Icicle = register("icicle", ()-> new TWIcicleBlock(properties(Blocks.POINTED_DRIPSTONE).sound(SoundType.GLASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 
-    public static final RegistryObject<TWPowerBlock> PowerBlock = register("power_block", ()-> new TWPowerBlock(properties(Blocks.GLASS).noDrops()));
+    public static final RegistryObject<TWPowerBlock> PowerBlock = register("power_block", ()-> new TWPowerBlock(properties(Blocks.GLASS).noLootTable()));
 
     public static final RegistryObject<TWGrowableBushBlock> WhiteMyrtleBush = registerWithoutItem("white_myrtle_bush", bush(1, 6));
     public static final RegistryObject<TWGrowableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));

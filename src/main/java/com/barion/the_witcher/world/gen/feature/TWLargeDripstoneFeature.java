@@ -5,6 +5,7 @@ import com.barion.the_witcher.world.gen.util.TWDripstoneUtils;
 import com.barion.the_witcher.world.gen.util.TWLargeSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.Column;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
-import java.util.Random;
 
 public class TWLargeDripstoneFeature extends Feature<TWLargeDripstoneConfiguration> {
     public TWLargeDripstoneFeature() {super(TWLargeDripstoneConfiguration.CODEC);}
@@ -31,7 +31,7 @@ public class TWLargeDripstoneFeature extends Feature<TWLargeDripstoneConfigurati
 
         Column.Range column = (Column.Range) optional.get();
         if (column.height() < 4) {return false;}
-        Random random = context.random();
+        RandomSource random = context.random();
         int i = (int)((float)column.height() * configuration.maxColumnRadiusToCaveHeightRatio);
         int maxRadius = Mth.clamp(i, configuration.columnRadius.getMinValue(), configuration.columnRadius.getMaxValue());
         int radius = Mth.randomBetweenInclusive(random, configuration.columnRadius.getMinValue(), maxRadius);
@@ -55,5 +55,5 @@ public class TWLargeDripstoneFeature extends Feature<TWLargeDripstoneConfigurati
         return placeStalagmite || placeStalactite;
     }
 
-    private static TWLargeSpike makeDripstone(BlockPos pos, boolean pointingUp, Random random, int radius, FloatProvider bluntness, FloatProvider scale) {return new TWLargeSpike(pos, pointingUp, radius, bluntness.sample(random), scale.sample(random));}
+    private static TWLargeSpike makeDripstone(BlockPos pos, boolean pointingUp, RandomSource random, int radius, FloatProvider bluntness, FloatProvider scale) {return new TWLargeSpike(pos, pointingUp, radius, bluntness.sample(random), scale.sample(random));}
 }

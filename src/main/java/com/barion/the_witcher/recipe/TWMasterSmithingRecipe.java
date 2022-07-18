@@ -12,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -31,6 +30,8 @@ public class TWMasterSmithingRecipe implements Recipe<Container> {
 
     @Override @ParametersAreNonnullByDefault
     public boolean matches(Container container, Level level) {
+        if(level.isClientSide) {return false;}
+
         return ingredient.test(container.getItem(TWMasterSmithingMenu.InputSlot));
     }
 
@@ -55,7 +56,7 @@ public class TWMasterSmithingRecipe implements Recipe<Container> {
 
     public static class Type implements RecipeType<TWMasterSmithingRecipe> {
         private Type() { }
-        public static final Type Instance = new Type();
+        public static final RecipeType<TWMasterSmithingRecipe> Instance = new Type();
         public static final String ID = "master_smithing";
     }
 
@@ -85,22 +86,6 @@ public class TWMasterSmithingRecipe implements Recipe<Container> {
             recipe.getIngredient().toNetwork(buf);
             buf.writeItemStack(recipe.getResultItem(), false);
             buf.writeInt(recipe.getXpCost());
-        }
-
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {return Instance;}
-
-        @Override @Nullable
-        public ResourceLocation getRegistryName() {return ID;}
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
-        }
-
-        @SuppressWarnings("unchecked") // Need this wrapper, because generics
-        private static <G> Class<G> castClass(Class<?> cls) {
-            return (Class<G>)cls;
         }
     }
 }

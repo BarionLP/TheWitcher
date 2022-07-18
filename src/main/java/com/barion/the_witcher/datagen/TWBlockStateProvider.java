@@ -7,6 +7,7 @@ import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +19,8 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
-import java.util.Objects;
+
+import static com.barion.the_witcher.util.TWUtil.getBlockName;
 
 public class TWBlockStateProvider extends BlockStateProvider {
     public TWBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper){
@@ -30,7 +32,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
 
     protected  <B extends Block> void simpleBlock(List<B> blocks){
         for(B block : blocks) {
-            String name = getName(block);
+            String name = getBlockName(block);
             ResourceLocation texture;
 
             if(block instanceof StairBlock) {
@@ -46,7 +48,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
                 else {texture = blockTexture(name.replace("_wall", ""));}
                 wallBlock((WallBlock) block, texture);
             }else if(block instanceof RotatedPillarBlock) {
-                if(getName(block).contains("wood")) {
+                if(getBlockName(block).contains("wood")) {
                     texture = blockTexture(name.replace("wood", "log"));
                     axisBlock((RotatedPillarBlock) block, texture, texture);
                 }else{
@@ -91,7 +93,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
         });
     }
     protected void icicleBlock(Block icicle, String name) {
-        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base"));
+        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base")).renderType(RenderType.cutout().toString());
         ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum"));
         ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle"));
         ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip"));
@@ -108,6 +110,5 @@ public class TWBlockStateProvider extends BlockStateProvider {
         });
     }
 
-    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
     protected final ResourceLocation blockTexture(String name) {return modLoc("block/" + name);}
 }

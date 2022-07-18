@@ -1,5 +1,6 @@
 package com.barion.the_witcher.util.integration;
 
+import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.recipe.TWMasterSmithingRecipe;
 import com.barion.the_witcher.util.TWUtil;
 import mezz.jei.api.IModPlugin;
@@ -17,6 +18,7 @@ import java.util.Objects;
 
 @JeiPlugin
 public class TWJEIPlugin implements IModPlugin {
+    public static final RecipeType<TWMasterSmithingRecipe> MasterSmithing = RecipeType.create(TheWitcher.ModID, "master_smithing", TWMasterSmithingRecipe.class);
     @Override
     public @NotNull ResourceLocation getPluginUid() {return TWUtil.location("jei_plugin");}
 

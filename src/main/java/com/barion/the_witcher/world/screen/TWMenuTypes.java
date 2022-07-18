@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class TWMenuTypes {
-    public static final DeferredRegister<MenuType<?>> Registry = DeferredRegister.create(ForgeRegistries.CONTAINERS, TheWitcher.ModID);
+    public static final DeferredRegister<MenuType<?>> Registry = DeferredRegister.create(ForgeRegistries.MENU_TYPES, TheWitcher.ModID);
 
     public static final RegistryObject<MenuType<TWMasterSmithingMenu>> MasterSmithingTableMenu = register("master_smithing_table_menu", TWMasterSmithingMenu::new);
 

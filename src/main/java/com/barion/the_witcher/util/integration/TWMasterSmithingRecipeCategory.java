@@ -11,6 +11,7 @@ import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -31,6 +32,9 @@ public class TWMasterSmithingRecipeCategory implements IRecipeCategory<TWMasterS
     }
 
     @Override
+    public @NotNull RecipeType<TWMasterSmithingRecipe> getRecipeType() {return TWJEIPlugin.MasterSmithing;}
+
+    @Override
     public @NotNull Component getTitle() {return TWMasterSmithingTableBlock.TextComponent;}
 
     @Override
@@ -38,12 +42,6 @@ public class TWMasterSmithingRecipeCategory implements IRecipeCategory<TWMasterS
 
     @Override
     public @NotNull IDrawable getIcon() {return icon;}
-
-    @Override
-    public ResourceLocation getUid() {return UID;}
-
-    @Override
-    public Class<? extends TWMasterSmithingRecipe> getRecipeClass() {return TWMasterSmithingRecipe.class;}
 
     @Override @ParametersAreNonnullByDefault
     public void setRecipe(IRecipeLayoutBuilder builder, TWMasterSmithingRecipe recipe, IFocusGroup focuses) {

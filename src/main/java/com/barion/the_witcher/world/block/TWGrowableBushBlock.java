@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +25,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
 
 public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock {
     public final int MaxAge = 3;
@@ -56,7 +56,7 @@ public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock 
     public boolean isRandomlyTicking(BlockState blockState) {return blockState.getValue(Age) < MaxAge;}
 
     @Override @ParametersAreNonnullByDefault
-    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
+    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
         int i = blockState.getValue(Age);
         if (i < MaxAge && level.getRawBrightness(pos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(level, pos, blockState,random.nextInt(GrowRarity) == 0)) {
             level.setBlock(pos, blockState.setValue(Age, i + 1), 2);
@@ -92,12 +92,13 @@ public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock 
     public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState blockState, boolean bool) {
         return blockState.getValue(Age) < MaxAge;
     }
+
     @Override @ParametersAreNonnullByDefault
-    public boolean isBonemealSuccess(Level level, Random random, BlockPos pos, BlockState blockState) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState blockState) {
         return true;
     }
     @Override @ParametersAreNonnullByDefault
-    public void performBonemeal(ServerLevel level, Random random, BlockPos pos, BlockState blockState) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState blockState) {
         level.setBlock(pos, blockState.setValue(Age, Math.min(MaxAge, blockState.getValue(Age) + 1)), 2);
     }
 }

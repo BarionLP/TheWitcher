@@ -3,6 +3,7 @@ package com.barion.the_witcher.world.gen.util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
@@ -11,7 +12,6 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public final class TWLargeSpike{
     private BlockPos root;
@@ -56,7 +56,7 @@ public final class TWLargeSpike{
 
     private int getHeightAtRadius(float radius) {return (int) TWDripstoneUtils.getSpikeHeight(radius, this.radius, this.scale, this.bluntness);}
 
-    public void placeBlocks(WorldGenLevel worldGenLevel, Random random, WindOffsetter windOffsetter, BlockStateProvider baseBlock) {
+    public void placeBlocks(WorldGenLevel worldGenLevel, RandomSource random, WindOffsetter windOffsetter, BlockStateProvider baseBlock) {
         for(int i1 = -this.radius; i1 <= this.radius; ++i1) {
             for(int j = -this.radius; j <= this.radius; ++j) {
                 float f = Mth.sqrt((float)(i1 * i1 + j * j));
@@ -95,7 +95,7 @@ public final class TWLargeSpike{
         private final int originY;
         @Nullable private final Vec3 windSpeed;
 
-        public WindOffsetter(int originY, Random random, FloatProvider amount) {
+        public WindOffsetter(int originY, RandomSource random, FloatProvider amount) {
             this.originY = originY;
             float f = amount.sample(random);
             float f1 = Mth.randomBetween(random, 0, (float)Math.PI);

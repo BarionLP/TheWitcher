@@ -1,5 +1,6 @@
 package com.barion.the_witcher.client;
 
+import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.client.model.TWIceGhostModel;
 import com.barion.the_witcher.client.model.TWWildHuntHoundModel;
 import com.barion.the_witcher.client.renderer.TWIceGhostRenderer;
@@ -18,10 +19,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@OnlyIn(Dist.CLIENT)
+@OnlyIn(Dist.CLIENT) @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class TWClient {
+    @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event){
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.Icicle.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(TWBlocks.WhiteMyrtleBush.get(), RenderType.cutout());
@@ -30,11 +34,13 @@ public class TWClient {
         MenuScreens.register(TWMenuTypes.MasterSmithingTableMenu.get(), TWMasterSmithingScreen::new);
     }
 
+    @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(TWEntities.IceGhost.get(), TWIceGhostRenderer::new);
         event.registerEntityRenderer(TWEntities.WildHuntHound.get(), TWWildHuntHoundRenderer::new);
         event.registerEntityRenderer(TWEntities.WildHuntKnight.get(), TWWildHuntKnightRenderer::new);
     }
+    @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(TWIceGhostRenderer.LayerLocation, TWIceGhostModel::createMesh);
         event.registerLayerDefinition(TWWildHuntHoundRenderer.LayerLocation, TWWildHuntHoundModel::createMesh);

@@ -1,6 +1,5 @@
 package com.barion.the_witcher;
 
-import com.barion.the_witcher.client.TWClient;
 import com.barion.the_witcher.datagen.*;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
 import com.barion.the_witcher.util.TWConfig;
@@ -17,6 +16,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -24,7 +24,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.slf4j.Logger;
 
 @Mod(TheWitcher.ModID)
@@ -42,14 +41,11 @@ public class TheWitcher {
         TWFeatures.Registry.register(modBus);
         TWBlockEntities.Registry.register(modBus);
         TWMenuTypes.Registry.register(modBus);
-        TWRecipeTypes.Registry.register(modBus);
+        TWRecipeTypes.SerializerRegistry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.register(TWStructures.class);
         modBus.addListener(TWEntities::registerAttributes);
-        modBus.addListener(TWClient::clientSetup);
-        modBus.addListener(TWClient::registerRenderers);
-        modBus.addListener(TWClient::registerLayers);
         modBus.addListener(TWVariables::initNetwork);
         modBus.addListener(TWVariables::initCapabilities);
 
@@ -67,16 +63,16 @@ public class TheWitcher {
         @SubscribeEvent
         public static void gatherData(GatherDataEvent event){
             DataGenerator generator = event.getGenerator();
-            ExistingFileHelper fileHelper = event.getExistingFileHelper();
-            generator.addProvider(new TWBlockStateProvider(generator, fileHelper));
-            generator.addProvider(new TWItemModelProvider(generator, fileHelper));
-            BlockTagsProvider blockTags = new TWBlockTagsProvider(generator, fileHelper);
-            generator.addProvider(blockTags);
-            generator.addProvider(new TWItemTagsProvider(generator, blockTags, fileHelper));
-            generator.addProvider(new TWEntityTypeTagsProvider(generator, fileHelper));
-            generator.addProvider(new TWBiomeTagsProvider(generator, fileHelper));
-            generator.addProvider(new TWLootTableProvider(generator));
-            generator.addProvider(new TWRecipeProvider(generator));
+            ExistingFileHelper exFileHelper = event.getExistingFileHelper();
+            generator.addProvider(true, new TWBlockStateProvider(generator, exFileHelper));
+            generator.addProvider(true, new TWItemModelProvider(generator, exFileHelper));
+            BlockTagsProvider blockTags = new TWBlockTagsProvider(generator, exFileHelper);
+            generator.addProvider(true, blockTags);
+            generator.addProvider(true, new TWItemTagsProvider(generator, blockTags, exFileHelper));
+            generator.addProvider(true, new TWEntityTypeTagsProvider(generator, exFileHelper));
+            generator.addProvider(true, new TWBiomeTagsProvider(generator, exFileHelper));
+            generator.addProvider(true, new TWLootTableProvider(generator));
+            generator.addProvider(true, new TWRecipeProvider(generator));
         }
     }
 }

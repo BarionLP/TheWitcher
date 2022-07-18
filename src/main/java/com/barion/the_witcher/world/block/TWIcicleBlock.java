@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
@@ -41,7 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
-import java.util.Random;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
@@ -132,7 +132,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
 
     }
     @Override @ParametersAreNonnullByDefault
-    public void animateTick(BlockState blockState, Level level, BlockPos pos, Random random) {
+    public void animateTick(BlockState blockState, Level level, BlockPos pos, RandomSource random) {
         if (canDrip(blockState) && !level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrowIn)) {
             float chance = random.nextFloat();
             if (!(chance > 0.12f)) {
@@ -143,7 +143,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
         }
     }
     @Override @ParametersAreNonnullByDefault
-    public void tick(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
+    public void tick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
         if (isStalagmite(blockState) && !canSurvive(blockState, level, pos)) {
             level.destroyBlock(pos, true);
         } else {
@@ -152,7 +152,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
     }
 
     @Override @ParametersAreNonnullByDefault
-    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
+    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
         if(level.getBiome(pos).is(TWTags.Biomes.IcicleCanGrowIn)) {
             if (random.nextFloat() < 0.011377778F && isStalactiteStartPos(blockState, level, pos)) {
                 growStalactiteOrStalagmiteIfPossible(blockState, level, pos, random);
@@ -248,8 +248,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
     public boolean isCollisionShapeFullBlock(BlockState blockState, BlockGetter level, BlockPos pos) {
         return false;
     }
-    @Override
-    public BlockBehaviour.@NotNull OffsetType getOffsetType() {return BlockBehaviour.OffsetType.XZ;}
+
 
     public float getMaxHorizontalOffset() {return 0.125f;}
     @Override
@@ -285,7 +284,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
     }
 
     @VisibleForTesting
-    public static void growStalactiteOrStalagmiteIfPossible(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
+    public static void growStalactiteOrStalagmiteIfPossible(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockState baseState = level.getBlockState(pos.above(1));
         BlockState fluidState = level.getBlockState(pos.above(2));
         if (canGrow(baseState, fluidState)) {
