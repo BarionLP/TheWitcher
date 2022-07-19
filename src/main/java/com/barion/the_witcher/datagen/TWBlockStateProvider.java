@@ -22,6 +22,7 @@ import java.util.List;
 import static com.barion.the_witcher.util.TWUtil.getBlockName;
 
 public class TWBlockStateProvider extends BlockStateProvider {
+    private static final String Cutout = "cutout";
     public TWBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, TheWitcher.ModID, fileHelper);
     }
@@ -82,26 +83,26 @@ public class TWBlockStateProvider extends BlockStateProvider {
         });
     }
     protected void simpleGrowableBush(Block bush, String name) {
-        ModelFile Age0 = models().cross("block/" + name + "/stage0", mcLoc("block/sweet_berry_bush_stage0"));
-        ModelFile Age1 = models().cross("block/" + name + "/stage1", mcLoc("block/sweet_berry_bush_stage1"));
-        ModelFile Age2 = models().cross("block/" + name + "/stage2", blockTexture(name+"/stage2"));
-        ModelFile Age3 = models().cross("block/" + name + "/stage3", blockTexture(name+"/stage3"));
+        ModelFile Age0 = models().cross("block/" + name + "/stage0", mcLoc("block/sweet_berry_bush_stage0")).renderType(Cutout);
+        ModelFile Age1 = models().cross("block/" + name + "/stage1", mcLoc("block/sweet_berry_bush_stage1")).renderType(Cutout);
+        ModelFile Age2 = models().cross("block/" + name + "/stage2", blockTexture(name+"/stage2")).renderType(Cutout);
+        ModelFile Age3 = models().cross("block/" + name + "/stage3", blockTexture(name+"/stage3")).renderType(Cutout);
         getVariantBuilder(bush).forAllStates(state -> {
             final int age = state.getValue(TWGrowableBushBlock.Age);
             return ConfiguredModel.builder().modelFile((age == 0) ? Age0 : (age == 1) ? Age1 : (age == 2) ? Age2 : Age3).build();
         });
     }
     protected void icicleBlock(Block icicle, String name) {
-        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base")).renderType("cutout");
-        ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum")).renderType("cutout");
-        ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle")).renderType("cutout");
-        ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip")).renderType("cutout");
-        ModelFile downTipMerge = models().cross("block/" + name + "/down/tip_merge", blockTexture(name + "/down/tip_merge")).renderType("cutout");
-        ModelFile upBase = models().cross("block/" + name + "/up/base", blockTexture(name + "/up/base")).renderType("cutout");
-        ModelFile upFrustum = models().cross("block/" + name + "/up/frustum", blockTexture(name + "/up/frustum")).renderType("cutout");
-        ModelFile upMiddle = models().cross("block/" + name + "/up/middle", blockTexture(name + "/up/middle")).renderType("cutout");
-        ModelFile upTip = models().cross("block/" + name + "/up/tip", blockTexture(name + "/up/tip")).renderType("cutout");
-        ModelFile upTipMerge = models().cross("block/" + name + "/up/tip_merge", blockTexture(name + "/up/tip_merge")).renderType("cutout");
+        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base")).renderType(Cutout);
+        ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum")).renderType(Cutout);
+        ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle")).renderType(Cutout);
+        ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip")).renderType(Cutout);
+        ModelFile downTipMerge = models().cross("block/" + name + "/down/tip_merge", blockTexture(name + "/down/tip_merge")).renderType(Cutout);
+        ModelFile upBase = models().cross("block/" + name + "/up/base", blockTexture(name + "/up/base")).renderType(Cutout);
+        ModelFile upFrustum = models().cross("block/" + name + "/up/frustum", blockTexture(name + "/up/frustum")).renderType(Cutout);
+        ModelFile upMiddle = models().cross("block/" + name + "/up/middle", blockTexture(name + "/up/middle")).renderType(Cutout);
+        ModelFile upTip = models().cross("block/" + name + "/up/tip", blockTexture(name + "/up/tip")).renderType(Cutout);
+        ModelFile upTipMerge = models().cross("block/" + name + "/up/tip_merge", blockTexture(name + "/up/tip_merge")).renderType(Cutout);
         getVariantBuilder(icicle).forAllStates(state -> {
             final DripstoneThickness thickness = state.getValue(TWIcicleBlock.Thickness);
             final Direction direction = state.getValue(TWIcicleBlock.TipDirection);
