@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "the_witcher:deep_frosted_stone"
   },
-  "result": "the_witcher:deep_frosted_stone_tile_stairs",
-  "count": 1
+  "result": "the_witcher:deep_frosted_stone_tile_stairs"
 }

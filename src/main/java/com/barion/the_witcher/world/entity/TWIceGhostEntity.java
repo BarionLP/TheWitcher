@@ -59,7 +59,8 @@ public class TWIceGhostEntity extends Monster {
     @Override
     protected void checkFallDamage(double p_20809_, boolean p_20810_, @NotNull BlockState fallOnBlockState, @NotNull BlockPos landingPos) {}
     @Override @ParametersAreNonnullByDefault
-    protected int getExperienceReward(Player player) {return 5 + level.random.nextInt(5);}
+    public int getExperienceReward() {return 5 + level.random.nextInt(5);}
+
     @Override @ParametersAreNonnullByDefault
     public boolean isPreventingPlayerRest(Player player) {return true;}
 

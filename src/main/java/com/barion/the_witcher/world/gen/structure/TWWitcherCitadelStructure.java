@@ -4,70 +4,78 @@ import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.TWStructures;
 import com.barion.the_witcher.world.gen.util.DETerrainAnalyzer;
 import com.barion.the_witcher.world.gen.util.TWProcessors;
-import com.legacy.structure_gel.api.structure.GelStructure;
 import com.legacy.structure_gel.api.structure.GelTemplateStructurePiece;
 import com.legacy.structure_gel.api.structure.processor.RemoveGelStructureProcessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureManager;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
+import java.util.Optional;
 
-public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfiguration> {
+public class TWWitcherCitadelStructure extends Structure {
     private static final ResourceLocation StructureFile = TWUtil.location("witcher_citadel");
+    public static final com.mojang.serialization.Codec<TWWitcherCitadelStructure> Codec = Structure.simpleCodec(TWWitcherCitadelStructure::new);
 
-    public TWWitcherCitadelStructure() {
-        super(NoneFeatureConfiguration.CODEC, PieceGeneratorSupplier.simple(TWWitcherCitadelStructure::checkLocation, TWWitcherCitadelStructure::generatePieces));
+    public TWWitcherCitadelStructure(StructureSettings settings) {super(settings);}
+
+    @Override
+    public @NotNull Optional<GenerationStub> findGenerationPoint(@NotNull GenerationContext context) {
+        return onTopOfChunkCenter(context, Heightmap.Types.WORLD_SURFACE_WG, (builder)-> generatePieces(builder, context));
     }
+
+    @Override
+    public @NotNull StructureType<?> type() {return TWStructures.WitcherCitadel.getType();}
 
     private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){
         if(context.validBiomeOnTop(Heightmap.Types.WORLD_SURFACE_WG)){
-            return DETerrainAnalyzer.isPositionSuitable(context.chunkPos(), context.chunkGenerator(), DETerrainAnalyzer.GenerationType.onGround, new DETerrainAnalyzer.Settings(1, 2, 8), context.heightAccessor());
+            return DETerrainAnalyzer.isFlatEnough(context.chunkPos(), context.chunkGenerator(), new DETerrainAnalyzer.Settings(1, 2, 8), context.heightAccessor(), context.randomState());
         }
         return false;
     }
 
-    private static void generatePieces(StructurePiecesBuilder piecesBuilder, PieceGenerator.Context<NoneFeatureConfiguration> context) {
+    private static void generatePieces(StructurePiecesBuilder piecesBuilder, GenerationContext context) {
         int x = context.chunkPos().getMinBlockX();
         int z = context.chunkPos().getMinBlockZ();
         ChunkGenerator chunkGen = context.chunkGenerator();
         LevelHeightAccessor heightAccessor = context.heightAccessor();
-        int y = chunkGen.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, heightAccessor);
+        int y = chunkGen.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, heightAccessor, context.randomState());
 
-        piecesBuilder.addPiece(new Piece(context.structureManager(), new BlockPos(x, y, z), context.random()));
+        piecesBuilder.addPiece(new Piece(context.structureTemplateManager(), new BlockPos(x, y, z), context.random()));
     }
 
     public static class Piece extends GelTemplateStructurePiece {
-        public Piece(StructureManager structureManager, BlockPos pos, Random random){
-            super(TWStructures.WitcherCastle.getPieceType(), 0, structureManager, StructureFile, pos);
+        public Piece(StructureTemplateManager structureManager, BlockPos pos, RandomSource random){
+            super(TWStructures.WitcherCitadel.getPieceType().get(), 0, structureManager, StructureFile, pos);
             rotation = Rotation.getRandom(random);
             setupPlaceSettings(structureManager);
         }
 
         public Piece(StructurePieceSerializationContext context, CompoundTag nbt){
-            super(TWStructures.WitcherCastle.getPieceType(), nbt, context.structureManager());
-            setupPlaceSettings(context.structureManager());
+            super(TWStructures.WitcherCitadel.getPieceType().get(), nbt, context.structureTemplateManager());
+            setupPlaceSettings(context.structureTemplateManager());
         }
 
         @Override
-        protected StructurePlaceSettings getPlaceSettings(StructureManager structureManager) {
+        protected StructurePlaceSettings getPlaceSettings(StructureTemplateManager structureManager) {
             Vec3i size = structureManager.get(makeTemplateLocation()).get().getSize();
             BlockPos pivot = new BlockPos(size.getX() / 2, 0, size.getZ() / 2);
             StructurePlaceSettings settings = new StructurePlaceSettings().setKeepLiquids(false).setRotationPivot(pivot);
@@ -77,12 +85,6 @@ public class TWWitcherCitadelStructure extends GelStructure<NoneFeatureConfigura
         }
 
         @Override @ParametersAreNonnullByDefault
-        protected void handleDataMarker(String key, BlockPos pos, ServerLevelAccessor world, Random random, BoundingBox box) {}
+        protected void handleDataMarker(String key, BlockPos pos, ServerLevelAccessor world, RandomSource random, BoundingBox box) {}
     }
-
-    @Override
-    public int getSpacing() {return 68;}
-
-    @Override
-    public int getOffset() {return getSpacing()/2;}
 }

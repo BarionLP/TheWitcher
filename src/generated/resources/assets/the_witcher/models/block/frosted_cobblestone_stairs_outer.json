@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/outer_stairs",
   "textures": {
-    "side": "the_witcher:block/frosted_cobblestone",
     "bottom": "the_witcher:block/frosted_cobblestone",
+    "side": "the_witcher:block/frosted_cobblestone",
     "top": "the_witcher:block/frosted_cobblestone"
   }
 }

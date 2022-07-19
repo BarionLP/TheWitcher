@@ -18,9 +18,9 @@ public class TWConfig {
 
         protected Common(ForgeConfigSpec.Builder builder){
             WitcherCitadelConfig = StructureConfig.builder(builder, "Witcher Citadel")
-                    .pushConfigured()
+                    .pushStructure()
                         .biomes("##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach")
-                    .popConfigured().build();
+                    .popStructure().build();
         }
     }
 }

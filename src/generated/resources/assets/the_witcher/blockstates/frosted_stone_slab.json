@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "the_witcher:block/frosted_stone_slab_top"
-    },
     "type=bottom": {
       "model": "the_witcher:block/frosted_stone_slab"
     },
     "type=double": {
       "model": "the_witcher:block/frosted_stone"
+    },
+    "type=top": {
+      "model": "the_witcher:block/frosted_stone_slab_top"
     }
   }
 }

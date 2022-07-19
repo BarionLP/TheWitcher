@@ -6,36 +6,40 @@ import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.structure.TWIcyRuinStructure;
 import com.barion.the_witcher.world.gen.structure.TWWitcherCitadelStructure;
 import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
+import com.legacy.structure_gel.api.structure.GridStructurePlacement;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.feature.StructureFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 
 public class TWStructures {
-    public static final StructureRegistrar<NoneFeatureConfiguration, TWWitcherCitadelStructure> WitcherCastle =
-            StructureRegistrar.builder(TWUtil.location("witcher_citadel"), TWWitcherCitadelStructure::new)
-                    .addPiece(TWWitcherCitadelStructure.Piece::new)
-                    .pushConfigured(NoneFeatureConfiguration.INSTANCE)
-                            .biomes(TWConfig.COMMON.WitcherCitadelConfig.getConfigured())
-                            .dimensions(Level.OVERWORLD)
-                            .adaptNoise()
-                    .popConfigured().build();
+    private TWStructures() {}
 
-    public static final StructureRegistrar<NoneFeatureConfiguration, TWIcyRuinStructure> IcyRuin =
-            StructureRegistrar.builder(TWUtil.location("icy_ruin"), TWIcyRuinStructure::new)
-                    .addPiece(TWIcyRuinStructure.Piece::new)
-                    .pushConfigured(NoneFeatureConfiguration.INSTANCE)
-                            .biomes(TWTags.Biomes.hasIcyRuin)
-                            .dimensions(TWLevels.WhiteFrost)
-                    .popConfigured().build();
+    public static void init() {}
 
-    @SubscribeEvent
-    public static void register(final RegistryEvent.Register<StructureFeature<?>> event){
-        IForgeRegistry<Structure> registry = event.getRegistry();
-        WitcherCastle.handleForge(registry);
-        IcyRuin.handleForge(registry);
+    public static final StructureRegistrar<TWWitcherCitadelStructure> WitcherCitadel;
+    public static final StructureRegistrar<TWIcyRuinStructure> IcyRuin;
+
+
+    static {
+        WitcherCitadel = StructureRegistrar.builder(TWUtil.location("witcher_citadel"), ()-> ()-> TWWitcherCitadelStructure.Codec)
+                .addPiece(()-> TWWitcherCitadelStructure.Piece::new)
+                .pushStructure(TWWitcherCitadelStructure::new)
+                        .biomes(()-> TWConfig.COMMON.WitcherCitadelConfig.getStructure().getBiomes())
+                        .dimensions(Level.OVERWORLD)
+                        .lakeProof(true)
+                        .terrainAdjustment(TerrainAdjustment.BEARD_THIN)
+                .popStructure()
+                .placement(()-> GridStructurePlacement.builder(72, 48).allowedNearSpawn(false).build(TWUtil.location("witcher_citadel")))
+                .build();
+
+        IcyRuin = StructureRegistrar.builder(TWUtil.location("icy_ruin"), () -> ()-> TWIcyRuinStructure.Codec)
+                .addPiece(()-> TWIcyRuinStructure.Piece::new)
+                .pushStructure(TWIcyRuinStructure::new)
+                        .biomes(TWTags.Biomes.hasIcyRuin)
+                        .dimensions(TWLevels.WhiteFrost)
+                        .lakeProof(true)
+                .popStructure()
+                .placement(()-> GridStructurePlacement.builder(27, 18, 0.8f).build(TWUtil.location("icy_ruin")))
+                .build();
     }
+
 }

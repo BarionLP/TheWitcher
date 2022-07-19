@@ -48,7 +48,7 @@ public class TWKikimoraEntity extends Spider {
     }
 
     @Override @ParametersAreNonnullByDefault
-    protected int getExperienceReward(Player player) {return 5 + level.random.nextInt(5);}
+    public int getExperienceReward() {return 5 + level.random.nextInt(5);}
 
     @Override @ParametersAreNonnullByDefault
     public boolean isPreventingPlayerRest(Player player) {return true;}

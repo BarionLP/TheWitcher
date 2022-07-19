@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "the_witcher:frosted_stone_bricks"
   },
-  "result": "the_witcher:cracked_frosted_stone_brick_stairs",
-  "count": 1
+  "result": "the_witcher:cracked_frosted_stone_brick_stairs"
 }

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 400,
+  "experience": 0.0,
   "ingredient": {
     "item": "the_witcher:deep_frosted_stone"
   },
-  "result": "minecraft:stone",
-  "experience": 0.0,
-  "cookingtime": 400
+  "result": "minecraft:stone"
 }

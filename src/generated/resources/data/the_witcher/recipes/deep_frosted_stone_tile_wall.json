@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "the_witcher:deep_frosted_stone_tiles"
     }
   },
+  "pattern": [
+    "###",
+    "###"
+  ],
   "result": {
-    "item": "the_witcher:deep_frosted_stone_tile_wall",
-    "count": 6
+    "count": 6,
+    "item": "the_witcher:deep_frosted_stone_tile_wall"
   }
 }

@@ -7,6 +7,7 @@ import com.barion.the_witcher.world.gen.util.TWStructurePiece;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +19,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
-import java.util.Random;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -32,7 +32,7 @@ public class TWUtil {
     public static boolean isWooden(String name) {return isLog(name) || isWood(name) || name.contains("plank");}
     public static TWStructurePiece.Builder pieceBuilder() {return new TWStructurePiece.Builder();}
 
-    public static TWStructurePiece getRandomPiece(TWStructurePiece[] variants, int maxWeight, Random rand){
+    public static TWStructurePiece getRandomPiece(TWStructurePiece[] variants, int maxWeight, RandomSource rand){
         int piece = 0;
         if(variants.length > 1) {
             int i = rand.nextInt(maxWeight+1);

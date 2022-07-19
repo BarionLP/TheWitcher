@@ -2,147 +2,147 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 10.0,
-        "max": 15.0
-      },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 6,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": 1.0,
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "the_witcher:white_myrtle"
+          "name": "the_witcher:white_myrtle",
+          "weight": 6
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 4.0
+                "max": 4.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:wheat"
+          "name": "minecraft:wheat",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
+                "max": 2.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gunpowder"
+          "name": "minecraft:gunpowder",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
-          "weight": 12,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
+                "max": 3.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:spider_eye"
+          "name": "minecraft:spider_eye",
+          "weight": 12
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": 1.0,
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:glowstone_dust"
+          "name": "minecraft:glowstone_dust",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": 1.0,
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:redstone"
+          "name": "minecraft:redstone",
+          "weight": 3
         }
-      ]
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 15.0,
+        "min": 10.0
+      }
     },
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 1.0,
-        "max": 3.0
-      },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 2,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
+                "max": 2.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "the_witcher:celandine"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1.0,
-              "add": false
-            }
-          ],
-          "name": "the_witcher:kikimora_tooth"
+          "name": "the_witcher:celandine",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": 1.0,
-              "add": false
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "the_witcher:kikimora_tooth",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:blaze_powder"
         }
-      ]
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
     }
   ]
 }

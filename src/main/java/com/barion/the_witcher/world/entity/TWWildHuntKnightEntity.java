@@ -3,6 +3,7 @@ package com.barion.the_witcher.world.entity;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -47,12 +48,12 @@ public class TWWildHuntKnightEntity extends Monster implements TWWildHuntEntity{
 
     @Override @ParametersAreNonnullByDefault
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag tag) {
-        populateDefaultEquipmentSlots(difficulty);
+        populateDefaultEquipmentSlots(random, difficulty);
         return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData, tag);
     }
 
     @Override
-    protected void populateDefaultEquipmentSlots(@NotNull DifficultyInstance difficulty) {
+    protected void populateDefaultEquipmentSlots(RandomSource random, @NotNull DifficultyInstance difficulty) {
         populateEquipmentSlot(EquipmentSlot.HEAD);
         populateEquipmentSlot(EquipmentSlot.CHEST);
         populateEquipmentSlot(EquipmentSlot.LEGS);

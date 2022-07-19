@@ -7,7 +7,6 @@ import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -93,16 +92,16 @@ public class TWBlockStateProvider extends BlockStateProvider {
         });
     }
     protected void icicleBlock(Block icicle, String name) {
-        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base")).renderType(RenderType.cutout().toString());
-        ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum"));
-        ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle"));
-        ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip"));
-        ModelFile downTipMerge = models().cross("block/" + name + "/down/tip_merge", blockTexture(name + "/down/tip_merge"));
-        ModelFile upBase = models().cross("block/" + name + "/up/base", blockTexture(name + "/up/base"));
-        ModelFile upFrustum = models().cross("block/" + name + "/up/frustum", blockTexture(name + "/up/frustum"));
-        ModelFile upMiddle = models().cross("block/" + name + "/up/middle", blockTexture(name + "/up/middle"));
-        ModelFile upTip = models().cross("block/" + name + "/up/tip", blockTexture(name + "/up/tip"));
-        ModelFile upTipMerge = models().cross("block/" + name + "/up/tip_merge", blockTexture(name + "/up/tip_merge"));
+        ModelFile downBase = models().cross("block/" + name + "/down/base", blockTexture(name + "/down/base")).renderType("cutout");
+        ModelFile downFrustum = models().cross("block/" + name + "/down/frustum", blockTexture(name + "/down/frustum")).renderType("cutout");
+        ModelFile downMiddle = models().cross("block/" + name + "/down/middle", blockTexture(name + "/down/middle")).renderType("cutout");
+        ModelFile downTip = models().cross("block/" + name + "/down/tip", blockTexture(name + "/down/tip")).renderType("cutout");
+        ModelFile downTipMerge = models().cross("block/" + name + "/down/tip_merge", blockTexture(name + "/down/tip_merge")).renderType("cutout");
+        ModelFile upBase = models().cross("block/" + name + "/up/base", blockTexture(name + "/up/base")).renderType("cutout");
+        ModelFile upFrustum = models().cross("block/" + name + "/up/frustum", blockTexture(name + "/up/frustum")).renderType("cutout");
+        ModelFile upMiddle = models().cross("block/" + name + "/up/middle", blockTexture(name + "/up/middle")).renderType("cutout");
+        ModelFile upTip = models().cross("block/" + name + "/up/tip", blockTexture(name + "/up/tip")).renderType("cutout");
+        ModelFile upTipMerge = models().cross("block/" + name + "/up/tip_merge", blockTexture(name + "/up/tip_merge")).renderType("cutout");
         getVariantBuilder(icicle).forAllStates(state -> {
             final DripstoneThickness thickness = state.getValue(TWIcicleBlock.Thickness);
             final Direction direction = state.getValue(TWIcicleBlock.TipDirection);

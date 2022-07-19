@@ -1,18 +1,17 @@
 
 ["Witcher Citadel"]
 
-	["Witcher Citadel".configured_structures]
+	["Witcher Citadel".structures]
 
-		["Witcher Citadel".configured_structures.configured]
+		["Witcher Citadel".structures.structure]
 
-			["Witcher Citadel".configured_structures.configured.biomes]
+			["Witcher Citadel".structures.structure.biomes]
 				#
 				# A filter for which biomes this structure should generate in. Entries are formatted as follows:
 				# - Biome: "minecraft:plains"
-				# - Biome Dictionary Entry: "##structure_gel:birch_forest"
-				# - Add ! to the start of an entry to exclude it: "!##structure_gel:frozen_ocean"
-				# - Biome Tag: "#minecraft:is_ocean". If using a biome tag, only one can be used and it must be by itself. This does not support "!"
-				# Example: ["##structure_gel:wooded", "!minecraft:flower_forest"] This will include all wooded biomes except for flower forests.
+				# - Tag: "#minecraft:is_forest"
+				# - Prefix an entry with ! to exclude it: "!#minecraft:is_ocean"
+				# Example: ["#minecraft:is_forest", "!minecraft:flower_forest"] This will include all biomes tagged as forests except for flower forests.
 				# Default: ["##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach"]
 				biomes = ["##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach"]
 

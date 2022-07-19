@@ -2,7 +2,6 @@
   "type": "the_witcher:white_frost",
   "generator": {
     "type": "minecraft:noise",
-    "seed": 768038731,
     "settings": "the_witcher:white_frost",
     "biome_source": {
       "type": "minecraft:multi_noise",
