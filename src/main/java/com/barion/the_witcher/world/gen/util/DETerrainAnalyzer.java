@@ -111,5 +111,5 @@ public class DETerrainAnalyzer {
 
     public record Settings(int steps, int stepSize, int columSpreading) {}
 
-    public enum GenerationType {onGround, inAir, underground, onWater, underwater}
+    public enum GenerationType{onGround, inAir, underground, onWater, underwater}
 }

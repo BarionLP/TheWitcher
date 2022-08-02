@@ -44,14 +44,6 @@ public class TWIcyRuinStructure extends Structure {
         piecesBuilder.addPiece(new Piece(context.structureTemplateManager(), TWUtil.getRandomPiece(Piece.StructureFiles, Piece.maxWeight, context.random()), new BlockPos(x, y, z), context.random()));
     }
 
-/*    private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){
-        if(context.validBiomeOnTop(Heightmap.Types.WORLD_SURFACE_WG)){
-            return DETerrainAnalyzer.isFlatEnough(context.chunkPos(), context.chunkGenerator(), context.heightAccessor());
-        }
-
-        return false;
-    }*/
-
     @Override
     public @NotNull Optional<GenerationStub> findGenerationPoint(@NotNull GenerationContext context) {
         return onTopOfChunkCenter(context, Heightmap.Types.WORLD_SURFACE_WG, (builder)-> generatePieces(builder, context));
@@ -91,7 +83,4 @@ public class TWIcyRuinStructure extends Structure {
         @Override @ParametersAreNonnullByDefault
         protected void handleDataMarker(String key, BlockPos pos, ServerLevelAccessor level, RandomSource random, BoundingBox box) {}
     }
-
-    public int getSpacing() {return 27;}
-    public int getOffset() {return getSpacing()/2;}
 }

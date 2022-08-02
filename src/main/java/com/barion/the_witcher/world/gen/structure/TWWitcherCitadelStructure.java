@@ -2,7 +2,6 @@ package com.barion.the_witcher.world.gen.structure;
 
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.TWStructures;
-import com.barion.the_witcher.world.gen.util.DETerrainAnalyzer;
 import com.barion.the_witcher.world.gen.util.TWProcessors;
 import com.legacy.structure_gel.api.structure.GelTemplateStructurePiece;
 import com.legacy.structure_gel.api.structure.processor.RemoveGelStructureProcessor;
@@ -16,11 +15,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
-import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
@@ -44,13 +41,6 @@ public class TWWitcherCitadelStructure extends Structure {
 
     @Override
     public @NotNull StructureType<?> type() {return TWStructures.WitcherCitadel.getType();}
-
-    private static boolean checkLocation(PieceGeneratorSupplier.Context<? extends FeatureConfiguration> context){
-        if(context.validBiomeOnTop(Heightmap.Types.WORLD_SURFACE_WG)){
-            return DETerrainAnalyzer.isFlatEnough(context.chunkPos(), context.chunkGenerator(), new DETerrainAnalyzer.Settings(1, 2, 8), context.heightAccessor(), context.randomState());
-        }
-        return false;
-    }
 
     private static void generatePieces(StructurePiecesBuilder piecesBuilder, GenerationContext context) {
         int x = context.chunkPos().getMinBlockX();

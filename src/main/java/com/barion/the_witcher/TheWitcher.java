@@ -41,13 +41,15 @@ public class TheWitcher {
         TWFeatures.Registry.register(modBus);
         TWBlockEntities.Registry.register(modBus);
         TWMenuTypes.Registry.register(modBus);
-        TWRecipeTypes.SerializerRegistry.register(modBus);
+        TWRecipeTypes.Registry.register(modBus);
 
         modBus.addListener(this::setup);
-        modBus.register(TWStructures.class);
+        modBus.addListener(TWRecipeTypes::registerRecipeTypes);
         modBus.addListener(TWEntities::registerAttributes);
         modBus.addListener(TWVariables::initNetwork);
         modBus.addListener(TWVariables::initCapabilities);
+
+        TWStructures.init();
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
     }

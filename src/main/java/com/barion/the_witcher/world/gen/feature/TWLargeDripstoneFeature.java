@@ -27,9 +27,8 @@ public class TWLargeDripstoneFeature extends Feature<TWLargeDripstoneConfigurati
         TWLargeDripstoneConfiguration configuration = context.config();
 
         Optional<Column> optional = Column.scan(level, origin, configuration.floorToCeilingSearchRange, TWDripstoneUtils::isEmptyOrWater, TWDripstoneUtils::isDripstoneBaseOrLava);
-        if (optional.isEmpty() || optional.get() instanceof Column.Range) {return false;}
+        if (optional.isEmpty() || !(optional.get() instanceof Column.Range column)) {return false;}
 
-        Column.Range column = (Column.Range) optional.get();
         if (column.height() < 4) {return false;}
         RandomSource random = context.random();
         int i = (int)((float)column.height() * configuration.maxColumnRadiusToCaveHeightRatio);
