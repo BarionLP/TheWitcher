@@ -1,17 +1,17 @@
 
-["Witcher Citadel"]
+[witcher_citadel]
 
-	["Witcher Citadel".structures]
+	[witcher_citadel.structures]
 
-		["Witcher Citadel".structures.structure]
+		[witcher_citadel.structures.structure]
 
-			["Witcher Citadel".structures.structure.biomes]
+			[witcher_citadel.structures.structure.biomes]
 				#
 				# A filter for which biomes this structure should generate in. Entries are formatted as follows:
 				# - Biome: "minecraft:plains"
 				# - Tag: "#minecraft:is_forest"
 				# - Prefix an entry with ! to exclude it: "!#minecraft:is_ocean"
 				# Example: ["#minecraft:is_forest", "!minecraft:flower_forest"] This will include all biomes tagged as forests except for flower forests.
-				# Default: ["##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach"]
-				biomes = ["##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach"]
+				# Default: ["#minecraft:is_taiga", "#forge:is_plains", "#forge:is_dead", "!#minecraft:is_mountain"]
+				biomes = ["#minecraft:is_taiga", "#forge:is_plains", "#forge:is_dead", "!#minecraft:is_mountain"]
 

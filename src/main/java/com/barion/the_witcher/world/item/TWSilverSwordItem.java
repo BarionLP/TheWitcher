@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world.item;
 
-import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.util.TWUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,10 +36,10 @@ public class TWSilverSwordItem extends SwordItem {
                 float dmgScale = ((Player) attacker).getAttackStrengthScale(0.5f);
                 damage *= 0.2f + dmgScale * dmgScale * 0.8f;
                 enchantmentBonus *= dmgScale;
-                TheWitcher.Logger.info("Scaled damage with: " + 0.2f + dmgScale * dmgScale * 0.8f);
+                TWUtil.Logger.info("Scaled damage with: " + 0.2f + dmgScale * dmgScale * 0.8f);
             }
             damage += enchantmentBonus;
-            TheWitcher.Logger.info("Total Damage: " + damage);
+            TWUtil.Logger.info("Total Damage: " + damage);
             target.hurt(DamageSource.mobAttack(attacker), damage);
         }
         return super.hurtEnemy(itemStack, target, attacker);

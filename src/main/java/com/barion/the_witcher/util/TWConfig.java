@@ -17,9 +17,9 @@ public class TWConfig {
         public final StructureConfig WitcherCitadelConfig;
 
         protected Common(ForgeConfigSpec.Builder builder){
-            WitcherCitadelConfig = StructureConfig.builder(builder, "Witcher Citadel")
+            WitcherCitadelConfig = StructureConfig.builder(builder, "witcher_citadel")
                     .pushStructure()
-                        .biomes("##structure_gel:plains", "##structure_gel:cold", "##structure_gel:snowy", "!##structure_gel:mountain", "!##structure_gel:beach")
+                            .biomes("#minecraft:is_taiga", "#forge:is_plains", "#forge:is_dead", "!#minecraft:is_mountain")
                     .popStructure().build();
         }
     }

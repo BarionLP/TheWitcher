@@ -1,9 +1,9 @@
 package com.barion.the_witcher;
 
 import com.barion.the_witcher.datagen.*;
+import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
 import com.barion.the_witcher.util.TWConfig;
-import com.barion.the_witcher.util.TWVariables;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWEntities;
 import com.barion.the_witcher.world.TWItems;
@@ -11,6 +11,7 @@ import com.barion.the_witcher.world.block.entity.TWBlockEntities;
 import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
+import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -29,7 +30,7 @@ import org.slf4j.Logger;
 @Mod(TheWitcher.ModID)
 public class TheWitcher {
     public static final String ModID = "the_witcher";
-    public static final Logger Logger = LogUtils.getLogger();
+    @Deprecated(forRemoval = true) public static final Logger Logger = LogUtils.getLogger();
 
     public TheWitcher() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWConfig.CommonSpec);
@@ -46,16 +47,17 @@ public class TheWitcher {
         modBus.addListener(this::setup);
         modBus.addListener(TWRecipeTypes::registerRecipeTypes);
         modBus.addListener(TWEntities::registerAttributes);
-        modBus.addListener(TWVariables::initNetwork);
-        modBus.addListener(TWVariables::initCapabilities);
-
         TWStructures.init();
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+
+        RegistrarHandler.registerHandlers(ModID, modBus);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-
+    private void setup(final FMLCommonSetupEvent event){
+        event.enqueueWork(()-> {
+            TWMessages.register();
+        });
     }
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)

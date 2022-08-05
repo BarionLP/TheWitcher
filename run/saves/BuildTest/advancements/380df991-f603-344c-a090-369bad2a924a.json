@@ -65,6 +65,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/combat/leather_helmet": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/deep_frosted_cobblestone_slab": {
     "criteria": {
       "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
@@ -233,6 +239,13 @@
     },
     "done": true
   },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "beef": "2022-08-04 16:37:11 +0200",
+      "enchanted_golden_apple": "2022-08-05 13:05:49 +0200"
+    },
+    "done": false
+  },
   "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_stairs": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
@@ -302,6 +315,18 @@
   "minecraft:recipes/building_blocks/hay_block": {
     "criteria": {
       "has_wheat": "2022-04-15 18:22:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/leather_horse_armor": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/leather_leggings": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
     },
     "done": true
   },
@@ -455,6 +480,12 @@
     },
     "done": true
   },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2022-08-04 16:37:11 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/food/golden_apple": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
@@ -494,6 +525,12 @@
   "minecraft:recipes/misc/bowl": {
     "criteria": {
       "has_mushroom_stew": "2022-04-15 17:47:56 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/item_frame": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
     },
     "done": true
   },
@@ -560,6 +597,12 @@
   "minecraft:recipes/decorations/stone_brick_wall": {
     "criteria": {
       "has_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_beef_from_smoking": {
+    "criteria": {
+      "has_beef": "2022-08-04 16:37:07 +0200"
     },
     "done": true
   },
@@ -1037,6 +1080,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/combat/leather_chestplate": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/tools/compass": {
     "criteria": {
       "has_redstone": "2022-04-15 18:00:53 +0200"
@@ -1064,6 +1113,12 @@
   "minecraft:recipes/building_blocks/mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_beef": {
+    "criteria": {
+      "has_beef": "2022-08-04 16:37:07 +0200"
     },
     "done": true
   },
@@ -1145,6 +1200,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/combat/leather_boots": {
+    "criteria": {
+      "has_leather": "2022-08-04 16:37:46 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/light_gray_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -1181,6 +1242,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2022-08-05 13:05:46 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/redstone/piston": {
     "criteria": {
       "has_redstone": "2022-04-15 18:00:53 +0200"
@@ -1196,6 +1263,12 @@
   "minecraft:recipes/decorations/lantern": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_beef_from_campfire_cooking": {
+    "criteria": {
+      "has_beef": "2022-08-04 16:37:07 +0200"
     },
     "done": true
   },

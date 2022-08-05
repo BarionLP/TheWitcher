@@ -4,26 +4,22 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.gen.util.TWStructurePiece;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.slf4j.Logger;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class TWUtil {
+    public static final Logger Logger = LogUtils.getLogger();
     public static final CreativeModeTab TheWitcherTab = new TheWitcherTab();
 
     public static boolean shouldAppendS(String name) {return ((name.contains("brick") && !name.contains("bricks")) || (name.contains("tile") && !name.contains("tiles")));}
@@ -58,14 +54,6 @@ public class TWUtil {
 
     public static String getItemName(Item item) {return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath();}
     public static String getBlockName(Block block) {return Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();}
-
-    private static final String ProtocolVersion = "1";
-    public static final SimpleChannel PacketHandler = NetworkRegistry.newSimpleChannel(location(TheWitcher.ModID), () -> ProtocolVersion, ProtocolVersion::equals, ProtocolVersion::equals);
-    private static int messageID = 0;
-    public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
-        PacketHandler.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
-        messageID++;
-    }
 
     private static class TheWitcherTab extends CreativeModeTab {
         public TheWitcherTab() {super("the_witcher");}

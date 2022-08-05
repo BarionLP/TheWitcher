@@ -66,5 +66,7 @@
   "entity.the_witcher.wild_hunt_hound": "Hound of the Wild Hunt",
   "entity.the_witcher.wild_hunt_hound_spawn_egg": "Hound of the Wild Hunt Spawn Egg",
   "entity.the_witcher.wild_hunt_knight": "Knight of the Wild Hunt",
-  "entity.the_witcher.wild_hunt_knight_spawn_egg": "Knight of the Wild Hunt Spawn Egg"
+  "entity.the_witcher.wild_hunt_knight_spawn_egg": "Knight of the Wild Hunt Spawn Egg",
+
+  "key.the_witcher.cast_sign": "Cast Sign"
 }
