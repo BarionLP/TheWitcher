@@ -34,7 +34,7 @@ public class TWTags {
         private static TagKey<Item> tw(String path) {return ItemTags.create(TWUtil.location(path));}
     }
 
-    public static final class Entities{
+    public static final class EntityTypes{
         public static final TagKey<EntityType<?>> MagicMob = forge("magic_mob");
         public static final TagKey<EntityType<?>> WildHunt = tw("wild_hunt");
         public static final TagKey<EntityType<?>> WildHuntIgnore = tw("wild_hunt_ignore");
@@ -45,9 +45,9 @@ public class TWTags {
     }
 
     public static final class Biomes{
-        public static final TagKey<Biome> isWhiteFrost = tw("is_white_frost");
+        public static final TagKey<Biome> isWhiteFrost = tw("is/white_frost");
         public static final TagKey<Biome> hasIcyRuin = tw("has/icy_ruin");
-        public static final TagKey<Biome> IcicleCanGrowIn = tw("icicle_can_grow");
+        public static final TagKey<Biome> IcicleCanGrowIn = tw("icicle_can_grow_in");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
     }

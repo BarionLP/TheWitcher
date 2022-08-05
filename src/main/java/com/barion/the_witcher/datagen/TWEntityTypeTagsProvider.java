@@ -18,19 +18,19 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
 
     @Override
     protected void addTags(){
-        tag(TWTags.Entities.MagicMob).add(
+        tag(TWTags.EntityTypes.MagicMob).add(
                 EntityType.VEX,
                 EntityType.CREEPER,
                 TWEntities.WildHuntHound.get(),
                 TWEntities.IceGhost.get()
         );
 
-        tag(TWTags.Entities.WildHunt).add(
+        tag(TWTags.EntityTypes.WildHunt).add(
                 TWEntities.WildHuntHound.get(),
                 TWEntities.WildHuntKnight.get()
         );
 
-        tag(TWTags.Entities.WildHuntIgnore).addTag(TWTags.Entities.WildHunt).add(
+        tag(TWTags.EntityTypes.WildHuntIgnore).addTag(TWTags.EntityTypes.WildHunt).add(
                 EntityType.AXOLOTL,
                 EntityType.BEE,
                 EntityType.CREEPER,

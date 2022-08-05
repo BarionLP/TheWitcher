@@ -77,10 +77,7 @@ public class TWBlockStateProvider extends BlockStateProvider {
     protected void powerBlock(Block powerBlock, String name){
         ModelFile on = models().cubeAll("block/" + name + "/on", blockTexture(name + "/on"));
         ModelFile off = models().cubeAll("block/" + name + "/off", blockTexture(name + "/off"));
-        getVariantBuilder(powerBlock).forAllStates(state -> {
-            final boolean hasPower = state.getValue(TWPowerBlock.hasPower);
-            return ConfiguredModel.builder().modelFile(hasPower ? on : off).build();
-        });
+        getVariantBuilder(powerBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(state.getValue(TWPowerBlock.hasPower) ? on : off).build());
     }
     protected void simpleGrowableBush(Block bush, String name) {
         ModelFile Age0 = models().cross("block/" + name + "/stage0", mcLoc("block/sweet_berry_bush_stage0")).renderType(Cutout);

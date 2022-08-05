@@ -32,6 +32,8 @@ public class TWBlocks {
     public static final RegistryObject<Block> RawSilverBlock = register("raw_silver_block", block(Blocks.RAW_IRON_BLOCK));
     public static final RegistryObject<TWMasterSmithingTableBlock> MasterSmithingTable = register("master_smithing_table", () -> new TWMasterSmithingTableBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE)));
 
+    public static final RegistryObject<TWPowerBlock> PowerBlock = register("power_block", ()-> new TWPowerBlock(properties(Blocks.GLASS).noLootTable()));
+
     public static final RegistryObject<Block> FrostedCobblestone = register("frosted_cobblestone", block(cobbledFrosted));
     public static final RegistryObject<StairBlock> FrostedCobblestoneStairs = register("frosted_cobblestone_stairs", stair(cobbledFrosted, () -> FrostedCobblestone.get().defaultBlockState()));
     public static final RegistryObject<SlabBlock> FrostedCobblestoneSlab = register("frosted_cobblestone_slab", slab(cobbledFrosted));
@@ -68,8 +70,6 @@ public class TWBlocks {
     public static final RegistryObject<SlabBlock> DeepFrostedStoneTileSlab = register("deep_frosted_stone_tile_slab", slab(deepFrosted));
     public static final RegistryObject<WallBlock> DeepFrostedStoneTileWall = register("deep_frosted_stone_tile_wall", wall(deepFrosted));
     public static final RegistryObject<TWIcicleBlock> Icicle = register("icicle", ()-> new TWIcicleBlock(properties(Blocks.POINTED_DRIPSTONE).sound(SoundType.GLASS).offsetType(BlockBehaviour.OffsetType.XZ)));
-
-    public static final RegistryObject<TWPowerBlock> PowerBlock = register("power_block", ()-> new TWPowerBlock(properties(Blocks.GLASS).noLootTable()));
 
     public static final RegistryObject<TWGrowableBushBlock> WhiteMyrtleBush = registerWithoutItem("white_myrtle_bush", bush(1, 6));
     public static final RegistryObject<TWGrowableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));

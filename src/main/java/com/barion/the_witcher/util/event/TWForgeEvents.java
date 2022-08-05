@@ -1,6 +1,8 @@
 package com.barion.the_witcher.util.event;
 
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.command.TWGetSignStrengthCommand;
+import com.barion.the_witcher.command.TWSetSignStrengthCommand;
 import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.networking.packet.TWPlayerEnergySyncS2CPacket;
 import com.barion.the_witcher.networking.packet.TWPlayerMaxEnergySyncS2CPacket;
@@ -12,12 +14,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.server.command.ConfigCommand;
 
 @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TWForgeEvents{
@@ -27,7 +31,9 @@ public class TWForgeEvents{
         if(event.side == LogicalSide.SERVER){
             event.player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy -> {
                 if(energy.isFull(event.player)) {return;}
-                energy.increase(1, (ServerPlayer) event.player);
+                event.player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength-> {
+                    energy.increase(0.2f + signStrength.get()/5f, (ServerPlayer) event.player);
+                });
             });
         }
     }
@@ -71,5 +77,13 @@ public class TWForgeEvents{
                 player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength -> TWMessages.sendToPlayer(new TWPlayerSignStrengthSyncS2CPacket(signStrength.get()), player));
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void registerCommands(RegisterCommandsEvent event){
+        new TWSetSignStrengthCommand(event.getDispatcher());
+        new TWGetSignStrengthCommand(event.getDispatcher());
+
+        ConfigCommand.register(event.getDispatcher());
     }
 }

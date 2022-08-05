@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world;
 
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.util.TWUtil;
+import com.barion.the_witcher.util.TWCreativeModeTab;
 import com.barion.the_witcher.world.item.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -55,7 +55,7 @@ public class TWItems{
         return () -> new SwordItem(tier, dmg, speed, properties().defaultDurability(tier.getUses() + bonusUses).rarity(rarity));
     }
 
-    public static Item.Properties properties() {return new Item.Properties().tab(TWUtil.TheWitcherTab);}
+    public static Item.Properties properties() {return new Item.Properties().tab(TWCreativeModeTab.Instance);}
 
     private static <I extends Item> RegistryObject<I> register(String id, Supplier<I> item) {return Registry.register(id, item);}
     public static List<Item> getAllItems() {return Registry.getEntries().stream().map(RegistryObject::get).toList();}

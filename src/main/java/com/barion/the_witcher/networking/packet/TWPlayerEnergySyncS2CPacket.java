@@ -7,11 +7,11 @@ import net.minecraftforge.network.NetworkEvent;
 import java.util.function.Supplier;
 
 public class TWPlayerEnergySyncS2CPacket {
-    private final int energy;
+    private final float energy;
 
-    public TWPlayerEnergySyncS2CPacket(int energy) {this.energy = energy;}
-    public TWPlayerEnergySyncS2CPacket(FriendlyByteBuf buf) {this.energy = buf.readInt();}
-    public void toBytes(FriendlyByteBuf buf) {buf.writeInt(energy);}
+    public TWPlayerEnergySyncS2CPacket(float energy) {this.energy = energy;}
+    public TWPlayerEnergySyncS2CPacket(FriendlyByteBuf buf) {this.energy = buf.readFloat();}
+    public void toBytes(FriendlyByteBuf buf) {buf.writeFloat(energy);}
 
     public boolean handle(Supplier<NetworkEvent.Context> contextSupplier){
         NetworkEvent.Context context = contextSupplier.get();

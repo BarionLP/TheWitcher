@@ -28,7 +28,7 @@ public class TWSilverSwordItem extends SwordItem {
 
     @Override @ParametersAreNonnullByDefault
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
-        if(target.getType().is(TWTags.Entities.MagicMob)) {
+        if(target.getType().is(TWTags.EntityTypes.MagicMob)) {
             float damage = MagicDamage;
             float enchantmentBonus;
             enchantmentBonus = EnchantmentHelper.getDamageBonus(attacker.getMainHandItem(), target.getMobType());

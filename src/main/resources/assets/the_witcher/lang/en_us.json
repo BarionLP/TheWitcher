@@ -21,6 +21,9 @@
   "item.the_witcher.reinforced_leather_leggings": "Reinforced Leather Leggings",
   "item.the_witcher.reinforced_leather_boots": "Reinforced Leather Boots",
 
+  "block.the_witcher.power_block": "Block of Power",
+  "message.the_witcher.sign.need_unlock": "You can't use that right now",
+
   "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
   "block.the_witcher.frosted_cobblestone_stairs": "Frosted Cobblestone Stairs",
   "block.the_witcher.frosted_cobblestone_slab": "Frosted Cobblestone Slab",
@@ -54,8 +57,6 @@
   "block.the_witcher.deep_frosted_stone_tile_wall": "Deep Frosted Stone Tile Wall",
   "block.the_witcher.icicle": "Icicle",
 
-  "block.the_witcher.power_block": "Block of Power",
-
   "item.the_witcher.kikimora_tooth": "Kikimora Tooth",
   "item.the_witcher.celandine": "Celandine Blossom",
   "item.the_witcher.white_myrtle": "White Myrtle Bloom",
@@ -68,5 +69,9 @@
   "entity.the_witcher.wild_hunt_knight": "Knight of the Wild Hunt",
   "entity.the_witcher.wild_hunt_knight_spawn_egg": "Knight of the Wild Hunt Spawn Egg",
 
-  "key.the_witcher.cast_sign": "Cast Sign"
+  "key.the_witcher.cast_sign": "Cast Sign",
+
+  "command.the_witcher.sign_strength.set.success": "Set sign strength of %s to %s.",
+  "command.the_witcher.sign_strength.get.success": "Sign strength of %s is %s.",
+  "command.the_witcher.fail.no_player": "Error! Please specify a player"
 }

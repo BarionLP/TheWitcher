@@ -147,7 +147,7 @@ soundCategory_master:1.0
 soundCategory_music:0.0
 soundCategory_record:0.5
 soundCategory_weather:0.5
-soundCategory_block:0.3
+soundCategory_block:1.0
 soundCategory_hostile:0.7
 soundCategory_neutral:0.2
 soundCategory_player:0.4
