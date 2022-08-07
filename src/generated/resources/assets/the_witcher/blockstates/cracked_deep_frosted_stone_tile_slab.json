@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "the_witcher:block/cracked_deep_frosted_stone_tile_slab"
+    },
+    "type=double": {
+      "model": "the_witcher:block/cracked_deep_frosted_stone_tiles"
+    },
+    "type=top": {
+      "model": "the_witcher:block/cracked_deep_frosted_stone_tile_slab_top"
+    }
+  }
+}

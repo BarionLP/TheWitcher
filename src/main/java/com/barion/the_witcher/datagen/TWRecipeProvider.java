@@ -42,35 +42,63 @@ public class TWRecipeProvider extends RecipeProvider {
                 .save(consumer);} // Silver Sword
         sword(TWTags.Items.SteelIngots, TWItems.SteelSword.get());
 
-        stairSlabWall(TWBlocks.FrostedCobblestoneStairs.get(), TWBlocks.FrostedCobblestoneSlab.get(), TWBlocks.FrostedCobblestoneWall.get(), TWBlocks.FrostedCobblestone.get(), TWBlocks.FrostedStone.get());
-        stairSlabWall(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStone.get(), true);
-        stairSlabWall(TWBlocks.FrostedStoneBrickStairs.get(), TWBlocks.FrostedStoneBrickSlab.get(), TWBlocks.FrostedStoneBrickWall.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
-        button(TWBlocks.FrostedStoneBrickButton.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
-        stairSlabWall(TWBlocks.CrackedFrostedStoneBrickStairs.get(), TWBlocks.CrackedFrostedStoneBrickSlab.get(), TWBlocks.CrackedFrostedStoneBrickWall.get(), TWBlocks.CrackedFrostedStoneBricks.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
-        stairSlabWall(TWBlocks.DeepFrostedCobblestoneStairs.get(), TWBlocks.DeepFrostedCobblestoneSlab.get(), TWBlocks.DeepFrostedCobblestoneWall.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
-        stairSlabWall(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStone.get(), true);
-        stairSlabWall(TWBlocks.DeepFrostedStoneBrickStairs.get(), TWBlocks.DeepFrostedStoneBrickSlab.get(), TWBlocks.DeepFrostedStoneBrickWall.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
-        button(TWBlocks.DeepFrostedStoneBrickButton.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
-        stairSlabWall(TWBlocks.DeepFrostedStoneTileStairs.get(), TWBlocks.DeepFrostedStoneTileSlab.get(), TWBlocks.DeepFrostedStoneTileWall.get(), TWBlocks.DeepFrostedStoneTiles.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedStoneBricks.get());
+        stairSlabWallButton(TWBlocks.FrostedCobblestoneStairs.get(), TWBlocks.FrostedCobblestoneSlab.get(), TWBlocks.FrostedCobblestoneWall.get(), TWBlocks.FrostedCobblestoneButton.get(), TWBlocks.FrostedCobblestone.get(), TWBlocks.FrostedStone.get());
+        stairSlabWallButton(TWBlocks.FrostedStoneStairs.get(), TWBlocks.FrostedStoneSlab.get(), TWBlocks.FrostedStoneWall.get(), TWBlocks.FrostedStoneButton.get(), TWBlocks.FrostedStone.get(), true);
+        stairSlabWallButton(TWBlocks.FrostedStoneBrickStairs.get(), TWBlocks.FrostedStoneBrickSlab.get(), TWBlocks.FrostedStoneBrickWall.get(), TWBlocks.FrostedStoneBrickButton.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
+        stairSlabWallButton(TWBlocks.CrackedFrostedStoneBrickStairs.get(), TWBlocks.CrackedFrostedStoneBrickSlab.get(), TWBlocks.CrackedFrostedStoneBrickWall.get(), TWBlocks.CrackedFrostedStoneBrickButton.get(), TWBlocks.CrackedFrostedStoneBricks.get(), TWBlocks.FrostedStoneBricks.get(), TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
+        stairSlabWallButton(TWBlocks.DeepFrostedCobblestoneStairs.get(), TWBlocks.DeepFrostedCobblestoneSlab.get(), TWBlocks.DeepFrostedCobblestoneWall.get(), TWBlocks.DeepFrostedCobblestoneButton.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
+        stairSlabWallButton(TWBlocks.DeepFrostedStoneStairs.get(), TWBlocks.DeepFrostedStoneSlab.get(), TWBlocks.DeepFrostedStoneWall.get(), TWBlocks.DeepFrostedStoneButton.get(), TWBlocks.DeepFrostedStone.get(), true);
+        stairSlabWallButton(TWBlocks.DeepFrostedStoneBrickStairs.get(), TWBlocks.DeepFrostedStoneBrickSlab.get(), TWBlocks.DeepFrostedStoneBrickWall.get(), TWBlocks.DeepFrostedStoneBrickButton.get(), TWBlocks.DeepFrostedStoneBricks.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get());
+        stairSlabWallButton(TWBlocks.DeepFrostedStoneTileStairs.get(), TWBlocks.DeepFrostedStoneTileSlab.get(), TWBlocks.DeepFrostedStoneTileWall.get(), TWBlocks.DeepFrostedStoneTileButton.get(), TWBlocks.DeepFrostedStoneTiles.get(), TWBlocks.DeepFrostedCobblestone.get(), TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedStoneBricks.get());
 
         shapeless(TWBlocks.FrostedStone.get(), 4, TWBlocks.FrostedCobblestone.get(), 4);
         shapeless(TWBlocks.DeepFrostedStone.get(), 4, TWBlocks.DeepFrostedCobblestone.get(), 4);
 
-        furnance(Items.COBBLESTONE, TWBlocks.FrostedCobblestone.get(), 0, 200);
-        furnance(Items.STONE, TWBlocks.FrostedStone.get(), 0, 200);
-        furnanceExtraID(Items.COBBLESTONE, TWBlocks.DeepFrostedCobblestone.get(), 0, 400);
-        furnanceExtraID(Items.STONE, TWBlocks.DeepFrostedStone.get(), 0, 400);
+        float xp = 0.1f;
+        int time = 200;
+
+        furnance(Items.COBBLESTONE, TWBlocks.FrostedCobblestone.get(), xp, time);
+        furnance(Items.COBBLESTONE_STAIRS, TWBlocks.FrostedCobblestoneStairs.get(), xp, time);
+        furnance(Items.COBBLESTONE_SLAB, TWBlocks.FrostedCobblestoneSlab.get(), xp/2, time);
+        furnance(Items.COBBLESTONE_WALL, TWBlocks.FrostedCobblestoneWall.get(), xp, time);
+        furnance(Items.STONE, TWBlocks.FrostedStone.get(), xp, time);
+        furnance(Items.STONE_STAIRS, TWBlocks.FrostedStoneStairs.get(), xp, time);
+        furnance(Items.STONE_SLAB, TWBlocks.FrostedStoneSlab.get(), xp/2, time);
+        furnance(Items.STONE_BUTTON, TWBlocks.FrostedStoneButton.get(), xp, time);
+        furnance(Items.STONE_BRICKS, TWBlocks.FrostedStoneBricks.get(), xp, time);
+        furnance(Items.STONE_BRICK_STAIRS, TWBlocks.FrostedStoneBrickStairs.get(), xp, time);
+        furnance(Items.STONE_BRICK_SLAB, TWBlocks.FrostedStoneBrickSlab.get(), xp/2, time);
+        furnance(Items.STONE_BRICK_WALL, TWBlocks.FrostedStoneBrickWall.get(), xp, time);
+        furnance(Items.CRACKED_STONE_BRICKS, TWBlocks.CrackedFrostedStoneBricks.get(), xp, time);
+
+        furnance(Items.COBBLED_DEEPSLATE, TWBlocks.DeepFrostedCobblestone.get(), xp*2, time*2);
+        furnance(Items.COBBLED_DEEPSLATE_STAIRS, TWBlocks.DeepFrostedCobblestoneStairs.get(), xp*2, time*2);
+        furnance(Items.COBBLED_DEEPSLATE_SLAB, TWBlocks.DeepFrostedCobblestoneSlab.get(), xp, time*2);
+        furnance(Items.COBBLED_DEEPSLATE_WALL, TWBlocks.DeepFrostedCobblestoneWall.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE, TWBlocks.DeepFrostedStone.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_BRICKS, TWBlocks.DeepFrostedStoneBricks.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_BRICK_STAIRS, TWBlocks.DeepFrostedStoneBrickStairs.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_BRICK_SLAB, TWBlocks.DeepFrostedStoneBrickSlab.get(), xp, time*2);
+        furnance(Items.DEEPSLATE_BRICK_WALL, TWBlocks.DeepFrostedStoneBrickWall.get(), xp*2, time*2);
+        furnance(Items.CRACKED_DEEPSLATE_BRICKS, TWBlocks.CrackedDeepFrostedStoneBricks.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_TILES, TWBlocks.DeepFrostedStoneTiles.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_TILE_STAIRS, TWBlocks.DeepFrostedStoneTileStairs.get(), xp*2, time*2);
+        furnance(Items.DEEPSLATE_TILE_SLAB, TWBlocks.DeepFrostedStoneTileSlab.get(), xp, time*2);
+        furnance(Items.DEEPSLATE_TILE_WALL, TWBlocks.DeepFrostedStoneTileWall.get(), xp*2, time*2);
+        furnance(Items.CRACKED_DEEPSLATE_TILES, TWBlocks.CrackedDeepFrostedStoneTiles.get(), xp*2, time*2);
     }
 
-    protected static void stairSlabWall(ItemLike stair, ItemLike slab, ItemLike wall, ItemLike material, boolean hasStonecutting){
+    protected static void stairSlabWallButton(ItemLike stair, ItemLike slab, ItemLike wall, ItemLike button, ItemLike material, boolean hasStonecutting){
         stairs(stair, material, hasStonecutting);
         slab(slab, material, hasStonecutting);
         wall(wall, material, hasStonecutting);
+        button(button, material, hasStonecutting);
     }
-    protected static void stairSlabWall(ItemLike stair, ItemLike slab, ItemLike wall, ItemLike material, ItemLike... addMats){
+    protected static void stairSlabWallButton(ItemLike stair, ItemLike slab, ItemLike wall, ItemLike button, ItemLike material, ItemLike... addMats){
         stairs(stair, material, addMats);
         slab(slab, material, addMats);
         wall(wall, material, addMats);
+        button(button, material, addMats);
     }
 
     protected static void stairs(ItemLike stair, ItemLike material, boolean hasStonecutting){

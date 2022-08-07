@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "the_witcher:block/deep_frosted_cobblestone"
+  }
+}

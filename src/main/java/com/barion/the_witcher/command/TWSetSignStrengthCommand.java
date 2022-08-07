@@ -1,7 +1,7 @@
 package com.barion.the_witcher.command;
 
-import com.barion.the_witcher.sign.TWPlayerSignStrength;
-import com.barion.the_witcher.sign.TWPlayerSignStrengthProvider;
+import com.barion.the_witcher.capability.TWPlayerSignStrength;
+import com.barion.the_witcher.capability.TWPlayerSignStrengthProvider;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.commands.CommandSourceStack;

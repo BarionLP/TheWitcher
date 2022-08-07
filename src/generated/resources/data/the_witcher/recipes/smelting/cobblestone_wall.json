@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "the_witcher:frosted_cobblestone_wall"
+  },
+  "result": "minecraft:cobblestone_wall"
+}

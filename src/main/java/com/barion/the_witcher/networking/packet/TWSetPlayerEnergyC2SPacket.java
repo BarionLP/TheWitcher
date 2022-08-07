@@ -1,6 +1,6 @@
 package com.barion.the_witcher.networking.packet;
 
-import com.barion.the_witcher.sign.TWPlayerEnergyProvider;
+import com.barion.the_witcher.capability.TWPlayerEnergyProvider;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 

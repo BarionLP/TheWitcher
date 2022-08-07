@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 400,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "the_witcher:cracked_deep_frosted_stone_tiles"
+  },
+  "result": "minecraft:cracked_deepslate_tiles"
+}

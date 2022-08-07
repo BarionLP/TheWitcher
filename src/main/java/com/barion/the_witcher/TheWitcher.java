@@ -1,7 +1,9 @@
 package com.barion.the_witcher;
 
 import com.barion.the_witcher.datagen.*;
+import com.barion.the_witcher.effect.TWEffects;
 import com.barion.the_witcher.networking.TWMessages;
+import com.barion.the_witcher.potion.TWPotions;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
 import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.world.TWBlocks;
@@ -14,6 +16,8 @@ import com.barion.the_witcher.world.screen.TWMenuTypes;
 import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -40,6 +44,8 @@ public class TheWitcher {
         TWBlockEntities.Registry.register(modBus);
         TWMenuTypes.Registry.register(modBus);
         TWRecipeTypes.Registry.register(modBus);
+        TWEffects.Registry.register(modBus);
+        TWPotions.Registry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.addListener(TWRecipeTypes::registerRecipeTypes);
@@ -55,10 +61,12 @@ public class TheWitcher {
         event.enqueueWork(()-> {
             TWMessages.register();
         });
+
+        PotionBrewing.addMix(Potions.AWKWARD, TWItems.KikimoraTooth.get(), TWPotions.EnergyRegenPotion.get());
     }
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class DataGenerators {
+    public static class DataGenerators{
         private DataGenerators() {}
 
         @SubscribeEvent

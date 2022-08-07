@@ -1,13 +1,13 @@
-// 1.19.1	2022-08-02T15:45:00.2892283	Tags for minecraft:block
+// 1.19.1	2022-08-06T21:38:53.3501702	Tags for minecraft:block
 97eb1b03810e22a976b10e158ad5eda01f2f6b3e data/forge/tags/blocks/storage_blocks.json
 5f774c1514cbdec38546aec7ad9eb20200d84666 data/forge/tags/blocks/storage_blocks/raw_silver.json
 a19f158ea62aecb2decae8db799e4c94220dd282 data/forge/tags/blocks/storage_blocks/silver.json
 a19f158ea62aecb2decae8db799e4c94220dd282 data/minecraft/tags/blocks/beacon_base_blocks.json
-2166dcd40b271ec5f1c4db079a06801618447ead data/minecraft/tags/blocks/buttons.json
+c2fbca142a0bb7a065ff7df0e9ecc2025de80699 data/minecraft/tags/blocks/buttons.json
 3557afaef48650890a0f02aa8fc24b7ce20f1d56 data/minecraft/tags/blocks/mineable/axe.json
-6d429641244e80af1fa033198c022f94796c3008 data/minecraft/tags/blocks/mineable/pickaxe.json
+b24e4505e6836ec1237776a48f654916cf8f40f2 data/minecraft/tags/blocks/mineable/pickaxe.json
 2ead84e2ce171b287a1546633b2c2ff2c289a736 data/minecraft/tags/blocks/needs_iron_tool.json
-46e0b2d3262e52943a341317eb8340fc84de07e7 data/minecraft/tags/blocks/slabs.json
-ecf1503baf65fc0580c8326670f8b95c633cc594 data/minecraft/tags/blocks/stairs.json
-e3d03efbfa63f7aa7bd85c8805af9b7960831c87 data/minecraft/tags/blocks/walls.json
+7565a764740e6cb89bbe7ebae8e5e7ec0e08bda0 data/minecraft/tags/blocks/slabs.json
+7d34ef4a88be8d68c41ca578093b30eecbcbd710 data/minecraft/tags/blocks/stairs.json
+c0c110298e712d3f9c1d1568b149f3a6ed636f82 data/minecraft/tags/blocks/walls.json
 ca7d65c4a54ef547df573de6cead765132b1d489 data/the_witcher/tags/blocks/spikes_can_place.json

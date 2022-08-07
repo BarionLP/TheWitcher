@@ -62,7 +62,6 @@ public class TWGrowableBushBlock extends BushBlock implements BonemealableBlock 
             level.setBlock(pos, blockState.setValue(Age, i + 1), 2);
             net.minecraftforge.common.ForgeHooks.onCropsGrowPost(level, pos, blockState);
         }
-
     }
 
     @Override @ParametersAreNonnullByDefault

@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-02T15:45:00.2932293	Tags for minecraft:item
+// 1.19.1	2022-08-06T21:38:53.3341657	Tags for minecraft:item
 6bdcdcfdbe7441efb851542186e65d9805e83e94 data/forge/tags/items/ingots.json
 269a4b2283f0cd05a65405c0589bb4993b7b9793 data/forge/tags/items/ingots/silver.json
 c6513bd84e923ea7020791844e4e2b8634d22a16 data/forge/tags/items/nuggets.json
@@ -9,9 +9,9 @@ eda4c7fc9815530a17ea9c1f08f0835595888c2d data/forge/tags/items/raw_materials.jso
 5f774c1514cbdec38546aec7ad9eb20200d84666 data/forge/tags/items/storage_blocks/raw_silver.json
 a19f158ea62aecb2decae8db799e4c94220dd282 data/forge/tags/items/storage_blocks/silver.json
 c6cc9ae2c82ba6a033cadd219b59c48e0ca167a4 data/minecraft/tags/items/beacon_payment_items.json
-2166dcd40b271ec5f1c4db079a06801618447ead data/minecraft/tags/items/buttons.json
-46e0b2d3262e52943a341317eb8340fc84de07e7 data/minecraft/tags/items/slabs.json
-ecf1503baf65fc0580c8326670f8b95c633cc594 data/minecraft/tags/items/stairs.json
-e3d03efbfa63f7aa7bd85c8805af9b7960831c87 data/minecraft/tags/items/walls.json
+c2fbca142a0bb7a065ff7df0e9ecc2025de80699 data/minecraft/tags/items/buttons.json
+7565a764740e6cb89bbe7ebae8e5e7ec0e08bda0 data/minecraft/tags/items/slabs.json
+7d34ef4a88be8d68c41ca578093b30eecbcbd710 data/minecraft/tags/items/stairs.json
+c0c110298e712d3f9c1d1568b149f3a6ed636f82 data/minecraft/tags/items/walls.json
 a2d1653a72db672faeb80cac74fd0dda897c6f3e data/the_witcher/tags/items/ingots/steel.json
 a3444ae7fa4c206cf8b90affdc8c16b2e95dd728 data/the_witcher/tags/items/nuggets/steel.json

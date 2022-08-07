@@ -1,13 +1,16 @@
 package com.barion.the_witcher.util.event;
 
 import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.capability.*;
+import com.barion.the_witcher.command.TWGetEnergyCommand;
 import com.barion.the_witcher.command.TWGetSignStrengthCommand;
+import com.barion.the_witcher.command.TWSetEnergyCommand;
 import com.barion.the_witcher.command.TWSetSignStrengthCommand;
+import com.barion.the_witcher.effect.TWEffects;
 import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.networking.packet.TWPlayerEnergySyncS2CPacket;
 import com.barion.the_witcher.networking.packet.TWPlayerMaxEnergySyncS2CPacket;
 import com.barion.the_witcher.networking.packet.TWPlayerSignStrengthSyncS2CPacket;
-import com.barion.the_witcher.sign.*;
 import com.barion.the_witcher.util.TWUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -32,7 +35,11 @@ public class TWForgeEvents{
             event.player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy -> {
                 if(energy.isFull(event.player)) {return;}
                 event.player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength-> {
-                    energy.increase(0.2f + signStrength.get()/5f, (ServerPlayer) event.player);
+                    float base = 0.2f;
+                    if(event.player.hasEffect(TWEffects.EnergyRegen.get())){
+                        base += (event.player.getEffect(TWEffects.EnergyRegen.get()).getAmplifier()+1)/5f;
+                    }
+                    energy.increase(base + signStrength.get() / 5f, (ServerPlayer) event.player);
                 });
             });
         }
@@ -40,11 +47,11 @@ public class TWForgeEvents{
 
     @SubscribeEvent
     public static void playerCloned(PlayerEvent.Clone event) {
-        if (event.isWasDeath()) {
+        if (event.isWasDeath() && event.getEntity() instanceof ServerPlayer) {
             event.getOriginal().getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(oldStore ->
-                    event.getEntity().getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(newStore -> newStore.copy(oldStore)));
+                    event.getEntity().getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(newStore -> newStore.copy(oldStore, (ServerPlayer) event.getEntity())));
             event.getOriginal().getCapability(TWPlayerMaxEnergyProvider.Instance).ifPresent(oldStore ->
-                    event.getEntity().getCapability(TWPlayerMaxEnergyProvider.Instance).ifPresent(newStore -> newStore.copy(oldStore)));
+                    event.getEntity().getCapability(TWPlayerMaxEnergyProvider.Instance).ifPresent(newStore -> newStore.copy(oldStore, (ServerPlayer) event.getEntity())));
         }
     }
 
@@ -66,6 +73,8 @@ public class TWForgeEvents{
     @SubscribeEvent
     public static void registerCapabilities(RegisterCapabilitiesEvent event){
         event.register(TWPlayerSignStrength.class);
+        event.register(TWPlayerEnergy.class);
+        event.register(TWPlayerMaxEnergy.class);
     }
 
     @SubscribeEvent
@@ -81,6 +90,8 @@ public class TWForgeEvents{
 
     @SubscribeEvent
     public static void registerCommands(RegisterCommandsEvent event){
+        new TWSetEnergyCommand(event.getDispatcher());
+        new TWGetEnergyCommand(event.getDispatcher());
         new TWSetSignStrengthCommand(event.getDispatcher());
         new TWGetSignStrengthCommand(event.getDispatcher());
 

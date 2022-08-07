@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.block;
 
-import com.barion.the_witcher.sign.TWPlayerSignStrengthProvider;
+import com.barion.the_witcher.capability.TWPlayerSignStrengthProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;

@@ -210,7 +210,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
         } else {
             boolean flag = !placeContext.isSecondaryUseActive();
             DripstoneThickness thickness = calculateIcicleThickness(levelaccessor, clickedPos, tipDirection, flag);
-            return thickness == null ? null : this.defaultBlockState().setValue(TipDirection, tipDirection).setValue(Thickness, thickness).setValue(Waterlogged, Boolean.valueOf(levelaccessor.getFluidState(clickedPos).getType() == Fluids.WATER));
+            return thickness == null ? null : this.defaultBlockState().setValue(TipDirection, tipDirection).setValue(Thickness, thickness).setValue(Waterlogged, levelaccessor.getFluidState(clickedPos).getType() == Fluids.WATER);
         }
     }
     @Override

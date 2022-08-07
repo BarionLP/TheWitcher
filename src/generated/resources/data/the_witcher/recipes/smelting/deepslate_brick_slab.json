@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 400,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "the_witcher:deep_frosted_stone_brick_slab"
+  },
+  "result": "minecraft:deepslate_brick_slab"
+}

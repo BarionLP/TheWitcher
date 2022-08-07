@@ -1,6 +1,6 @@
 package com.barion.the_witcher.datagen;
 
-import com.barion.the_witcher.TheWitcher;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.google.common.collect.ImmutableList;
@@ -56,10 +56,12 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.FrostedStoneStairs.get(),
                     TWBlocks.FrostedStoneSlab.get(),
                     TWBlocks.FrostedStoneWall.get(),
+                    TWBlocks.FrostedStoneButton.get(),
                     TWBlocks.FrostedCobblestone.get(),
                     TWBlocks.FrostedCobblestoneStairs.get(),
                     TWBlocks.FrostedCobblestoneSlab.get(),
                     TWBlocks.FrostedCobblestoneWall.get(),
+                    TWBlocks.FrostedCobblestoneButton.get(),
                     TWBlocks.FrostedStoneBricks.get(),
                     TWBlocks.FrostedStoneBrickStairs.get(),
                     TWBlocks.FrostedStoneBrickSlab.get(),
@@ -69,23 +71,37 @@ public class TWLootTableProvider extends LootTableProvider {
                     TWBlocks.CrackedFrostedStoneBrickStairs.get(),
                     TWBlocks.CrackedFrostedStoneBrickSlab.get(),
                     TWBlocks.CrackedFrostedStoneBrickWall.get(),
+                    TWBlocks.CrackedFrostedStoneBrickButton.get(),
 
                     TWBlocks.DeepFrostedStoneStairs.get(),
                     TWBlocks.DeepFrostedStoneSlab.get(),
                     TWBlocks.DeepFrostedStoneWall.get(),
+                    TWBlocks.DeepFrostedStoneButton.get(),
                     TWBlocks.DeepFrostedCobblestone.get(),
                     TWBlocks.DeepFrostedCobblestoneStairs.get(),
                     TWBlocks.DeepFrostedCobblestoneSlab.get(),
                     TWBlocks.DeepFrostedCobblestoneWall.get(),
+                    TWBlocks.DeepFrostedCobblestoneButton.get(),
                     TWBlocks.DeepFrostedStoneBricks.get(),
                     TWBlocks.DeepFrostedStoneBrickStairs.get(),
                     TWBlocks.DeepFrostedStoneBrickSlab.get(),
                     TWBlocks.DeepFrostedStoneBrickWall.get(),
                     TWBlocks.DeepFrostedStoneBrickButton.get(),
+                    TWBlocks.CrackedDeepFrostedStoneBricks.get(),
+                    TWBlocks.CrackedDeepFrostedStoneBrickStairs.get(),
+                    TWBlocks.CrackedDeepFrostedStoneBrickSlab.get(),
+                    TWBlocks.CrackedDeepFrostedStoneBrickWall.get(),
+                    TWBlocks.CrackedDeepFrostedStoneBrickButton.get(),
                     TWBlocks.DeepFrostedStoneTiles.get(),
                     TWBlocks.DeepFrostedStoneTileStairs.get(),
                     TWBlocks.DeepFrostedStoneTileSlab.get(),
-                    TWBlocks.DeepFrostedStoneTileWall.get()
+                    TWBlocks.DeepFrostedStoneTileWall.get(),
+                    TWBlocks.DeepFrostedStoneTileButton.get(),
+                    TWBlocks.CrackedDeepFrostedStoneTiles.get(),
+                    TWBlocks.CrackedDeepFrostedStoneTileStairs.get(),
+                    TWBlocks.CrackedDeepFrostedStoneTileSlab.get(),
+                    TWBlocks.CrackedDeepFrostedStoneTileWall.get(),
+                    TWBlocks.CrackedDeepFrostedStoneTileButton.get()
             );
 
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
@@ -224,7 +240,7 @@ public class TWLootTableProvider extends LootTableProvider {
             return LootItem.lootTableItem(Items.POTION).setWeight(weight).apply(SetItemCountFunction.setCount(amount)).apply(SetPotionFunction.setPotion(potion));
         }
 
-        private static ResourceLocation location(String name) {return new ResourceLocation(TheWitcher.ModID, "chests/" + name);}
+        private static ResourceLocation location(String name) {return TWUtil.location("chests/" + name);}
     }
 
     protected static NumberProvider one() {return lootNumber(1);}

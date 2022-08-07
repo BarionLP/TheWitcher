@@ -7,6 +7,8 @@
     "the_witcher:deep_frosted_cobblestone_slab",
     "the_witcher:deep_frosted_stone_slab",
     "the_witcher:deep_frosted_stone_brick_slab",
-    "the_witcher:deep_frosted_stone_tile_slab"
+    "the_witcher:cracked_deep_frosted_stone_brick_slab",
+    "the_witcher:deep_frosted_stone_tile_slab",
+    "the_witcher:cracked_deep_frosted_stone_tile_slab"
   ]
 }

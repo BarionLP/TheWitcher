@@ -33,13 +33,13 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         tag(TWTags.Items.SteelNuggets).add(TWItems.SteelNugget.get());
         tag(TWTags.Items.SteelNuggets).add(TWItems.SteelNugget.get());
 
-        tag(Tags.Items.INGOTS).addTags(
-                TWTags.Items.SilverIngots,
-                TWTags.Items.SteelIngots);
+        tag(Tags.Items.INGOTS)
+                .addTag(TWTags.Items.SilverIngots)
+                .addTag(TWTags.Items.SteelIngots);
 
-        tag(Tags.Items.NUGGETS).addTags(
-                TWTags.Items.SilverNuggets,
-                TWTags.Items.SteelNuggets);
+        tag(Tags.Items.NUGGETS)
+                .addTag(TWTags.Items.SilverNuggets)
+                .addTag(TWTags.Items.SteelNuggets);
 
         tag(Tags.Items.RAW_MATERIALS).addTag(TWTags.Items.RawMaterialsSilver);
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(TWItems.SilverIngot.get(), TWItems.SteelIngot.get());
