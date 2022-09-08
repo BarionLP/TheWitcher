@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-05T22:24:58.3812925	Tags for minecraft:worldgen/biome
+// 1.19.2	2022-09-09T00:02:28.3203694	Tags for minecraft:worldgen/biome
 97896c600e1a34024b105a64cffb65351e15ef9c data/minecraft/tags/worldgen/biome/has_structure/nether_fossil.json
 911bd7816ba8529f0fb3796a2cb5e1453b7860ee data/the_witcher/tags/worldgen/biome/has/icy_ruin.json
 b6f055d06cdb01817c08edc3cdbfb87943471f4b data/the_witcher/tags/worldgen/biome/icicle_can_grow_in.json

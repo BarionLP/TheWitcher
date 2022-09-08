@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-02T15:45:00.2982307	Tags for minecraft:entity_type
+// 1.19.2	2022-09-09T00:02:28.3023725	Tags for minecraft:entity_type
 f4e6559262c747b9a7091cdd473fcff572e9ba94 data/forge/tags/entity_types/magic_mob.json
 14e7cdebd6b5f672cfded947b1f4e3e7b3ee72f7 data/minecraft/tags/entity_types/freeze_immune_entity_types.json
 569cee91ad8896af49760f8b47f60ded6ea937bb data/minecraft/tags/entity_types/powder_snow_walkable_mobs.json
