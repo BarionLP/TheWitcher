@@ -203,6 +203,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/building_blocks/smelting/deepslate": {
+    "criteria": {
+      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_wall_from_frosted_stone": {
     "criteria": {
       "has_frosted_stone": "2022-07-19 15:30:50 +0200"
@@ -248,6 +254,7 @@
   "minecraft:husbandry/balanced_diet": {
     "criteria": {
       "beef": "2022-08-04 16:37:11 +0200",
+      "bread": "2022-08-07 12:18:28 +0200",
       "enchanted_golden_apple": "2022-08-05 13:05:49 +0200"
     },
     "done": false
@@ -303,6 +310,12 @@
   "minecraft:recipes/building_blocks/dripstone_block": {
     "criteria": {
       "has_pointed_dripstone": "2022-06-17 09:08:41 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_button": {
+    "criteria": {
+      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
     },
     "done": true
   },
@@ -936,6 +949,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_button_from_deep_frosted_stone": {
+    "criteria": {
+      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/cyan_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -1017,6 +1036,12 @@
   "the_witcher:recipes/the_witcher/cracked_frosted_stone_brick_slab": {
     "criteria": {
       "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/decorations/smelting/cobblestone_wall": {
+    "criteria": {
+      "has_frosted_cobblestone_wall": "2022-08-07 12:20:01 +0200"
     },
     "done": true
   },
@@ -1335,6 +1360,12 @@
   "minecraft:recipes/decorations/lantern": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button_from_deep_frosted_stone": {
+    "criteria": {
+      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
     },
     "done": true
   },

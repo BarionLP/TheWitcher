@@ -42,7 +42,7 @@ public class TWClient {
 
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event){
-            event.registerBelow(new ResourceLocation("hotbar"), "sign", TWGuiOverlay.InfoHUD);
+            event.registerBelow(new ResourceLocation("hotbar"), "energy_level", TWGuiOverlay.EnergyLevel);
         }
 
         @SubscribeEvent

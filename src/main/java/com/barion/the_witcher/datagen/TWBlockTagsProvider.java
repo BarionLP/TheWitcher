@@ -13,7 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
 
-import static com.barion.the_witcher.util.TWUtil.getBlockName;
+import static com.ametrinstudios.ametrin.AmUtil.getBlockName;
 
 public class TWBlockTagsProvider extends BlockTagsProvider {
     public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){

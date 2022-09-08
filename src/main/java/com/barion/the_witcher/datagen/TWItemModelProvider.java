@@ -1,7 +1,6 @@
 package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.block.TWGrowableBushBlock;
@@ -17,8 +16,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
 
-import static com.barion.the_witcher.util.TWUtil.getBlockName;
-import static com.barion.the_witcher.util.TWUtil.getItemName;
+import static com.ametrinstudios.ametrin.AmUtil.*;
 
 public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
@@ -42,15 +40,15 @@ public class TWItemModelProvider extends ItemModelProvider {
             String name = getBlockName(block);
             ResourceLocation texture;
             if(block instanceof StairBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
+                if(shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
                 else {texture = blockTexture(name.replace("_stairs", ""));}
                 stairs(name, texture, texture, texture);
             }else if(block instanceof SlabBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
+                if(shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
                 else {texture = blockTexture(name.replace("_slab", ""));}
                 slab(name, texture, texture, texture);
             }else if(block instanceof WallBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                if(shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
                 else {texture = blockTexture(name.replace("_wall", ""));}
                 wallInventory(name, texture);
             }else if(block instanceof SaplingBlock){
@@ -58,7 +56,7 @@ public class TWItemModelProvider extends ItemModelProvider {
             }else if(block instanceof TWIcicleBlock){
                 itemBlock(getExistingFile(mcLoc("item/pointed_dripstone")), name, name + "/down/tip");
             }else if(block instanceof ButtonBlock){
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
+                if(shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
                 else {texture = blockTexture(name.replace("_button", ""));}
                 buttonInventory(name, texture);
             }else if(block instanceof TWPowerBlock){
