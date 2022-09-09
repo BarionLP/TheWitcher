@@ -7,13 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.slf4j.Logger;
 
-import static com.ametrinstudios.ametrin.AmUtil.isLog;
-import static com.ametrinstudios.ametrin.AmUtil.isWood;
-
 public class TWUtil {
     public static final Logger Logger = LogUtils.getLogger();
-
-    public static boolean isWooden(String name) {return isLog(name) || isWood(name) || name.contains("plank");}
     public static TWStructurePiece.Builder pieceBuilder() {return new TWStructurePiece.Builder();}
 
     public static TWStructurePiece getRandomPiece(TWStructurePiece[] variants, int maxWeight, RandomSource rand){

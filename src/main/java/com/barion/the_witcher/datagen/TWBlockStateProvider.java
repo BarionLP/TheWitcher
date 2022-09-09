@@ -45,52 +45,8 @@ public class TWBlockStateProvider extends ExtendedBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        handleDefaults(TWBlocks.getAllBlocks());
+        runProviderRules(TWBlocks.getAllBlocks());
     }
-
-    /*protected  <B extends Block> void simpleBlock(List<B> blocks){
-        for(B block : blocks) {
-            String name = getBlockName(block);
-            ResourceLocation texture;
-
-            if(block instanceof StairBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
-                else {texture = blockTexture(name.replace("_stairs", ""));}
-                stairsBlock((StairBlock) block, texture);
-            }else if(block instanceof SlabBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
-                else {texture = blockTexture(name.replace("_slab", ""));}
-                slabBlock((SlabBlock) block, texture, texture);
-            }else if(block instanceof WallBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
-                else {texture = blockTexture(name.replace("_wall", ""));}
-                wallBlock((WallBlock) block, texture);
-            }else if(block instanceof RotatedPillarBlock) {
-                if(getBlockName(block).contains("wood")) {
-                    texture = blockTexture(name.replace("wood", "log"));
-                    axisBlock((RotatedPillarBlock) block, texture, texture);
-                }else{
-                    logBlock((RotatedPillarBlock) block);
-                }
-            }else if(block instanceof TWMasterSmithingTableBlock) {
-                simpleBlock(block, models().cube(name, blockTexture(name + "_bottom"), blockTexture(name + "_top"), blockTexture(name + "_front"), blockTexture(name + "_front"), blockTexture(name + "_side"), blockTexture(name + "_side")).texture("particle", blockTexture(name + "_top")));
-            }else if(block instanceof SaplingBlock) {
-                simpleBlock(block, models().cross(name, blockTexture(name)));
-            }else if(block instanceof TWGrowableBushBlock) {
-                simpleGrowableBush(block, name);
-            }else if(block instanceof TWIcicleBlock) {
-                icicleBlock(block, name);
-            }else if(block instanceof TWPowerBlock) {
-                powerBlock(block, name);
-            }else if(block instanceof ButtonBlock) {
-                if(TWUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_button", "s"));}
-                else {texture = blockTexture(name.replace("_button", ""));}
-                buttonBlock((ButtonBlock) block, texture);
-            }else {
-                simpleBlock(block);
-            }
-        }
-    }*/
 
     protected void powerBlock(TWPowerBlock powerBlock, String name, String texture){
         ModelFile on = models().cubeAll("block/" + name + "/on", modBlockLoc(texture + "/on"));

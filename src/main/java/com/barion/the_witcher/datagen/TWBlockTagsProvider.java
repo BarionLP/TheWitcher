@@ -1,28 +1,23 @@
 package com.barion.the_witcher.datagen;
 
+import com.ametrinstudios.ametrin.datagen.ExtendedBlockTagsProvider;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
-import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import java.util.List;
-
-import static com.ametrinstudios.ametrin.AmUtil.getBlockName;
-
-public class TWBlockTagsProvider extends BlockTagsProvider {
+public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
     public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, TheWitcher.ModID, fileHelper);
     }
 
     @Override
     protected void addTags() {
-        handleDefaults(TWBlocks.getAllBlocks());
+        runRules(TWBlocks.getAllBlocks());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 TWBlocks.RawSilverBlock.get(),
@@ -97,42 +92,5 @@ public class TWBlockTagsProvider extends BlockTagsProvider {
         tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());
         tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW);
         tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TWTags.Blocks.StorageBlocksSilver).addTag(TWTags.Blocks.StorageBlocksRawSilver);
-    }
-
-    private void handleDefaults(List<Block> allBlocks) {
-        for(Block block : allBlocks) {
-            String name = getBlockName(block);
-
-            if(block instanceof StairBlock){
-                if(TWUtil.isWooden(name)){
-                    tag(BlockTags.WOODEN_STAIRS).add(block);
-                } else {
-                    tag(BlockTags.STAIRS).add(block);
-                }
-            }
-            if(block instanceof SlabBlock){
-                if(TWUtil.isWooden(name)){
-                    tag(BlockTags.WOODEN_SLABS).add(block);
-                } else {
-                    tag(BlockTags.SLABS).add(block);
-                }
-            }
-            if(block instanceof WallBlock) {
-                tag(BlockTags.WALLS).add(block);
-            }
-            if(block instanceof FenceBlock){
-                tag(BlockTags.FENCES).add(block);
-            }
-            if(block instanceof FenceGateBlock){
-                tag(BlockTags.FENCE_GATES).add(block);
-            }
-            if(block instanceof ButtonBlock){
-                if(block instanceof WoodButtonBlock){
-                    tag(BlockTags.WOODEN_BUTTONS).add(block);
-                } else{
-                    tag(BlockTags.BUTTONS).add(block);
-                }
-            }
-        }
     }
 }

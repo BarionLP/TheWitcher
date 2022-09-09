@@ -16,7 +16,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
 
-import static com.ametrinstudios.ametrin.AmUtil.*;
+import static com.ametrinstudios.ametrin.AmetrinUtil.*;
 
 public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile generatedItem = getExistingFile(mcLoc("item/generated"));
