@@ -4,14 +4,14 @@
     "#": {
       "tag": "the_witcher:ingots/steel"
     },
-    "-": {
+    "|": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
     "#",
     "#",
-    "-"
+    "|"
   ],
   "result": {
     "item": "the_witcher:steel_sword"

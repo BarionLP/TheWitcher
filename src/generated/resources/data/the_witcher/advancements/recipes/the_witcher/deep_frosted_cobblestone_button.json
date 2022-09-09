@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ingots_steel": {
+    "has_deep_frosted_cobblestone": {
       "conditions": {
         "items": [
           {
-            "tag": "the_witcher:ingots/steel"
+            "items": [
+              "the_witcher:deep_frosted_cobblestone"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "the_witcher:steel_sword"
+        "recipe": "the_witcher:deep_frosted_cobblestone_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ingots_steel",
+      "has_deep_frosted_cobblestone",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "the_witcher:steel_sword"
+      "the_witcher:deep_frosted_cobblestone_button"
     ]
   }
 }

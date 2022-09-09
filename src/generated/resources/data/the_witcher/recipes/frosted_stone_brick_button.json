@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "the_witcher:frosted_stone_bricks"
+    }
+  ],
+  "result": {
+    "item": "the_witcher:frosted_stone_brick_button"
+  }
+}
