@@ -87,10 +87,16 @@ public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
                 TWBlocks.SilverBlock.get()
         );
 
+        tag(TWTags.Blocks.IceGroundReplaceable).add(
+                TWBlocks.FrostedStone.get(),
+                TWBlocks.DeepFrostedStone.get()
+        );
+
         tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksSilver).add(TWBlocks.SilverBlock.get());
         tag(TWTags.Blocks.StorageBlocksRawSilver).add(TWBlocks.RawSilverBlock.get());
         tag(TWTags.Blocks.SpikesCanPlace).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get(), Blocks.STONE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW);
         tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TWTags.Blocks.StorageBlocksSilver).addTag(TWTags.Blocks.StorageBlocksRawSilver);
+        tag(BlockTags.VALID_SPAWN).add(TWBlocks.FrostedStone.get(), TWBlocks.DeepFrostedStone.get());
     }
 }

@@ -8,7 +8,13 @@
     "sky_color": 8364543,
     "fog_color": 12638463,
     "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:snowflake"
+      },
+      "probability": 0.1
+    }
   },
   "spawners": {},
   "spawn_costs": {},
@@ -20,6 +26,9 @@
     ]
   },
   "features": [
+    [
+
+    ],
     [
       "minecraft:freeze_top_layer"
     ]

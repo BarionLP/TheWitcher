@@ -7,7 +7,7 @@
          "Name": "minecraft:packed_ice"
        }
      },
-     "floor_to_ceiling_search_range": 30,
+     "floor_to_ceiling_search_range": 32,
      "column_radius": {
        "type": "minecraft:uniform",
        "value": {

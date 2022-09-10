@@ -77,7 +77,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
 
     public TWIcicleBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(stateDefinition.any().setValue(TipDirection, Direction.UP).setValue(Thickness, DripstoneThickness.TIP).setValue(Waterlogged, Boolean.FALSE));
+        this.registerDefaultState(stateDefinition.any().setValue(TipDirection, Direction.UP).setValue(Thickness, DripstoneThickness.TIP).setValue(Waterlogged, false));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
@@ -116,9 +116,9 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
     }
     @Override @ParametersAreNonnullByDefault
     public void onProjectileHit(Level level, BlockState blockState, BlockHitResult blockHitResult, Projectile projectile) {
-        BlockPos blockpos = blockHitResult.getBlockPos();
-        if (!level.isClientSide && projectile.mayInteract(level, blockpos) && projectile instanceof ThrownTrident && projectile.getDeltaMovement().length() > 0.6D) {
-            level.destroyBlock(blockpos, true);
+        BlockPos pos = blockHitResult.getBlockPos();
+        if (!level.isClientSide && projectile instanceof ThrownTrident && projectile.mayInteract(level, pos) && projectile.getDeltaMovement().length() > 0.6D) {
+            level.destroyBlock(pos, true);
         }
 
     }

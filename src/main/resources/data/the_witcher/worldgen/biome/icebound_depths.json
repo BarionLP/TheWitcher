@@ -27,7 +27,11 @@
   },
   "features": [
     [
-      "the_witcher:large_ice_spike"
+      "the_witcher:large_icicle"
+    ],
+    [
+      "the_witcher:icebound_depths/floor",
+      "the_witcher:icebound_depths/ceiling"
     ],
     [
       "minecraft:freeze_top_layer"

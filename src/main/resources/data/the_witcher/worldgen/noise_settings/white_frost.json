@@ -35,12 +35,7 @@
       "xz_scale": 1,
       "y_scale": 0.7142857142857143
     },
-    "lava": {
-      "type": "minecraft:noise",
-      "noise": "minecraft:aquifer_lava",
-      "xz_scale": 1,
-      "y_scale": 1
-    },
+    "lava": 0,
     "temperature": {
       "type": "minecraft:shifted_noise",
       "noise": "minecraft:temperature",
@@ -429,8 +424,8 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "nebula:icy_peaks",
-                "nebula:snowy_desert"
+                "the_witcher:icy_peaks",
+                "the_witcher:snowy_desert"
               ]
             },
             "then_run": {
@@ -439,7 +434,7 @@
                 "type": "minecraft:noise_threshold",
                 "noise": "minecraft:powder_snow",
                 "min_threshold": 0.35,
-                "max_threshold": 0.6
+                "max_threshold": 0.5
               },
               "then_run": {
                 "type": "minecraft:condition",
@@ -450,9 +445,62 @@
                   "add_stone_depth": false
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:powder_snow"
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:stone_depth",
+                    "offset": 0,
+                    "surface_type": "floor",
+                    "add_surface_depth": true,
+                    "secondary_depth_range": 0
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:powder_snow"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "the_witcher:arctic_boneyard"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "minecraft:powder_snow",
+                "min_threshold": 0.25,
+                "max_threshold": 0.6
+              },
+              "then_run": {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:stone_depth",
+                  "offset": 0,
+                  "surface_type": "floor",
+                  "add_surface_depth": true,
+                  "secondary_depth_range": 0
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:water",
+                    "offset": 0,
+                    "surface_depth_multiplier": 0,
+                    "add_stone_depth": false
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:powder_snow"
+                    }
                   }
                 }
               }

@@ -22,7 +22,8 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
                 TWBiomes.IcyPeaks,
                 TWBiomes.SnowyDesert,
                 TWBiomes.ArcticBoneyard,
-                TWBiomes.FrostedOcean
+                TWBiomes.FrostedOcean,
+                TWBiomes.IceboundDepths
         );
         tag(TWTags.Biomes.hasIcyRuin).add(
                 TWBiomes.FrozenSpikes,
@@ -31,6 +32,7 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
         );
 
         tag(TWTags.Biomes.IcicleCanGrowIn).addTag(TWTags.Biomes.isWhiteFrost).addTag(Tags.Biomes.IS_COLD);
+        tag(TWTags.Biomes.DealsFreezingDamage).addTag(TWTags.Biomes.isWhiteFrost);
 
         tag(BiomeTags.HAS_NETHER_FOSSIL).add(
                 TWBiomes.ArcticBoneyard

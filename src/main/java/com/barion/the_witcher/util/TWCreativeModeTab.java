@@ -33,7 +33,6 @@ public class TWCreativeModeTab extends CreativeModeTab {
         items.add(TWBlocks.MasterSmithingTable.get().asItem().getDefaultInstance());
 
         items.add(TWBlocks.PowerBlock.get().asItem().getDefaultInstance());
-        items.add(TWBlocks.PowerBlock.get().asItem().getDefaultInstance());
 
         items.add(TWBlocks.FrostedCobblestone.get().asItem().getDefaultInstance());
         items.add(TWBlocks.FrostedCobblestoneStairs.get().asItem().getDefaultInstance());

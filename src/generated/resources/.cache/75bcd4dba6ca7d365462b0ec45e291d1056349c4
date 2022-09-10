@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-09T00:02:28.3113798	Tags for minecraft:block
+// 1.19.2	2022-09-10T12:36:50.7549532	Tags for minecraft:block
 97eb1b03810e22a976b10e158ad5eda01f2f6b3e data/forge/tags/blocks/storage_blocks.json
 5f774c1514cbdec38546aec7ad9eb20200d84666 data/forge/tags/blocks/storage_blocks/raw_silver.json
 a19f158ea62aecb2decae8db799e4c94220dd282 data/forge/tags/blocks/storage_blocks/silver.json
@@ -9,5 +9,7 @@ b24e4505e6836ec1237776a48f654916cf8f40f2 data/minecraft/tags/blocks/mineable/pic
 2ead84e2ce171b287a1546633b2c2ff2c289a736 data/minecraft/tags/blocks/needs_iron_tool.json
 7565a764740e6cb89bbe7ebae8e5e7ec0e08bda0 data/minecraft/tags/blocks/slabs.json
 7d34ef4a88be8d68c41ca578093b30eecbcbd710 data/minecraft/tags/blocks/stairs.json
+c63e574e5c0fb38a533a0709dbd11b2c847754e8 data/minecraft/tags/blocks/valid_spawn.json
 c0c110298e712d3f9c1d1568b149f3a6ed636f82 data/minecraft/tags/blocks/walls.json
+c63e574e5c0fb38a533a0709dbd11b2c847754e8 data/the_witcher/tags/blocks/replaceable/ice_ground.json
 ca7d65c4a54ef547df573de6cead765132b1d489 data/the_witcher/tags/blocks/spikes_can_place.json

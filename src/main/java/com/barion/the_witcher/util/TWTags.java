@@ -15,6 +15,7 @@ public class TWTags {
         public static final TagKey<Block> StorageBlocksSilver = forge("storage_blocks/silver");
         public static final TagKey<Block> StorageBlocksRawSilver = forge("storage_blocks/raw_silver");
         public static final TagKey<Block> SpikesCanPlace = tw("spikes_can_place");
+        public static final TagKey<Block> IceGroundReplaceable = tw("replaceable/ice_ground");
 
         private static TagKey<Block> forge(String path){return BlockTags.create(new ResourceLocation("forge", path));}
         private static TagKey<Block> tw(String path){return BlockTags.create(TWUtil.location(path));}
@@ -48,6 +49,7 @@ public class TWTags {
         public static final TagKey<Biome> isWhiteFrost = tw("is/white_frost");
         public static final TagKey<Biome> hasIcyRuin = tw("has/icy_ruin");
         public static final TagKey<Biome> IcicleCanGrowIn = tw("icicle_can_grow_in");
+        public static final TagKey<Biome> DealsFreezingDamage = tw("deals_freezing_damage");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
     }

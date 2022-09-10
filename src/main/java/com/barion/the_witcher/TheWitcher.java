@@ -73,6 +73,7 @@ public class TheWitcher {
         public static void gatherData(GatherDataEvent event){
             DataGenerator generator = event.getGenerator();
             ExistingFileHelper exFileHelper = event.getExistingFileHelper();
+
             generator.addProvider(true, new TWBlockStateProvider(generator, exFileHelper));
             generator.addProvider(true, new TWItemModelProvider(generator, exFileHelper));
             BlockTagsProvider blockTags = new TWBlockTagsProvider(generator, exFileHelper);

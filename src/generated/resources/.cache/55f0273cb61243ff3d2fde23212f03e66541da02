@@ -1,5 +1,6 @@
-// 1.19.2	2022-09-09T00:02:28.3203694	Tags for minecraft:worldgen/biome
+// 1.19.2	2022-09-10T11:34:41.6370198	Tags for minecraft:worldgen/biome
 97896c600e1a34024b105a64cffb65351e15ef9c data/minecraft/tags/worldgen/biome/has_structure/nether_fossil.json
+7edf754e2a8ebdc05e7f9981a135aab5b9e6efb7 data/the_witcher/tags/worldgen/biome/deals_freezing_damage.json
 911bd7816ba8529f0fb3796a2cb5e1453b7860ee data/the_witcher/tags/worldgen/biome/has/icy_ruin.json
 b6f055d06cdb01817c08edc3cdbfb87943471f4b data/the_witcher/tags/worldgen/biome/icicle_can_grow_in.json
-03854a0da23756fa4af4e00f9ba629b48794eda0 data/the_witcher/tags/worldgen/biome/is/white_frost.json
+82f5277444b13e03713593679f3c18f751bb6f6f data/the_witcher/tags/worldgen/biome/is/white_frost.json
