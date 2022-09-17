@@ -1,12 +1,12 @@
 package com.barion.the_witcher.world.gen;
 
+import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.structure.TWIcyRuinStructure;
 import com.barion.the_witcher.world.gen.structure.TWWitcherCitadelStructure;
 import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
 import com.legacy.structure_gel.api.structure.GridStructurePlacement;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 
@@ -25,7 +25,6 @@ public class TWStructures {
                 .pushStructure(TWIcyRuinStructure::new)
                         .biomes(TWTags.Biomes.hasIcyRuin)
                         .dimensions(TWLevels.WhiteFrost)
-                        .lakeProof(true)
                 .popStructure()
                 .placement(()-> GridStructurePlacement.builder(27, 18, 0.8f).build(IcyRuin.getRegistryName()))
                 .build();
@@ -33,9 +32,8 @@ public class TWStructures {
         WitcherCitadel = StructureRegistrar.builder(TWUtil.location("witcher_citadel"), ()-> ()-> TWWitcherCitadelStructure.Codec)
                 .addPiece(()-> TWWitcherCitadelStructure.Piece::new)
                 .pushStructure(TWWitcherCitadelStructure::new)
-                        .biomes(BiomeTags.IS_OVERWORLD/*()-> TWConfig.COMMON.WitcherCitadelConfig.getStructure().getBiomes()*/)
+                        .config(TWConfig.COMMON.WitcherCitadelConfig::getStructure)
                         .dimensions(Level.OVERWORLD)
-                        .lakeProof(true)
                         .terrainAdjustment(TerrainAdjustment.BEARD_THIN)
                 .popStructure()
                 .placement(()-> GridStructurePlacement.builder(72, 48, 0.9f).allowedNearSpawn(false).build(WitcherCitadel.getRegistryName()))

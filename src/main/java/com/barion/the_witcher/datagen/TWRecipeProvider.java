@@ -1,6 +1,7 @@
 package com.barion.the_witcher.datagen;
 
 import com.ametrinstudios.ametrin.datagen.ExtendedRecipeProvider;
+import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
@@ -17,7 +18,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 public class TWRecipeProvider extends ExtendedRecipeProvider {
-    public TWRecipeProvider(DataGenerator generator) {super(generator);}
+    public TWRecipeProvider(DataGenerator generator) {super(generator, TheWitcher.ModID);}
 
     @Override @ParametersAreNonnullByDefault
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {

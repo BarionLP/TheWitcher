@@ -1,7 +1,7 @@
 package com.barion.the_witcher.world;
 
+import com.ametrinstudios.ametrin.world.block.AgeableBushBlock;
 import com.barion.the_witcher.TheWitcher;
-import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
@@ -87,8 +87,8 @@ public class TWBlocks {
     public static final RegistryObject<StoneButtonBlock> CrackedDeepFrostedStoneTileButton = register("cracked_deep_frosted_stone_tile_button", () -> new StoneButtonBlock(deepFrostedNoCollision));
     public static final RegistryObject<TWIcicleBlock> Icicle = register("icicle", ()-> new TWIcicleBlock(properties(Blocks.POINTED_DRIPSTONE).sound(SoundType.GLASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 
-    public static final RegistryObject<TWGrowableBushBlock> WhiteMyrtleBush = registerWithoutItem("white_myrtle_bush", bush(1, 6));
-    public static final RegistryObject<TWGrowableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));
+    public static final RegistryObject<AgeableBushBlock> WhiteMyrtleBush = registerWithoutItem("white_myrtle_bush", bush(1, 6));
+    public static final RegistryObject<AgeableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));
 
     private static BlockBehaviour.Properties properties(Block base) {return BlockBehaviour.Properties.copy(base);}
 
@@ -96,7 +96,7 @@ public class TWBlocks {
     private static Supplier<StairBlock> stair(StairBlock.Properties properties, Supplier<BlockState> base) {return ()-> new StairBlock(base, properties);}
     private static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
     private static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
-    private static Supplier<TWGrowableBushBlock> bush(int bonusDrop, int growRarity) {return ()-> new TWGrowableBushBlock(bonusDrop, growRarity, properties(Blocks.SWEET_BERRY_BUSH));}
+    private static Supplier<AgeableBushBlock> bush(int bonusDrop, int growRarity) {return ()-> new AgeableBushBlock(bonusDrop, growRarity, properties(Blocks.SWEET_BERRY_BUSH));}
     private static Supplier<Block> block(Block base) {return ()-> new Block(BlockBehaviour.Properties.copy(base));}
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block){

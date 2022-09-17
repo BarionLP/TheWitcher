@@ -89,7 +89,13 @@ public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
 
         tag(TWTags.Blocks.IceGroundReplaceable).add(
                 TWBlocks.FrostedStone.get(),
-                TWBlocks.DeepFrostedStone.get()
+                TWBlocks.DeepFrostedStone.get(),
+                Blocks.SNOW_BLOCK,
+                Blocks.SNOW,
+                Blocks.POWDER_SNOW,
+                Blocks.ICE,
+                Blocks.PACKED_ICE,
+                Blocks.BLUE_ICE
         );
 
         tag(BlockTags.BEACON_BASE_BLOCKS).add(TWBlocks.SilverBlock.get());

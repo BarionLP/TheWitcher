@@ -3,7 +3,6 @@ package com.barion.the_witcher.datagen;
 import com.ametrinstudios.ametrin.datagen.ExtendedBlockStateProvider;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
-import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
@@ -36,32 +35,15 @@ public class TWBlockStateProvider extends ExtendedBlockStateProvider {
             powerBlock((TWPowerBlock) block, name, texture);
             return true;
         });
-        blockStateProviderRules.add((block, name, texture)-> {
-            if(!(block instanceof TWGrowableBushBlock)) {return false;}
-            simpleGrowableBushBlock((TWGrowableBushBlock) block, name, texture);
-            return true;
-        });
     }
 
     @Override
-    protected void registerStatesAndModels() {
-        runProviderRules(TWBlocks.getAllBlocks());
-    }
+    protected void registerStatesAndModels() {runProviderRules(TWBlocks.getAllBlocks());}
 
     protected void powerBlock(TWPowerBlock powerBlock, String name, String texture){
         ModelFile on = models().cubeAll("block/" + name + "/on", modBlockLoc(texture + "/on"));
         ModelFile off = models().cubeAll("block/" + name + "/off", modBlockLoc(texture + "/off"));
         getVariantBuilder(powerBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(state.getValue(TWPowerBlock.hasPower) ? on : off).build());
-    }
-    protected void simpleGrowableBushBlock(TWGrowableBushBlock bush, String name, String texture) {
-        ModelFile Age0 = models().cross("block/" + name + "/stage0", mcLoc("block/sweet_berry_bush_stage0")).renderType(RenderTypes.Cutout);
-        ModelFile Age1 = models().cross("block/" + name + "/stage1", mcLoc("block/sweet_berry_bush_stage1")).renderType(RenderTypes.Cutout);
-        ModelFile Age2 = models().cross("block/" + name + "/stage2", modBlockLoc(texture + "/stage2")).renderType(RenderTypes.Cutout);
-        ModelFile Age3 = models().cross("block/" + name + "/stage3", modBlockLoc(texture + "/stage3")).renderType(RenderTypes.Cutout);
-        getVariantBuilder(bush).forAllStates(state -> {
-            final int age = state.getValue(TWGrowableBushBlock.Age);
-            return ConfiguredModel.builder().modelFile((age == 0) ? Age0 : (age == 1) ? Age1 : (age == 2) ? Age2 : Age3).build();
-        });
     }
 
     protected void masterSmithingTableBlock(TWMasterSmithingTableBlock block, String name, String texture){

@@ -10,7 +10,7 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
     displayURL="https://www.curseforge.com/minecraft/mc-mods/the-witcher-content" #optional
     #updateJSONURL="https://change.me.example.invalid/updates.json"
     logoFile="logo.png" #optional
-    credits="Thanks to Callout and every supporter" #optional
+    credits="Thanks to Callout for his models, KaupenJoe for his amazing tutorials and every supporter" #optional
     authors="Ametrin Studios" #optional
     description='''Adds stuff from The Witcher Universe'''
 
@@ -31,6 +31,6 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 [[dependencies.the_witcher]]
     modId="structure_gel"
     mandatory=true
-    versionRange="[2.5.7,]"
+    versionRange="[2.6.1,]"
     ordering="NONE"
     side="BOTH"

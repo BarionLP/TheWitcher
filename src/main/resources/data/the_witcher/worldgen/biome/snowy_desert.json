@@ -13,7 +13,7 @@
       "options": {
         "type": "minecraft:snowflake"
       },
-      "probability": 0.1
+      "probability": 0.05
     }
   },
   "spawners": {},
@@ -27,7 +27,7 @@
   },
   "features": [
     [
-
+      "the_witcher:pile_ice"
     ],
     [
       "minecraft:freeze_top_layer"

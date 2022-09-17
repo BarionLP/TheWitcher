@@ -1,9 +1,9 @@
 package com.barion.the_witcher.datagen;
 
+import com.ametrinstudios.ametrin.world.block.AgeableBushBlock;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
-import com.barion.the_witcher.world.block.TWGrowableBushBlock;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
 import net.minecraft.data.DataGenerator;
@@ -23,7 +23,7 @@ public class TWItemModelProvider extends ItemModelProvider {
     private final ModelFile bigHandheld = getExistingFile(modLoc("item/big_sword"));
     private final ModelFile spawnEgg = getExistingFile(mcLoc("item/template_spawn_egg"));
 
-    public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper){super(generator, TheWitcher.ModID, fileHelper);}
+    public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {super(generator, TheWitcher.ModID, fileHelper);}
 
     @Override
     protected void registerModels() {
@@ -33,7 +33,7 @@ public class TWItemModelProvider extends ItemModelProvider {
 
     private <B extends Block> void blocks(List<B> blocks){
         for(B block : blocks) {
-            if(block instanceof TWGrowableBushBlock){
+            if(block instanceof AgeableBushBlock){
                 continue;
             }
 

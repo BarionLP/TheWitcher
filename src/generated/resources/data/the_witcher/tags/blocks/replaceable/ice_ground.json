@@ -1,6 +1,12 @@
 {
   "values": [
     "the_witcher:frosted_stone",
-    "the_witcher:deep_frosted_stone"
+    "the_witcher:deep_frosted_stone",
+    "minecraft:snow_block",
+    "minecraft:snow",
+    "minecraft:powder_snow",
+    "minecraft:ice",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice"
   ]
 }

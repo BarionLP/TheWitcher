@@ -32,9 +32,7 @@ import static com.barion.the_witcher.util.TWUtil.pieceBuilder;
 public class TWIcyRuinStructure extends Structure {
 
     public static final Codec<TWIcyRuinStructure> Codec = Structure.simpleCodec(TWIcyRuinStructure::new);
-    public TWIcyRuinStructure(StructureSettings structureSettings){
-        super(structureSettings);
-    }
+    public TWIcyRuinStructure(StructureSettings structureSettings) {super(structureSettings);}
 
     private static void generatePieces(StructurePiecesBuilder piecesBuilder, GenerationContext context) {
         int x = context.chunkPos().getMinBlockX();
@@ -53,7 +51,7 @@ public class TWIcyRuinStructure extends Structure {
     public @NotNull StructureType<?> type() {return TWStructures.IcyRuin.getType();}
 
     public static class Piece extends GelTemplateStructurePiece {
-        private static final TWStructurePiece[] StructureFiles = pieceBuilder().offset(-5, 0, -4).add("icy_ruin/small").offset(-7, -4, -6).add("icy_ruin/big").offset(-4, -4, -7).add("icy_tower").build(); //new ResourceLocation[] {TWUtil.location("icy_ruin/small"), TWUtil.location("icy_ruin/small"), TWUtil.location("icy_tower")};
+        private static final TWStructurePiece[] StructureFiles = pieceBuilder().offset(-5, -1, -4).add("icy_ruin/small").offset(-7, -4, -6).add("icy_ruin/big").offset(-4, -4, -7).add("icy_tower").build();
         private static final int maxWeight = TWUtil.getMaxWeight(StructureFiles);
         public Piece(StructureTemplateManager structureManager, TWStructurePiece piece, BlockPos pos, RandomSource random){
             super(TWStructures.IcyRuin.getPieceType().get(), 0, structureManager, piece.Resource, pos.offset(piece.Offset));
