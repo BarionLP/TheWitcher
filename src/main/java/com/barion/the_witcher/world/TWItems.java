@@ -1,5 +1,6 @@
 package com.barion.the_witcher.world;
 
+import com.ametrinstudios.ametrin.world.item.CustomArmorItem;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWCreativeModeTab;
 import com.barion.the_witcher.world.item.*;
@@ -32,10 +33,10 @@ public class TWItems{
     public static final RegistryObject<Item> SteelNugget = register("steel_nugget", item(DefaultProperies));
     public static final RegistryObject<SwordItem> SteelSword = register("steel_sword", sword(TWTiers.Steel, 0, -2, 0, Rarity.COMMON));
     public static final RegistryObject<SwordItem> MasterfulSteelSword = register("masterful_steel_sword", sword(TWTiers.Steel, 4, -1.5f, 500, Rarity.RARE));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherHelmet = register("reinforced_leather_helmet", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.HEAD, properties()));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherChestplate = register("reinforced_leather_chestplate", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.CHEST, properties()));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherLeggings = register("reinforced_leather_leggings", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.LEGS, properties()));
-    public static final RegistryObject<ArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new ArmorItem(TWArmorMaterial.ReinforcedLeather, EquipmentSlot.FEET, properties()));
+    public static final RegistryObject<CustomArmorItem> ReinforcedLeatherHelmet = register("reinforced_leather_helmet", ()-> new CustomArmorItem(TWArmors.ReinforcedLeather, EquipmentSlot.HEAD, properties()));
+    public static final RegistryObject<CustomArmorItem> ReinforcedLeatherChestplate = register("reinforced_leather_chestplate", ()-> new CustomArmorItem(TWArmors.ReinforcedLeather, EquipmentSlot.CHEST, properties()));
+    public static final RegistryObject<CustomArmorItem> ReinforcedLeatherLeggings = register("reinforced_leather_leggings", ()-> new CustomArmorItem(TWArmors.ReinforcedLeather, EquipmentSlot.LEGS, properties()));
+    public static final RegistryObject<CustomArmorItem> ReinforcedLeatherBoots = register("reinforced_leather_boots", ()-> new CustomArmorItem(TWArmors.ReinforcedLeather, EquipmentSlot.FEET, properties()));
 
     public static final RegistryObject<TWKikimoraToothItem> KikimoraTooth = register("kikimora_tooth", TWKikimoraToothItem::new);
     public static final RegistryObject<ItemNameBlockItem> WhiteMyrtle = register("white_myrtle", blockItem(TWBlocks.WhiteMyrtleBush));
