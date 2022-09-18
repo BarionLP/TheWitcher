@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "the_witcher:block/deep_frosted_stone",
-    "side": "the_witcher:block/deep_frosted_stone",
-    "top": "the_witcher:block/deep_frosted_stone"
-  }
+  "parent": "the_witcher:block/deep_frosted_stone_slab"
 }
