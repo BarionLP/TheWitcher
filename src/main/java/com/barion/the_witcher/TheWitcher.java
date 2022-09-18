@@ -16,6 +16,7 @@ import com.barion.the_witcher.world.screen.TWMenuTypes;
 import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.common.MinecraftForge;
@@ -63,6 +64,11 @@ public class TheWitcher {
         });
 
         PotionBrewing.addMix(Potions.AWKWARD, TWItems.KikimoraTooth.get(), TWPotions.EnergyRegenPotion.get());
+        PotionBrewing.addMix(TWPotions.EnergyRegenPotion.get(), Items.REDSTONE, TWPotions.LongEnergyRegenPotion.get());
+        PotionBrewing.addMix(TWPotions.EnergyRegenPotion.get(), Items.GLOWSTONE_DUST, TWPotions.StrongEnergyRegenPotion.get());
+
+        PotionBrewing.addMix(Potions.AWKWARD, Items.BLAZE_ROD, TWPotions.FrostResistancePotion.get());
+        PotionBrewing.addMix(TWPotions.FrostResistancePotion.get(), Items.REDSTONE, TWPotions.LongFrostResistancePotion.get());
     }
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)

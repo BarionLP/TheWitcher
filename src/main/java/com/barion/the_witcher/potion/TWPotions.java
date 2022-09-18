@@ -8,6 +8,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import static com.ametrinstudios.ametrin.AmetrinUtil.MinutesToTicks;
+
 public class TWPotions {
     public static final DeferredRegister<Potion> Registry = DeferredRegister.create(ForgeRegistries.POTIONS, TheWitcher.ModID);
 
@@ -15,6 +17,6 @@ public class TWPotions {
     public static final RegistryObject<Potion> LongEnergyRegenPotion = Registry.register("long_energy_regen_potion", ()-> new Potion("energy_regen_potion", new MobEffectInstance(TWEffects.EnergyRegen.get(), 9000, 0)));
     public static final RegistryObject<Potion> StrongEnergyRegenPotion = Registry.register("strong_energy_regen_potion", ()-> new Potion("energy_regen_potion", new MobEffectInstance(TWEffects.EnergyRegen.get(), 6000, 1)));
 
-    public static final RegistryObject<Potion> FrostResistancePotion = Registry.register("frost_resistance_potion", ()-> new Potion(new MobEffectInstance(TWEffects.FrostResistance.get(), 24000, 0)));
-    public static final RegistryObject<Potion> LongFrostResistancePotion = Registry.register("long_frost_resistance_potion", ()-> new Potion("frost_resistance_potion", new MobEffectInstance(TWEffects.FrostResistance.get(), 30000, 0)));
+    public static final RegistryObject<Potion> FrostResistancePotion = Registry.register("frost_resistance_potion", ()-> new Potion(new MobEffectInstance(TWEffects.FrostResistance.get(), MinutesToTicks(20), 0)));
+    public static final RegistryObject<Potion> LongFrostResistancePotion = Registry.register("long_frost_resistance_potion", ()-> new Potion("frost_resistance_potion", new MobEffectInstance(TWEffects.FrostResistance.get(), MinutesToTicks(30), 0)));
 }

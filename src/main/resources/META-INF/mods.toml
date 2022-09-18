@@ -17,7 +17,7 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 [[dependencies.the_witcher]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[43.1.0,)" #mandatory
+    versionRange="[43.1,)" #mandatory
     ordering="NONE"
     side="BOTH"
 
@@ -32,5 +32,12 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
     modId="structure_gel"
     mandatory=true
     versionRange="[2.6.1,]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.the_witcher]]
+    modId="ametrin"
+    mandatory=true
+    versionRange="[0.0.16,]"
     ordering="NONE"
     side="BOTH"

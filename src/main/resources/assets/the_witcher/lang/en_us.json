@@ -23,9 +23,6 @@
 
   "block.the_witcher.power_block": "Block of Power",
   "message.the_witcher.sign.need_unlock": "You can't use that right now",
-  "item.minecraft.potion.effect.energy_regen_potion": "Potion of Energy Regeneration",
-  "item.minecraft.splash_potion.effect.energy_regen_potion": "Splash Potion of Energy Regeneration",
-  "item.minecraft.lingering_potion.effect.energy_regen_potion": "Lingering Potion of Energy Regeneration",
 
   "block.the_witcher.frosted_cobblestone": "Frosted Cobblestone",
   "block.the_witcher.frosted_cobblestone_stairs": "Frosted Cobblestone Stairs",
@@ -86,13 +83,20 @@
   "item.the_witcher.hot_water_bottle": "Bottle of Hot Water",
 
   "entity.the_witcher.ice_ghost": "Ice Ghost",
-  "entity.the_witcher.ice_ghost_spawn_egg": "Ice Ghost Spawn Egg",
+  "item.the_witcher.ice_ghost_spawn_egg": "Ice Ghost Spawn Egg",
   "entity.the_witcher.wild_hunt_hound": "Hound of the Wild Hunt",
-  "entity.the_witcher.wild_hunt_hound_spawn_egg": "Hound of the Wild Hunt Spawn Egg",
+  "item.the_witcher.wild_hunt_hound_spawn_egg": "Hound of the Wild Hunt Spawn Egg",
   "entity.the_witcher.wild_hunt_knight": "Knight of the Wild Hunt",
-  "entity.the_witcher.wild_hunt_knight_spawn_egg": "Knight of the Wild Hunt Spawn Egg",
+  "item.the_witcher.wild_hunt_knight_spawn_egg": "Knight of the Wild Hunt Spawn Egg",
 
   "effect.the_witcher.energy_regen": "Energy Regeneration",
+  "item.minecraft.potion.effect.energy_regen_potion": "Potion of Energy Regeneration",
+  "item.minecraft.splash_potion.effect.energy_regen_potion": "Splash Potion of Energy Regeneration",
+  "item.minecraft.lingering_potion.effect.energy_regen_potion": "Lingering Potion of Energy Regeneration",
+  "effect.the_witcher.frost_resistance": "Frost Resistance",
+  "item.minecraft.potion.effect.frost_resistance_potion": "Potion of Frost Resistance",
+  "item.minecraft.splash_potion.effect.frost_resistance_potion": "Splash Potion of Frost Resistance",
+  "item.minecraft.lingering_potion.effect.frost_resistance_potion": "Lingering Potion of Frost Resistance",
 
   "key.the_witcher.cast_sign": "Cast Sign",
 

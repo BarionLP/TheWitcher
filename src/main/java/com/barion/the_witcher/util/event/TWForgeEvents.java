@@ -33,13 +33,17 @@ public class TWForgeEvents{
     @SubscribeEvent
     public static void entityTick(final LivingEvent.LivingTickEvent event){
         LivingEntity entity = event.getEntity();
-        if(entity == null || entity.level.isClientSide) {return;}
+        if(entity == null) {return;}
 
         if(entity.level.dimension() == TWLevels.WhiteFrost && !entity.hasEffect(TWEffects.FrostResistance.get())){
             if(entity instanceof Player && ((Player)entity).getAbilities().invulnerable) {return;}
             entity.setIsInPowderSnow(true);
-            entity.setTicksFrozen(entity.getTicksFrozen() + 1);
+            entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze()+2, entity.getTicksFrozen() + 3));
+//            entity.getEntityData().
+//            entity.setTicksFrozen(entity.getTicksFrozen() + 2);
             TWUtil.Logger.info(entity.getTicksFrozen() + "");
+            TWUtil.Logger.info(entity.isInPowderSnow + "");
+            TWUtil.Logger.info(entity.wasInPowderSnow + "");
         }
     }
 
