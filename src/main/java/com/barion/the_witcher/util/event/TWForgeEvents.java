@@ -38,12 +38,7 @@ public class TWForgeEvents{
         if(entity.level.dimension() == TWLevels.WhiteFrost && !entity.hasEffect(TWEffects.FrostResistance.get())){
             if(entity instanceof Player && ((Player)entity).getAbilities().invulnerable) {return;}
             entity.setIsInPowderSnow(true);
-            entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze()+2, entity.getTicksFrozen() + 3));
-//            entity.getEntityData().
-//            entity.setTicksFrozen(entity.getTicksFrozen() + 2);
-            TWUtil.Logger.info(entity.getTicksFrozen() + "");
-            TWUtil.Logger.info(entity.isInPowderSnow + "");
-            TWUtil.Logger.info(entity.wasInPowderSnow + "");
+            entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze()+2, entity.getTicksFrozen() + 3)); //very bad, need a better solution
         }
     }
 

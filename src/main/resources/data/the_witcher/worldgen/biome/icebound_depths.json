@@ -2,7 +2,6 @@
   "temperature": 0,
   "downfall": 0.5,
   "precipitation": "snow",
-  "category": "icy",
   "creature_spawn_probability": 0.07,
   "effects": {
     "sky_color": 8364543,
@@ -13,7 +12,7 @@
       "options": {
         "type": "minecraft:snowflake"
       },
-      "probability": 0.1
+      "probability": 0.07
     }
   },
   "spawners": {},
@@ -32,6 +31,9 @@
     [
       "the_witcher:icebound_depths/floor",
       "the_witcher:icebound_depths/ceiling"
+    ],
+    [
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer"

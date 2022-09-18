@@ -13,7 +13,7 @@
       "options": {
         "type": "minecraft:snowflake"
       },
-      "probability": 0.05
+      "probability": 0.02
     }
   },
   "spawners": {},
