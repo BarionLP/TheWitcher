@@ -1,6 +1,7 @@
 package com.barion.the_witcher.world;
 
 import com.ametrinstudios.ametrin.world.item.CustomArmorItem;
+import com.ametrinstudios.ametrin.world.item.PortalCatalystItem;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWCreativeModeTab;
 import com.barion.the_witcher.world.item.*;
@@ -12,7 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.function.Supplier;
 
 public class TWItems{
@@ -43,9 +44,11 @@ public class TWItems{
     public static final RegistryObject<ItemNameBlockItem> Celandine = register("celandine", blockItem(TWBlocks.CelandineBush));
     public static final RegistryObject<Item> HotWaterBottle = register("hot_water_bottle", () -> new TWHotWaterBottleItem(properties().stacksTo(4).craftRemainder(Items.GLASS_BOTTLE).food(TWFoods.HotWaterBottle)));
 
-    public static final RegistryObject<SpawnEggItem> WildHuntKnightSpawnEgg = register("wild_hunt_knight_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.WildHuntKnight, -16777216, -6684673, DefaultProperies));
-    public static final RegistryObject<SpawnEggItem> WildHuntHoundSpawnEgg = register("wild_hunt_hound_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.WildHuntHound, -13421773, -16737895, DefaultProperies));
-    public static final RegistryObject<SpawnEggItem> IceGhostSpawnEgg = register("ice_ghost_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntities.IceGhost, -13369345, -16776961, DefaultProperies));
+    public static final RegistryObject<SpawnEggItem> WildHuntKnightSpawnEgg = register("wild_hunt_knight_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.WildHuntKnight, -16777216, -6684673, DefaultProperies));
+    public static final RegistryObject<SpawnEggItem> WildHuntHoundSpawnEgg = register("wild_hunt_hound_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.WildHuntHound, -13421773, -16737895, DefaultProperies));
+    public static final RegistryObject<SpawnEggItem> IceGhostSpawnEgg = register("ice_ghost_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.IceGhost, -13369345, -16776961, DefaultProperies));
+
+    public static final RegistryObject<PortalCatalystItem> IceStuff = register("ice_stuff", ()-> new PortalCatalystItem(TWBlocks.WhiteFrostPortal::get, TheWitcher.WhiteFrost, NoStack));
 
     private static Supplier<Item> item(Item.Properties properties) {return () -> new Item(properties);}
     private static Supplier<ItemNameBlockItem> blockItem(Supplier<? extends Block> block) {return () -> new ItemNameBlockItem(block.get(), DefaultProperies);}
@@ -59,5 +62,5 @@ public class TWItems{
     public static Item.Properties properties() {return new Item.Properties().tab(TWCreativeModeTab.Instance);}
 
     private static <I extends Item> RegistryObject<I> register(String id, Supplier<I> item) {return Registry.register(id, item);}
-    public static List<Item> getAllItems() {return Registry.getEntries().stream().map(RegistryObject::get).toList();}
+    public static Iterator<Item> getAllItems() {return Registry.getEntries().stream().map(RegistryObject::get).iterator();}
 }

@@ -6,19 +6,23 @@ import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.potion.TWPotions;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
 import com.barion.the_witcher.util.TWConfig;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
-import com.barion.the_witcher.world.TWEntities;
+import com.barion.the_witcher.world.TWEntityTypes;
 import com.barion.the_witcher.world.TWItems;
+import com.barion.the_witcher.world.TWPOIs;
 import com.barion.the_witcher.world.block.entity.TWBlockEntities;
 import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
 import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -30,9 +34,13 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import static com.ametrinstudios.ametrin.util.Extensions.addBrewingRecipe;
+
 @Mod(TheWitcher.ModID)
 public class TheWitcher {
     public static final String ModID = "the_witcher";
+
+    public static final ResourceKey<Level> WhiteFrost = ResourceKey.create(Registry.DIMENSION_REGISTRY, TWUtil.location("white_frost"));
 
     public TheWitcher() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWConfig.CommonSpec);
@@ -40,17 +48,18 @@ public class TheWitcher {
         final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         TWItems.Registry.register(modBus);
         TWBlocks.Registry.register(modBus);
-        TWEntities.Registry.register(modBus);
+        TWEntityTypes.Registry.register(modBus);
         TWFeatures.Registry.register(modBus);
         TWBlockEntities.Registry.register(modBus);
         TWMenuTypes.Registry.register(modBus);
         TWRecipeTypes.Registry.register(modBus);
         TWEffects.Registry.register(modBus);
         TWPotions.Registry.register(modBus);
+        TWPOIs.Registry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.addListener(TWRecipeTypes::registerRecipeTypes);
-        modBus.addListener(TWEntities::registerAttributes);
+        modBus.addListener(TWEntityTypes::registerAttributes);
         TWStructures.init();
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
@@ -63,12 +72,12 @@ public class TheWitcher {
             TWMessages.register();
         });
 
-        PotionBrewing.addMix(Potions.AWKWARD, TWItems.KikimoraTooth.get(), TWPotions.EnergyRegenPotion.get());
-        PotionBrewing.addMix(TWPotions.EnergyRegenPotion.get(), Items.REDSTONE, TWPotions.LongEnergyRegenPotion.get());
-        PotionBrewing.addMix(TWPotions.EnergyRegenPotion.get(), Items.GLOWSTONE_DUST, TWPotions.StrongEnergyRegenPotion.get());
+        addBrewingRecipe(Potions.AWKWARD, TWItems.KikimoraTooth.get(), TWPotions.EnergyRegenPotion.get());
+        addBrewingRecipe(TWPotions.EnergyRegenPotion.get(), Items.REDSTONE, TWPotions.LongEnergyRegenPotion.get());
+        addBrewingRecipe(TWPotions.EnergyRegenPotion.get(), Items.GLOWSTONE_DUST, TWPotions.StrongEnergyRegenPotion.get());
 
-        PotionBrewing.addMix(Potions.AWKWARD, Items.BLAZE_ROD, TWPotions.FrostResistancePotion.get());
-        PotionBrewing.addMix(TWPotions.FrostResistancePotion.get(), Items.REDSTONE, TWPotions.LongFrostResistancePotion.get());
+        addBrewingRecipe(Potions.AWKWARD, Items.BLAZE_ROD, TWPotions.FrostResistancePotion.get());
+        addBrewingRecipe(TWPotions.FrostResistancePotion.get(), Items.REDSTONE, TWPotions.LongFrostResistancePotion.get());
     }
 
     @Mod.EventBusSubscriber(modid = TheWitcher.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)

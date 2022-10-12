@@ -2,7 +2,7 @@ package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
-import com.barion.the_witcher.world.TWEntities;
+import com.barion.the_witcher.world.TWEntityTypes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
@@ -21,13 +21,13 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
         tag(TWTags.EntityTypes.MagicMob).add(
                 EntityType.VEX,
                 EntityType.CREEPER,
-                TWEntities.WildHuntHound.get(),
-                TWEntities.IceGhost.get()
+                TWEntityTypes.WildHuntHound.get(),
+                TWEntityTypes.IceGhost.get()
         );
 
         tag(TWTags.EntityTypes.WildHunt).add(
-                TWEntities.WildHuntHound.get(),
-                TWEntities.WildHuntKnight.get()
+                TWEntityTypes.WildHuntHound.get(),
+                TWEntityTypes.WildHuntKnight.get()
         );
 
         tag(TWTags.EntityTypes.WildHuntIgnore).addTag(TWTags.EntityTypes.WildHunt).add(
@@ -42,13 +42,13 @@ public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
         );
 
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(
-                TWEntities.WildHuntHound.get(),
-                TWEntities.WildHuntKnight.get(),
-                TWEntities.IceGhost.get()
+                TWEntityTypes.WildHuntHound.get(),
+                TWEntityTypes.WildHuntKnight.get(),
+                TWEntityTypes.IceGhost.get()
         );
         tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS).add(
-                TWEntities.WildHuntHound.get(),
-                TWEntities.IceGhost.get()
+                TWEntityTypes.WildHuntHound.get(),
+                TWEntityTypes.IceGhost.get()
         );
     }
 }

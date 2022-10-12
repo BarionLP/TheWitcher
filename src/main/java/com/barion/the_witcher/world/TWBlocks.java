@@ -1,24 +1,25 @@
 package com.barion.the_witcher.world;
 
+import com.ametrinstudios.ametrin.world.BlockRegistry;
 import com.ametrinstudios.ametrin.world.block.AgeableBushBlock;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
+import com.barion.the_witcher.world.block.TWWhiteFrostPortalBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.function.Supplier;
 
-public class TWBlocks {
+public class TWBlocks extends BlockRegistry {
     public static final DeferredRegister<Block> Registry = DeferredRegister.create(ForgeRegistries.BLOCKS, TheWitcher.ModID);
 
     protected static final BlockBehaviour.Properties frosted = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.ICE).requiresCorrectToolForDrops().strength(1.5f, 6).sound(SoundType.STONE).friction(Blocks.ICE.getFriction());
@@ -90,14 +91,9 @@ public class TWBlocks {
     public static final RegistryObject<AgeableBushBlock> WhiteMyrtleBush = registerWithoutItem("white_myrtle_bush", bush(1, 6));
     public static final RegistryObject<AgeableBushBlock> CelandineBush = registerWithoutItem("celandine_bush", bush(0,12));
 
-    private static BlockBehaviour.Properties properties(Block base) {return BlockBehaviour.Properties.copy(base);}
+    public static final RegistryObject<TWWhiteFrostPortalBlock> WhiteFrostPortal = registerWithoutItem("white_frost_portal", TWWhiteFrostPortalBlock::new);
+    public static final RegistryObject<Block> WhiteFrostPortalFrame = register("white_frost_portal_frame", block(properties(Blocks.OBSIDIAN).noLootTable()));
 
-    private static Supplier<Block> block(BlockBehaviour.Properties properties) {return ()-> new Block(properties);}
-    private static Supplier<StairBlock> stair(StairBlock.Properties properties, Supplier<BlockState> base) {return ()-> new StairBlock(base, properties);}
-    private static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
-    private static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
-    private static Supplier<AgeableBushBlock> bush(int bonusDrop, int growRarity) {return ()-> new AgeableBushBlock(bonusDrop, growRarity, properties(Blocks.SWEET_BERRY_BUSH));}
-    private static Supplier<Block> block(Block base) {return ()-> new Block(BlockBehaviour.Properties.copy(base));}
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block){
         RegistryObject<T> registered = registerWithoutItem(name, block);
@@ -106,5 +102,5 @@ public class TWBlocks {
     }
 
     private static <T extends Block>RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return Registry.register(name, block);}
-    public static List<Block> getAllBlocks() {return Registry.getEntries().stream().map(RegistryObject::get).toList();}
+    public static Iterator<Block> getAllBlocks() {return Registry.getEntries().stream().map(RegistryObject::get).iterator();}
 }

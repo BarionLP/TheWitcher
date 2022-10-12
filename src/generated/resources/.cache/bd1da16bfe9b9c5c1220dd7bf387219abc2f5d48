@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-09T10:53:12.6089973	Block States: the_witcher
+// 1.19.2	2022-10-09T16:54:41.158351	Block States: the_witcher
 037bc8079bf98ab49cc7ecd6b4a85f649edf25c1 assets/the_witcher/blockstates/celandine_bush.json
 c291e40e3826b909ae57641f60aafd9547aac2f6 assets/the_witcher/blockstates/cracked_deep_frosted_stone_bricks.json
 ad94bef873eb5f95b1f96c9f45c4ae9ca35c2fab assets/the_witcher/blockstates/cracked_deep_frosted_stone_brick_button.json
@@ -55,6 +55,8 @@ b63e14f66555cdb088e2d90b93b952f3d257d52f assets/the_witcher/blockstates/icicle.j
 b13a0b07893e3774515ce1a96293c25a0deaee23 assets/the_witcher/blockstates/power_block.json
 b72716fad376dae4f235d561ce6e79e82fc57dac assets/the_witcher/blockstates/raw_silver_block.json
 86f8878bcba0e4e63f26730f1583f1c409330e68 assets/the_witcher/blockstates/silver_block.json
+639ba903aede8d9cab9c1e73972a3ee825ff7e5d assets/the_witcher/blockstates/white_frost_portal.json
+308a95e0d440604c0e43991deffb0eb35f4341d8 assets/the_witcher/blockstates/white_frost_portal_frame.json
 56dc5e3a41cc47bd80c9fc0e348463275a133c12 assets/the_witcher/blockstates/white_myrtle_bush.json
 181d8ebbc855b694ecb618e6ae0f2b06df78f438 assets/the_witcher/models/block/celandine_bush/stage0.json
 c1c01e72dcfeddfc7cf6efda5a2e2507c09ded60 assets/the_witcher/models/block/celandine_bush/stage1.json
@@ -185,6 +187,9 @@ f96fd9b31dc2bb268c981e4252799717decc9cf3 assets/the_witcher/models/block/power_b
 41ebd8dfa0f93240a895b55a602f15a3c2b2560d assets/the_witcher/models/block/power_block/on.json
 422c76e0a8fe61483cb71040c5e521d943b50b1b assets/the_witcher/models/block/raw_silver_block.json
 2492238c3b72069290ecbfa1ef0db2d8041ea098 assets/the_witcher/models/block/silver_block.json
+ffc6b1c7995269ddf3c84e9e5c5932230a718a9e assets/the_witcher/models/block/white_frost_portal_ew.json
+53f13bcbb9bfcb67a45195d3e15ea4e13dcb954a assets/the_witcher/models/block/white_frost_portal_frame.json
+06bcf232768477e73a04ddeb18913419d120253b assets/the_witcher/models/block/white_frost_portal_ns.json
 181d8ebbc855b694ecb618e6ae0f2b06df78f438 assets/the_witcher/models/block/white_myrtle_bush/stage0.json
 c1c01e72dcfeddfc7cf6efda5a2e2507c09ded60 assets/the_witcher/models/block/white_myrtle_bush/stage1.json
 f98a6cbe16574c107005c596cfcf8561d6487e94 assets/the_witcher/models/block/white_myrtle_bush/stage2.json

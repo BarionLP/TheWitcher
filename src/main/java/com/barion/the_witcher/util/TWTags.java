@@ -16,6 +16,7 @@ public class TWTags {
         public static final TagKey<Block> StorageBlocksRawSilver = forge("storage_blocks/raw_silver");
         public static final TagKey<Block> SpikesCanPlace = tw("spikes_can_place");
         public static final TagKey<Block> IceGroundReplaceable = tw("replaceable/ice_ground");
+        public static final TagKey<Block> WhiteFrostPortalFrame = tw("portal_frame/white_frost");
 
         private static TagKey<Block> forge(String path){return BlockTags.create(new ResourceLocation("forge", path));}
         private static TagKey<Block> tw(String path){return BlockTags.create(TWUtil.location(path));}

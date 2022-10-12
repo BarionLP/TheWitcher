@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-18T09:57:28.5411605	Item Models: the_witcher
+// 1.19.2	2022-10-09T14:12:16.7006877	Item Models: the_witcher
 371989dd67439fc93e92d539e77833d185791d52 assets/the_witcher/models/item/celandine.json
 5d922746aef091549557333ace29ddbe2bb07009 assets/the_witcher/models/item/cracked_deep_frosted_stone_bricks.json
 c2e59fe30cf7ba03f4f996994203bbe260dc7f4b assets/the_witcher/models/item/cracked_deep_frosted_stone_brick_button.json
@@ -52,6 +52,7 @@ cb608084672c2713469224c578a9f010f8a2aea7 assets/the_witcher/models/item/frosted_
 e59f6e6bafc1917fe6a4be006dc90b032a560756 assets/the_witcher/models/item/frosted_stone_wall.json
 e76c9ecb764438e9bf68bbbb4fd46f444630d746 assets/the_witcher/models/item/hot_water_bottle.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/the_witcher/models/item/ice_ghost_spawn_egg.json
+09d99ffc1d45594067b157d26a65299988971cde assets/the_witcher/models/item/ice_stuff.json
 fda844de3ca1eebbc0f92dcf58cd4f3a7fcd2fda assets/the_witcher/models/item/icicle.json
 8c305ac6fb8965eba702f60f25be5f45ad5d1b26 assets/the_witcher/models/item/kikimora_tooth.json
 ddb246d8454bc1dae1d3abb12fe6897f31b77957 assets/the_witcher/models/item/masterful_silver_sword.json
@@ -72,6 +73,7 @@ e4e2aeea94327439055a4a3f3bd97ac1a3d9dc9b assets/the_witcher/models/item/steel_in
 be42450f8e845c0ff9b536db10bed109bd4194a0 assets/the_witcher/models/item/steel_nugget.json
 39a0781abff81c00c59ea1b1e6f531f49da26945 assets/the_witcher/models/item/steel_sword.json
 1c44c37bbe098d038d44a976264b05932233d600 assets/the_witcher/models/item/tab_logo.json
+db1b716a6beb1b99b828dd1cd2c365230c62fea5 assets/the_witcher/models/item/white_frost_portal_frame.json
 1f2ba88d8cdc46f5d0ed8e9764573fec90fe1aa1 assets/the_witcher/models/item/white_myrtle.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/the_witcher/models/item/wild_hunt_hound_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/the_witcher/models/item/wild_hunt_knight_spawn_egg.json

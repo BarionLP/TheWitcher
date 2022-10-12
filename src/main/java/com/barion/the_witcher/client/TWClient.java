@@ -8,7 +8,7 @@ import com.barion.the_witcher.client.renderer.TWWildHuntHoundRenderer;
 import com.barion.the_witcher.client.renderer.TWWildHuntKnightRenderer;
 import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.networking.packet.TWSetPlayerEnergyC2SPacket;
-import com.barion.the_witcher.world.TWEntities;
+import com.barion.the_witcher.world.TWEntityTypes;
 import com.barion.the_witcher.world.screen.TWMasterSmithingScreen;
 import com.barion.the_witcher.world.screen.TWMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -47,9 +47,9 @@ public class TWClient {
 
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
-            event.registerEntityRenderer(TWEntities.IceGhost.get(), TWIceGhostRenderer::new);
-            event.registerEntityRenderer(TWEntities.WildHuntHound.get(), TWWildHuntHoundRenderer::new);
-            event.registerEntityRenderer(TWEntities.WildHuntKnight.get(), TWWildHuntKnightRenderer::new);
+            event.registerEntityRenderer(TWEntityTypes.IceGhost.get(), TWIceGhostRenderer::new);
+            event.registerEntityRenderer(TWEntityTypes.WildHuntHound.get(), TWWildHuntHoundRenderer::new);
+            event.registerEntityRenderer(TWEntityTypes.WildHuntKnight.get(), TWWildHuntKnightRenderer::new);
         }
         @SubscribeEvent
         public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){

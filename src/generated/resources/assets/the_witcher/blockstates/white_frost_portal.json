@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "the_witcher:block/white_frost_portal_ns"
+    },
+    "axis=z": {
+      "model": "the_witcher:block/white_frost_portal_ew"
+    }
+  }
+}

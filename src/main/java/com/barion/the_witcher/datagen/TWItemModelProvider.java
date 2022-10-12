@@ -37,6 +37,4 @@ public class TWItemModelProvider extends ExtendedItemModelProvider {
     protected void registerModels() {
         runProviderRules(TWItems.getAllItems());
     }
-
-    private void blockItem(String name, ModelFile parent, String texture) {getBuilder(name).parent(parent).texture("layer0", blockLoc(texture));}
 }
