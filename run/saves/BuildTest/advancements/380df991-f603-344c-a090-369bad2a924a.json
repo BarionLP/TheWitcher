@@ -439,6 +439,12 @@
     },
     "done": true
   },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_helmet": "2022-10-30 12:19:37 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/frosted_stone_wall": {
     "criteria": {
       "has_frosted_stone": "2022-07-19 15:30:50 +0200"
@@ -1144,6 +1150,12 @@
   "minecraft:recipes/misc/iron_nugget_from_blasting": {
     "criteria": {
       "has_iron_pickaxe": "2022-06-17 09:09:04 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/frosted_stone_brick_button": {
+    "criteria": {
+      "has_frosted_stone_bricks": "2022-10-30 12:24:24 +0100"
     },
     "done": true
   },

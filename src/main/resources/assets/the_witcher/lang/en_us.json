@@ -85,6 +85,14 @@
   "block.the_witcher.white_frost_portal_frame": "White Frost Portal Frame",
   "item.the_witcher.ice_stuff": "Ice Stuff",
 
+  "item.the_witcher.acid_bucket": "Bucket of Acid",
+  "block.the_witcher.hallucinated_stone": "Hallucinated Stone",
+  "block.the_witcher.hallucinated_stone_stairs": "Hallucinated Stone Stairs",
+  "block.the_witcher.hallucinated_stone_slab": "Hallucinated Stone Slab",
+  "block.the_witcher.hallucinated_stone_wall": "Hallucinated Stone Wall",
+  "block.the_witcher.hallucinated_stone_button": "Hallucinated Stone Button",
+  "block.the_witcher.alcite": "Alcite",
+
   "entity.the_witcher.ice_ghost": "Ice Ghost",
   "item.the_witcher.ice_ghost_spawn_egg": "Ice Ghost Spawn Egg",
   "entity.the_witcher.wild_hunt_hound": "Hound of the Wild Hunt",
@@ -102,6 +110,8 @@
   "item.minecraft.lingering_potion.effect.frost_resistance_potion": "Lingering Potion of Frost Resistance",
 
   "key.the_witcher.cast_sign": "Cast Sign",
+
+  "msg.the_witcher.dream_block.wrong_dimension": "This is just an ancient relict of a long forgotten dream",
 
   "command.the_witcher.energy.set.success": "Set energy of %s to %s.",
   "command.the_witcher.energy.get.success": "Energy of %s is %s.",

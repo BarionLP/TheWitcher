@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class TWKikimoraToothItem extends Item {
-    public TWKikimoraToothItem() {super(TWItems.Stacks16);}
+    public TWKikimoraToothItem() {super(TWItems.properties().stacksTo(16));}
 
     @Override @ParametersAreNonnullByDefault
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {

@@ -92,13 +92,19 @@ public class TWCreativeModeTab extends CreativeModeTab {
         items.add(TWItems.KikimoraTooth.get().getDefaultInstance());
         items.add(TWItems.HotWaterBottle.get().getDefaultInstance());
 
+        items.add(TWItems.IceStuff.get().getDefaultInstance());
         items.add(TWItems.WildHuntKnightSpawnEgg.get().getDefaultInstance());
         items.add(TWItems.WildHuntHoundSpawnEgg.get().getDefaultInstance());
         items.add(TWItems.IceGhostSpawnEgg.get().getDefaultInstance());
+
+        items.add(TWBlocks.HallucinatedStone.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.HallucinatedStoneStairs.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.HallucinatedStoneSlab.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.HallucinatedStoneWall.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.HallucinatedStoneButton.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.Alcite.get().asItem().getDefaultInstance());
     }
 
     @Override
-    public @NotNull ItemStack makeIcon() {
-        return TWItems.TabLogo.get().getDefaultInstance();
-    }
+    public @NotNull ItemStack makeIcon() {return TWItems.TabLogo.get().getDefaultInstance();}
 }

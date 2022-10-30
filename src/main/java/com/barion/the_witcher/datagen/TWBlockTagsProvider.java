@@ -74,12 +74,28 @@ public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
                 TWBlocks.CrackedDeepFrostedStoneTileSlab.get(),
                 TWBlocks.CrackedDeepFrostedStoneTileWall.get(),
                 TWBlocks.CrackedDeepFrostedStoneTileButton.get(),
-                TWBlocks.Icicle.get()
+                TWBlocks.Icicle.get(),
+
+                TWBlocks.HallucinatedStone.get(),
+                TWBlocks.HallucinatedStoneStairs.get(),
+                TWBlocks.HallucinatedStoneSlab.get(),
+                TWBlocks.HallucinatedStoneWall.get(),
+                TWBlocks.HallucinatedStoneButton.get(),
+                TWBlocks.Alcite.get()
         );
 
         tag(BlockTags.MINEABLE_WITH_AXE).add(
                 TWBlocks.MasterSmithingTable.get(),
                 TWBlocks.Icicle.get()
+        );
+
+        tag(BlockTags.NEEDS_STONE_TOOL).add(
+                TWBlocks.HallucinatedStone.get(),
+                TWBlocks.HallucinatedStoneStairs.get(),
+                TWBlocks.HallucinatedStoneSlab.get(),
+                TWBlocks.HallucinatedStoneWall.get(),
+                TWBlocks.HallucinatedStoneButton.get(),
+                TWBlocks.Alcite.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(

@@ -2,6 +2,7 @@ package com.barion.the_witcher.datagen;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
+import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -40,6 +41,14 @@ public class TWItemTagsProvider extends ItemTagsProvider {
         tag(Tags.Items.NUGGETS)
                 .addTag(TWTags.Items.SilverNuggets)
                 .addTag(TWTags.Items.SteelNuggets);
+
+        tag(ItemTags.STONE_CRAFTING_MATERIALS).add(
+                TWBlocks.FrostedStone.get().asItem(),
+                TWBlocks.FrostedCobblestone.get().asItem(),
+                TWBlocks.DeepFrostedStone.get().asItem(),
+                TWBlocks.DeepFrostedCobblestone.get().asItem(),
+                TWBlocks.HallucinatedStone.get().asItem()
+        );
 
         tag(Tags.Items.RAW_MATERIALS).addTag(TWTags.Items.RawMaterialsSilver);
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(TWItems.SilverIngot.get(), TWItems.SteelIngot.get());

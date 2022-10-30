@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "the_witcher:hallucinated_stone_stairs"
+    }
+  ],
+  "result": {
+    "item": "the_witcher:hallucinated_stone_button"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "the_witcher:block/hallucinated_stone_slab"
+    },
+    "type=double": {
+      "model": "the_witcher:block/hallucinated_stone"
+    },
+    "type=top": {
+      "model": "the_witcher:block/hallucinated_stone_slab_top"
+    }
+  }
+}

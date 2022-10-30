@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "the_witcher:block/hallucinated_stone",
+    "side": "the_witcher:block/hallucinated_stone",
+    "top": "the_witcher:block/hallucinated_stone"
+  }
+}

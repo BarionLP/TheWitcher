@@ -52,6 +52,12 @@
     "the_witcher:cracked_deep_frosted_stone_tile_slab",
     "the_witcher:cracked_deep_frosted_stone_tile_wall",
     "the_witcher:cracked_deep_frosted_stone_tile_button",
-    "the_witcher:icicle"
+    "the_witcher:icicle",
+    "the_witcher:hallucinated_stone",
+    "the_witcher:hallucinated_stone_stairs",
+    "the_witcher:hallucinated_stone_slab",
+    "the_witcher:hallucinated_stone_wall",
+    "the_witcher:hallucinated_stone_button",
+    "the_witcher:alcite"
   ]
 }

@@ -79,5 +79,7 @@ public class TWRecipeProvider extends ExtendedRecipeProvider {
         smelting(consumer, Items.DEEPSLATE_TILE_SLAB, TWBlocks.DeepFrostedStoneTileSlab.get(), xp, time*2);
         smelting(consumer, Items.DEEPSLATE_TILE_WALL, TWBlocks.DeepFrostedStoneTileWall.get(), xp*2, time*2);
         smelting(consumer, Items.CRACKED_DEEPSLATE_TILES, TWBlocks.CrackedDeepFrostedStoneTiles.get(), xp*2, time*2);
+
+        stairSlabWallButton(consumer, TWBlocks.HallucinatedStoneStairs.get(), TWBlocks.HallucinatedStoneSlab.get(), TWBlocks.HallucinatedStoneWall.get(), TWBlocks.HallucinatedStoneButton.get(), TWBlocks.HallucinatedStoneStairs.get());
     }
 }

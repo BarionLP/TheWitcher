@@ -2,6 +2,8 @@ package com.barion.the_witcher;
 
 import com.barion.the_witcher.datagen.*;
 import com.barion.the_witcher.effect.TWEffects;
+import com.barion.the_witcher.fluid.TWFluidTypes;
+import com.barion.the_witcher.fluid.TWFluids;
 import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.potion.TWPotions;
 import com.barion.the_witcher.recipe.TWRecipeTypes;
@@ -56,6 +58,8 @@ public class TheWitcher {
         TWEffects.Registry.register(modBus);
         TWPotions.Registry.register(modBus);
         TWPOIs.Registry.register(modBus);
+        TWFluids.Registry.register(modBus);
+        TWFluidTypes.Registry.register(modBus);
 
         modBus.addListener(this::setup);
         modBus.addListener(TWRecipeTypes::registerRecipeTypes);

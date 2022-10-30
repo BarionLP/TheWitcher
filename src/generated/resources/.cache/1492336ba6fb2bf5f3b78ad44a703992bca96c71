@@ -1,4 +1,5 @@
-// 1.19.2	2022-10-09T14:12:16.7006877	Item Models: the_witcher
+// 1.19.2	2022-10-30T11:38:25.4093666	Item Models: the_witcher
+c66ebd497c542edf310fb255716994b9373af29a assets/the_witcher/models/item/alcite.json
 371989dd67439fc93e92d539e77833d185791d52 assets/the_witcher/models/item/celandine.json
 5d922746aef091549557333ace29ddbe2bb07009 assets/the_witcher/models/item/cracked_deep_frosted_stone_bricks.json
 c2e59fe30cf7ba03f4f996994203bbe260dc7f4b assets/the_witcher/models/item/cracked_deep_frosted_stone_brick_button.json
@@ -50,6 +51,11 @@ a99bc7fa0814543463e71a8b768f8562f95b8c73 assets/the_witcher/models/item/frosted_
 cb608084672c2713469224c578a9f010f8a2aea7 assets/the_witcher/models/item/frosted_stone_slab.json
 64db00e39534441fedb3b89b4e5f8a9ed4191687 assets/the_witcher/models/item/frosted_stone_stairs.json
 e59f6e6bafc1917fe6a4be006dc90b032a560756 assets/the_witcher/models/item/frosted_stone_wall.json
+5a3f8604cbab7ad0aaa643d6474daabbd0713dc1 assets/the_witcher/models/item/hallucinated_stone.json
+37cfd5852e0610527b3168b18dfb909e2be40aa8 assets/the_witcher/models/item/hallucinated_stone_button.json
+dc0f21de9e018b9c4d01e80feb51031fbc062698 assets/the_witcher/models/item/hallucinated_stone_slab.json
+d4d5edc61f4b828bb4cb348c8a2656d3a3caa325 assets/the_witcher/models/item/hallucinated_stone_stairs.json
+96ab75a02839bac4c9eb7ac5f17c2ba040848a7a assets/the_witcher/models/item/hallucinated_stone_wall.json
 e76c9ecb764438e9bf68bbbb4fd46f444630d746 assets/the_witcher/models/item/hot_water_bottle.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/the_witcher/models/item/ice_ghost_spawn_egg.json
 09d99ffc1d45594067b157d26a65299988971cde assets/the_witcher/models/item/ice_stuff.json

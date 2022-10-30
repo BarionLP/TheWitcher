@@ -6,8 +6,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
-
+@OnlyIn(Dist.CLIENT)
 public class TWGuiOverlay {
     private static final ResourceLocation SignStrengthInfo = TWUtil.location("textures/gui/sign/info.png");
     private static final ResourceLocation EnergyBar = TWUtil.location("textures/gui/sign/energy.png");
