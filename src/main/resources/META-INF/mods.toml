@@ -31,13 +31,13 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 [[dependencies.the_witcher]]
     modId="structure_gel"
     mandatory=true
-    versionRange="[2.6.1,]"
+    versionRange="[2.7.0,]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.the_witcher]]
     modId="ametrin"
     mandatory=true
-    versionRange="[0.0.16,]"
+    versionRange="[0.0.23,]"
     ordering="NONE"
     side="BOTH"
