@@ -46,7 +46,7 @@ public class TWItems{
     public static final RegistryObject<SpawnEggItem> WildHuntHoundSpawnEgg = register("wild_hunt_hound_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.WildHuntHound, -13421773, -16737895, DefaultProperies));
     public static final RegistryObject<SpawnEggItem> IceGhostSpawnEgg = register("ice_ghost_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.IceGhost, -13369345, -16776961, DefaultProperies));
 
-    public static final RegistryObject<PortalCatalystItem> IceStuff = register("ice_stuff", ()-> new PortalCatalystItem(TWBlocks.WhiteFrostPortal, TheWitcher.WhiteFrost, properties().stacksTo(1)));
+    public static final RegistryObject<PortalCatalystItem> IceStuff = register("ice_stuff", ()-> new PortalCatalystItem(TWBlocks.WhiteFrostPortal, TheWitcher.WhiteFrost, properties().stacksTo(1).rarity(Rarity.EPIC)));
 
 //    public static final RegistryObject<BucketItem> AcidBucket = register("acid_bucket", ()-> new BucketItem(TWFluids.AcidSource, properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 

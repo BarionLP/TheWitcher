@@ -84,6 +84,7 @@
 
   "block.the_witcher.white_frost_portal_frame": "White Frost Portal Frame",
   "item.the_witcher.ice_stuff": "Ice Stuff",
+  "item.the_witcher.ice_stuff.desc": "Used to light the White Frost Portal",
 
   "item.the_witcher.acid_bucket": "Bucket of Acid",
   "block.the_witcher.hallucinated_stone": "Hallucinated Stone",
