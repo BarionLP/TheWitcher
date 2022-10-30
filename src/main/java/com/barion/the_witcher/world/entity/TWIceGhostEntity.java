@@ -45,6 +45,7 @@ public class TWIceGhostEntity extends Monster {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.FLYING_SPEED, 0.3)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2)
                 .add(Attributes.ATTACK_DAMAGE, 3)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.1)
