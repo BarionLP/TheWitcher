@@ -31,6 +31,7 @@ public class TWTags {
 
         public static final TagKey<Item> SteelIngots = tw("ingots/steel");
         public static final TagKey<Item> SteelNuggets = tw("nuggets/steel");
+        public static final TagKey<Item> BrewBeer = tw("brew_beer");
 
         private static TagKey<Item> forge(String path) {return ItemTags.create(new ResourceLocation("forge", path));}
         private static TagKey<Item> tw(String path) {return ItemTags.create(TWUtil.location(path));}

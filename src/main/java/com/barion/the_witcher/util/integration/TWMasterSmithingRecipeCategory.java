@@ -1,10 +1,10 @@
 package com.barion.the_witcher.util.integration;
 
+import com.barion.the_witcher.client.screen.TWMasterSmithingScreen;
 import com.barion.the_witcher.recipe.TWMasterSmithingRecipe;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
-import com.barion.the_witcher.world.screen.TWMasterSmithingScreen;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;

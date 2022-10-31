@@ -9,6 +9,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -48,6 +49,18 @@ public class TWItemTagsProvider extends ItemTagsProvider {
                 TWBlocks.DeepFrostedStone.get().asItem(),
                 TWBlocks.DeepFrostedCobblestone.get().asItem(),
                 TWBlocks.HallucinatedStone.get().asItem()
+        );
+
+        tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(
+                TWItems.ReinforcedLeatherHelmet.get(),
+                TWItems.ReinforcedLeatherChestplate.get(),
+                TWItems.ReinforcedLeatherLeggings.get(),
+                TWItems.ReinforcedLeatherBoots.get()
+        );
+
+        tag(TWTags.Items.BrewBeer).add(
+                Items.WHEAT,
+                Items.BROWN_MUSHROOM
         );
 
         tag(Tags.Items.RAW_MATERIALS).addTag(TWTags.Items.RawMaterialsSilver);

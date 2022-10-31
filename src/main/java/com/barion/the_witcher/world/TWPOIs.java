@@ -11,4 +11,5 @@ public class TWPOIs {
     public static final DeferredRegister<PoiType> Registry = DeferredRegister.create(ForgeRegistries.POI_TYPES, TheWitcher.ModID);
 
     public static final RegistryObject<PoiType> WhiteFrostPortal = Registry.register("white_frost_portal", ()-> new PoiType(ImmutableSet.copyOf(TWBlocks.WhiteFrostPortal.get().getStateDefinition().getPossibleStates()), 0, 1));
+    public static final RegistryObject<PoiType> MasterSmith = Registry.register("master_smith", ()-> new PoiType(ImmutableSet.copyOf(TWBlocks.MasterSmithingTable.get().getStateDefinition().getPossibleStates()), 0, 1));
 }

@@ -16,7 +16,7 @@ import com.barion.the_witcher.world.TWPOIs;
 import com.barion.the_witcher.world.block.entity.TWBlockEntities;
 import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
-import com.barion.the_witcher.world.screen.TWMenuTypes;
+import com.barion.the_witcher.world.inventory.TWMenuTypes;
 import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
 import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;

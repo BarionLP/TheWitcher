@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.block;
 
-import com.barion.the_witcher.world.screen.TWMasterSmithingMenu;
+import com.barion.the_witcher.world.inventory.TWMasterSmithingMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;

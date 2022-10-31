@@ -41,6 +41,7 @@ public class TWItems{
     public static final RegistryObject<ItemNameBlockItem> WhiteMyrtle = register("white_myrtle", blockItem(TWBlocks.WhiteMyrtleBush));
     public static final RegistryObject<ItemNameBlockItem> Celandine = register("celandine", blockItem(TWBlocks.CelandineBush));
     public static final RegistryObject<Item> HotWaterBottle = register("hot_water_bottle", () -> new TWHotWaterBottleItem(properties().stacksTo(4).craftRemainder(Items.GLASS_BOTTLE).food(TWFoods.HotWaterBottle)));
+    public static final RegistryObject<Item> Beer = register("beer", item(properties().stacksTo(4).craftRemainder(Items.GLASS_BOTTLE).food(TWFoods.Beer)));
 
     public static final RegistryObject<SpawnEggItem> WildHuntKnightSpawnEgg = register("wild_hunt_knight_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.WildHuntKnight, -16777216, -6684673, DefaultProperies));
     public static final RegistryObject<SpawnEggItem> WildHuntHoundSpawnEgg = register("wild_hunt_hound_spawn_egg", ()-> new ForgeSpawnEggItem(TWEntityTypes.WildHuntHound, -13421773, -16737895, DefaultProperies));

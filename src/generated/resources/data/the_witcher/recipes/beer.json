@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "the_witcher:brew_beer"
+    },
+    {
+      "tag": "the_witcher:brew_beer"
+    },
+    {
+      "tag": "the_witcher:brew_beer"
+    },
+    {
+      "tag": "the_witcher:brew_beer"
+    },
+    {
+      "item": "the_witcher:hot_water_bottle"
+    }
+  ],
+  "result": {
+    "item": "the_witcher:beer"
+  }
+}

@@ -5,6 +5,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/smoker": {
+    "criteria": {
+      "has_furnace": "2022-10-31 12:11:19 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/black_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -451,6 +457,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/the_witcher/smelting/hot_water_bottle": {
+    "criteria": {
+      "has_potion": "2022-10-31 12:11:03 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_slab_from_frosted_cobblestone": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
@@ -553,6 +565,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/the_witcher/beer": {
+    "criteria": {
+      "has_hot_water_bottle": "2022-10-31 12:12:13 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/item_frame": {
     "criteria": {
       "has_leather": "2022-08-04 16:37:46 +0200"
@@ -640,6 +658,12 @@
   "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_slab_from_frosted_stone": {
     "criteria": {
       "has_frosted_stone": "2022-07-19 15:30:50 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/smoking/hot_water_bottle": {
+    "criteria": {
+      "has_potion": "2022-10-31 12:11:03 +0100"
     },
     "done": true
   },
@@ -826,6 +850,12 @@
   "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_wall_from_frosted_stone": {
     "criteria": {
       "has_frosted_stone": "2022-07-19 15:30:50 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/blaze_powder": {
+    "criteria": {
+      "has_blaze_rod": "2022-10-31 12:43:51 +0100"
     },
     "done": true
   },
@@ -1069,6 +1099,12 @@
     },
     "done": true
   },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2022-10-31 12:15:51 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/redstone/dropper": {
     "criteria": {
       "has_redstone": "2022-04-15 18:00:53 +0200"
@@ -1135,6 +1171,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/brewing/brewing_stand": {
+    "criteria": {
+      "has_blaze_rod": "2022-10-31 12:43:51 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/building_blocks/smelting/cobblestone": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
@@ -1180,6 +1222,12 @@
   "minecraft:recipes/tools/golden_pickaxe": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:nether/obtain_blaze_rod": {
+    "criteria": {
+      "blaze_rod": "2022-10-31 12:43:51 +0100"
     },
     "done": true
   },

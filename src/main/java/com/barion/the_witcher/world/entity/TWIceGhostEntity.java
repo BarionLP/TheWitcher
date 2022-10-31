@@ -63,7 +63,7 @@ public class TWIceGhostEntity extends Monster {
 
     @Override @NotNull
     protected PathNavigation createNavigation(@NotNull Level level) {
-        FlyingPathNavigation flyingNavigation = new FlyingPathNavigation(this, level) {
+        FlyingPathNavigation flyingNavigation = new FlyingPathNavigation(this, level){
             public boolean isStableDestination(BlockPos pos) {return !this.level.getBlockState(pos.below()).isAir();}
         };
 

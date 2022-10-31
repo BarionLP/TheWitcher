@@ -2,7 +2,7 @@ package com.barion.the_witcher.recipe;
 
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWBlocks;
-import com.barion.the_witcher.world.screen.TWMasterSmithingMenu;
+import com.barion.the_witcher.world.inventory.TWMasterSmithingMenu;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -30,8 +30,6 @@ public class TWMasterSmithingRecipe implements Recipe<Container> {
 
     @Override @ParametersAreNonnullByDefault
     public boolean matches(Container container, Level level) {
-        if(level.isClientSide) {return false;}
-
         return ingredient.test(container.getItem(TWMasterSmithingMenu.InputSlot));
     }
 

@@ -8,7 +8,9 @@ import com.barion.the_witcher.world.TWItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
@@ -79,6 +81,15 @@ public class TWRecipeProvider extends ExtendedRecipeProvider {
         smelting(consumer, Items.DEEPSLATE_TILE_SLAB, TWBlocks.DeepFrostedStoneTileSlab.get(), xp, time*2);
         smelting(consumer, Items.DEEPSLATE_TILE_WALL, TWBlocks.DeepFrostedStoneTileWall.get(), xp*2, time*2);
         smelting(consumer, Items.CRACKED_DEEPSLATE_TILES, TWBlocks.CrackedDeepFrostedStoneTiles.get(), xp*2, time*2);
+
+        ShapelessRecipeBuilder.shapeless(TWItems.Beer.get())
+                .requires(Ingredient.of(TWTags.Items.BrewBeer), 4)
+                .requires(Ingredient.of(TWItems.HotWaterBottle.get()))
+                .unlockedBy(getHasName(TWItems.HotWaterBottle.get()), has(TWItems.HotWaterBottle.get()))
+                .save(consumer, recipeID(TWItems.Beer.get(), TWItems.HotWaterBottle.get()));
+
+        smelting(consumer, TWItems.HotWaterBottle.get(), Items.POTION, 0.1f, 200);
+        smoking(consumer, TWItems.HotWaterBottle.get(), Items.POTION, 0.1f, 200);
 
         stairSlabWallButton(consumer, TWBlocks.HallucinatedStoneStairs.get(), TWBlocks.HallucinatedStoneSlab.get(), TWBlocks.HallucinatedStoneWall.get(), TWBlocks.HallucinatedStoneButton.get(), TWBlocks.HallucinatedStoneStairs.get());
     }

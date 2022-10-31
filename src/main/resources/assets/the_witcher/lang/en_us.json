@@ -81,10 +81,11 @@
   "item.the_witcher.celandine": "Celandine Blossom",
   "item.the_witcher.white_myrtle": "White Myrtle Bloom",
   "item.the_witcher.hot_water_bottle": "Bottle of Hot Water",
+  "item.the_witcher.beer": "Beer Mug",
 
   "block.the_witcher.white_frost_portal_frame": "White Frost Portal Frame",
   "item.the_witcher.ice_stuff": "Ice Stuff",
-  "item.the_witcher.ice_stuff.desc": "Used to light the White Frost Portal",
+  "item.the_witcher.ice_stuff.desc": "Used to light the White Frost Portal (Creative Only)",
 
   "item.the_witcher.acid_bucket": "Bucket of Acid",
   "block.the_witcher.hallucinated_stone": "Hallucinated Stone",
@@ -105,12 +106,16 @@
   "item.minecraft.potion.effect.energy_regen_potion": "Potion of Energy Regeneration",
   "item.minecraft.splash_potion.effect.energy_regen_potion": "Splash Potion of Energy Regeneration",
   "item.minecraft.lingering_potion.effect.energy_regen_potion": "Lingering Potion of Energy Regeneration",
+  "item.minecraft.tipped_arrow.effect.energy_regen_potion": "Arrow of Energy Regeneration",
   "effect.the_witcher.frost_resistance": "Frost Resistance",
   "item.minecraft.potion.effect.frost_resistance_potion": "Potion of Frost Resistance",
   "item.minecraft.splash_potion.effect.frost_resistance_potion": "Splash Potion of Frost Resistance",
   "item.minecraft.lingering_potion.effect.frost_resistance_potion": "Lingering Potion of Frost Resistance",
+  "item.minecraft.tipped_arrow.effect.frost_resistance_potion": "Arrow of Frost Resistance",
 
   "key.the_witcher.cast_sign": "Cast Sign",
+
+  "death.attack.hot_water": "%s burned his throat",
 
   "msg.the_witcher.dream_block.wrong_dimension": "This is just an ancient relict of a long forgotten dream",
 
