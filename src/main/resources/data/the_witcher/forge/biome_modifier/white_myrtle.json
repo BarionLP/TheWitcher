@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_witcher:has/white_myrtle",
+  "features": "the_witcher:white_myrtle",
+  "step": "vegetal_decoration"
+}

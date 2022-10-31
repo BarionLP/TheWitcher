@@ -6,6 +6,7 @@ import com.barion.the_witcher.world.gen.TWBiomes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -36,6 +37,12 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
 
         tag(BiomeTags.HAS_NETHER_FOSSIL).add(
                 TWBiomes.ArcticBoneyard
+        );
+
+        tag(TWTags.Biomes.hasWhiteMyrtle).add(
+                Biomes.FLOWER_FOREST,
+                Biomes.BIRCH_FOREST,
+                Biomes.OLD_GROWTH_BIRCH_FOREST
         );
     }
 }

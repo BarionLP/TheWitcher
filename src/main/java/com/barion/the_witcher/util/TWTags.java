@@ -52,6 +52,7 @@ public class TWTags {
         public static final TagKey<Biome> hasIcyRuin = tw("has/icy_ruin");
         public static final TagKey<Biome> IcicleCanGrowIn = tw("icicle_can_grow_in");
         public static final TagKey<Biome> DealsFreezingDamage = tw("deals_freezing_damage");
+        public static final TagKey<Biome> hasWhiteMyrtle = tw("has/white_myrtle");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
         private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
     }

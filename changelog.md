@@ -1,3 +1,11 @@
+## 1.1.1 (ALPHA)
+* added beer
+* added hot water recipe
+* added Master Smith POI
+* added White Myrtle Generation
+* fixed translations for tipped arrows missing
+* fixed Master Smithing
+
 ## 1.1.0 (ALPHA)
 significant differences to 0.1.7:
 * **requires Structure Gel 2.7.0 or above**
