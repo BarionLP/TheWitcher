@@ -114,6 +114,7 @@ public class TWLootTableProvider extends LootTableProvider {
             dropOther(TWBlocks.FrostedStone.get(), TWBlocks.FrostedCobblestone.get());
             dropOther(TWBlocks.DeepFrostedStone.get(), TWBlocks.DeepFrostedCobblestone.get());
             dropWhenSilkTouch(TWBlocks.Icicle.get());
+            dropWhenSilkTouch(TWBlocks.Larimar.get());
 
             dropBush(TWBlocks.WhiteMyrtleBush.get(), TWItems.WhiteMyrtle.get());
             dropBush(TWBlocks.CelandineBush.get(), TWItems.Celandine.get());

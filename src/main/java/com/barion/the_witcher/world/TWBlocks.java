@@ -4,10 +4,7 @@ import com.ametrinstudios.ametrin.world.BlockRegistry;
 import com.ametrinstudios.ametrin.world.block.AgeableBushBlock;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.fluid.TWFluids;
-import com.barion.the_witcher.world.block.TWIcicleBlock;
-import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
-import com.barion.the_witcher.world.block.TWPowerBlock;
-import com.barion.the_witcher.world.block.TWWhiteFrostPortalBlock;
+import com.barion.the_witcher.world.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -90,6 +87,7 @@ public class TWBlocks extends BlockRegistry {
     public static final RegistryObject<WallBlock> CrackedDeepFrostedStoneTileWall = register("cracked_deep_frosted_stone_tile_wall", wall(deepFrostedProperties));
     public static final RegistryObject<StoneButtonBlock> CrackedDeepFrostedStoneTileButton = register("cracked_deep_frosted_stone_tile_button", () -> new StoneButtonBlock(deepFrostedPropertiesNoCollision));
     public static final RegistryObject<TWIcicleBlock> Icicle = register("icicle", ()-> new TWIcicleBlock(properties(Blocks.POINTED_DRIPSTONE).sound(SoundType.GLASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistryObject<TWLarimar> Larimar = register("larimar", ()-> new TWLarimar(properties(Material.ICE_SOLID).lightLevel(emission(13)).strength(0, 10).sound(SoundType.AMETHYST_CLUSTER).emissiveRendering((blockState, level, pos)-> true).noCollission()));
 
     public static final RegistryObject<TWWhiteFrostPortalBlock> WhiteFrostPortal = registerWithoutItem("white_frost_portal", TWWhiteFrostPortalBlock::new);
     public static final RegistryObject<Block> WhiteFrostPortalFrame = register("white_frost_portal_frame", block(properties(Blocks.OBSIDIAN).noLootTable()));

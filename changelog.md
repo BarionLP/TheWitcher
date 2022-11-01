@@ -3,6 +3,7 @@
 * added hot water recipe
 * added Master Smith POI
 * added White Myrtle Generation
+* added Larimar Crystal
 * fixed translations for tipped arrows missing
 * fixed Master Smithing
 

@@ -4,6 +4,7 @@ import com.ametrinstudios.ametrin.datagen.ExtendedBlockStateProvider;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
+import com.barion.the_witcher.world.block.TWLarimar;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
 import net.minecraft.core.Direction;
@@ -20,6 +21,7 @@ public class TWBlockStateProvider extends ExtendedBlockStateProvider {
     }
 
     {
+        excludedClasses.add(TWLarimar.class);
         blockStateProviderRules.add((block, name, texture)-> {
             if(!(block instanceof TWMasterSmithingTableBlock)) {return false;}
             masterSmithingTableBlock((TWMasterSmithingTableBlock)block, name, texture);

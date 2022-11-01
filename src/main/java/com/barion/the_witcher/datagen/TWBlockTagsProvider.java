@@ -16,7 +16,7 @@ public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(){
         runRules(TWBlocks.getAllBlocks());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(

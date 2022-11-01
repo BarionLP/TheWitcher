@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-30T17:02:41.1994527	Item Models: the_witcher
+// 1.19.2	2022-10-31T16:46:32.4439147	Item Models: the_witcher
 c66ebd497c542edf310fb255716994b9373af29a assets/the_witcher/models/item/alcite.json
 d935348b6276ddc33debac7b9c615bf40cba5950 assets/the_witcher/models/item/beer.json
 371989dd67439fc93e92d539e77833d185791d52 assets/the_witcher/models/item/celandine.json
@@ -62,6 +62,7 @@ e76c9ecb764438e9bf68bbbb4fd46f444630d746 assets/the_witcher/models/item/hot_wate
 09d99ffc1d45594067b157d26a65299988971cde assets/the_witcher/models/item/ice_stuff.json
 fda844de3ca1eebbc0f92dcf58cd4f3a7fcd2fda assets/the_witcher/models/item/icicle.json
 8c305ac6fb8965eba702f60f25be5f45ad5d1b26 assets/the_witcher/models/item/kikimora_tooth.json
+9332c85b9a86c5b79f1599fd9c8a5406848c3fad assets/the_witcher/models/item/larimar.json
 ddb246d8454bc1dae1d3abb12fe6897f31b77957 assets/the_witcher/models/item/masterful_silver_sword.json
 0071c9585f9ca43f3e2fdbc2247a6c096cdf1751 assets/the_witcher/models/item/masterful_steel_sword.json
 8a400461834bb2ae2e2612cb05c5908beff2679f assets/the_witcher/models/item/master_smithing_table.json

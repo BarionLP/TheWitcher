@@ -14,6 +14,7 @@ public class TWCreativeModeTab extends CreativeModeTab {
 
     @Override
     public void fillItemList(NonNullList<ItemStack> items) {
+        items.clear();
         items.add(TWBlocks.RawSilverBlock.get().asItem().getDefaultInstance());
         items.add(TWItems.RawSilver.get().getDefaultInstance());
         items.add(TWBlocks.SilverBlock.get().asItem().getDefaultInstance());
@@ -86,6 +87,7 @@ public class TWCreativeModeTab extends CreativeModeTab {
         items.add(TWBlocks.CrackedDeepFrostedStoneTileWall.get().asItem().getDefaultInstance());
         items.add(TWBlocks.CrackedDeepFrostedStoneTileButton.get().asItem().getDefaultInstance());
         items.add(TWBlocks.Icicle.get().asItem().getDefaultInstance());
+        items.add(TWBlocks.Larimar.get().asItem().getDefaultInstance());
 
         items.add(TWItems.Celandine.get().getDefaultInstance());
         items.add(TWItems.WhiteMyrtle.get().getDefaultInstance());

@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-30T11:38:25.447369	LootTables
+// 1.19.2	2022-10-31T16:46:32.4499099	LootTables
 fbd5ed773a8e5f4a68567e3a7221593dde4f5a74 data/the_witcher/loot_tables/blocks/alcite.json
 69eb48586c0b981b2c0a825996631882c77f03b0 data/the_witcher/loot_tables/blocks/celandine_bush.json
 10e3a50c083a820feaa170a2e892c1f567ee0231 data/the_witcher/loot_tables/blocks/cracked_deep_frosted_stone_bricks.json
@@ -57,6 +57,7 @@ bb77eb2eb8328e2419ee2a057067a3eaad9d8887 data/the_witcher/loot_tables/blocks/hal
 e73573edce7f59daf8d8ae15c9066e2ef95504d3 data/the_witcher/loot_tables/blocks/hallucinated_stone_stairs.json
 c8493a47b407602d0ca6ef1da7d758858ad7cac3 data/the_witcher/loot_tables/blocks/hallucinated_stone_wall.json
 1a80b549d5708616b1347f321b331978c0d024cd data/the_witcher/loot_tables/blocks/icicle.json
+7766ed53fc9d2c6c988deec488be5500f6f7453c data/the_witcher/loot_tables/blocks/larimar.json
 f2103921672d01bbf5cfcb30b0a882aba848dc3c data/the_witcher/loot_tables/blocks/master_smithing_table.json
 0caedb2095be8ea3a999de6861903d0992f61d93 data/the_witcher/loot_tables/blocks/raw_silver_block.json
 8d09b516d77167f9aa437fb23ce174831bb6ccf1 data/the_witcher/loot_tables/blocks/silver_block.json

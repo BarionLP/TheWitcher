@@ -481,6 +481,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/furnace": {
+    "criteria": {
+      "has_cobblestone": "2022-11-01 09:03:30 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_wall_from_deep_frosted_stone": {
     "criteria": {
       "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
@@ -592,6 +598,12 @@
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_stairs_from_deep_frosted_stone": {
     "criteria": {
       "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/deep_frosted_stone_button": {
+    "criteria": {
+      "has_deep_frosted_stone": "2022-11-01 09:03:30 +0100"
     },
     "done": true
   },
