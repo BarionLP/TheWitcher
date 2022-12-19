@@ -46,6 +46,7 @@ public class TheWitcher {
 
     public TheWitcher() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWConfig.CommonSpec);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TWConfig.ClientSpec);
 
         final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         TWItems.Registry.register(modBus);

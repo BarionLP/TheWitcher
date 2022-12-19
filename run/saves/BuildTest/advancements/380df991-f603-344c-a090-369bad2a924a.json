@@ -17,6 +17,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/polished_andesite_slab": {
+    "criteria": {
+      "has_polished_andesite": "2022-11-01 11:30:59 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/building_blocks/smelting/stone": {
     "criteria": {
       "has_frosted_stone": "2022-07-19 15:30:50 +0200"
@@ -44,6 +50,12 @@
   "the_witcher:recipes/building_blocks/smelting/stone_bricks": {
     "criteria": {
       "has_frosted_stone_bricks": "2022-08-07 10:55:26 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_stairs": {
+    "criteria": {
+      "has_polished_andesite": "2022-11-01 11:30:59 +0100"
     },
     "done": true
   },
@@ -113,6 +125,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/tools/golden_hoe": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
@@ -134,6 +152,12 @@
   "minecraft:recipes/misc/iron_nugget": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dark_oak_slab": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
@@ -185,9 +209,21 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dark_oak_button": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/tools/shears": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
@@ -200,6 +236,12 @@
   "minecraft:recipes/building_blocks/cracked_stone_bricks": {
     "criteria": {
       "has_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/flint_and_steel": {
+    "criteria": {
+      "has_obsidian": "2022-11-01 11:46:23 +0100"
     },
     "done": true
   },
@@ -257,6 +299,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dark_oak_door": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "minecraft:husbandry/balanced_diet": {
     "criteria": {
       "beef": "2022-08-04 16:37:11 +0200",
@@ -274,6 +322,12 @@
   "minecraft:recipes/combat/shield": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/smelting/stone_brick_slab": {
+    "criteria": {
+      "has_frosted_stone_brick_slab": "2022-11-02 21:02:54 +0100"
     },
     "done": true
   },
@@ -298,6 +352,12 @@
   "the_witcher:recipes/the_witcher/deep_frosted_stone_wall": {
     "criteria": {
       "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/smelting/deepslate_bricks": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
     },
     "done": true
   },
@@ -493,6 +553,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/deepslate_tile_stairs_from_deepslate_tiles_stonecutting": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/red_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -535,6 +601,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/enchanting_table": {
+    "criteria": {
+      "has_obsidian": "2022-11-01 11:46:23 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_cobblestone": {
     "criteria": {
       "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
@@ -568,6 +640,12 @@
   "minecraft:recipes/misc/bowl": {
     "criteria": {
       "has_mushroom_stew": "2022-04-15 17:47:56 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/decorations/smelting/deepslate_brick_wall": {
+    "criteria": {
+      "has_deep_frosted_stone_brick_wall": "2022-11-02 21:23:42 +0100"
     },
     "done": true
   },
@@ -610,6 +688,18 @@
   "minecraft:recipes/combat/spectral_arrow": {
     "criteria": {
       "has_glowstone_dust": "2022-04-15 18:22:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/deepslate_tile_slab_from_deepslate_tiles_stonecutting": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dark_oak_stairs": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
@@ -673,6 +763,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/dark_oak_sign": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/smoking/hot_water_bottle": {
     "criteria": {
       "has_potion": "2022-10-31 12:11:03 +0100"
@@ -682,6 +778,12 @@
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_stairs_from_deep_frosted_stone": {
     "criteria": {
       "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dark_oak_fence_gate": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
@@ -805,6 +907,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/building_blocks/smelting/deepslate_brick_stairs": {
+    "criteria": {
+      "has_deep_frosted_stone_brick_stairs": "2022-11-02 21:23:41 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/light_blue_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -850,6 +958,12 @@
   "minecraft:recipes/decorations/mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button": {
+    "criteria": {
+      "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
     },
     "done": true
   },
@@ -913,6 +1027,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/building_blocks/smelting/deepslate_brick_slab": {
+    "criteria": {
+      "has_deep_frosted_stone_brick_slab": "2022-11-02 21:23:42 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/stone_brick_wall_from_stone_bricks_stonecutting": {
     "criteria": {
       "has_stone_bricks": "2022-04-15 17:01:07 +0200"
@@ -952,6 +1072,12 @@
   "minecraft:recipes/building_blocks/iron_block": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/painting": {
+    "criteria": {
+      "has_wool": "2022-11-02 20:44:17 +0100"
     },
     "done": true
   },
@@ -1003,9 +1129,21 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/light_blue_carpet": {
+    "criteria": {
+      "has_light_blue_wool": "2022-11-02 20:44:17 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/cyan_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/decorations/smelting/stone_brick_wall": {
+    "criteria": {
+      "has_frosted_stone_brick_wall": "2022-11-02 21:02:54 +0100"
     },
     "done": true
   },
@@ -1039,6 +1177,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/polished_andesite_stairs_from_polished_andesite_stonecutting": {
+    "criteria": {
+      "has_polished_andesite": "2022-11-01 11:30:59 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_stairs_from_frosted_cobblestone": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
@@ -1060,6 +1204,12 @@
   "minecraft:recipes/redstone/tripwire_hook": {
     "criteria": {
       "has_string": "2022-04-15 18:00:53 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/deepslate_tile_wall": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
     },
     "done": true
   },
@@ -1153,15 +1303,33 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dark_oak_trapdoor": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/food/cooked_porkchop_from_smoking": {
     "criteria": {
       "has_porkchop": "2022-04-16 13:58:30 +0200"
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/deepslate_tile_slab": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/frosted_cobblestone_wall": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/form_obsidian": {
+    "criteria": {
+      "obsidian": "2022-11-01 11:46:23 +0100"
     },
     "done": true
   },
@@ -1207,6 +1375,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/the_witcher/deep_frosted_stone_brick_button": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/frosted_stone_brick_button": {
     "criteria": {
       "has_frosted_stone_bricks": "2022-10-30 12:24:24 +0100"
@@ -1237,9 +1411,21 @@
     },
     "done": true
   },
+  "the_witcher:recipes/the_witcher/deep_frosted_stone_tile_button": {
+    "criteria": {
+      "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
+    },
+    "done": true
+  },
   "minecraft:nether/obtain_blaze_rod": {
     "criteria": {
       "blaze_rod": "2022-10-31 12:43:51 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dark_oak_pressure_plate": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
@@ -1252,6 +1438,12 @@
   "minecraft:recipes/building_blocks/mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button_from_deep_frosted_stone_bricks": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
     },
     "done": true
   },
@@ -1291,6 +1483,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2022-11-02 21:20:56 +0100"
+    },
+    "done": true
+  },
   "minecraft:nether/brew_potion": {
     "criteria": {
       "potion": "2022-08-06 20:58:12 +0200"
@@ -1309,9 +1507,21 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/mossy_stone_brick_slab": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_blue_banner": {
+    "criteria": {
+      "has_light_blue_wool": "2022-11-02 20:44:17 +0100"
     },
     "done": true
   },
@@ -1345,6 +1555,18 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/deepslate_tile_wall_from_deepslate_tiles_stonecutting": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cracked_deepslate_tiles": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/brown_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -1375,6 +1597,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/polished_andesite_slab_from_polished_andesite_stonecutting": {
+    "criteria": {
+      "has_polished_andesite": "2022-11-01 11:30:59 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/light_gray_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
@@ -1402,6 +1630,12 @@
   "the_witcher:recipes/the_witcher/frosted_stone": {
     "criteria": {
       "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/smelting/deepslate_tiles": {
+    "criteria": {
+      "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
     },
     "done": true
   },
@@ -1459,6 +1693,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/dark_oak_fence": {
+    "criteria": {
+      "has_planks": "2022-11-02 21:13:02 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_stone": {
     "criteria": {
       "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
@@ -1501,6 +1741,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/light_blue_bed": {
+    "criteria": {
+      "has_light_blue_wool": "2022-11-02 20:44:17 +0100"
+    },
+    "done": true
+  },
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_slab_from_deep_frosted_cobblestone": {
     "criteria": {
       "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
@@ -1510,6 +1756,12 @@
   "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_slab": {
     "criteria": {
       "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/deepslate_tile_stairs": {
+    "criteria": {
+      "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
     },
     "done": true
   },

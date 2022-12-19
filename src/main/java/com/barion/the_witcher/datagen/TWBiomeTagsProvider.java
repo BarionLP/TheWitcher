@@ -29,7 +29,8 @@ public class TWBiomeTagsProvider extends BiomeTagsProvider {
         tag(TWTags.Biomes.hasIcyRuin).add(
                 TWBiomes.FrozenSpikes,
                 TWBiomes.IcyPeaks,
-                TWBiomes.SnowyDesert
+                TWBiomes.SnowyDesert,
+                TWBiomes.ArcticBoneyard
         );
 
         tag(TWTags.Biomes.IcicleCanGrowIn).addTag(TWTags.Biomes.isWhiteFrost).addTag(Tags.Biomes.IS_COLD);

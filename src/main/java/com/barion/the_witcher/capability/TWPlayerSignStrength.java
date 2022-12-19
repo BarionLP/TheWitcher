@@ -32,7 +32,7 @@ public class TWPlayerSignStrength {
                 maxEnergy.set(0, player);
                 return;
             }
-            maxEnergy.set(90 + get() * 10, player);
+            maxEnergy.set(90 + (get() * 10), player);
         });
     }
     public boolean isMax() {return strength == maxStrength;}

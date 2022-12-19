@@ -42,6 +42,5 @@ public class TWPlayerSignStrengthProvider implements ICapabilityProvider, INBTSe
     }
 
     @Override
-    public void deserializeNBT(CompoundTag nbt) {
-        get().loadFromNBT(nbt);}
+    public void deserializeNBT(CompoundTag nbt) {get().loadFromNBT(nbt);}
 }

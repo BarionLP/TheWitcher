@@ -5,11 +5,13 @@ import com.barion.the_witcher.client.TWGuiOverlay;
 import com.barion.the_witcher.client.TWKeyBinding;
 import com.barion.the_witcher.client.model.TWIceGhostModel;
 import com.barion.the_witcher.client.model.TWWildHuntHoundModel;
-import com.barion.the_witcher.client.renderer.TWIceGhostRenderer;
-import com.barion.the_witcher.client.renderer.TWWildHuntHoundRenderer;
-import com.barion.the_witcher.client.renderer.TWWildHuntKnightRenderer;
+import com.barion.the_witcher.client.renderer.TWWhiteFrostSpecialEffects;
+import com.barion.the_witcher.client.renderer.entity.TWIceGhostRenderer;
+import com.barion.the_witcher.client.renderer.entity.TWWildHuntHoundRenderer;
+import com.barion.the_witcher.client.renderer.entity.TWWildHuntKnightRenderer;
 import com.barion.the_witcher.client.screen.TWMasterSmithingScreen;
 import com.barion.the_witcher.fluid.TWFluids;
+import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.TWEntityTypes;
 import com.barion.the_witcher.world.inventory.TWMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -22,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterDimensionSpecialEffectsEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -60,5 +63,10 @@ public class TWClientEvents {
         event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocation, ()-> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0), 64, 32));
         event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocationOuterArmor, ()-> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(1), 0), 64, 32));
         event.registerLayerDefinition(TWWildHuntKnightRenderer.LayerLocationInnerArmor, ()-> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.5f), 0), 64, 32));
+    }
+
+    @SubscribeEvent
+    protected static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event){
+        event.register(TWUtil.location("white_frost"), new TWWhiteFrostSpecialEffects());
     }
 }

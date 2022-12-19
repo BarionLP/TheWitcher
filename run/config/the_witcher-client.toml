@@ -1,0 +1,7 @@
+
+[white_frost]
+	#
+	# Should the White Frost always have dense fog
+	# Default: false
+	always_foggy = true
+

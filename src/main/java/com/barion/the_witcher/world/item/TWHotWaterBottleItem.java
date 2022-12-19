@@ -1,6 +1,6 @@
 package com.barion.the_witcher.world.item;
 
-import com.barion.the_witcher.world.gen.util.TWDamageSources;
+import com.barion.the_witcher.world.TWDamageSources;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;

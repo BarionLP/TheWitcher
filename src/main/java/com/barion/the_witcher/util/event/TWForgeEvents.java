@@ -2,18 +2,17 @@ package com.barion.the_witcher.util.event;
 
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.capability.*;
-import com.barion.the_witcher.command.TWGetEnergyCommand;
-import com.barion.the_witcher.command.TWGetSignStrengthCommand;
-import com.barion.the_witcher.command.TWSetEnergyCommand;
-import com.barion.the_witcher.command.TWSetSignStrengthCommand;
+import com.barion.the_witcher.command.*;
 import com.barion.the_witcher.effect.TWEffects;
 import com.barion.the_witcher.networking.TWMessages;
 import com.barion.the_witcher.networking.packet.TWPlayerEnergySyncS2CPacket;
 import com.barion.the_witcher.networking.packet.TWPlayerMaxEnergySyncS2CPacket;
 import com.barion.the_witcher.networking.packet.TWPlayerSignStrengthSyncS2CPacket;
+import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.TWLevels;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -32,30 +31,42 @@ import net.minecraftforge.server.command.ConfigCommand;
 public class TWForgeEvents{
     @SubscribeEvent
     public static void entityTick(final LivingEvent.LivingTickEvent event){
-        LivingEntity entity = event.getEntity();
-        if(entity == null) {return;}
+        freezeEntity(event.getEntity());
+    }
 
-        if(entity.level.dimension() == TWLevels.WhiteFrost && !entity.hasEffect(TWEffects.FrostResistance.get())){
-            if(entity instanceof Player && ((Player)entity).getAbilities().invulnerable) {return;}
-            entity.setIsInPowderSnow(true);
-            entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze()+2, entity.getTicksFrozen() + 3)); //very bad, need a better solution
+    private static void freezeEntity(LivingEntity entity){
+        if(entity.level.dimension() != TWLevels.WhiteFrost) {return;}
+        if(entity.isOnFire()) {
+            entity.clearFire();
         }
+        if(entity.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) || entity.hasEffect(TWEffects.FrostResistance.get())) {return;}
+        if(entity instanceof Player && ((Player) entity).getAbilities().invulnerable) {return;}
+
+        entity.setIsInPowderSnow(true);
+        entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze()+2, entity.getTicksFrozen() + 3)); //very bad, need a better solution
     }
 
     @SubscribeEvent
     public static void playerTick(TickEvent.PlayerTickEvent event){
-        if(event.side == LogicalSide.SERVER){
-            event.player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy -> {
-                if(energy.isFull(event.player)) {return;}
-                event.player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength-> {
-                    float base = 0.2f;
-                    if(event.player.hasEffect(TWEffects.EnergyRegen.get())){
-                        base += (event.player.getEffect(TWEffects.EnergyRegen.get()).getAmplifier()+1)/5f;
-                    }
-                    energy.increase(base + (signStrength.get() / 5f), (ServerPlayer) event.player);
-                });
+        if(event.side != LogicalSide.SERVER) {return;}
+
+        updateEnergy((ServerPlayer) event.player);
+    }
+
+    private static void updateEnergy(ServerPlayer player){
+        player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength->{
+            if(signStrength.get() == 0) {return;}
+
+            player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy->{
+                if(energy.isFull(player)) {return;}
+
+                float increase = 0.2f + signStrength.get()/5f;
+                if(player.hasEffect(TWEffects.EnergyRegen.get())){
+                    increase += (player.getEffect(TWEffects.EnergyRegen.get()).getAmplifier()+1)/5f;
+                }
+                energy.increase(increase, player);
             });
-        }
+        });
     }
 
     @SubscribeEvent
@@ -91,9 +102,9 @@ public class TWForgeEvents{
     @SubscribeEvent
     public static void playerLoggedIn(PlayerEvent.PlayerLoggedInEvent event){
         if(event.getEntity() instanceof ServerPlayer player){
-            player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy -> TWMessages.sendToPlayer(new TWPlayerEnergySyncS2CPacket(energy.get()), player));
-            player.getCapability(TWPlayerMaxEnergyProvider.Instance).ifPresent(maxEnergy -> TWMessages.sendToPlayer(new TWPlayerMaxEnergySyncS2CPacket(maxEnergy.get()), player));
             player.getCapability(TWPlayerSignStrengthProvider.Instance).ifPresent(signStrength -> TWMessages.sendToPlayer(new TWPlayerSignStrengthSyncS2CPacket(signStrength.get()), player));
+            player.getCapability(TWPlayerMaxEnergyProvider.Instance).ifPresent(maxEnergy -> TWMessages.sendToPlayer(new TWPlayerMaxEnergySyncS2CPacket(maxEnergy.get()), player));
+            player.getCapability(TWPlayerEnergyProvider.Instance).ifPresent(energy -> TWMessages.sendToPlayer(new TWPlayerEnergySyncS2CPacket(energy.get()), player));
         }
     }
 
