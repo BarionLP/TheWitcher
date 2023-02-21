@@ -1,4 +1,5 @@
-// 1.19.2	2022-10-30T11:38:25.431366	Block States: the_witcher
+// 1.19.3	2023-02-21T12:03:07.3026665	Block States: the_witcher
+dc677952f961d917352d9833b6c3bee65f5004a2 assets/the_witcher/blockstates/acid.json
 eb40f5169c349ef65bb316ec684310e1e9ad917c assets/the_witcher/blockstates/alcite.json
 037bc8079bf98ab49cc7ecd6b4a85f649edf25c1 assets/the_witcher/blockstates/celandine_bush.json
 c291e40e3826b909ae57641f60aafd9547aac2f6 assets/the_witcher/blockstates/cracked_deep_frosted_stone_bricks.json
@@ -64,6 +65,7 @@ b72716fad376dae4f235d561ce6e79e82fc57dac assets/the_witcher/blockstates/raw_silv
 639ba903aede8d9cab9c1e73972a3ee825ff7e5d assets/the_witcher/blockstates/white_frost_portal.json
 308a95e0d440604c0e43991deffb0eb35f4341d8 assets/the_witcher/blockstates/white_frost_portal_frame.json
 56dc5e3a41cc47bd80c9fc0e348463275a133c12 assets/the_witcher/blockstates/white_myrtle_bush.json
+50812bd51e14ec5ea223afe239c89730a63e43b1 assets/the_witcher/models/block/acid.json
 fad3d8bcca5ba9c9ff52893bcb96af9674dbd118 assets/the_witcher/models/block/alcite.json
 181d8ebbc855b694ecb618e6ae0f2b06df78f438 assets/the_witcher/models/block/celandine_bush/stage0.json
 c1c01e72dcfeddfc7cf6efda5a2e2507c09ded60 assets/the_witcher/models/block/celandine_bush/stage1.json

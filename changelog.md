@@ -7,8 +7,8 @@
 * added Larimar Crystal
 * fixed translations for tipped arrows missing
 * fixed Master Smithing
-* requires Structure Gel 2.8.0 or above
-* requires Ametrin API 0.0.27 or above
+* requires Structure Gel 2.9.0 or above
+* requires Ametrin API 0.0.29 or above
 
 ## 1.1.0 (ALPHA)
 significant differences to 0.1.7:
