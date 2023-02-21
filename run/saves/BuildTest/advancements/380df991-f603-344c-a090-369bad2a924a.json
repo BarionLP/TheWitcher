@@ -41,12 +41,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_wall_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-07-19 15:30:47 +0200"
-    },
-    "done": true
-  },
   "the_witcher:recipes/building_blocks/smelting/stone_bricks": {
     "criteria": {
       "has_frosted_stone_bricks": "2022-08-07 10:55:26 +0200"
@@ -83,21 +77,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_cobblestone_stairs": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/leather_helmet": {
     "criteria": {
       "has_leather": "2022-08-04 16:37:46 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_cobblestone_slab": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
     },
     "done": true
   },
@@ -149,6 +131,12 @@
     },
     "done": true
   },
+  "the_witcher:recipes/decorations/stonecutting/cracked_frosted_stone_brick_wall_from_frosted_stone_bricks": {
+    "criteria": {
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/misc/iron_nugget": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
@@ -173,33 +161,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_brick_wall": {
+  "the_witcher:recipes/building_blocks/deep_frosted_stone_brick_slab": {
     "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_cobblestone_stairs": {
+  "the_witcher:recipes/building_blocks/stonecutting/frosted_stone_brick_stairs": {
     "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_stone_bricks": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_stairs_from_frosted_stone_bricks": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-06-17 08:37:07 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_stairs_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -227,12 +197,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_wall_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/cracked_stone_bricks": {
     "criteria": {
       "has_stone_bricks": "2022-04-15 17:01:07 +0200"
@@ -254,24 +218,6 @@
   "the_witcher:recipes/building_blocks/smelting/deepslate": {
     "criteria": {
       "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_wall_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_wall": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
     },
     "done": true
   },
@@ -313,12 +259,6 @@
     },
     "done": false
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_stairs": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/shield": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
@@ -349,21 +289,27 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_wall": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
   "the_witcher:recipes/building_blocks/smelting/deepslate_bricks": {
     "criteria": {
       "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
     },
     "done": true
   },
+  "the_witcher:recipes/redstone/stonecutting/deep_frosted_stone_brick_button": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/stonecutting/deep_frosted_stone_brick_stairs": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -376,24 +322,6 @@
   "minecraft:recipes/building_blocks/dripstone_block": {
     "criteria": {
       "has_pointed_dripstone": "2022-06-17 09:08:41 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_button": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_stairs": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_stairs": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
     },
     "done": true
   },
@@ -427,12 +355,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_wall": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/bow": {
     "criteria": {
       "has_string": "2022-04-15 18:00:53 +0200"
@@ -442,24 +364,6 @@
   "minecraft:recipes/redstone/tnt": {
     "criteria": {
       "has_gunpowder": "2022-04-15 17:08:43 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_slab_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_stairs_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_stairs_from_deep_frosted_stone_bricks": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
     },
     "done": true
   },
@@ -475,27 +379,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_cobblestone_wall": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_slab": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/gold_block": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_button": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
     },
     "done": true
   },
@@ -511,21 +397,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_stone_wall": {
+  "the_witcher:recipes/decorations/frosted_stone_brick_wall": {
     "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/smelting/hot_water_bottle": {
-    "criteria": {
-      "has_potion": "2022-10-31 12:11:03 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_slab_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -547,9 +421,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_wall_from_deep_frosted_stone": {
+  "the_witcher:recipes/building_blocks/stonecutting/cracked_frosted_stone_brick_stairs_from_frosted_stone_bricks": {
     "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -607,12 +481,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/iron_shovel": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
@@ -643,18 +511,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/decorations/smelting/deepslate_brick_wall": {
-    "criteria": {
-      "has_deep_frosted_stone_brick_wall": "2022-11-02 21:23:42 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/beer": {
-    "criteria": {
-      "has_hot_water_bottle": "2022-10-31 12:12:13 +0100"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/item_frame": {
     "criteria": {
       "has_leather": "2022-08-04 16:37:46 +0200"
@@ -673,18 +529,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_stairs_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_button": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-11-01 09:03:30 +0100"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/spectral_arrow": {
     "criteria": {
       "has_glowstone_dust": "2022-04-15 18:22:03 +0200"
@@ -694,6 +538,12 @@
   "minecraft:recipes/building_blocks/deepslate_tile_slab_from_deepslate_tiles_stonecutting": {
     "criteria": {
       "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/deep_frosted_stone_brick_stairs": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -709,12 +559,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_button": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-18 13:14:00 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/redstone/redstone_block": {
     "criteria": {
       "has_redstone": "2022-04-15 18:00:53 +0200"
@@ -724,18 +568,6 @@
   "minecraft:recipes/building_blocks/blue_ice": {
     "criteria": {
       "has_packed_ice": "2022-04-16 13:43:00 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_wall": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_wall_from_frosted_stone_bricks": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-06-17 08:37:07 +0200"
     },
     "done": true
   },
@@ -757,27 +589,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_slab_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/dark_oak_sign": {
     "criteria": {
       "has_planks": "2022-11-02 21:13:02 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/smoking/hot_water_bottle": {
-    "criteria": {
-      "has_potion": "2022-10-31 12:11:03 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_stairs_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
     },
     "done": true
   },
@@ -793,27 +607,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_stone_slab": {
+  "the_witcher:recipes/redstone/deep_frosted_stone_brick_button": {
     "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_slab": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_stairs_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -823,33 +619,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/chain": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_stairs_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/frosted_cobblestone_slab": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
     },
     "done": true
   },
@@ -859,51 +631,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_wall_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_tile_slab": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/soul_lantern": {
     "criteria": {
       "has_soul_torch": "2022-04-18 12:15:05 +0200"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_stairs_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_button_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
   "the_witcher:recipes/building_blocks/smelting/stone_brick_stairs": {
     "criteria": {
       "has_frosted_stone_brick_stairs": "2022-08-07 10:54:24 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_slab": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_button_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
     },
     "done": true
   },
@@ -931,21 +667,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_slab": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/golden_boots": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/cracked_frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
     },
     "done": true
   },
@@ -961,24 +685,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_slab_from_frosted_stone_bricks": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-06-17 08:37:07 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_wall_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/brewing/blaze_powder": {
     "criteria": {
       "has_blaze_rod": "2022-10-31 12:43:51 +0100"
@@ -991,33 +697,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_button_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-18 13:14:00 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/golden_chestplate": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
     },
     "done": true
   },
-  "the_witcher:recipes/redstone/smelting/stone_button": {
-    "criteria": {
-      "has_frosted_stone_button": "2022-08-06 21:48:56 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/loom": {
     "criteria": {
       "has_string": "2022-04-15 18:00:53 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_wall": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
     },
     "done": true
   },
@@ -1039,21 +727,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_slab_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/brewing/glass_bottle": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_stairs_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-07-19 15:30:47 +0200"
     },
     "done": true
   },
@@ -1063,9 +739,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_slab": {
+  "the_witcher:recipes/redstone/stonecutting/cracked_frosted_stone_brick_button_from_frosted_stone_bricks": {
     "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/decorations/stonecutting/deep_frosted_stone_tile_wall_from_deep_frosted_stone_bricks": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1087,15 +769,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_wall_from_deep_frosted_stone_bricks": {
+  "the_witcher:recipes/building_blocks/frosted_stone_brick_stairs": {
     "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone": {
+  "the_witcher:recipes/building_blocks/frosted_stone_brick_slab": {
     "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1111,24 +793,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_wall_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_button_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/light_blue_carpet": {
     "criteria": {
       "has_light_blue_wool": "2022-11-02 20:44:17 +0100"
@@ -1138,12 +802,6 @@
   "minecraft:recipes/building_blocks/cyan_stained_glass": {
     "criteria": {
       "has_glass": "2022-04-18 14:10:59 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/decorations/smelting/stone_brick_wall": {
-    "criteria": {
-      "has_frosted_stone_brick_wall": "2022-11-02 21:02:54 +0100"
     },
     "done": true
   },
@@ -1159,15 +817,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_wall": {
+  "the_witcher:recipes/building_blocks/stonecutting/cracked_frosted_stone_brick_slab_from_frosted_stone_bricks": {
     "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_wall": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1183,21 +835,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_stairs_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/golden_helmet": {
     "criteria": {
       "has_gold_ingot": "2022-04-15 18:11:20 +0200"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_wall_from_deep_frosted_stone": {
+  "the_witcher:recipes/redstone/stonecutting/frosted_stone_brick_button": {
     "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1213,12 +859,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_button_from_frosted_stone_bricks": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-08-07 10:55:26 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/iron_boots": {
     "criteria": {
       "has_iron_ingot": "2022-04-15 18:11:20 +0200"
@@ -1231,24 +871,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/cracked_frosted_stone_brick_slab": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/decorations/smelting/cobblestone_wall": {
-    "criteria": {
-      "has_frosted_cobblestone_wall": "2022-08-07 12:20:01 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_slab_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-07-19 15:30:47 +0200"
-    },
-    "done": true
-  },
   "minecraft:story/iron_tools": {
     "criteria": {
       "iron_pickaxe": "2022-06-17 09:09:04 +0200"
@@ -1258,6 +880,12 @@
   "minecraft:recipes/decorations/cartography_table": {
     "criteria": {
       "has_paper": "2022-04-15 18:00:54 +0200"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/stonecutting/deep_frosted_stone_tile_stairs_from_deep_frosted_stone_bricks": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1285,21 +913,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_wall": {
+  "the_witcher:recipes/building_blocks/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_stone_bricks": {
     "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_button_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1321,33 +937,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_cobblestone_wall": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "minecraft:story/form_obsidian": {
     "criteria": {
       "obsidian": "2022-11-01 11:46:23 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/frosted_stone_stairs": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_stairs_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_tile_wall": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
     },
     "done": true
   },
@@ -1363,27 +955,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_stone_brick_wall": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/iron_nugget_from_blasting": {
     "criteria": {
       "has_iron_pickaxe": "2022-06-17 09:09:04 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_brick_button": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/frosted_stone_brick_button": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-10-30 12:24:24 +0100"
     },
     "done": true
   },
@@ -1393,15 +967,21 @@
     },
     "done": true
   },
+  "the_witcher:recipes/decorations/stonecutting/frosted_stone_brick_wall": {
+    "criteria": {
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/tools/compass": {
     "criteria": {
       "has_redstone": "2022-04-15 18:00:53 +0200"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_wall": {
+  "the_witcher:recipes/decorations/deep_frosted_stone_brick_wall": {
     "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1411,9 +991,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_tile_button": {
+  "the_witcher:recipes/redstone/frosted_stone_brick_button": {
     "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1438,12 +1018,6 @@
   "minecraft:recipes/building_blocks/mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-04-15 17:01:07 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button_from_deep_frosted_stone_bricks": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-11-02 21:11:08 +0100"
     },
     "done": true
   },
@@ -1477,33 +1051,21 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_brick_wall_from_frosted_cobblestone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/composter": {
     "criteria": {
       "has_wood_slab": "2022-11-02 21:20:56 +0100"
     },
     "done": true
   },
+  "the_witcher:recipes/decorations/stonecutting/deep_frosted_stone_brick_wall": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
   "minecraft:nether/brew_potion": {
     "criteria": {
       "potion": "2022-08-06 20:58:12 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_tile_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone_tiles": "2022-07-19 15:32:05 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
     },
     "done": true
   },
@@ -1549,12 +1111,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/deepslate_tile_wall_from_deepslate_tiles_stonecutting": {
     "criteria": {
       "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
@@ -1573,12 +1129,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/deep_frosted_stone_brick_slab": {
-    "criteria": {
-      "has_deep_frosted_stone_bricks": "2022-07-19 15:31:47 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/leather_boots": {
     "criteria": {
       "has_leather": "2022-08-04 16:37:46 +0200"
@@ -1586,12 +1136,6 @@
     "done": true
   },
   "the_witcher:recipes/building_blocks/smelting/cracked_stone_bricks": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/cracked_frosted_stone_brick_button": {
     "criteria": {
       "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
     },
@@ -1621,27 +1165,9 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/steel_ingot": {
-    "criteria": {
-      "has_steel_nugget": "2022-04-15 18:02:16 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/frosted_stone": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
   "the_witcher:recipes/building_blocks/smelting/deepslate_tiles": {
     "criteria": {
       "has_deep_frosted_stone_tiles": "2022-11-02 21:54:24 +0100"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_slab_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
     },
     "done": true
   },
@@ -1669,9 +1195,15 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_button_from_deep_frosted_stone": {
+  "the_witcher:recipes/building_blocks/stonecutting/frosted_stone_brick_slab": {
     "criteria": {
-      "has_deep_frosted_stone": "2022-08-07 11:35:41 +0200"
+      "has_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
+    },
+    "done": true
+  },
+  "the_witcher:recipes/building_blocks/stonecutting/deep_frosted_stone_brick_slab": {
+    "criteria": {
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
@@ -1681,51 +1213,21 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_slab_from_deep_frosted_stone": {
-    "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/frosted_stone_brick_stairs": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/dark_oak_fence": {
     "criteria": {
       "has_planks": "2022-11-02 21:13:02 +0100"
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_tile_slab_from_deep_frosted_stone": {
+  "the_witcher:recipes/redstone/stonecutting/deep_frosted_stone_tile_button_from_deep_frosted_stone_bricks": {
     "criteria": {
-      "has_deep_frosted_stone": "2022-07-19 15:31:44 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_slab": {
-    "criteria": {
-      "has_frosted_cobblestone": "2022-04-16 13:42:48 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_stone_slab": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
+      "has_deep_frosted_stone_bricks": "2023-02-21 12:09:17 +0100"
     },
     "done": true
   },
   "minecraft:story/smelt_iron": {
     "criteria": {
       "iron": "2022-04-15 18:11:20 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/cracked_frosted_stone_brick_wall": {
-    "criteria": {
-      "has_cracked_frosted_stone_bricks": "2022-08-06 21:49:18 +0200"
     },
     "done": true
   },
@@ -1747,18 +1249,6 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_stone_brick_slab_from_deep_frosted_cobblestone": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/deep_frosted_cobblestone_slab": {
-    "criteria": {
-      "has_deep_frosted_cobblestone": "2022-07-19 15:31:14 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/deepslate_tile_stairs": {
     "criteria": {
       "has_deepslate_tiles": "2022-11-02 21:54:16 +0100"
@@ -1771,17 +1261,5 @@
     },
     "done": true
   },
-  "the_witcher:recipes/the_witcher/frosted_stone_brick_slab": {
-    "criteria": {
-      "has_frosted_stone_bricks": "2022-04-16 13:42:46 +0200"
-    },
-    "done": true
-  },
-  "the_witcher:recipes/the_witcher/stonecutting/frosted_cobblestone_wall_from_frosted_stone": {
-    "criteria": {
-      "has_frosted_stone": "2022-07-19 15:30:50 +0200"
-    },
-    "done": true
-  },
-  "DataVersion": 3120
+  "DataVersion": 3218
 }
