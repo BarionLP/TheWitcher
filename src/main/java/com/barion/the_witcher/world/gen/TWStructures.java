@@ -1,6 +1,5 @@
 package com.barion.the_witcher.world.gen;
 
-import com.barion.the_witcher.util.TWConfig;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.structure.TWIcyRuinStructure;
@@ -8,10 +7,7 @@ import com.barion.the_witcher.world.gen.structure.TWWildHuntOutpostStructure;
 import com.barion.the_witcher.world.gen.structure.TWWitcherCitadelStructure;
 import com.legacy.structure_gel.api.registry.registrar.StructureRegistrar;
 import com.legacy.structure_gel.api.structure.GridStructurePlacement;
-import net.minecraft.util.random.WeightedRandomList;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 
 public class TWStructures {
@@ -48,7 +44,7 @@ public class TWStructures {
         WitcherCitadel = StructureRegistrar.builder(TWUtil.location("witcher_citadel"), ()-> ()-> TWWitcherCitadelStructure.Codec)
                 .addPiece(()-> TWWitcherCitadelStructure.Piece::new)
                 .pushStructure(TWWitcherCitadelStructure::new)
-                        .config(TWConfig.COMMON.WitcherCitadelConfig::getStructure)
+//                        .config(TWConfig.COMMON.WitcherCitadelConfig::getStructure)
                         .dimensions(Level.OVERWORLD)
                         .terrainAdjustment(TerrainAdjustment.BEARD_THIN)
                 .popStructure()

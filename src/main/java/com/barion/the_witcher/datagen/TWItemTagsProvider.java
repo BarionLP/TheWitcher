@@ -4,22 +4,27 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWBlocks;
 import com.barion.the_witcher.world.TWItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import javax.annotation.Nonnull;
+import java.util.concurrent.CompletableFuture;
+
 public class TWItemTagsProvider extends ItemTagsProvider {
-    public TWItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper fileHelper){
-        super(generator, blockTags, TheWitcher.ModID, fileHelper);
+    public TWItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, TagsProvider<Block> blockTagsProvider, ExistingFileHelper existingFileHelper){
+        super(output, lookupProvider, blockTagsProvider, TheWitcher.ModID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(@Nonnull HolderLookup.Provider provider) {
         copy(TWTags.Blocks.StorageBlocksSilver, TWTags.Items.StorageBlocksSilver);
         copy(TWTags.Blocks.StorageBlocksRawSilver, TWTags.Items.StorageBlocksRawSilver);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);

@@ -1,4 +1,5 @@
-## 1.1.1 (ALPHA)
+## 1.2.0 (ALPHA)
+* ported to 1.19.3
 * added beer
 * added hot water recipe
 * added Master Smith POI
@@ -6,6 +7,8 @@
 * added Larimar Crystal
 * fixed translations for tipped arrows missing
 * fixed Master Smithing
+* requires Structure Gel 2.8.0 or above
+* requires Ametrin API 0.0.27 or above
 
 ## 1.1.0 (ALPHA)
 significant differences to 0.1.7:

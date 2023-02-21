@@ -4,19 +4,23 @@ import com.ametrinstudios.ametrin.datagen.ExtendedBlockTagsProvider;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWBlocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import javax.annotation.Nonnull;
+import java.util.concurrent.CompletableFuture;
+
 public class TWBlockTagsProvider extends ExtendedBlockTagsProvider {
-    public TWBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
-        super(generator, TheWitcher.ModID, fileHelper);
+    public TWBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper){
+        super(output, lookupProvider, TheWitcher.ModID, existingFileHelper);
     }
 
     @Override
-    protected void addTags(){
+    protected void addTags(@Nonnull HolderLookup.Provider lookupProvider) {
         runRules(TWBlocks.getAllBlocks());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(

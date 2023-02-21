@@ -8,7 +8,7 @@ import com.barion.the_witcher.world.block.TWLarimar;
 import com.barion.the_witcher.world.block.TWMasterSmithingTableBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
 import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -16,8 +16,8 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class TWBlockStateProvider extends ExtendedBlockStateProvider {
-    public TWBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper){
-        super(generator, TheWitcher.ModID, existingFileHelper);
+    public TWBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){
+        super(output, TheWitcher.ModID, existingFileHelper);
     }
 
     {

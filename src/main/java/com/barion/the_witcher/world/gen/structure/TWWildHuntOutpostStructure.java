@@ -2,10 +2,8 @@ package com.barion.the_witcher.world.gen.structure;
 
 import com.barion.the_witcher.util.TWUtil;
 import com.barion.the_witcher.world.gen.TWStructures;
-import com.barion.the_witcher.world.gen.util.ExperimentalTerrainAnalyzer;
 import com.barion.the_witcher.world.gen.util.TWProcessors;
 import com.legacy.structure_gel.api.structure.GelTemplateStructurePiece;
-import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
@@ -18,6 +16,7 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
+import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
@@ -37,17 +36,21 @@ public class TWWildHuntOutpostStructure extends Structure {
     public @NotNull Optional<GenerationStub> findGenerationPoint(@NotNull GenerationContext context) {
         BlockPos pos = context.chunkPos().getWorldPosition();
         Rotation rotation = Rotation.getRandom(context.random());
-        Pair<Boolean, Float> results = ExperimentalTerrainAnalyzer.isFlatEnough(pos, context.structureTemplateManager().getOrCreate(Piece.StructureFile).getSize(rotation), 1, 100, context.chunkGenerator(), context.heightAccessor(), context.randomState());
-        if(!results.getFirst()) {return Optional.empty();}
+//        Pair<Boolean, Float> results = ExperimentalTerrainAnalyzer.isFlatEnough(pos, context.structureTemplateManager().getOrCreate(Piece.StructureFile).getSize(rotation), 1, 100, context.chunkGenerator(), context.heightAccessor(), context.randomState());
+//        if(!results.getFirst()) {return Optional.empty();}
 //        TWUtil.Logger.info("Generated at: {} {} {}", pos.getX(), pos.getY(), pos.getZ());
-        return Optional.of(new Structure.GenerationStub(pos, (piecesBuilder)-> piecesBuilder.addPiece(new Piece(pos.atY((int) Math.floor(results.getSecond())), context, rotation))));
+        return Optional.of(new Structure.GenerationStub(pos, (piecesBuilder)-> piecesBuilder.addPiece(new Piece(pos/*.atY((int) Math.floor(results.getSecond()))*/, context, rotation))));
     }
 
     @Override
-    public @NotNull StructureType<?> type() {return TWStructures.WildHuntOutpost.getType();}
+    public @NotNull StructureType<?> type() {return null/*TWStructures.WildHuntOutpost.getType()*/;}
 
     public static class Piece extends GelTemplateStructurePiece {
         private static final ResourceLocation StructureFile = TWUtil.location("wild_hunt_outpost");
+
+        public Piece(StructurePieceType structurePieceType, int componentType, StructureTemplateManager structureManager, ResourceLocation templateName, StructurePlaceSettings placeSettings, BlockPos pos) {
+            super(structurePieceType, componentType, structureManager, templateName, placeSettings, pos);
+        }
 
         public Piece(BlockPos pos, GenerationContext context, Rotation rotation){
             super(TWStructures.WildHuntOutpost.getPieceType().get(), 0, context.structureTemplateManager(), StructureFile, pos);

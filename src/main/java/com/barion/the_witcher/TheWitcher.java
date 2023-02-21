@@ -18,13 +18,15 @@ import com.barion.the_witcher.world.gen.TWFeatures;
 import com.barion.the_witcher.world.gen.TWStructures;
 import com.barion.the_witcher.world.inventory.TWMenuTypes;
 import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
-import net.minecraft.core.Registry;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -36,13 +38,15 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import static com.ametrinstudios.ametrin.util.Extensions.addBrewingRecipe;
+import java.util.concurrent.CompletableFuture;
+
+import static com.ametrinstudios.ametrin.util.VanillaCompat.addBrewingRecipe;
 
 @Mod(TheWitcher.ModID)
 public class TheWitcher {
     public static final String ModID = "the_witcher";
 
-    public static final ResourceKey<Level> WhiteFrost = ResourceKey.create(Registry.DIMENSION_REGISTRY, TWUtil.location("white_frost"));
+    public static final ResourceKey<Level> WhiteFrost = ResourceKey.create(Registries.DIMENSION, TWUtil.location("white_frost"));
 
     public TheWitcher() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWConfig.CommonSpec);
@@ -92,17 +96,18 @@ public class TheWitcher {
         @SubscribeEvent
         public static void gatherData(GatherDataEvent event){
             DataGenerator generator = event.getGenerator();
-            ExistingFileHelper exFileHelper = event.getExistingFileHelper();
+            ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+            CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-            generator.addProvider(true, new TWBlockStateProvider(generator, exFileHelper));
-            generator.addProvider(true, new TWItemModelProvider(generator, exFileHelper));
-            BlockTagsProvider blockTags = new TWBlockTagsProvider(generator, exFileHelper);
-            generator.addProvider(true, blockTags);
-            generator.addProvider(true, new TWItemTagsProvider(generator, blockTags, exFileHelper));
-            generator.addProvider(true, new TWEntityTypeTagsProvider(generator, exFileHelper));
-            generator.addProvider(true, new TWBiomeTagsProvider(generator, exFileHelper));
-            generator.addProvider(true, new TWLootTableProvider(generator));
-            generator.addProvider(true, new TWRecipeProvider(generator));
+            generator.addProvider(true, new TWBlockStateProvider(generator.getPackOutput(), existingFileHelper));
+            generator.addProvider(true, new TWItemModelProvider(generator.getPackOutput(), existingFileHelper));
+            TagsProvider<Block> blockTagsProvider = new TWBlockTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper);
+            generator.addProvider(true, blockTagsProvider);
+            generator.addProvider(true, new TWItemTagsProvider(generator.getPackOutput(), lookupProvider, blockTagsProvider, existingFileHelper));
+            generator.addProvider(true, new TWEntityTypeTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper));
+            generator.addProvider(true, new TWBiomeTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper));
+            generator.addProvider(true, new TWLootTableProvider(generator.getPackOutput()));
+            generator.addProvider(true, new TWRecipeProvider(generator.getPackOutput()));
         }
     }
 }

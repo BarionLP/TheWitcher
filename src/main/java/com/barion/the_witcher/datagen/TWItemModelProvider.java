@@ -5,7 +5,7 @@ import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.world.TWItems;
 import com.barion.the_witcher.world.block.TWIcicleBlock;
 import com.barion.the_witcher.world.block.TWPowerBlock;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class TWItemModelProvider extends ExtendedItemModelProvider {
     private final ModelFile bigHandheld = getExistingFile(modLoc("item/big_sword"));
 
-    public TWItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {super(generator, TheWitcher.ModID, fileHelper);}
+    public TWItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {super(packOutput, TheWitcher.ModID, existingFileHelper);}
 
     {
         blockItemModelProviderRules.add((item, block, name, texture)->{

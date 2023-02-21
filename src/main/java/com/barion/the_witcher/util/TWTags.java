@@ -1,6 +1,6 @@
 package com.barion.the_witcher.util;
 
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -44,7 +44,7 @@ public class TWTags {
 
         private static TagKey<EntityType<?>> forge(String path) {return create(new ResourceLocation("forge", path));}
         private static TagKey<EntityType<?>> tw(String path) {return create(TWUtil.location(path));}
-        private static TagKey<EntityType<?>> create(ResourceLocation location) {return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, location);}
+        private static TagKey<EntityType<?>> create(ResourceLocation location) {return TagKey.create(Registries.ENTITY_TYPE, location);}
     }
 
     public static final class Biomes{
@@ -54,6 +54,6 @@ public class TWTags {
         public static final TagKey<Biome> DealsFreezingDamage = tw("deals_freezing_damage");
         public static final TagKey<Biome> hasWhiteMyrtle = tw("has/white_myrtle");
         private static TagKey<Biome> tw(String path) {return create(TWUtil.location(path));}
-        private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registry.BIOME_REGISTRY, location);}
+        private static TagKey<Biome> create(ResourceLocation location) {return TagKey.create(Registries.BIOME, location);}
     }
 }

@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[43,)"
+loaderVersion="[44,)"
 license="All rights reserved"
 issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 
@@ -17,27 +17,27 @@ issueTrackerURL="https://github.com/BarionLP/TheWitcher/issues"
 [[dependencies.the_witcher]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[43.2,)" #mandatory
+    versionRange="[44.1,)" #mandatory
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.the_witcher]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.20)"
+    versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.the_witcher]]
     modId="structure_gel"
     mandatory=true
-    versionRange="[2.7.0,]"
+    versionRange="[2.9.0,]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.the_witcher]]
     modId="ametrin"
     mandatory=true
-    versionRange="[0.0.23,]"
+    versionRange="[0.0.29,]"
     ordering="NONE"
     side="BOTH"

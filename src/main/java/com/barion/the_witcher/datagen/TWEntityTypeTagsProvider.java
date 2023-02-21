@@ -3,21 +3,24 @@ package com.barion.the_witcher.datagen;
 import com.barion.the_witcher.TheWitcher;
 import com.barion.the_witcher.util.TWTags;
 import com.barion.the_witcher.world.TWEntityTypes;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class TWEntityTypeTagsProvider extends EntityTypeTagsProvider {
-    public TWEntityTypeTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generator, TheWitcher.ModID, existingFileHelper);
+    public TWEntityTypeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, TheWitcher.ModID, existingFileHelper);
     }
 
     @Override
-    protected void addTags(){
+    protected void addTags(@Nonnull HolderLookup.Provider lookupProvider){
         tag(TWTags.EntityTypes.MagicMob).add(
                 EntityType.VEX,
                 EntityType.CREEPER,

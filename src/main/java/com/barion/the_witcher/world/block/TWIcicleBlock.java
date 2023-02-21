@@ -258,10 +258,7 @@ public class TWIcicleBlock extends Block implements Fallable, SimpleWaterloggedB
         }
 
     }
-    @Override
-    public @NotNull DamageSource getFallDamageSource() {
-        return DamageSource.FALLING_STALACTITE;
-    }
+
     @Override
     public @NotNull Predicate<Entity> getHurtsEntitySelector() {
         return EntitySelector.NO_CREATIVE_OR_SPECTATOR.and(EntitySelector.LIVING_ENTITY_STILL_ALIVE);
