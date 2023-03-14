@@ -13,7 +13,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class TWItemModelProvider extends ExtendedItemModelProvider {
     private final ModelFile bigHandheld = getExistingFile(modLoc("item/big_sword"));
 
-    public TWItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {super(packOutput, TheWitcher.ModID, existingFileHelper);}
+    public TWItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, TheWitcher.ModID, existingFileHelper);
+    }
 
     {
         blockItemModelProviderRules.add((item, block, name, texture)->{

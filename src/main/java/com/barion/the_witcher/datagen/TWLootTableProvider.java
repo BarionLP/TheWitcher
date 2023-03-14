@@ -38,9 +38,7 @@ public class TWLootTableProvider extends ExtendedLootTableProvider {
     }
 
     @Override
-    public @NotNull List<SubProviderEntry> getTables() {
-        return tables;
-    }
+    public @NotNull List<SubProviderEntry> getTables() {return tables;}
 
     public class TWBlockLoot extends ExtendedBlockLootSubProvider{
         @Override

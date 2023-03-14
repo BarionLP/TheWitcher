@@ -21,12 +21,10 @@ import com.legacy.structure_gel.api.registry.registrar.RegistrarHandler;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -99,13 +97,13 @@ public class TheWitcher {
             ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
             CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+            generator.addProvider(true, new TWBiomeTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper));
             generator.addProvider(true, new TWBlockStateProvider(generator.getPackOutput(), existingFileHelper));
             generator.addProvider(true, new TWItemModelProvider(generator.getPackOutput(), existingFileHelper));
-            TagsProvider<Block> blockTagsProvider = new TWBlockTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper);
+            var blockTagsProvider = new TWBlockTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper);
             generator.addProvider(true, blockTagsProvider);
             generator.addProvider(true, new TWItemTagsProvider(generator.getPackOutput(), lookupProvider, blockTagsProvider, existingFileHelper));
             generator.addProvider(true, new TWEntityTypeTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper));
-            generator.addProvider(true, new TWBiomeTagsProvider(generator.getPackOutput(), lookupProvider, existingFileHelper));
             generator.addProvider(true, new TWLootTableProvider(generator.getPackOutput()));
             generator.addProvider(true, new TWRecipeProvider(generator.getPackOutput()));
         }
