@@ -98,10 +98,7 @@ repositories {
         url = "https://modmaven.dev"
     }
     maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
+        url "https://github.com/BarionLP/MCModsMaven/raw/main/"
     }
 }
 
@@ -115,7 +112,7 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
-    implementation fg.deobf("curse.maven:ametrin-670599:${ametrin_version}")
+    implementation fg.deobf("com.ametrinstudios:ametrin:${mc_version}-${ametrin_version}")
 }
 
 jar {
